@@ -38,7 +38,7 @@ function gl_insert_gallery( $gallery ){
  * @param string $status (Default:all)
  * @return array || false
  */
-
+/*
 function gl_get_galleries( $status = 'all' ){
 
 	global $GalleryLightboxDB;
@@ -87,7 +87,7 @@ function gl_get_galleries( $status = 'all' ){
  * @param string $id
  * @return array || 0
  */
-
+/*
 function gl_get_gallery( $id ){
 
 	global $GalleryLightboxDB, $wpdb;
