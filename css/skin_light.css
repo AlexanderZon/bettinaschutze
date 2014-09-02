@@ -1,0 +1,1114 @@
+header,
+footer {
+    background: #ffffff;
+}
+
+.fullscreen_title {
+    background: #ffffff;
+}
+
+.fullscreen_layout header {
+    background: #ffffff;
+}
+
+.glass_header header,
+.fs_title_wrapper {
+    background: #ffffff;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.fs_gallery_container {
+    background: #4f4d57;
+}
+
+header ul.menu > li > a {
+    color: #46434e;
+}
+
+.featured_slider .item .ico_gallery,
+.gallery_item .ico_gallery,
+.columns1 .element:hover .post_link,
+.fs_blog_module .blog_item  .featured_image_full .ico_gallery,
+.fs_grid_module .grid_gallery-item .item_hover-img a.post_link {
+    background-image: url(../img/light/frame_icons.png);
+    background-position: -480px -180px;
+}
+
+.fs_grid_module .grid_gallery-item .item_hover-img a.prettyPhoto,
+.columns1 .element:hover .prettyPhoto {
+    background-image: url(../img/light/frame_icons.png);
+    background-position: -540px -180px;
+}
+
+/*.fullscreen_block .gallery_item .gallery_descr,*/
+.module_line.faded:before {
+    background: #2a282f;
+}
+
+.pre_footer {
+    background: #46434e;
+}
+
+.fs_blog_module {
+    background: #46434e;
+}
+
+.fs_title_wrapper h1,
+.fs_title_wrapper h6 {
+    color: #46434e;
+}
+
+#footer_bar .twitter_list li a {
+    color: #ffffff;
+}
+
+#footer_bar .bg_title h1,
+#footer_bar .bg_title h2,
+#footer_bar .bg_title h3,
+#footer_bar .bg_title h4,
+#footer_bar .bg_title h5,
+#footer_bar .bg_title h6 {
+    color: #ffffff;
+}
+
+footer .copyright {
+    color: #6e6c74;
+}
+
+.pre_footer, .pre_footer p, .pre_footer span, .pre_footer div, .pre_footer label {
+    color: #cac7d4;
+}
+
+#footer_bar .recent_posts_content .post_title {
+    color: #ffffff !important;
+}
+
+#footer_bar .widget_mailchimpsf_widget .mc_submit {
+    background: #cac7d4;
+    color: #46434e !important;
+}
+
+#footer_bar .widget_mailchimpsf_widget .mc_input {
+    background: #6b6971;
+    color: #ffffff;
+}
+
+.module_line .shortcode_promoblock h3,
+.module_line .shortcode_promoblock h6 {
+    color: #ffffff;
+}
+
+.fullscreen_block {
+    background: #ffffff;
+}
+
+.fullscreen_title h1 {
+    color: #46434e;
+}
+
+.fullscreen_block .filter_block {
+    background: #2a282f;
+    background: rgba(42, 40, 47, 0.9);
+}
+
+.fullscreen_block .filter_block li a {
+    color: #ffffff !important;
+}
+
+.mobile_menu {
+    padding: 15px 0 25px 0 !important;
+}
+
+.mobile_menu_wrapper {
+    background: #2a282f;
+}
+
+.socials_list li a.ico_social-delicious {
+    background: url(../img/light/frame_icons.png) no-repeat -520px -0px;
+}
+
+.socials_list li a.ico_social-dribbble {
+    background: url(../img/light/frame_icons.png) no-repeat -560px -0px;
+}
+
+.socials_list li a.ico_social-facebook {
+    background: url(../img/light/frame_icons.png) no-repeat -0px -40px;
+}
+
+.socials_list li a.ico_social-flickr {
+    background: url(../img/light/frame_icons.png) no-repeat -40px -40px;
+}
+
+.socials_list li a.ico_social-gplus {
+    background: url(../img/light/frame_icons.png) no-repeat -80px -40px;
+}
+
+.socials_list li a.ico_social-instagram {
+    background: url(../img/light/frame_icons.png) no-repeat -120px -40px;
+}
+
+.socials_list li a.ico_social-linked {
+    background: url(../img/light/frame_icons.png) no-repeat -160px -40px;
+}
+
+.socials_list li a.ico_social-pinterest {
+    background: url(../img/light/frame_icons.png) no-repeat -200px -40px;
+}
+
+.socials_list li a.ico_social-tumblr {
+    background: url(../img/light/frame_icons.png) no-repeat -240px -40px;
+}
+
+.socials_list li a.ico_social-twitter {
+    background: url(../img/light/frame_icons.png) no-repeat -280px -40px;
+}
+
+.socials_list li a.ico_social-vimeo {
+    background: url(../img/light/frame_icons.png) no-repeat -320px -40px;
+}
+
+.socials_list li a.ico_social-youtube {
+    background: url(../img/light/frame_icons.png) no-repeat -360px -40px;
+}
+
+.featured_slider_wrapper a.featured_prev {
+    background: url(../img/light/frame_buttons.png) no-repeat -200px 0;
+}
+
+.featured_slider_wrapper a.featured_next {
+    background: url(../img/light/frame_buttons.png) no-repeat -260px 0;
+}
+
+.blogpost_type_ico.post_type_aside {
+    background: url(../img/light/frame_icons.png) no-repeat 0 0;
+}
+
+.blogpost_type_ico.post_type_audio {
+    background: url(../img/light/frame_icons.png) no-repeat -40px 0;
+}
+
+.blogpost_type_ico.post_type_chat {
+    background: url(../img/light/frame_icons.png) no-repeat -80px 0;
+}
+
+.blogpost_type_ico.post_type_gallery {
+    background: url(../img/light/frame_icons.png) no-repeat -120px 0;
+}
+
+.blogpost_type_ico.post_type_image {
+    background: url(../img/light/frame_icons.png) no-repeat -160px 0;
+}
+
+.blogpost_type_ico.post_type_link {
+    background: url(../img/light/frame_icons.png) no-repeat -200px 0;
+}
+
+.blogpost_type_ico.post_type_quote {
+    background: url(../img/light/frame_icons.png) no-repeat -240px 0;
+}
+
+.blogpost_type_ico.post_type_text {
+    background: url(../img/light/frame_icons.png) no-repeat -280px 0;
+}
+
+.blogpost_type_ico.post_type_video {
+    background: url(../img/light/frame_icons.png) no-repeat -320px 0;
+}
+
+.btn_back:before {
+    background: url(../img/light/frame_buttons.png) no-repeat -61px -1px;
+}
+
+.contentarea ul.list_type1 li:before {
+    background: url(../img/light/frame_buttons.png) no-repeat 0 -41px;
+}
+
+.contentarea ul.list_type2 li:before {
+    background: url(../img/light/frame_buttons.png) no-repeat -13px -41px;
+}
+
+.contentarea ul.list_type3 li:before {
+    background: url(../img/light/frame_buttons.png) no-repeat -26px -41px;
+}
+
+.contentarea ul.list_type4 li:before {
+    background: url(../img/light/frame_buttons.png) no-repeat -39px -41px;
+}
+
+.contentarea ul.list_type5 li:before {
+    background: url(../img/light/frame_buttons.png) no-repeat -52px -41px;
+}
+
+.contentarea ul.list_type6 li:before {
+    background: url(../img/light/frame_buttons.png) no-repeat -65px -41px;
+}
+
+.widget_nav_menu ul li a:before,
+.widget_archive ul li a:before,
+.widget_pages ul li a:before,
+.widget_categories ul li a:before,
+.widget_recent_entries ul li a:before {
+    background: url(../img/light/frame_buttons.png) no-repeat -20px 0;
+}
+
+blockquote:before {
+    background: url(../img/light/frame_buttons.png) no-repeat -80px -40px #46434e;
+}
+
+.carouselslider ul li .smallproflinks a.facebook_link {
+    background: url(../img/light/frame_icons.png) -600px -0px;
+}
+
+.carouselslider ul li .smallproflinks a.twitter_link {
+    background: url(../img/light/frame_icons.png) -600px -240px;
+}
+
+.carouselslider ul li .smallproflinks a.tumbler_link {
+    background: url(../img/light/frame_icons.png) -600px -200px;
+}
+
+.carouselslider ul li .smallproflinks a.linkedin_link {
+    background: url(../img/light/frame_icons.png) -600px -120px;
+}
+
+.carouselslider ul li .smallproflinks a.member_email {
+    background: url(../img/light/frame_icons.png) -600px -160px;
+}
+
+.carouselslider ul li .smallproflinks a.flickr_link {
+    background: url(../img/light/frame_icons.png) -600px -80px;
+}
+
+.carousel-previous {
+    background: url(../img/light/frame_buttons.png) no-repeat -41px -21px;
+}
+
+.carousel-next {
+    background: url(../img/light/frame_buttons.png) no-repeat -41px -1px;
+}
+
+.post_type_ico .post_type_gallery {
+    background: url(../img/light/frame_icons.png) -360px 0;
+}
+
+.post_type_ico .post_type_image {
+    background: url(../img/light/frame_icons.png) -400px 0;
+}
+
+.post_type_ico .post_type_video {
+    background: url(../img/light/frame_icons.png) -440px 0;
+}
+
+.shortcode_accordion_item_title .ico,
+.shortcode_toggles_item_title .ico {
+    background: url(../img/light/frame_buttons.png) no-repeat 0 0;
+}
+
+.shortcode_accordion_item_title.ui-state-active .ico,
+.shortcode_toggles_item_title.ui-state-active .ico {
+    background: url(../img/light/frame_buttons.png) no-repeat 0 -20px;
+}
+
+.shortcode_messagebox .box_close {
+    background: url(../img/light/frame_buttons.png) -61px -21px;
+}
+
+.ico_socialize_facebook1 {
+    background: url(../img/light/frame_icons.png) -360px -80px;
+}
+
+.ico_socialize_facebook2 {
+    background: url(../img/light/frame_icons.png) -400px -80px;
+}
+
+.ico_socialize_twitter1 {
+    background: url(../img/light/frame_icons.png) -40px -200px;
+}
+
+.ico_socialize_twitter2 {
+    background: url(../img/light/frame_icons.png) -80px -200px;
+}
+
+.ico_socialize_twitter3 {
+    background: url(../img/light/frame_icons.png) -120px -200px;
+}
+
+.ico_socialize_digg1 {
+    background: url(../img/light/frame_icons.png) -40px -80px;
+}
+
+.ico_socialize_digg2 {
+    background: url(../img/light/frame_icons.png) -80px -80px;
+}
+
+.ico_socialize_google1 {
+    background: url(../img/light/frame_icons.png) -0px -120px;
+}
+
+.ico_socialize_google2 {
+    background: url(../img/light/frame_icons.png) -40px -120px;
+}
+
+.ico_socialize_tumbler {
+    background: url(../img/light/frame_icons.png) -0px -200px;
+}
+
+.ico_socialize_delicious {
+    background: url(../img/light/frame_icons.png) -560px -40px;
+}
+
+.ico_socialize_plixi {
+    background: url(../img/light/frame_icons.png) -200px -160px;
+}
+
+.ico_socialize_dribbble1 {
+    background: url(../img/light/frame_icons.png) -160px -80px;
+}
+
+.ico_socialize_dribbble2 {
+    background: url(../img/light/frame_icons.png) -200px -80px;
+}
+
+.ico_socialize_stubleUpon {
+    background: url(../img/light/frame_icons.png) -400px -160px;
+}
+
+.ico_socialize_lastfm {
+    background: url(../img/light/frame_icons.png) -240px -120px;
+}
+
+.ico_socialize_moby {
+    background: url(../img/light/frame_icons.png) -400px -120px;
+}
+
+.ico_socialize_vimeo {
+    background: url(../img/light/frame_icons.png) -200px -200px;
+}
+
+.ico_socialize_youtube1 {
+    background: url(../img/light/frame_icons.png) -400px -200px;
+}
+
+.ico_socialize_youtube2 {
+    background: url(../img/light/frame_icons.png) -440px -200px;
+}
+
+.ico_socialize_myspace {
+    background: url(../img/light/frame_icons.png) -440px -120px;
+}
+
+.ico_socialize_linkedIn {
+    background: url(../img/light/frame_icons.png) -280px -120px;
+}
+
+.ico_socialize_pinterest {
+    background: url(../img/light/frame_icons.png) -160px -160px;
+}
+
+.ico_socialize_flickr {
+    background: url(../img/light/frame_icons.png) -480px -80px;
+}
+
+.ico_socialize_vk1 {
+    background: url(../img/light/frame_icons.png) -240px -200px;
+}
+
+.ico_socialize_vk2 {
+    background: url(../img/light/frame_icons.png) -280px -200px;
+}
+
+.ico_socialize_odnoklassniki {
+    background: url(../img/light/frame_icons.png) -0px -160px;
+}
+
+.ico_socialize_gowalla {
+    background: url(../img/light/frame_icons.png) -80px -120px;
+}
+
+.ico_socialize_dropbox {
+    background: url(../img/light/frame_icons.png) -240px -80px;
+}
+
+.ico_socialize_skype {
+    background: url(../img/light/frame_icons.png) -360px -160px;
+}
+
+.ico_socialize_iChat {
+    background: url(../img/light/frame_icons.png) -160px -120px;
+}
+
+.ico_socialize_instagram {
+    background: url(../img/light/frame_icons.png) -200px -120px;
+}
+
+.ico_socialize_evernote {
+    background: url(../img/light/frame_icons.png) -320px -80px;
+}
+
+.ico_socialize_deviantart {
+    background: url(../img/light/frame_icons.png) -0px -80px;
+}
+
+.ico_socialize_blogspot {
+    background: url(../img/light/frame_icons.png) -520px -40px;
+}
+
+.ico_socialize_reddit {
+    background: url(../img/light/frame_icons.png) -240px -160px;
+}
+
+.ico_socialize_technorati {
+    background: url(../img/light/frame_icons.png) -440px -160px;
+}
+
+.ico_socialize_yahoo {
+    background: url(../img/light/frame_icons.png) -360px -200px;
+}
+
+.ico_socialize_diigo {
+    background: url(../img/light/frame_icons.png) -120px -80px;
+}
+
+.ico_socialize_blinklist {
+    background: url(../img/light/frame_icons.png) -480px -40px;
+}
+
+.ico_socialize_bing {
+    background: url(../img/light/frame_icons.png) -440px -40px;
+}
+
+.ico_socialize_behnce {
+    background: url(../img/light/frame_icons.png) -400px -40px;
+}
+
+.ico_socialize_picasa {
+    background: url(../img/light/frame_icons.png) -120px -160px;
+}
+
+.ico_socialize_forrst {
+    background: url(../img/light/frame_icons.png) -520px -80px;
+}
+
+.ico_socialize_ffffound {
+    background: url(../img/light/frame_icons.png) -440px -80px;
+}
+
+.ico_socialize_viddler {
+    background: url(../img/light/frame_icons.png) -160px -200px;
+}
+
+.ico_socialize_friendfeed {
+    background: url(../img/light/frame_icons.png) -560px -80px;
+}
+
+.ico_socialize_mobileMe {
+    background: url(../img/light/frame_icons.png) -360px -120px;
+}
+
+.ico_socialize_wordpress {
+    background: url(../img/light/frame_icons.png) -320px -200px;
+}
+
+.ico_socialize_drupal {
+    background: url(../img/light/frame_icons.png) -280px -80px;
+}
+
+.ico_socialize_paypal {
+    background: url(../img/light/frame_icons.png) -40px -160px;
+}
+
+.ico_socialize_share {
+    background: url(../img/light/frame_icons.png) -320px -160px;
+}
+
+.ico_socialize_mail {
+    background: url(../img/light/frame_icons.png) -320px -120px;
+}
+
+.ico_socialize_rss {
+    background: url(../img/light/frame_icons.png) -280px -160px;
+}
+
+.ico_socialize_home {
+    background: url(../img/light/frame_icons.png) -120px -120px;
+}
+
+.ico_socialize_phone {
+    background: url(../img/light/frame_icons.png) -80px -160px;
+}
+
+ul.sitemap_list li:before {
+    background: url(../img/light/frame_buttons.png) no-repeat 0 -41px;
+}
+
+.fullscreen_title .btn_next {
+    background: url(../img/light/frame_buttons.png) no-repeat 0 -80px;
+}
+
+.fullscreen_title .btn_prev {
+    background: url(../img/light/frame_buttons.png) no-repeat 0 -120px;
+}
+
+.fullscreen_title .btn_close {
+    background: url(../img/light/frame_buttons.png) no-repeat -160px 0;
+}
+
+/*retina*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    header a.menu_toggler {
+        background: url(../img/light/retina/mobile_menu.png) no-repeat center;
+        background-size: 29px 29px;
+    }
+
+    .fullscreen_title .btn_next {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat 0 -80px;
+    }
+
+    .fullscreen_title .btn_prev {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat 0 -120px;
+    }
+
+    .fullscreen_title .btn_close {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -160px 0;
+    }
+
+    .featured_slider_wrapper a.featured_prev {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -200px 0;
+    }
+
+    .featured_slider_wrapper a.featured_next {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -260px 0;
+    }
+
+    .btn_back:before {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -61px -1px;
+    }
+
+    ul.sitemap_list li:before {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat 0 -41px;
+    }
+
+    .contentarea ul.list_type1 li:before {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat 0 -41px;
+    }
+
+    .contentarea ul.list_type2 li:before {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -13px -41px;
+    }
+
+    .contentarea ul.list_type3 li:before {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -26px -41px;
+    }
+
+    .contentarea ul.list_type4 li:before {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -39px -41px;
+    }
+
+    .contentarea ul.list_type5 li:before {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -52px -41px;
+
+    }
+
+    .contentarea ul.list_type6 li:before {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -65px -41px;
+    }
+
+    .widget_nav_menu ul li a:before,
+    .widget_archive ul li a:before,
+    .widget_pages ul li a:before,
+    .widget_categories ul li a:before,
+    .widget_recent_entries ul li a:before {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -20px 0;
+    }
+
+    blockquote:before {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -80px -40px #46434e;
+    }
+
+    .carousel-previous {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -41px -21px;
+    }
+
+    .carousel-next {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat -41px -1px;
+    }
+
+    .shortcode_accordion_item_title .ico,
+    .shortcode_toggles_item_title .ico {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat 0 0;
+    }
+
+    .shortcode_accordion_item_title.ui-state-active .ico,
+    .shortcode_toggles_item_title.ui-state-active .ico {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) no-repeat 0 -20px;
+    }
+
+    .shortcode_messagebox .box_close {
+        background-size: 320px 62px !important;
+        background: url(../img/light/retina/frame_buttons.png) -61px -21px;
+    }
+
+    .socials_list li a.ico_social-delicious {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -520px -0px;
+    }
+
+    .socials_list li a.ico_social-dribbble {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -560px -0px;
+    }
+
+    .socials_list li a.ico_social-facebook {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -0px -40px;
+    }
+
+    .socials_list li a.ico_social-flickr {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -40px -40px;
+    }
+
+    .socials_list li a.ico_social-gplus {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -80px -40px;
+    }
+
+    .socials_list li a.ico_social-instagram {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -120px -40px;
+    }
+
+    .socials_list li a.ico_social-linked {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -160px -40px;
+    }
+
+    .socials_list li a.ico_social-pinterest {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -200px -40px;
+    }
+
+    .socials_list li a.ico_social-tumblr {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -240px -40px;
+    }
+
+    .socials_list li a.ico_social-twitter {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -280px -40px;
+    }
+
+    .socials_list li a.ico_social-vimeo {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -320px -40px;
+    }
+
+    .socials_list li a.ico_social-youtube {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -360px -40px;
+    }
+
+    .blogpost_type_ico.post_type_aside {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat 0 0;
+    }
+
+    .blogpost_type_ico.post_type_audio {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -40px 0;
+    }
+
+    .blogpost_type_ico.post_type_chat {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -80px 0;
+    }
+
+    .blogpost_type_ico.post_type_gallery {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -120px 0;
+    }
+
+    .blogpost_type_ico.post_type_image {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -160px 0;
+    }
+
+    .blogpost_type_ico.post_type_link {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -200px 0;
+    }
+
+    .blogpost_type_ico.post_type_quote {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -240px 0;
+    }
+
+    .blogpost_type_ico.post_type_text {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -280px 0;
+    }
+
+    .blogpost_type_ico.post_type_video {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) no-repeat -320px 0;
+    }
+
+    .carouselslider ul li .smallproflinks a.facebook_link {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -600px -0px;
+    }
+
+    .carouselslider ul li .smallproflinks a.twitter_link {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -600px -240px;
+    }
+
+    .carouselslider ul li .smallproflinks a.tumbler_link {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -600px -200px;
+    }
+
+    .carouselslider ul li .smallproflinks a.linkedin_link {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -600px -120px;
+    }
+
+    .carouselslider ul li .smallproflinks a.member_email {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -600px -160px;
+    }
+
+    .carouselslider ul li .smallproflinks a.flickr_link {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -600px -80px;
+    }
+
+    .post_type_ico .post_type_gallery {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -360px 0;
+    }
+
+    .post_type_ico .post_type_image {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -400px 0;
+    }
+
+    .post_type_ico .post_type_video {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -440px 0;
+    }
+
+    .ico_socialize_facebook1 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -360px -80px;
+    }
+
+    .ico_socialize_facebook2 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -400px -80px;
+    }
+
+    .ico_socialize_twitter1 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -40px -200px;
+    }
+
+    .ico_socialize_twitter2 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -80px -200px;
+    }
+
+    .ico_socialize_twitter3 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -120px -200px;
+    }
+
+    .ico_socialize_digg1 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -40px -80px;
+    }
+
+    .ico_socialize_digg2 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -80px -80px;
+    }
+
+    .ico_socialize_google1 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -0px -120px;
+    }
+
+    .ico_socialize_google2 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -40px -120px;
+    }
+
+    .ico_socialize_tumbler {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -0px -200px;
+    }
+
+    .ico_socialize_delicious {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -560px -40px;
+    }
+
+    .ico_socialize_plixi {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -200px -160px;
+    }
+
+    .ico_socialize_dribbble1 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -160px -80px;
+    }
+
+    .ico_socialize_dribbble2 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -200px -80px;
+    }
+
+    .ico_socialize_stubleUpon {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -400px -160px;
+    }
+
+    .ico_socialize_lastfm {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -240px -120px;
+    }
+
+    .ico_socialize_moby {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -400px -120px;
+    }
+
+    .ico_socialize_vimeo {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -200px -200px;
+    }
+
+    .ico_socialize_youtube1 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -400px -200px;
+    }
+
+    .ico_socialize_youtube2 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -440px -200px;
+    }
+
+    .ico_socialize_myspace {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -440px -120px;
+    }
+
+    .ico_socialize_linkedIn {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -280px -120px;
+    }
+
+    .ico_socialize_pinterest {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -160px -160px;
+    }
+
+    .ico_socialize_flickr {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -480px -80px;
+    }
+
+    .ico_socialize_vk1 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -240px -200px;
+    }
+
+    .ico_socialize_vk2 {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -280px -200px;
+    }
+
+    .ico_socialize_odnoklassniki {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -0px -160px;
+    }
+
+    .ico_socialize_gowalla {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -80px -120px;
+    }
+
+    .ico_socialize_dropbox {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -240px -80px;
+    }
+
+    .ico_socialize_skype {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -360px -160px;
+    }
+
+    .ico_socialize_iChat {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -160px -120px;
+    }
+
+    .ico_socialize_instagram {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -200px -120px;
+    }
+
+    .ico_socialize_evernote {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -320px -80px;
+    }
+
+    .ico_socialize_deviantart {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -0px -80px;
+    }
+
+    .ico_socialize_blogspot {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -520px -40px;
+    }
+
+    .ico_socialize_reddit {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -240px -160px;
+    }
+
+    .ico_socialize_technorati {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -440px -160px;
+    }
+
+    .ico_socialize_yahoo {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -360px -200px;
+    }
+
+    .ico_socialize_diigo {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -120px -80px;
+    }
+
+    .ico_socialize_blinklist {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -480px -40px;
+    }
+
+    .ico_socialize_bing {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -440px -40px;
+    }
+
+    .ico_socialize_behnce {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -400px -40px;
+    }
+
+    .ico_socialize_picasa {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -120px -160px;
+    }
+
+    .ico_socialize_forrst {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -520px -80px;
+    }
+
+    .ico_socialize_ffffound {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -440px -80px;
+    }
+
+    .ico_socialize_viddler {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -160px -200px;
+    }
+
+    .ico_socialize_friendfeed {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -560px -80px;
+    }
+
+    .ico_socialize_mobileMe {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -360px -120px;
+    }
+
+    .ico_socialize_wordpress {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -320px -200px;
+    }
+
+    .ico_socialize_drupal {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -280px -80px;
+    }
+
+    .ico_socialize_paypal {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -40px -160px;
+    }
+
+    .ico_socialize_share {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -320px -160px;
+    }
+
+    .ico_socialize_mail {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -320px -120px;
+    }
+
+    .ico_socialize_rss {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -280px -160px;
+    }
+
+    .ico_socialize_home {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -120px -120px;
+    }
+
+    .ico_socialize_phone {
+        background-size: 640px 240px !important;
+        background: url(../img/light/retina/frame_icons.png) -80px -160px;
+    }
+}
+
+.thumb_toggle a {
+    background: url(../img/light/btn_menu.png) no-repeat center;
+}
+
+.fs_slider_prev {
+    background: url(../img/light/frame_buttons.png) no-repeat -200px 0;
+}
+
+.fs_slider_next {
+    background: url(../img/light/frame_buttons.png) no-repeat -260px 0;
+}
+header a.menu_toggler {
+	background:url(../img/light/mobile_menu.png) no-repeat center;
+}

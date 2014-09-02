@@ -1,0 +1,174 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GT3Themes WP\n"
+"POT-Creation-Date: 2013-08-12 12:07+0200\n"
+"PO-Revision-Date: 2013-08-12 12:07+0200\n"
+"Last-Translator: \n"
+"Language-Team: GT3Themes <help@gt3themes.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e;_\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:5
+msgid "404 Error"
+msgstr ""
+
+#: 404.php:7
+msgid "Oops!"
+msgstr ""
+
+#: 404.php:7
+msgid "Not Found :("
+msgstr ""
+
+#: 404.php:9
+msgid "Apologies, but we were unable to find what you were looking for."
+msgstr ""
+
+#: comments.php:4
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:24
+msgid "Comments"
+msgstr ""
+
+#: comments.php:49 page-contacts.php:55 core/registrator/ajax-handlers.php:225
+msgid "Name *"
+msgstr ""
+
+#: comments.php:50 page-contacts.php:57 core/registrator/ajax-handlers.php:225
+msgid "Email *"
+msgstr ""
+
+#: comments.php:51
+msgid "URL"
+msgstr ""
+
+#: comments.php:53
+msgid "Message..."
+msgstr ""
+
+#: comments.php:56
+msgid "You must be logged in to post a comment."
+msgstr ""
+
+#: comments.php:57
+msgid "Leave a Comment!"
+msgstr ""
+
+#: comments.php:58
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:59
+msgid "Logged in as"
+msgstr ""
+
+#: comments.php:59
+msgid "Log out?"
+msgstr ""
+
+#: comments.php:64
+msgid "Sorry, the comment form is closed at this time."
+msgstr ""
+
+#: functions.php:115 functions.php:167
+msgid "All"
+msgstr ""
+
+#: functions.php:213
+msgid "Reply"
+msgstr ""
+
+#: functions.php:216
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:326
+msgid "[Website] Contact Form"
+msgstr ""
+
+#: functions.php:722
+msgid "Home"
+msgstr ""
+
+#: page-contacts.php:33 page.php:73 single-port.php:68 single.php:70
+msgid "Collapse"
+msgstr ""
+
+#: page-contacts.php:34 page.php:74 single-port.php:69 single.php:71
+msgid "Show info"
+msgstr ""
+
+#: page-contacts.php:59
+msgid "Subject"
+msgstr ""
+
+#: page-contacts.php:61 core/registrator/ajax-handlers.php:225
+msgid "Message *"
+msgstr ""
+
+#: page-contacts.php:69
+msgid "Clear form"
+msgstr ""
+
+#: page-contacts.php:70
+msgid "Send comment"
+msgstr ""
+
+#: page-portfolio-grid.php:42 page-portfolio-masonry.php:42
+msgid "Load more works"
+msgstr ""
+
+#: single-port.php:88
+msgid "Equipment:"
+msgstr ""
+
+#: single-port.php:92
+msgid "Location:"
+msgstr ""
+
+#: single-port.php:96
+msgid "Model:"
+msgstr ""
+
+#: single-port.php:100
+msgid "Style:"
+msgstr ""
+
+#: single.php:89
+msgid "Author"
+msgstr ""
+
+#: single.php:95
+msgid "Tags"
+msgstr ""
+
+#: single.php:126
+msgid "Pages"
+msgstr ""
+
+#: core/page-builder/pb-parser.php:119 core/registrator/ajax-handlers.php:370
+msgid "Read more!"
+msgstr ""
+
+#: core/registrator/ajax-handlers.php:226
+#: core/registrator/ajax-handlers.php:231
+msgid "Please fill the required field."
+msgstr ""
+
+#: core/registrator/ajax-handlers.php:236
+msgid "Thank you! Your message has been sent."
+msgstr ""
+
+#: core/registrator/ajax-handlers.php:297
+msgid "Time spent"
+msgstr ""

@@ -1,0 +1,23 @@
+/*
+Theme Name: Frame Photography Minimalistic WP Theme
+Theme URI: http://gt3themes.com/wordpress-themes/frame/
+Author: mad_dog
+Author URI: gt3themes.com
+Description: This outstanding photography theme comes in two versions Light and Dark skins. We tried to implement the most popular galleries into the theme, like fullscreeen, kenburns, wall gallery, fullscreen grid, masonry style.
+Version: 1.5 (build b32a12b)
+Tags: wordpress theme, responsive, retina ready, photography, portfolio.
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+/* Released by http://www.96down.com */
+
+.logo{
+position:absolute;
+top:100px;
+left:50px;
+z-index:99999;
+}
+
+.fs_thmb_viewport {
+bottom: 69px !important;
+}
