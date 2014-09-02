@@ -12,6 +12,8 @@ if(!class_exists("GalleryLightbox")){
 
 			spl_autoload_register( array($this, 'autoload') );
 
+			include_once( $this->plugin_path() . '/class.db.php' );
+
 			$this->initializeAdmin();
 
 		}
