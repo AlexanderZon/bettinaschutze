@@ -109,10 +109,11 @@ class GalleryLightboxDB{
 	
 $GLOBALS['GalleryLightboxDB'] = new GalleryLightboxDB();
 
+/*
 require('db/items.db.php');
 
 require('db/photos.db.php');
 
 require('db/galleries.db.php');
-
+*/
 ?>
