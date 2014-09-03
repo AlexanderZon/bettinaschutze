@@ -22,7 +22,7 @@
 
 			if($bool):
 
-				$msg = 'Materia agregada con éxito!';
+				$msg = 'Galería agregada con éxito!';
 
 			else:
 
@@ -34,7 +34,7 @@
 			
 		else:
 
-			$msg = 'No se pudo agregar la materia, revise sus datos';
+			$msg = 'No se pudo agregar la galería, revise sus datos';
 
 		endif;
 
@@ -70,7 +70,6 @@
 		
 </style>
 
-<!--<script language="javascript" src="<?php echo plugins_url().'/elearning/assets/js/jquery.js'; ?>"></script>-->
 <div class="wrap">
 	<div class="icon32 element"><br></div>
 	<h2>Añadir Galerias <a href="admin.php?page=page_gallery_lightbox_add" class="add-new-h2">Volver</a></h2>
