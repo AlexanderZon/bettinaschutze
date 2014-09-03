@@ -230,6 +230,10 @@ class GalleryLightboxDB{
 
 		echo "<br><br>";
 
+		var_dump($object);
+
+		echo "<br><br>";
+
 		$gallery = array_replace( $gallery, $object );
 
 		var_dump($gallery);
