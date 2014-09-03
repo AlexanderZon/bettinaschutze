@@ -195,6 +195,7 @@
     var_dump($gldb->getGalleries());
 
     var_dump(get_posts(array(
+                    'post_status' => 'any',
                     'post_type' => 'gl_gallery'
                     )));
     
