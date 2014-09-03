@@ -153,7 +153,7 @@
             
         public function column_post_date( $item ){
             
-            return sprintf( '%1$s', $item['post_date']);
+            return sprintf( '<span class="moment">%1$s</span>', $item['post_date']);
             
             }
             
@@ -232,7 +232,15 @@
                     )));
   */  
     ?>
-    <!-- PAGE CONTENT --->
-    
+
     
 </div>
+
+<script type="text/javascript" src="<?php echo wp_template_directory_uri(); ?>/js/moment.js"></script>
+<script type="text/javascript">
+    
+    $(document).on('ready', function(){
+        console.log("JQUERY");
+    });
+
+</script>
