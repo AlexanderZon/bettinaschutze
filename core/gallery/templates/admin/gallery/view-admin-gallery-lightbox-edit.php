@@ -7,11 +7,11 @@
 		global $gldb;
 	
 		$data = $_POST;
+
+		$gallery = $gldb->getGallery($data['ID']);
 			
-		$gallery = array(
-			'post_title' => $data['post_title']
-			);
-		
+		$gallery['post_title'] = $data['post_title'];
+
 		$id = $gldb->updateGallery($gallery);
 
 		$msg = '';
