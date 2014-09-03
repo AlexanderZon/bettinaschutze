@@ -30,6 +30,14 @@ class eLError{
 class GalleryLightboxDB{
 	
 	/**
+	 * @var table
+	 * @access public
+	 * @type string
+	 */
+	
+	public $table;
+	
+	/**
 	 * @var galleries
 	 * @access public
 	 * @type string
@@ -53,7 +61,13 @@ class GalleryLightboxDB{
 	
 	public $photos;
 	
-	public $tables = array(
+	/**
+	 * @var types
+	 * @access public
+	 * @type array
+	 */
+	
+	public $types = array(
 		'galleries' => 'gallery',	
 		'items' => 'item',	
 		'photos' => 'photo',
@@ -75,7 +89,9 @@ class GalleryLightboxDB{
 	
 	public function __construct(){
 		
-		foreach( $this->tables as $value => $key):
+		$this->table = 'wp_posts';
+
+		foreach( $this->types as $value => $key):
 			$this->__set( $value , $key );
 		endforeach;
 		
@@ -142,38 +158,28 @@ class GalleryLightboxDB{
 	 * @return array || false
 	 */
 	function getGalleries( $status = 'all' ){
+	 
+		global  $wpdb;
 		
 		$band = true;
 
-		$args = array();
+		$where = " WHERE ";
+		
+		if( $status != 'all' AND $status != 'untrash' AND $status != 'publish' AND $status != 'draft' AND $status != 'trash' )
+			$band = false;
+		if( $status == 'all' )
+			$where = " 1 ";
+		else 
+			if( $status == 'untrash' )
+				$where .= " `post_status`!='trash'";
+			else
+				$where .= " `post_status`='" . $status . "'";
 
-		switch($status){
-			case 'all':
-				$args = array(
-					'post_status' => 'any',
-					'post_type' => $this->galleries
-					);
-				break;
-			case 'public':
-			case 'draft':
-			case 'trash':
-				$args = array(
-					'post_status' => $status,
-					'post_type' => $this->galleries
-					);
-				break;
-			default:
-				$args = array(
-					'post_status' => 'any',
-					'post_type' => $this->galleries
-					);
-				break;
-		}	
-
+		if($semestre != '')
+			$where .= " AND `semestre_id`='".$semestre."'";
 		if( $band ):
 			
-			$array = get_posts( $args );
-			
+			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
 			return $array;
 			
 		else:
