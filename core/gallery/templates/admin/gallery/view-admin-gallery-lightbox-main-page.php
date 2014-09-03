@@ -34,7 +34,7 @@
                             
             $this->data = $gldb->getGalleries('all');
             $this->_args = $this->data;
-            var_dump($this->_args);
+            var_dump($this->data);
             $this->prepare_items();
             $this->display_search_box( 'Buscar', 'serach_id' );
             $this->display();
