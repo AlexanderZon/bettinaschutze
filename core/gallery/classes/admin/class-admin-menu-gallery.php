@@ -10,6 +10,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 		
 		add_menu_page( 'Gallery Lightbox' , 'Gallery Lightbox' , 'manage_options' , 'page_gallery_lightbox' , array( $this , 'page_gallery_lightbox' ) , '' );
 		add_submenu_page( 'page_gallery_lightbox' , 'Agregar' , 'Agregar' , 'manage_options' , 'page_gallery_lightbox_add' , array( $this , 'page_gallery_lightbox_add' ) );
+		add_submenu_page( 'page_gallery_lightbox' , 'Editar' , 'Editar' , 'manage_options' , 'page_gallery_lightbox_edit' , array( $this , 'page_gallery_lightbox_edit' ) );
 		add_submenu_page( 'page_gallery_lightbox' , 'Borrar' , 'Borrar' , 'manage_options' , 'page_gallery_lightbox_delete' , array( $this , 'page_gallery_lightbox_delete' ) );
 		
 		}
@@ -23,6 +24,12 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 	public function page_gallery_lightbox_add( $atts ){
 		
 		$this->autoload('view_admin_gallery_lightbox_add');
+		
+		}
+		
+	public function page_gallery_lightbox_edit( $atts ){
+		
+		$this->autoload('view_admin_gallery_lightbox_edit');
 		
 		}
 				
