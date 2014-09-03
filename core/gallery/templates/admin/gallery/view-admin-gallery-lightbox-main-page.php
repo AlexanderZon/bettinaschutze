@@ -44,9 +44,9 @@
             
             $columns = array(
                 'cb' => '<input type="checkbox" />',
-                'materia_codigo' => 'Código',
-                'materia_descripcion' => 'Nombre',
-                'semestre_id' => 'Semestre'
+                'post_title' => 'Código',
+                'post_content' => 'Nombre',
+                'post_type' => 'Semestre'
                 );
             
             return $columns;
@@ -104,9 +104,9 @@
         public function get_sortable_columns(){
             
             $sortable_columns = array(
-                'materia_codigo' => array( 'materia_codigo', false ),
-                'materia_descripcion' => array( 'materia_descripcion', false),
-                'semestre_id' => array( 'semestre_id', false)
+                'post_title' => array( 'post_title', false ),
+                'post_content' => array( 'post_content', false),
+                'post_type' => array( 'post_type', false)
                 );
                 
             return $sortable_columns;
@@ -115,7 +115,7 @@
             
         public function usort_reorder( $a, $b ){
             
-            $orderby = ( ! empty( $_GET['orderby'] ) ) ? $_GET['orderby'] : 'materia_codigo';
+            $orderby = ( ! empty( $_GET['orderby'] ) ) ? $_GET['orderby'] : 'post_title';
             
             $order = ( ! empty( $_GET['order'] ) ) ? $_GET['order'] : 'asc' ;
             
@@ -129,9 +129,9 @@
             
             switch( $column_name ){
                 
-                case 'materia_codigo':
-                case 'materia_descripcion':
-                case 'semestre_id':
+                case 'post_title':
+                case 'post_content':
+                case 'post_type':
                     return $item[ $column_name ];
                 default:
                     return print_r( $item, true );
@@ -140,22 +140,20 @@
             
             }
             
-        public function column_materia_codigo( $item ){
+        public function column_post_title( $item ){
             
             $actions = array(
                 'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Editar</a>', 'edit_materia', 'edit' , $item['ID'] ),
                 'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Eliminar</a>', 'delete_materia', 'delete', $item['ID'] )
                 );
                 
-            return sprintf( '%1$s %2$s', $item['materia_codigo'], $this->row_actions( $actions ) );
+            return sprintf( '%1$s %2$s', $item['post_title'], $this->row_actions( $actions ) );
             
             }
             
-        public function column_semestre_id( $item ){
+        public function column_post_type( $item ){
             
-            $pensum = '2010';
-            
-            return sprintf( 'Semestre: %1$s, Pensum: %2$s', $item['semestre_id'], $pensum);
+            return sprintf( '%1$s', $item['post_type']);
             
             }
             
@@ -171,7 +169,7 @@
             
         public function column_cb( $item ){
             
-            return sprintf( '<input type="checkbox" name="materia_codigo[]" value="%s"/>', $item['ID'] );
+            return sprintf( '<input type="checkbox" name="post_title[]" value="%s"/>', $item['ID'] );
             
             }
             
@@ -190,11 +188,7 @@
         
         }
         
-    //$object = new MateriasMainPageTable();
-
-            global $gldb;
-
-            var_dump($gldb->getGalleries());
+    $object = new MateriasMainPageTable();
     
     ?>
     <!-- PAGE CONTENT --->
