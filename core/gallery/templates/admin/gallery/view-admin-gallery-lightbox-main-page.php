@@ -239,11 +239,11 @@
 
 <script type="text/javascript" src="<?php echo get_template_directory_uri().'/js/moment.js'; ?>"></script>
 <script type="text/javascript">
-    
+    moment.locale('br');
     $(document).on('ready', function(){
         $('.moment').each(function(){
             var elem = $(this);
-            elem.html(moment(elem.html()).fromNow().locale('br'));
+            elem.html(moment(elem.html()).fromNow());
         });
     });
 
