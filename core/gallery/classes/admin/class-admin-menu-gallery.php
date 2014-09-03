@@ -63,7 +63,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 		else:
 
-			wp_redirect( '?page=page=page_gallery_lightbox' ); exit;
+			wp_redirect( '?page=page_gallery_lightbox' ); exit;
 		
 			//$this->autoload('view_admin_gallery_lightbox_main_page');
 
@@ -95,7 +95,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 		else:
 
-			wp_redirect( '?page=page=page_gallery_lightbox' ); exit;
+			wp_redirect( '?page=page_gallery_lightbox' ); exit;
 		
 			//$this->autoload('view_admin_gallery_lightbox_main_page');
 
