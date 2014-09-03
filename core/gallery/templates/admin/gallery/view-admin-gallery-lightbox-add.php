@@ -12,7 +12,7 @@
 			'post_title' => $data['post_title']
 			);
 		
-		$id = $glbd->addGallery($gallery);
+		$id = $gldb->addGallery($gallery);
 
 		$msg = '';
 		
