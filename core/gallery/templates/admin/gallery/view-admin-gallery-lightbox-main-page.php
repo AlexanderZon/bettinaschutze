@@ -185,7 +185,7 @@
                     break;
             }
             
-            return sprintf( '%1$s %2$s', $status, $actions);
+            return sprintf( '%1$s %2$s', $status, $this->row_actions( $actions ) );
             
             }
             
