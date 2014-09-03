@@ -178,7 +178,7 @@ class GalleryLightboxDB{
 		if($semestre != '')
 			$where .= " AND `semestre_id`='".$semestre."'";
 		if( $band ):
-			
+			echo "SELECT * FROM " . $this->table .$where;
 			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
 			return $array;
 			
