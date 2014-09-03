@@ -241,7 +241,10 @@
 <script type="text/javascript">
     
     $(document).on('ready', function(){
-        console.log("JQUERY");
+        $('.moment').each(function(){
+            var elem = $(this);
+            elem.html(moment(elem.html()).fromNow());
+        });
     });
 
 </script>
