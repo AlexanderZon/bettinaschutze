@@ -46,8 +46,8 @@
             $columns = array(
                 'cb' => '<input type="checkbox" />',
                 'post_title' => 'Título',
-                'post_content' => 'Contenido',
-                'post_type' => 'Tipo'
+                'post_status' => 'Visibilidad',
+                'post_date' => 'Fecha de Creación'
                 );
             
             return $columns;
@@ -106,8 +106,8 @@
             
             $sortable_columns = array(
                 'post_title' => array( 'post_title', false ),
-                'post_content' => array( 'post_content', false),
-                'post_type' => array( 'post_type', false)
+                'post_status' => array( 'post_status', false),
+                'post_date' => array( 'post_date', false)
                 );
                 
             return $sortable_columns;
@@ -131,8 +131,8 @@
             switch( $column_name ){
                 
                 case 'post_title':
-                case 'post_content':
-                case 'post_type':
+                case 'post_status':
+                case 'post_date':
                     return $item[ $column_name ];
                 default:
                     return print_r( $item, true );
@@ -152,9 +152,32 @@
             
             }
             
-        public function column_post_type( $item ){
+        public function column_post_date( $item ){
             
-            return sprintf( '%1$s', $item['post_type']);
+            return sprintf( '%1$s', $item['post_date']);
+            
+            }
+            
+        public function column_post_status( $item ){
+
+            $status = '';
+
+            switch($item['post_status']){
+                case 'publish':
+                    $status = 'Visible';
+                    break;
+                case 'draft':
+                    $status = 'No Visible';
+                    break;
+                case 'trash':
+                    $status = 'Eliminado';
+                    break;
+                default:
+                    $status = 'Desconocido';
+                    break;
+            }
+            
+            return sprintf( '%1$s', $status);
             
             }
             
