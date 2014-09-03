@@ -55,7 +55,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
-			elseif(!isset($_GET['action'])):
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'edit'):
 		
 				$this->autoload('view_admin_gallery_lightbox_edit');
 
