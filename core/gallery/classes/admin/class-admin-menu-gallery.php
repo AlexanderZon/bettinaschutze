@@ -56,8 +56,16 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 				global $gldb;
 
 				$gallery = $gldb->getGallery($data['ID']);
+
+				echo "cachted";
+				
 				$gallery['post_status'] = 'publish';
+
+				echo "published";
+				
 				$gallery = $gldb->updateGallery($gallery);
+
+				echo "updated";
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
