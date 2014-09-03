@@ -29,11 +29,17 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 		
 	public function page_gallery_lightbox_edit( $atts ){
 
+				echo "EDIT";
+
 		if(isset($_GET['ID']) AND $_GET['ID'] != ''):
+
+				echo "ID";
 
 			$data = $_GET;
 
 			if(isset($_GET['action']) AND $_GET['action'] == 'hide'):
+
+				echo "HIDE";
 
 				global $gldb;
 
@@ -44,6 +50,8 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'show'):
+
+				echo "SHOW";
 
 				global $gldb;
 
