@@ -104,10 +104,35 @@ class GalleryLightboxDB{
 		$this->$name = $this->prefix.$value;
 		
 		}
+
+	public function addGallery( $gallery ){
+		
+		$bool = true;
+		
+		if ( ! isset($gallery['post_type']) OR $gallery['post_type'] == '' )
+			$gallery['post_type'] = $this->gallery;
+		if ( ! isset($gallery['post_status']) OR $gallery['post_status'] == '' )
+			$gallery['post_status'] = 'draft';
+
+		$id = wp_insert_post( $gallery );
+			
+		if( is_int($id) ):
+			
+			return $id;
+		
+		else:
+		
+			return 0;	
+		
+		endif;
+
+		}
+
+
 		
 	}
 	
-$GLOBALS['GalleryLightboxDB'] = new GalleryLightboxDB();
+$GLOBALS['gldb'] = new GalleryLightboxDB();
 /*
 require('db/items.db.php');
 

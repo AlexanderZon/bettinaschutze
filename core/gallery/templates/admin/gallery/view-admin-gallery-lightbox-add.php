@@ -2,17 +2,17 @@
 
 	# CODE_ERR: MOSTRAR ERROR DE DUPLICADO DE CÓDIGO DE MATERIA
 
-	if($_POST['verify_materia'] == 'add'):
+	if($_POST['verify_gallery'] == 'add'):
+
+		global $gldb;
 	
 		$data = $_POST;
 			
-		$materiadata = array(
-			'materia_codigo' => $data['materia_codigo'],
-			'materia_descripcion' => $data['materia_descripcion'],
-			'semestre_id' => $data['semestre_id']
+		$gallery = array(
+			'post_title' => $data['post_title']
 			);
 		
-		$id = el_insert_materia($materiadata);
+		$id = $glbd->addGallery($gallery);
 
 		$msg = '';
 		
@@ -20,39 +20,9 @@
 
 			$bool = true;
 
-			if( 0 == (add_materia_meta( $id , 'num_h_teoria' , $data['num_h_teoria'] )))
-				$bool = false;
-			if( 0 == (add_materia_meta( $id , 'num_h_laboratorio' , $data['num_h_laboratorio'] )))
-				$bool = false;
-			if( 0 == (add_materia_meta( $id , 'num_h_practica' , $data['num_h_practica'] )))
-				$bool = false;
-			if( 0 == (add_materia_meta( $id , 'unid_credito' , $data['unid_credito'] )))
-				$bool = false;
-
 			if($bool):
 
 				$msg = 'Materia agregada con éxito!';
-			
-				$count = 0;
-				$band;
-				
-				do{
-					
-					$key = 'materia_prelacion'.++$count;
-					
-					if(isset($data[$key])):
-					
-						if( 0 == (add_materia_meta( $id , 'materia_prelacion' , $data[$key] )))
-							$bool = false;
-						$band = true;
-						
-					else:
-					
-						$band = false;
-						
-					endif;
-					
-					}while( $band );
 
 			else:
 
@@ -60,7 +30,7 @@
 
 			endif;
 			
-			unset($_POST['verify_materia']);
+			unset($_POST['verify_gallery']);
 			
 		else:
 
@@ -103,13 +73,13 @@
 <!--<script language="javascript" src="<?php echo plugins_url().'/elearning/assets/js/jquery.js'; ?>"></script>-->
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Añadir Galerias</h2>
+	<h2>Añadir Galerias <a href="admin.php?page=page_gallery_lightbox_add" class="add-new-h2">Volver</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
 	
 	<form method="post" action="" id="form-materia">
-		<input type="hidden" name="verify_materia" value="add"/>
+		<input type="hidden" name="verify_gallery" value="add"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
 				<td><span class="label">Título de la Galería:</span></td>
