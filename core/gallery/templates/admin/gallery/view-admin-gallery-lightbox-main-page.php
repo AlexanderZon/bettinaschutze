@@ -168,13 +168,13 @@
                 case 'publish':
                     $status = 'Visible';
                     $actions = array(
-                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Ocultar</a>', 'page_gallery_lightbox_main_page', 'hide', $item['ID'] )
+                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Ocultar</a>', 'page_gallery_lightbox_edit', 'hide', $item['ID'] )
                         );
                     break;
                 case 'draft':
                     $status = 'No Visible';
                     $actions = array(
-                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Visualizar</a>', 'page_gallery_lightbox_main_page', 'show' , $item['ID'] ),
+                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Visualizar</a>', 'page_gallery_lightbox_edit', 'show' , $item['ID'] ),
                         );
                     break;
                 case 'trash':
