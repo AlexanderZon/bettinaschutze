@@ -163,20 +163,18 @@ class GalleryLightboxDB{
 		
 		$band = true;
 
-		$where = " WHERE ";
+		$where = " WHERE `post_type`='".$this->galleries."'";
 		
 		if( $status != 'all' AND $status != 'untrash' AND $status != 'publish' AND $status != 'draft' AND $status != 'trash' )
 			$band = false;
-		if( $status == 'all' )
-			$where = " 1 ";
 		else 
 			if( $status == 'untrash' )
+				$where .= " ";
+			elseif( $status == 'untrash' )
 				$where .= " `post_status`!='trash'";
 			else
 				$where .= " `post_status`='" . $status . "'";
 
-		if($semestre != '')
-			$where .= " AND `semestre_id`='".$semestre."'";
 		if( $band ):
 			echo "SELECT * FROM " . $this->table .$where;
 			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
