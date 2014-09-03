@@ -226,7 +226,19 @@ class GalleryLightboxDB{
 
 		$gallery = $this->getGallery( $object['ID'] );
 
+		var_dump($gallery);
+
+		echo "<br>gallery<br>";
+
+		var_dump($object);
+
+		echo "<br>object<br>";
+
+		var_dump(array_replace( $gallery, $object ));
+		echo "SAY SOMETHING";
 		$gallery = array_replace( $gallery, $object );
+
+		var_dump($gallery);
 
 		$update = $wpdb->update( $this->table, $gallery, array( 'ID' => $gallery['ID'] ) );
 
