@@ -44,9 +44,9 @@
             
             $columns = array(
                 'cb' => '<input type="checkbox" />',
-                'post_title' => 'Código',
-                'post_content' => 'Nombre',
-                'post_type' => 'Semestre'
+                'post_title' => 'Título',
+                'post_content' => 'Contenido',
+                'post_type' => 'Tipo'
                 );
             
             return $columns;
@@ -189,6 +189,10 @@
         }
         
     $object = new MateriasMainPageTable();
+
+    global $gldb;
+
+    var_dump($gldb->getGalleries());
     
     ?>
     <!-- PAGE CONTENT --->
