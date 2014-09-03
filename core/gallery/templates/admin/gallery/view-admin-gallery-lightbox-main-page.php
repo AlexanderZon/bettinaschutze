@@ -190,9 +190,9 @@
         }
         
     $object = new MateriasMainPageTable();
-    global $gldb;
+    //global $gldb;
 
-    var_dump($gldb->getGalleries());
+    //var_dump($gldb->getGalleries());
 
 /*
     var_dump(get_posts(array(
