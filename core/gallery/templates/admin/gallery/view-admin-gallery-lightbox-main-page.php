@@ -236,7 +236,7 @@
     
 </div>
 
-<script type="text/javascript" src="<?php echo wp_template_directory_uri(); ?>/js/moment.js"></script>
+<script type="text/javascript" src="<?php echo wp_template_directory_uri().'/js/moment.js'; ?>"></script>
 <script type="text/javascript">
     
     $(document).on('ready', function(){
