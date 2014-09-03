@@ -168,7 +168,7 @@ class GalleryLightboxDB{
 		if( $status != 'all' AND $status != 'untrash' AND $status != 'publish' AND $status != 'draft' AND $status != 'trash' )
 			$band = false;
 		else 
-			if( $status == 'untrash' )
+			if( $status == 'all' )
 				$where .= " ";
 			elseif( $status == 'untrash' )
 				$where .= " `post_status`!='trash'";
