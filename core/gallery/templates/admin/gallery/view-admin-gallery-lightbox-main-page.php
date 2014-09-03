@@ -161,12 +161,21 @@
 
             $status = '';
 
+            $actions = array(
+                );
+
             switch($item['post_status']){
                 case 'publish':
                     $status = 'Visible';
+                    $actions = array(
+                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Ocultar</a>', 'page_gallery_lightbox_main_page', 'hide', $item['ID'] )
+                        );
                     break;
                 case 'draft':
                     $status = 'No Visible';
+                    $actions = array(
+                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Visualizar</a>', 'page_gallery_lightbox_main_page', 'show' , $item['ID'] ),
+                        );
                     break;
                 case 'trash':
                     $status = 'Eliminado';
@@ -176,7 +185,7 @@
                     break;
             }
             
-            return sprintf( '%1$s', $status);
+            return sprintf( '%1$s %2$s', $status, $actions);
             
             }
             
