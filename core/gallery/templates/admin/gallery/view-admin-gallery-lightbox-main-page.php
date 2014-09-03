@@ -29,9 +29,11 @@
         public $data = array();
         
         public function __construct(){
+
+            global $gldb;
                             
             $this->data = array();
-            $this->_args = $this->data;
+            $this->_args = $gldb->getGaleries('all');
             $this->prepare_items();
             $this->display_search_box( 'Buscar', 'serach_id' );
             $this->display();
