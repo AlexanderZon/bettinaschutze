@@ -235,7 +235,7 @@ class GalleryLightboxDB{
 		echo "<br>object<br>";
 
 		var_dump(array_replace( $gallery, $object ));
-
+		echo "SAY SOMETHING";
 		$gallery = array_replace( $gallery, $object );
 
 		var_dump($gallery);
