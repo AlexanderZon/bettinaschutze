@@ -150,6 +150,7 @@ class GalleryLightboxDB{
 		switch($status){
 			case 'all':
 				$args = array(
+					'post_status' => 'any',
 					'post_type' => $this->galleries
 					);
 				break;

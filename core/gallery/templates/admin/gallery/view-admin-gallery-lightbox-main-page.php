@@ -189,7 +189,7 @@
         }
         
     $object = new MateriasMainPageTable();
-
+/*
     global $gldb;
 
     var_dump($gldb->getGalleries());
@@ -198,7 +198,7 @@
                     'post_status' => 'any',
                     'post_type' => 'gl_gallery'
                     )));
-    
+  */  
     ?>
     <!-- PAGE CONTENT --->
     
