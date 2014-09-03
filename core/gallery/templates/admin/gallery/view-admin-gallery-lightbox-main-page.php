@@ -33,7 +33,7 @@
             global $gldb;
                             
             $this->data = array();
-            $this->_args = $gldb->getGaleries('all');
+            $this->_args = $gldb->getGalleries('all');
             $this->prepare_items();
             $this->display_search_box( 'Buscar', 'serach_id' );
             $this->display();
@@ -190,7 +190,11 @@
         
         }
         
-    $object = new MateriasMainPageTable();
+    //$object = new MateriasMainPageTable();
+
+            global $gldb;
+
+            var_dump($gldb->getGalleries());
     
     ?>
     <!-- PAGE CONTENT --->
