@@ -72,7 +72,7 @@
 
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Añadir Galerias <a href="admin.php?page=page_gallery_lightbox_add" class="add-new-h2">Volver</a></h2>
+	<h2>Añadir Galerias <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
