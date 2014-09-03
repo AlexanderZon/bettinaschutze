@@ -243,7 +243,7 @@
     $(document).on('ready', function(){
         $('.moment').each(function(){
             var elem = $(this);
-            elem.html(moment(elem.html(), 'br').fromNow());
+            elem.html(moment(elem.html(), '', 'br').fromNow());
         });
     });
 
