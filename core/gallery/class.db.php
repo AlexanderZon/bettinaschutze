@@ -197,13 +197,40 @@ class GalleryLightboxDB{
 
 	function getGallery( $id ){
 
-		$row  = get_post( $id );
+		global $wpdb;
+
+		$row  = $wpdb->get_row( "SELECT * FROM $this->table WHERE `ID`='$id';", ARRAY_A );
 
 		if( $row == null ):
 			return 0;
 		else:
 			return $row;
 		endif;
+
+		}
+
+	/** 
+	 * Actualización de Galerias.
+	 * @access public
+	 * @param array $object
+	 * @return integer || false
+	 */
+		
+	function updateGallery( $object ){
+
+		global $wpdb;
+
+		if( !isset($object['ID']) OR empty($object['ID']) ):
+			return 0;
+		endif;
+
+		$gallery = $this->getGallery( $object['ID'] );
+
+		$gallery = array_replace( $gallery, $object );
+
+		$update = $wpdb->update( $this->table, $gallery, array( 'ID' => $gallery['ID'] ) );
+
+		return $update;
 
 		}
 		

@@ -28,8 +28,42 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 		}
 		
 	public function page_gallery_lightbox_edit( $atts ){
+
+		if(isset($_GET['ID']) AND $_GET['ID'] != ''):
+
+			$data = $_GET;
+
+			if(isset($_GET['action']) AND $_GET['action'] == 'hide'):
+
+				global $gldb;
+
+				$gallery = $gldb->getGallery($data['ID']);
+				$gallery['post_status'] = 'draft';
+				$gallery = $gldb->updateGallery($gallery);
 		
-		$this->autoload('view_admin_gallery_lightbox_edit');
+				$this->autoload('view_admin_gallery_lightbox_main_page');
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'show'):
+
+				global $gldb;
+
+				$gallery = $gldb->getGallery($data['ID']);
+				$gallery['post_status'] = 'publish';
+				$gallery = $gldb->updateGallery($gallery);
+		
+				$this->autoload('view_admin_gallery_lightbox_main_page');
+
+			elseif(!isset($_GET['action'])):
+		
+				$this->autoload('view_admin_gallery_lightbox_edit');
+
+			endif;
+
+		else:
+		
+			$this->autoload('view_admin_gallery_lightbox_main_page');
+
+		endif;
 		
 		}
 				
