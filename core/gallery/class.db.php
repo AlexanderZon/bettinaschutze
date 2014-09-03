@@ -105,12 +105,19 @@ class GalleryLightboxDB{
 		
 		}
 
+	/**
+	 * Inserción de asignaciones.
+	 * @access public
+	 * @param array $asignacion
+	 * @return int
+	 */
+
 	public function addGallery( $gallery ){
 		
 		$bool = true;
 		
 		if ( ! isset($gallery['post_type']) OR $gallery['post_type'] == '' )
-			$gallery['post_type'] = $this->gallery;
+			$gallery['post_type'] = $this->galleries;
 		if ( ! isset($gallery['post_status']) OR $gallery['post_status'] == '' )
 			$gallery['post_status'] = 'draft';
 
@@ -128,7 +135,70 @@ class GalleryLightboxDB{
 
 		}
 
+	/**
+	 * Consulta de asignaciones.
+	 * @access public
+	 * @param string $status (Default:all)
+	 * @return array || false
+	 */
+	function getGalleries( $status = 'all' ){
+		
+		$band = true;
 
+		switch($status){
+			case 'all':
+				$args = array(
+					'post_type' => $this->galleries
+					);
+				break;
+			case 'public':
+			case 'draft':
+			case 'trash':
+				$args = array(
+					'post_status' => $status,
+					'post_type' => $this->galleries
+					);
+				break;
+			default:
+				$args = array(
+					'post_status' => 'any',
+					'post_type' => $this->galleries
+					);
+				break;
+		}	
+
+		if( $band ):
+			
+			$array = get_posts( array( 'post_status' => $status ) );
+			
+			return $array;
+			
+		else:
+		
+			return false;				
+				
+		endif;
+
+		}
+
+	/**
+	 * Consulta de asignaciones por ID.
+	 * @access public
+	 * @param string $id
+	 * @return array || 0
+	 */
+
+	function getGallery( $id ){
+
+		$row  = get_post( $id );
+
+		if( $row == null ):
+			return 0;
+		else:
+			return $row;
+		endif;
+
+		}
 		
 	}
 	
