@@ -51,21 +51,23 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'show'):
 
-				echo "SHOW";
+				echo "<br>SHOW<br>";
 
 				global $gldb;
 
 				$gallery = $gldb->getGallery($data['ID']);
 
-				echo "cachted";
-				
+				echo "<br>cachted<br>";
+
+				var_dump($gallery);
+
 				$gallery['post_status'] = 'publish';
 
-				echo "published";
-				
+				echo "<br>published<br>";
+
 				$gallery = $gldb->updateGallery($gallery);
 
-				echo "updated";
+				echo "<br>updated<br>";
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
