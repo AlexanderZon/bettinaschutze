@@ -24,7 +24,7 @@
     if( ! class_exists( 'WP_List_Table' ) )
         require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
         
-    class MateriasMainPageTable extends WP_List_Table{
+    class GalleriesMainPageTable extends WP_List_Table{
         
         public $data = array();
         
@@ -32,8 +32,8 @@
 
             global $gldb;
                             
-            $this->data = array();
-            $this->_args = $gldb->getGalleries('all');
+            $this->data = $gldb->getGalleries('all');
+            $this->_args = $this->data;
             var_dump($this->_args);
             $this->prepare_items();
             $this->display_search_box( 'Buscar', 'serach_id' );
@@ -144,8 +144,8 @@
         public function column_post_title( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Editar</a>', 'edit_materia', 'edit' , $item['ID'] ),
-                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Eliminar</a>', 'delete_materia', 'delete', $item['ID'] )
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Editar</a>', 'page_gallery_lightbox_add', 'edit' , $item['ID'] ),
+                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Eliminar</a>', 'page_gallery_lightbox_delete', 'delete', $item['ID'] )
                 );
                 
             return sprintf( '%1$s %2$s', $item['post_title'], $this->row_actions( $actions ) );
@@ -178,7 +178,7 @@
             
             echo '
             <form method="post">
-                <input type="hidden" name="page" value="set_page_materias"/>
+                <input type="hidden" name="page" value="page_gallery_lightbox"/>
             ';
             
             $this->search_box( $button, $id );
@@ -189,7 +189,7 @@
         
         }
         
-    $object = new MateriasMainPageTable();
+    $object = new GalleriesMainPageTable();
     //global $gldb;
 
     //var_dump($gldb->getGalleries());
