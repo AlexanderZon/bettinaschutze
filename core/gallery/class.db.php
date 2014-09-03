@@ -145,6 +145,8 @@ class GalleryLightboxDB{
 		
 		$band = true;
 
+		$args = array();
+
 		switch($status){
 			case 'all':
 				$args = array(
@@ -169,7 +171,7 @@ class GalleryLightboxDB{
 
 		if( $band ):
 			
-			$array = get_posts( array( 'post_status' => $status ) );
+			$array = get_posts( $args );
 			
 			return $array;
 			
