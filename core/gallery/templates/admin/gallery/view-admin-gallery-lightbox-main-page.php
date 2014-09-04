@@ -242,7 +242,7 @@
     $(document).on('ready', function(){
         $('.moment').each(function(){
             var elem = $(this);
-            elem.html(moment(elem.html()).lang('es').fromNow());
+            elem.html(moment(element.html()).lang('es').fromNow());
         });
     });
 
