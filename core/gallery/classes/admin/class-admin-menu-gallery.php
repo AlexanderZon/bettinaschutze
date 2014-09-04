@@ -147,9 +147,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 		else:
 
-			wp_redirect( '?page=page_gallery_lightbox' ); exit;
-		
-			//$this->autoload('view_admin_gallery_lightbox_main_page');
+			$this->autoload('view_admin_gallery_lightbox_delete');
 
 		endif;
 		
