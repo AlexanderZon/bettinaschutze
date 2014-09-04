@@ -75,7 +75,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 				global $gldb;
 
-				$gallery = $gldb->deleteGallery($data['ID']);
+				$gallery = $gldb->trashGallery($data['ID']);
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
@@ -83,7 +83,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 				global $gldb;
 
-				$gallery = $gldb->untrashGallery($data['ID']);
+				$gallery = $gldb->trashGallery($data['ID']);
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
