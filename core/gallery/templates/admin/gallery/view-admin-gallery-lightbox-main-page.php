@@ -20,6 +20,10 @@
     <h2>Gallery Lightbox <a href="admin.php?page=page_gallery_lightbox_add" class="add-new-h2">Añadir nueva</a></h2>
     
     <?php 
+
+    if(isset($_GET['msg']) AND $_GET['msg'] != ''):
+        echo '<div class="update-nag">'.$_GET['msg'].'</div>';
+    endif;
     
     if( ! class_exists( 'WP_List_Table' ) )
         require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
