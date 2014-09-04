@@ -2,46 +2,6 @@
 
 	# CODE_ERR: MOSTRAR ERROR DE DUPLICADO DE CÓDIGO DE MATERIA
 
-	if($_POST['verify_gallery'] == 'add'):
-
-		global $gldb;
-	
-		$data = $_POST;
-			
-		$gallery = array(
-			'post_title' => $data['post_title']
-			);
-		
-		$id = $gldb->addGallery($gallery);
-
-		$msg = '';
-		
-		if($id != 0):
-
-			$bool = true;
-
-			if($bool):
-
-				$msg = 'Galería agregada con éxito!';
-
-			else:
-
-				$msg = 'No se pudieron agregar algunos datos debido a un error!';
-
-			endif;
-			
-			unset($_POST['verify_gallery']);
-			
-		else:
-
-			$msg = 'No se pudo agregar la galería, revise sus datos';
-
-		endif;
-
-		echo "<div class='update-nag'>$msg</div>";
-		
-	endif;
-
 ?>
 
 <style>

@@ -22,6 +22,28 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 		}
 		
 	public function page_gallery_lightbox_add( $atts ){
+
+		if($_POST['verify_gallery'] == 'add'):
+
+			global $gldb;
+		
+			$data = $_POST;
+				
+			$gallery = array(
+				'post_title' => $data['post_title']
+				);
+			
+			$id = $gldb->addGallery($gallery);
+
+			if($id):
+				$msg = 'gallery_oculted';
+			else:
+				$msg = 'gallery_oculted_err';
+			endif;
+
+			wp_redirect( '?page=page_gallery_lightbox&msg='.$msg ); exit;
+			
+		endif;
 		
 		$this->autoload('view_admin_gallery_lightbox_add');
 		
@@ -37,9 +59,9 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 			if(isset($_GET['action']) AND $_GET['action'] == 'hide'):
 
-				$gallery = $gldb->untrashGallery($data['ID']);
+				$id = $gldb->untrashGallery($data['ID']);
 
-				if($gallery):
+				if($id):
 					$msg = 'gallery_oculted';
 				else:
 					$msg = 'gallery_oculted_err';
@@ -49,9 +71,9 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'show'):
 
-				$gallery = $gldb->publishGallery($data['ID']);
+				$id = $gldb->publishGallery($data['ID']);
 
-				if($gallery):
+				if($id):
 					$msg = 'gallery_visible';
 				else:
 					$msg = 'gallery_visible_err';
