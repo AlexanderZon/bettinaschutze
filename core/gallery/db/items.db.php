@@ -1,6 +1,6 @@
 <?php
 
-public function addItem( $parent, $item ){
+	public function addItem( $parent, $item ){
 		
 		$bool = true;
 		
@@ -31,7 +31,7 @@ public function addItem( $parent, $item ){
 	 * @param string $status (Default:all)
 	 * @return array || false
 	 */
-	function getItems( $parent, $status = 'all' ){
+	public function getItems( $parent, $status = 'all' ){
 	 
 		global  $wpdb;
 		
@@ -70,7 +70,7 @@ public function addItem( $parent, $item ){
 	 * @return array || 0
 	 */
 
-	function getItem( $id ){
+	public function getItem( $id ){
 
 		global $wpdb;
 
@@ -91,7 +91,7 @@ public function addItem( $parent, $item ){
 	 * @return integer || false
 	 */
 		
-	function updateItem( $object ){
+	public function updateItem( $object ){
 
 		global $wpdb;
 
@@ -116,7 +116,7 @@ public function addItem( $parent, $item ){
 	 * @return integer || false
 	 */
 		
-	function deleteItem( $id ){
+	public function deleteItem( $id ){
 
 		global $wpdb;
 
@@ -133,7 +133,7 @@ public function addItem( $parent, $item ){
 	 * @return intener || false
 	 */
 		
-	function trashItem( $id ){
+	public function trashItem( $id ){
 
 		$item = $this->getItem( $id );
 
@@ -152,7 +152,7 @@ public function addItem( $parent, $item ){
 	 * @return intener || false
 	 */
 		
-	function untrashItem( $id ){
+	public function untrashItem( $id ){
 
 		$item = $this->getItem( $id );
 
@@ -171,7 +171,7 @@ public function addItem( $parent, $item ){
 	 * @return intener || false
 	 */
 
-	function publishItem( $id ){
+	public function publishItem( $id ){
 
 		$item = $this->getItem( $id );
 

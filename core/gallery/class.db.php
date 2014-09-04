@@ -205,13 +205,205 @@ class GalleryLightboxDB{
 	 * @param string $status (Default:all)
 	 * @return array || false
 	 */
-	function getGalleries( $status = 'all' ){
+
+	public function getGalleries( $status = 'all' ){
 	 
 		global  $wpdb;
 		
 		$band = true;
 
 		$where = " WHERE `post_type`='".$this->galleries."'";
+		
+		if( $status != 'all' AND $status != 'untrash' AND $status != 'publish' AND $status != 'draft' AND $status != 'trash' )
+			$band = false;
+		else 
+			if( $status == 'all' )
+				$where .= " ";
+			elseif( $status == 'untrash' )
+				$where .= " AND `post_status`!='trash'";
+			else
+				$where .= " AND `post_status`='" . $status . "'";
+
+		if( $band ):
+			
+			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
+
+			return $array;
+			
+		else:
+		
+			return false;				
+				
+		endif;
+
+	}
+
+	/**
+	 * Consulta de asignaciones por ID.
+	 * @access public
+	 * @param string $id
+	 * @return array || 0
+	 */
+
+	public function getGallery( $id ){
+
+		global $wpdb;
+
+		$row  = $wpdb->get_row( "SELECT * FROM $this->table WHERE `ID`='$id';", ARRAY_A );
+
+		if( $row == null ):
+			return 0;
+		else:
+			return $row;
+		endif;
+
+	}
+
+	/** 
+	 * Actualización de Galerias.
+	 * @access public
+	 * @param array $object
+	 * @return integer || false
+	 */
+		
+	public function updateGallery( $object ){
+
+		global $wpdb;
+
+		if( !isset($object['ID']) OR empty($object['ID']) ):
+			return 0;
+		endif;
+
+		$gallery = $this->getGallery( $object['ID'] );
+
+		$gallery = array_replace( $gallery, $object );
+
+		$update = $wpdb->update( $this->table, $gallery, array( 'ID' => $gallery['ID'] ) );
+
+		return $update;
+
+	}
+
+	/**
+	 * Eliminación de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return integer || false
+	 */
+		
+	public function deleteGallery( $id ){
+
+		global $wpdb;
+
+		$delete = $wpdb->delete( $this->table, array( 'ID' => $id ), array( '%d' ) );
+
+		return $delete;
+
+	}
+
+	/**
+	 * Envío a papelera de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+		
+	public function trashGallery( $id ){
+
+		$gallery = $this->getGallery( $id );
+
+		$gallery['post_status'] = 'trash';
+
+		$trash = $this->updateGallery( $gallery );
+
+		return $trash;
+
+	}
+
+	/**
+	 * Envío a papelera de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+		
+	public function untrashGallery( $id ){
+
+		$gallery = $this->getGallery( $id );
+
+		$gallery['post_status'] = 'draft';
+
+		$trash = $this->updateGallery( $gallery );
+
+		return $trash;
+
+	}
+
+	/**
+	 * Publicación de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	public function publishGallery( $id ){
+
+		$gallery = $this->getGallery( $id );
+
+		$gallery['post_status'] = 'publish';
+
+		$trash = $this->updateGallery( $gallery );
+
+		return $trash;
+
+	}
+
+	/**
+	 * Inserción de item.
+	 * @access public
+	 * @param array $asignacion
+	 * @return int
+	 */
+
+	public function addItem( $parent, $item ){
+		
+		$bool = true;
+		
+		if ( ! isset($item['post_type']) OR $item['post_type'] == '' )
+			$item['post_type'] = $this->items;
+		if ( ! isset($item['post_status']) OR $item['post_status'] == '' )
+			$item['post_status'] = 'draft';
+
+		$item['post_parent'] = $parent;
+		
+		$id = wp_insert_post( $item );
+			
+		if( is_int($id) ):
+			
+			return $id;
+		
+		else:
+		
+			return 0;	
+		
+		endif;
+
+	}
+
+	/**
+	 * Consulta de items.
+	 * @access public
+	 * @param string $status (Default:all)
+	 * @return array || false
+	 */
+
+	function getItems( $parent, $status = 'all' ){
+	 
+		global  $wpdb;
+		
+		$band = true;
+
+		$where = " WHERE `post_type`='".$this->items."' AND  `post_parent`='".$parent."'";
 		
 		if( $status != 'all' AND $status != 'untrash' AND $status != 'publish' AND $status != 'draft' AND $status != 'trash' )
 			$band = false;
@@ -238,13 +430,13 @@ class GalleryLightboxDB{
 	}
 
 	/**
-	 * Consulta de asignaciones por ID.
+	 * Consulta de item por ID.
 	 * @access public
 	 * @param string $id
 	 * @return array || 0
 	 */
 
-	function getGallery( $id ){
+	function getItem( $id ){
 
 		global $wpdb;
 
@@ -259,13 +451,13 @@ class GalleryLightboxDB{
 	}
 
 	/** 
-	 * Actualización de Galerias.
+	 * Actualización de Item.
 	 * @access public
 	 * @param array $object
 	 * @return integer || false
 	 */
 		
-	function updateGallery( $object ){
+	function updateItem( $object ){
 
 		global $wpdb;
 
@@ -273,24 +465,24 @@ class GalleryLightboxDB{
 			return 0;
 		endif;
 
-		$gallery = $this->getGallery( $object['ID'] );
+		$item = $this->getItem( $object['ID'] );
 
-		$gallery = array_replace( $gallery, $object );
+		$item = array_replace( $item, $object );
 
-		$update = $wpdb->update( $this->table, $gallery, array( 'ID' => $gallery['ID'] ) );
+		$update = $wpdb->update( $this->table, $item, array( 'ID' => $item['ID'] ) );
 
 		return $update;
 
 	}
 
 	/**
-	 * Eliminación de materias.
+	 * Eliminación de item.
 	 * @access public
 	 * @param integer $id
 	 * @return integer || false
 	 */
 		
-	function deleteGallery( $id ){
+	function deleteItem( $id ){
 
 		global $wpdb;
 
@@ -301,59 +493,82 @@ class GalleryLightboxDB{
 	}
 
 	/**
-	 * Envío a papelera de materias.
+	 * Envío a papelera de item.
 	 * @access public
 	 * @param integer $id
 	 * @return intener || false
 	 */
 		
-	function trashGallery( $id ){
+	function trashItem( $id ){
 
-		$gallery = $this->getGallery( $id );
+		$item = $this->getItem( $id );
 
-		$gallery['post_status'] = 'trash';
+		$item['post_status'] = 'trash';
 
-		$trash = $this->updateGallery( $gallery );
+		$trash = $this->updateItem( $item );
 
 		return $trash;
 
 	}
 
 	/**
-	 * Envío a papelera de materias.
+	 * Envío a papelera de item.
 	 * @access public
 	 * @param integer $id
 	 * @return intener || false
 	 */
 		
-	function untrashGallery( $id ){
+	function untrashItem( $id ){
 
-		$gallery = $this->getGallery( $id );
+		$item = $this->getItem( $id );
 
-		$gallery['post_status'] = 'draft';
+		$item['post_status'] = 'draft';
 
-		$trash = $this->updateGallery( $gallery );
+		$trash = $this->updateItem( $item );
 
 		return $trash;
 
 	}
 
 	/**
-	 * Publicación de materias.
+	 * Publicación de item.
 	 * @access public
 	 * @param integer $id
 	 * @return intener || false
 	 */
 
-	function publishGallery( $id ){
+	function publishItem( $id ){
 
-		$gallery = $this->getGallery( $id );
+		$item = $this->getItem( $id );
 
-		$gallery['post_status'] = 'publish';
+		$item['post_status'] = 'publish';
 
-		$trash = $this->updateGallery( $gallery );
+		$trash = $this->updateItem( $item );
 
 		return $trash;
+
+	}	public function addItem( $parent, $item ){
+		
+		$bool = true;
+		
+		if ( ! isset($item['post_type']) OR $item['post_type'] == '' )
+			$item['post_type'] = $this->items;
+		if ( ! isset($item['post_status']) OR $item['post_status'] == '' )
+			$item['post_status'] = 'draft';
+
+		$item['post_parent'] = $parent;
+		
+		$id = wp_insert_post( $item );
+			
+		if( is_int($id) ):
+			
+			return $id;
+		
+		else:
+		
+			return 0;	
+		
+		endif;
 
 	}
 		
