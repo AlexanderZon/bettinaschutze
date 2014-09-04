@@ -36,9 +36,8 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 			if(isset($_GET['action']) AND $_GET['action'] == 'hide'):
 
 				global $gldb;
-
-				$gallery = $gldb->getGallery($data['ID']);
-				$gallery = $gldb->untrashGallery($gallery);
+			
+				$gallery = $gldb->untrashGallery($data['ID']);
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
@@ -46,8 +45,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 				global $gldb;
 
-				$gallery = $gldb->getGallery($data['ID']);
-				$gallery = $gldb->publishGallery($gallery);
+				$gallery = $gldb->publishGallery($data['ID']);
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
