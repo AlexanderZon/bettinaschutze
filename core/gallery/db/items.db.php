@@ -1,5 +1,12 @@
 <?php
 
+	/**
+	 * Inserción de item.
+	 * @access public
+	 * @param array $asignacion
+	 * @return int
+	 */
+
 	public function addItem( $parent, $item ){
 		
 		$bool = true;
@@ -26,11 +33,12 @@
 	}
 
 	/**
-	 * Consulta de asignaciones.
+	 * Consulta de items.
 	 * @access public
 	 * @param string $status (Default:all)
 	 * @return array || false
 	 */
+
 	public function getItems( $parent, $status = 'all' ){
 	 
 		global  $wpdb;
@@ -64,7 +72,7 @@
 	}
 
 	/**
-	 * Consulta de asignaciones por ID.
+	 * Consulta de item por ID.
 	 * @access public
 	 * @param string $id
 	 * @return array || 0
@@ -85,7 +93,7 @@
 	}
 
 	/** 
-	 * Actualización de Galerias.
+	 * Actualización de Item.
 	 * @access public
 	 * @param array $object
 	 * @return integer || false
@@ -110,7 +118,7 @@
 	}
 
 	/**
-	 * Eliminación de materias.
+	 * Eliminación de item.
 	 * @access public
 	 * @param integer $id
 	 * @return integer || false
@@ -127,7 +135,7 @@
 	}
 
 	/**
-	 * Envío a papelera de materias.
+	 * Envío a papelera de item.
 	 * @access public
 	 * @param integer $id
 	 * @return intener || false
@@ -146,7 +154,7 @@
 	}
 
 	/**
-	 * Envío a papelera de materias.
+	 * Envío a papelera de item.
 	 * @access public
 	 * @param integer $id
 	 * @return intener || false
@@ -165,7 +173,7 @@
 	}
 
 	/**
-	 * Publicación de materias.
+	 * Publicación de item.
 	 * @access public
 	 * @param integer $id
 	 * @return intener || false
@@ -181,6 +189,5 @@
 
 		return $trash;
 
-	}
-
+	}	
 ?>

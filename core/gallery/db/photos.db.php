@@ -1,184 +1,194 @@
 <?php
 
-/**
- * Inserción de asignaciones.
- * @access public
- * @param array $asignacion
- * @return int
- */
+	/**
+	 * Inserción de photo.
+	 * @access public
+	 * @param array $asignacion
+	 * @return int
+	 */
 
-function el_insert_asignacion( $asignaciondata ){
+	public function addPhoto( $parent, $photo ){
+		
+		$bool = true;
+		
+		if ( ! isset($photo['post_type']) OR $photo['post_type'] == '' )
+			$photo['post_type'] = $this->photos;
+		if ( ! isset($photo['post_status']) OR $photo['post_status'] == '' )
+			$photo['post_status'] = 'draft';
 
-	global $EL_DB, $wpdb;
-	
-	extract( wp_unslash( $asignaciondata ), EXTR_SKIP );
-	
-	$bool = true;
-	
-	if ( ! isset($profesor_id) OR $profesor_id == '' )
-		$bool = false;
-	if ( ! isset($materia_id) OR $materia_id == '' )
-		$bool = false;
-	if ( ! isset($asignacion_date) OR $asignacion_date == '' )
-		$bool = false;
-	if ( ! isset($periodo_id) OR $periodo_id == '' )
-		$bool = false;
-	if ( ! isset($asignacion_status) OR $asignacion_status == '' )
-		$asignacion_status = 'draft';
+		$photo['post_parent'] = $parent;
 		
-	if( $bool ):
-	
-		$data = compact('profesor_id','materia_id','asignacion_date','periodo_id','asignacion_status');
-		$wpdb->insert( $EL_DB->asignaciones , $data);
-		
-		$id = (int) $wpdb->insert_id;
-		
-		return $id;
-	
-	else:
-	
-		return 0;	
-	
-	endif;
-	
-	}
-
-/**
- * Consulta de asignaciones.
- * @access public
- * @param string $status (Default:all)
- * @return array || false
- */
-
-function el_get_asignaciones( $status = 'all' ){
-
-	global $EL_DB, $wpdb;
-	
-	$band = true;
-	
-	if( $status != 'all' AND $status != 'untrash' AND $status != 'publish' AND $status != 'draft' AND $status != 'trash' )
-		$band = false;
-	if( $status == 'all' )
-		$where = " WHERE 1;";
-	else 
-		if( $status == 'untrash' )
-			$where = " WHERE `asignacion_status`!='trash'";
-		else
-			$where = " WHERE `asignacion_status`='" . $status . "';";
-
-	if( $band ):
-		
-		$array = $wpdb->get_results( "SELECT * FROM " . $EL_DB->asignaciones .$where , ARRAY_A );
-		
-		return $array;
-		
-	else:
-	
-		return false;				
+		$id = wp_insert_post( $photo );
 			
-	endif;
+		if( is_int($id) ):
+			
+			return $id;
+		
+		else:
+		
+			return 0;	
+		
+		endif;
 
 	}
 
-/**
- * Consulta de asignaciones por ID.
- * @access public
- * @param string $id
- * @return array || 0
- */
+	/**
+	 * Consulta de photos.
+	 * @access public
+	 * @param string $status (Default:all)
+	 * @return array || false
+	 */
 
-function el_get_asignacion( $id ){
+	public function getPhotos( $parent, $status = 'all' ){
+	 
+		global  $wpdb;
+		
+		$band = true;
 
-	global $EL_DB, $wpdb;
+		$where = " WHERE `post_type`='".$this->photos."' AND  `post_parent`='".$parent."'";
+		
+		if( $status != 'all' AND $status != 'untrash' AND $status != 'publish' AND $status != 'draft' AND $status != 'trash' )
+			$band = false;
+		else 
+			if( $status == 'all' )
+				$where .= " ";
+			elseif( $status == 'untrash' )
+				$where .= " AND `post_status`!='trash'";
+			else
+				$where .= " AND `post_status`='" . $status . "'";
 
-	$row  = $wpdb->get_row( "SELECT * FROM $EL_DB->asignaciones WHERE `ID`='$id';", ARRAY_A );
-
-	if( $row == null ):
-		return 0;
-	else:
-		return $row;
-	endif;
+		if( $band ):
+			
+			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
+		
+			return $array;
+			
+		else:
+		
+			return false;				
+				
+		endif;
 
 	}
 
-/**
- * Actualización de asignaciones.
- * @access public
- * @param array $object
- * @return integer || false
- */
-	
-function el_update_asignacion( $object ){
+	/**
+	 * Consulta de photo por ID.
+	 * @access public
+	 * @param string $id
+	 * @return array || 0
+	 */
 
-	global $EL_DB, $wpdb;
+	public function getPhoto( $id ){
 
-	if( !isset($object['ID']) OR empty($object['ID']) ):
-		return 0;
-	endif;
+		global $wpdb;
 
-	$asignacion = el_get_asignacion( $object['ID'] );
+		$row  = $wpdb->get_row( "SELECT * FROM $this->table WHERE `ID`='$id';", ARRAY_A );
 
-	$asignacion = array_replace( $asignacion, $object );
+		if( $row == null ):
+			return 0;
+		else:
+			return $row;
+		endif;
 
-	$update = $wpdb->update( $EL_DB->asignaciones, $asignacion, array( 'ID' => $asignacion['ID'] ) );
+	}
 
-	return $update;
+	/** 
+	 * Actualización de photo.
+	 * @access public
+	 * @param array $object
+	 * @return integer || false
+	 */
+		
+	public function updatePhoto( $object ){
 
-}
+		global $wpdb;
 
-/**
- * Eliminación de asignacions.
- * @access public
- * @param integer $id
- * @return integer || false
- */
-	
-function el_delete_asignacion( $id ){
+		if( !isset($object['ID']) OR empty($object['ID']) ):
+			return 0;
+		endif;
 
-	global $EL_DB, $wpdb;
+		$photo = $this->getPhoto( $object['ID'] );
 
-	$delete = $wpdb->delete( $EL_DB->asignaciones, array( 'ID' => $id ), array( '%d' ) );
+		$photo = array_replace( $photo, $object );
 
-	return $delete;
+		$update = $wpdb->update( $this->table, $photo, array( 'ID' => $photo['ID'] ) );
 
-}
+		return $update;
 
-/**
- * Envío a papelera de asignaciones.
- * @access public
- * @param integer $id
- * @return intener || false
- */
-	
-function el_trash_asignacion( $id ){
+	}
 
-	$asignacion = el_get_asignacion( $id );
+	/**
+	 * Eliminación de photos.
+	 * @access public
+	 * @param integer $id
+	 * @return integer || false
+	 */
+		
+	public function deletePhoto( $id ){
 
-	$asignacion['asignacion_status'] = 'trash';
+		global $wpdb;
 
-	$trash = el_update_asignacion( $asignacion );
+		$delete = $wpdb->delete( $this->table, array( 'ID' => $id ), array( '%d' ) );
 
-	return $trash;
+		return $delete;
 
-}
+	}
 
-/**
- * Publicación de asignaiconess.
- * @access public
- * @param integer $id
- * @return intener || false
- */
+	/**
+	 * Envío a papelera de photos.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+		
+	public function trashPhoto( $id ){
 
-function el_publish_asignacion( $id ){
+		$photo = $this->getPhoto( $id );
 
-	$asignacion = el_get_asignacion( $id );
+		$photo['post_status'] = 'trash';
 
-	$asignacion['asignacion_status'] = 'publish';
+		$trash = $this->updatePhoto( $photo );
 
-	$publish = el_update_asignacion( $asignacion );
+		return $trash;
 
-	return $publish;
+	}
 
-}
+	/**
+	 * Envío a papelera de photos.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+		
+	public function untrashPhoto( $id ){
+
+		$photo = $this->getPhoto( $id );
+
+		$photo['post_status'] = 'draft';
+
+		$trash = $this->updatePhoto( $photo );
+
+		return $trash;
+
+	}
+
+	/**
+	 * Publicación de photos.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	public function publishPhoto( $id ){
+
+		$photo = $this->getPhoto( $id );
+
+		$photo['post_status'] = 'publish';
+
+		$trash = $this->updatePhoto( $photo );
+
+		return $trash;
+
+	}
 
 ?>
