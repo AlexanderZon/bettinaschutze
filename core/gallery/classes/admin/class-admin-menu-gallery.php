@@ -36,9 +36,9 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 			$id = $gldb->addGallery($gallery);
 
 			if($id):
-				$msg = 'gallery_oculted';
+				$msg = 'gallery_add';
 			else:
-				$msg = 'gallery_oculted_err';
+				$msg = 'gallery_add_err';
 			endif;
 
 			wp_redirect( '?page=page_gallery_lightbox&msg='.$msg ); exit;

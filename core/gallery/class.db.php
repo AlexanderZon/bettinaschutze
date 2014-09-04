@@ -80,6 +80,8 @@ class GalleryLightboxDB{
 	 */
 	
 	public $msg = array(
+		'gallery_add' => 'La galería ha sido creada con éxito',	
+		'gallery_add_err' => 'Hubo un error al crear la galería',
 		'gallery_oculted' => 'La galería se ha puesto en modo no visible',	
 		'gallery_oculted_err' => 'Hubo un error al ocultar la galería',
 		'gallery_visible' => 'La galería se ha puesto en modo visible',
