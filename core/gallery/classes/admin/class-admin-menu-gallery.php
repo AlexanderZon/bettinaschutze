@@ -75,9 +75,15 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 				global $gldb;
 
-				$gallery = $gldb->getGallery($data['ID']);
-				$gallery['post_status'] = 'draft';
-				$gallery = $gldb->trashGallery($data['ID']);
+				$gallery = $gldb->deleteGallery($data['ID']);
+		
+				$this->autoload('view_admin_gallery_lightbox_main_page');
+
+			if(isset($_GET['action']) AND $_GET['action'] == 'untrash'):
+
+				global $gldb;
+
+				$gallery = $gldb->untrashGallery($data['ID']);
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
