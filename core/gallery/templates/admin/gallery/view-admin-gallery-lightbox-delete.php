@@ -147,7 +147,7 @@
         public function column_post_title( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Restaurar</a>', 'page_gallery_lightbox_edit', 'untrash' , $item['ID'] ),
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Restaurar</a>', 'page_gallery_lightbox_delete', 'untrash' , $item['ID'] ),
                 'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Eliminar</a>', 'page_gallery_lightbox_delete', 'trash', $item['ID'] )
                 );
                 
