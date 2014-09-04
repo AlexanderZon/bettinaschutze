@@ -71,7 +71,7 @@ class GalleryLightboxDB{
 		'galleries' => 'gallery',	
 		'items' => 'item',	
 		'photos' => 'photo',
-		);
+	);
 		
 	/**
 	 * @var prefix
@@ -95,7 +95,7 @@ class GalleryLightboxDB{
 			$this->__set( $value , $key );
 		endforeach;
 		
-		}
+	}
 		
 	/**
 	 * GalleryLightboxDB Destructor.
@@ -119,7 +119,7 @@ class GalleryLightboxDB{
 		
 		$this->$name = $this->prefix.$value;
 		
-		}
+	}
 
 	/**
 	 * Inserción de asignaciones.
@@ -149,7 +149,7 @@ class GalleryLightboxDB{
 		
 		endif;
 
-		}
+	}
 
 	/**
 	 * Consulta de asignaciones.
@@ -186,7 +186,7 @@ class GalleryLightboxDB{
 				
 		endif;
 
-		}
+	}
 
 	/**
 	 * Consulta de asignaciones por ID.
@@ -207,7 +207,7 @@ class GalleryLightboxDB{
 			return $row;
 		endif;
 
-		}
+	}
 
 	/** 
 	 * Actualización de Galerias.
@@ -232,9 +232,83 @@ class GalleryLightboxDB{
 
 		return $update;
 
-		}
-		
 	}
+
+	/**
+	 * Eliminación de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return integer || false
+	 */
+		
+	function deleteGallery( $id ){
+
+		global $wpdb;
+
+		$delete = $wpdb->delete( $this->table, array( 'ID' => $id ), array( '%d' ) );
+
+		return $delete;
+
+	}
+
+	/**
+	 * Envío a papelera de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+		
+	function trashGallery( $id ){
+
+		$gallery = $this->getGallery( $id );
+
+		$gallery['post_status'] = 'trash';
+
+		$trash = $this->updateGallery( $gallery );
+
+		return $trash;
+
+	}
+
+	/**
+	 * Envío a papelera de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+		
+	function untrashGallery( $id ){
+
+		$gallery = $this->getGallery( $id );
+
+		$gallery['post_status'] = 'draft';
+
+		$trash = $this->updateGallery( $gallery );
+
+		return $trash;
+
+	}
+
+	/**
+	 * Publicación de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	function publishGallery( $id ){
+
+		$gallery = $this->getGallery( $id );
+
+		$gallery['post_status'] = 'publish';
+
+		$trash = $this->updateGallery( $gallery );
+
+		return $trash;
+
+	}
+		
+}
 	
 $GLOBALS['gldb'] = new GalleryLightboxDB();
 /*

@@ -38,8 +38,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 				global $gldb;
 
 				$gallery = $gldb->getGallery($data['ID']);
-				$gallery['post_status'] = 'draft';
-				$gallery = $gldb->updateGallery($gallery);
+				$gallery = $gldb->untrashGallery($gallery);
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
@@ -48,10 +47,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 				global $gldb;
 
 				$gallery = $gldb->getGallery($data['ID']);
-
-				$gallery['post_status'] = 'publish';
-
-				$gallery = $gldb->updateGallery($gallery);
+				$gallery = $gldb->publishGallery($gallery);
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
