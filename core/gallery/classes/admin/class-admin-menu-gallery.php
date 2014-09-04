@@ -29,27 +29,57 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 		
 	public function page_gallery_lightbox_edit( $atts ){
 
+		global $gldb;
+
 		if(isset($_GET['ID']) AND $_GET['ID'] != ''):
 
 			$data = $_GET;
 
 			if(isset($_GET['action']) AND $_GET['action'] == 'hide'):
 
-				global $gldb;
-
 				$gallery = $gldb->untrashGallery($data['ID']);
-		
-				$this->autoload('view_admin_gallery_lightbox_main_page');
+
+				if($gallery):
+					$msg = $gldb->msg['gallery_oculted'];
+				else:
+					$msg = $gldb->msg['gallery_oculted_err'];
+				endif;
+
+				wp_redirect( '?page=page_gallery_lightbox&msg='.$msg ); exit;
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'show'):
 
-				global $gldb;
-
 				$gallery = $gldb->publishGallery($data['ID']);
-		
-				$this->autoload('view_admin_gallery_lightbox_main_page');
+
+				if($gallery):
+					$msg = $gldb->msg['gallery_visible'];
+				else:
+					$msg = $gldb->msg['gallery_visible_err'];
+				endif;
+
+				wp_redirect( '?page=page_gallery_lightbox&msg='.$msg ); exit;
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'edit'):
+
+				if($_POST['verify_gallery'] == 'edit'):
+				
+					$data = $_POST;
+
+					$gallery = $gldb->getGallery($data['ID']);
+						
+					$gallery['post_title'] = $data['post_title'];
+
+					$id = $gldb->updateGallery($gallery);
+					
+					if($id != 0):
+						$msg = $gldb->msg['gallery_update'];
+					else:
+						$msg = $gldb->msg['gallery_update_err'];
+					endif;
+
+					wp_redirect( '?page=page_gallery_lightbox&msg='.$msg ); exit;
+					
+				endif;
 		
 				$this->autoload('view_admin_gallery_lightbox_edit');
 
@@ -75,15 +105,15 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 				global $gldb;
 
-				$gallery = $gldb->trashGallery($data['ID']);
+				$gallery = $gldb->deleteGallery($data['ID']);
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
-			if(isset($_GET['action']) AND $_GET['action'] == 'untrash'):
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'untrash'):
 
 				global $gldb;
 
-				$gallery = $gldb->trashGallery($data['ID']);
+				$gallery = $gldb->untrashGallery($data['ID']);
 		
 				$this->autoload('view_admin_gallery_lightbox_main_page');
 
