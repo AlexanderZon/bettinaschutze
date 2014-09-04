@@ -37,7 +37,7 @@
 
             global $gldb;
                             
-            $this->data = $gldb->getGalleries('all');
+            $this->data = $gldb->getGalleries('untrash');
             $this->_args = $this->data;
             $this->prepare_items();
             $this->display_search_box( 'Buscar', 'search_id' );
