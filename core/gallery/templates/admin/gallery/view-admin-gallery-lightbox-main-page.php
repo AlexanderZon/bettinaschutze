@@ -51,6 +51,7 @@
                 'cb' => '<input type="checkbox" />',
                 'post_title' => 'Título',
                 'post_status' => 'Visibilidad',
+                'post_excerpt' => 'Shortcode',
                 'post_date' => 'Fecha de Creación'
                 );
             
@@ -111,6 +112,7 @@
             $sortable_columns = array(
                 'post_title' => array( 'post_title', false ),
                 'post_status' => array( 'post_status', false),
+                'post_excerpt' => array( 'post_excerpt', false),
                 'post_date' => array( 'post_date', false)
                 );
                 
@@ -136,6 +138,7 @@
                 
                 case 'post_title':
                 case 'post_status':
+                case 'post_excerpt':
                 case 'post_date':
                     return $item[ $column_name ];
                 default:
@@ -159,6 +162,12 @@
         public function column_post_date( $item ){
             
             return sprintf( '<span class="moment">%1$s</span>', $item['post_date']);
+            
+            }
+            
+        public function column_post_excerpt( $item ){
+            
+            return sprintf( '<em>[gallery_lightbox id="%1$s"]</em>', $item['ID']);
             
             }
             
