@@ -219,9 +219,9 @@ class GalleryLightboxDB{
 			if( $status == 'all' )
 				$where .= " ";
 			elseif( $status == 'untrash' )
-				$where .= " `post_status`!='trash'";
+				$where .= " AND `post_status`!='trash'";
 			else
-				$where .= " `post_status`='" . $status . "'";
+				$where .= " AND `post_status`='" . $status . "'";
 
 		if( $band ):
 
