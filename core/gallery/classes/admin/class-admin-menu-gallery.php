@@ -125,7 +125,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 					$msg = 'gallery_untrash_err';
 				endif;
 
-				wp_redirect( '?page=page_gallery_lightbox_trash&msg='.$msg ); exit;
+				wp_redirect( '?page=page_gallery_lightbox_delete&msg='.$msg ); exit;
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'trash'):
 
