@@ -11,7 +11,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 		add_menu_page( 'Gallery Lightbox' , 'Gallery Lightbox' , 'manage_options' , 'page_gallery_lightbox' , array( $this , 'page_gallery_lightbox' ) , '' );
 		add_submenu_page( 'page_gallery_lightbox' , 'Agregar' , 'Agregar' , 'manage_options' , 'page_gallery_lightbox_add' , array( $this , 'page_gallery_lightbox_add' ) );
 		add_submenu_page( 'page_gallery_lightbox' , 'Editar' , 'Editar' , 'manage_options' , 'page_gallery_lightbox_edit' , array( $this , 'page_gallery_lightbox_edit' ) );
-		add_submenu_page( 'page_gallery_lightbox' , 'Borrar' , 'Borrar' , 'manage_options' , 'page_gallery_lightbox_delete' , array( $this , 'page_gallery_lightbox_delete' ) );
+		add_submenu_page( 'page_gallery_lightbox' , 'Papelera' , 'Papelera' , 'manage_options' , 'page_gallery_lightbox_delete' , array( $this , 'page_gallery_lightbox_delete' ) );
 		
 		}
 		
@@ -97,26 +97,47 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 				
 	public function page_gallery_lightbox_delete( $atts ){
 
+		global $gldb;
+
 		if(isset($_GET['ID']) AND $_GET['ID'] != ''):
 
 			$data = $_GET;
 
 			if(isset($_GET['action']) AND $_GET['action'] == 'delete'):
 
-				global $gldb;
-
 				$gallery = $gldb->deleteGallery($data['ID']);
-		
-				$this->autoload('view_admin_gallery_lightbox_main_page');
+					
+				if($id != 0):
+					$msg = $gldb->msg['gallery_delete'];
+				else:
+					$msg = $gldb->msg['gallery_delete_err'];
+				endif;
+
+				wp_redirect( '?page=page_gallery_lightbox_delete&msg='.$msg ); exit;
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'untrash'):
-				
-
-				global $gldb;
 
 				$gallery = $gldb->untrashGallery($data['ID']);
-		
-				$this->autoload('view_admin_gallery_lightbox_main_page');
+					
+				if($id != 0):
+					$msg = $gldb->msg['gallery_untrash'];
+				else:
+					$msg = $gldb->msg['gallery_untrash_err'];
+				endif;
+
+				wp_redirect( '?page=page_gallery_lightbox_trash&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'trash'):
+
+				$gallery = $gldb->trashGallery($data['ID']);
+					
+				if($id != 0):
+					$msg = $gldb->msg['gallery_trash'];
+				else:
+					$msg = $gldb->msg['gallery_trash_err'];
+				endif;
+
+				wp_redirect( '?page=page_gallery_lightbox&msg='.$msg ); exit;
 
 			elseif(!isset($_GET['action'])):
 		
