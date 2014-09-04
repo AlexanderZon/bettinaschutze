@@ -105,7 +105,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 			if(isset($_GET['action']) AND $_GET['action'] == 'delete'):
 
-				$gallery = $gldb->deleteGallery($data['ID']);
+				$id = $gldb->deleteGallery($data['ID']);
 					
 				if($id != 0):
 					$msg = 'gallery_delete';
@@ -117,7 +117,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'untrash'):
 
-				$gallery = $gldb->untrashGallery($data['ID']);
+				$id = $gldb->untrashGallery($data['ID']);
 					
 				if($id != 0):
 					$msg = 'gallery_untrash';
@@ -129,7 +129,7 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'trash'):
 
-				$gallery = $gldb->trashGallery($data['ID']);
+				$id = $gldb->trashGallery($data['ID']);
 					
 				if($id != 0):
 					$msg = 'gallery_trash';
