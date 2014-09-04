@@ -70,8 +70,6 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 					$gallery['post_title'] = $data['post_title'];
 
 					$id = $gldb->updateGallery($gallery);
-
-					$msg = '';
 					
 					if($id != 0):
 						$msg = $gldb->msg['gallery_update'];
