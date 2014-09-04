@@ -1,184 +1,186 @@
 <?php
 
-/**
- * Inserción de asignaciones.
- * @access public
- * @param array $asignacion
- * @return int
- */
-
-function el_insert_asignacion( $asignaciondata ){
-
-	global $EL_DB, $wpdb;
-	
-	extract( wp_unslash( $asignaciondata ), EXTR_SKIP );
-	
-	$bool = true;
-	
-	if ( ! isset($profesor_id) OR $profesor_id == '' )
-		$bool = false;
-	if ( ! isset($materia_id) OR $materia_id == '' )
-		$bool = false;
-	if ( ! isset($asignacion_date) OR $asignacion_date == '' )
-		$bool = false;
-	if ( ! isset($periodo_id) OR $periodo_id == '' )
-		$bool = false;
-	if ( ! isset($asignacion_status) OR $asignacion_status == '' )
-		$asignacion_status = 'draft';
+public function addItem( $parent, $item ){
 		
-	if( $bool ):
-	
-		$data = compact('profesor_id','materia_id','asignacion_date','periodo_id','asignacion_status');
-		$wpdb->insert( $EL_DB->asignaciones , $data);
+		$bool = true;
 		
-		$id = (int) $wpdb->insert_id;
-		
-		return $id;
-	
-	else:
-	
-		return 0;	
-	
-	endif;
-	
-	}
+		if ( ! isset($item['post_type']) OR $item['post_type'] == '' )
+			$item['post_type'] = $this->items;
+		if ( ! isset($item['post_status']) OR $item['post_status'] == '' )
+			$item['post_status'] = 'draft';
 
-/**
- * Consulta de asignaciones.
- * @access public
- * @param string $status (Default:all)
- * @return array || false
- */
-
-function el_get_asignaciones( $status = 'all' ){
-
-	global $EL_DB, $wpdb;
-	
-	$band = true;
-	
-	if( $status != 'all' AND $status != 'untrash' AND $status != 'publish' AND $status != 'draft' AND $status != 'trash' )
-		$band = false;
-	if( $status == 'all' )
-		$where = " WHERE 1;";
-	else 
-		if( $status == 'untrash' )
-			$where = " WHERE `asignacion_status`!='trash'";
-		else
-			$where = " WHERE `asignacion_status`='" . $status . "';";
-
-	if( $band ):
+		$item['post_parent'] = $parent;
 		
-		$array = $wpdb->get_results( "SELECT * FROM " . $EL_DB->asignaciones .$where , ARRAY_A );
-		
-		return $array;
-		
-	else:
-	
-		return false;				
+		$id = wp_insert_post( $item );
 			
-	endif;
+		if( is_int($id) ):
+			
+			return $id;
+		
+		else:
+		
+			return 0;	
+		
+		endif;
 
 	}
 
-/**
- * Consulta de asignaciones por ID.
- * @access public
- * @param string $id
- * @return array || 0
- */
+	/**
+	 * Consulta de asignaciones.
+	 * @access public
+	 * @param string $status (Default:all)
+	 * @return array || false
+	 */
+	function getItems( $parent, $status = 'all' ){
+	 
+		global  $wpdb;
+		
+		$band = true;
 
-function el_get_asignacion( $id ){
+		$where = " WHERE `post_type`='".$this->items."' AND  `post_parent`='".$parent."'";
+		
+		if( $status != 'all' AND $status != 'untrash' AND $status != 'publish' AND $status != 'draft' AND $status != 'trash' )
+			$band = false;
+		else 
+			if( $status == 'all' )
+				$where .= " ";
+			elseif( $status == 'untrash' )
+				$where .= " AND `post_status`!='trash'";
+			else
+				$where .= " AND `post_status`='" . $status . "'";
 
-	global $EL_DB, $wpdb;
-
-	$row  = $wpdb->get_row( "SELECT * FROM $EL_DB->asignaciones WHERE `ID`='$id';", ARRAY_A );
-
-	if( $row == null ):
-		return 0;
-	else:
-		return $row;
-	endif;
+		if( $band ):
+			
+			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
+		
+			return $array;
+			
+		else:
+		
+			return false;				
+				
+		endif;
 
 	}
 
-/**
- * Actualización de asignaciones.
- * @access public
- * @param array $object
- * @return integer || false
- */
-	
-function el_update_asignacion( $object ){
+	/**
+	 * Consulta de asignaciones por ID.
+	 * @access public
+	 * @param string $id
+	 * @return array || 0
+	 */
 
-	global $EL_DB, $wpdb;
+	function getItem( $id ){
 
-	if( !isset($object['ID']) OR empty($object['ID']) ):
-		return 0;
-	endif;
+		global $wpdb;
 
-	$asignacion = el_get_asignacion( $object['ID'] );
+		$row  = $wpdb->get_row( "SELECT * FROM $this->table WHERE `ID`='$id';", ARRAY_A );
 
-	$asignacion = array_replace( $asignacion, $object );
+		if( $row == null ):
+			return 0;
+		else:
+			return $row;
+		endif;
 
-	$update = $wpdb->update( $EL_DB->asignaciones, $asignacion, array( 'ID' => $asignacion['ID'] ) );
+	}
 
-	return $update;
+	/** 
+	 * Actualización de Galerias.
+	 * @access public
+	 * @param array $object
+	 * @return integer || false
+	 */
+		
+	function updateItem( $object ){
 
-}
+		global $wpdb;
 
-/**
- * Eliminación de asignacions.
- * @access public
- * @param integer $id
- * @return integer || false
- */
-	
-function el_delete_asignacion( $id ){
+		if( !isset($object['ID']) OR empty($object['ID']) ):
+			return 0;
+		endif;
 
-	global $EL_DB, $wpdb;
+		$item = $this->getItem( $object['ID'] );
 
-	$delete = $wpdb->delete( $EL_DB->asignaciones, array( 'ID' => $id ), array( '%d' ) );
+		$item = array_replace( $item, $object );
 
-	return $delete;
+		$update = $wpdb->update( $this->table, $item, array( 'ID' => $item['ID'] ) );
 
-}
+		return $update;
 
-/**
- * Envío a papelera de asignaciones.
- * @access public
- * @param integer $id
- * @return intener || false
- */
-	
-function el_trash_asignacion( $id ){
+	}
 
-	$asignacion = el_get_asignacion( $id );
+	/**
+	 * Eliminación de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return integer || false
+	 */
+		
+	function deleteItem( $id ){
 
-	$asignacion['asignacion_status'] = 'trash';
+		global $wpdb;
 
-	$trash = el_update_asignacion( $asignacion );
+		$delete = $wpdb->delete( $this->table, array( 'ID' => $id ), array( '%d' ) );
 
-	return $trash;
+		return $delete;
 
-}
+	}
 
-/**
- * Publicación de asignaiconess.
- * @access public
- * @param integer $id
- * @return intener || false
- */
+	/**
+	 * Envío a papelera de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+		
+	function trashItem( $id ){
 
-function el_publish_asignacion( $id ){
+		$item = $this->getItem( $id );
 
-	$asignacion = el_get_asignacion( $id );
+		$item['post_status'] = 'trash';
 
-	$asignacion['asignacion_status'] = 'publish';
+		$trash = $this->updateItem( $item );
 
-	$publish = el_update_asignacion( $asignacion );
+		return $trash;
 
-	return $publish;
+	}
 
-}
+	/**
+	 * Envío a papelera de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+		
+	function untrashItem( $id ){
+
+		$item = $this->getItem( $id );
+
+		$item['post_status'] = 'draft';
+
+		$trash = $this->updateItem( $item );
+
+		return $trash;
+
+	}
+
+	/**
+	 * Publicación de materias.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	function publishItem( $id ){
+
+		$item = $this->getItem( $id );
+
+		$item['post_status'] = 'publish';
+
+		$trash = $this->updateItem( $item );
+
+		return $trash;
+
+	}
 
 ?>
