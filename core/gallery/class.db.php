@@ -79,6 +79,47 @@ class GalleryLightboxDB{
 	 * @type array
 	 */
 	
+	public $msg = array(
+		'gallery_oculted' => 'La galería se ha puesto en modo no visible',	
+		'gallery_oculted_err' => 'Hubo un error al ocultar la galería',
+		'gallery_visible' => 'La galería se ha puesto en modo visible',
+		'gallery_visible_err' => 'Hubo un error al mostrar la galería',
+		'gallery_update' => 'Galería actualizada con éxito',
+		'gallery_update_err' => 'Hubo un error al actualizar la galería',
+		'gallery_trash' => 'La galería ha sido enviada a la papelera de reciclaje',
+		'gallery_trash_err' => 'Hubo un error el enviar la galería a la papelera de reciclaje',
+		'gallery_untrash' => 'La galería ha sido restaurada con éxito',
+		'gallery_untrash_err' => 'Hubo un error al restaurar la galería',
+		'gallery_delete' => 'La Galería ha sido eliminada con éxito',
+		'gallery_delete_err' => 'Hubo un error al eliminar la galería permanentemente',
+/*
+		'items_oculted' => 'La galería se ha puesto en modo no visible',	
+		'items_oculted_err' => 'Hubo un error al ocultar la galería',
+		'items_visible' => 'La galería se ha puesto en modo visible',
+		'items_visible_err' => 'Hubo un error al mostrar la galería',
+		'items_update' => 'Galería actualizada con éxito',
+		'items_update_err' => 'Hubo un error al actualizar la galería',
+		'items_trash' => 'La galería ha sido enviada a la papelera de reciclaje',
+		'items_trash_err' => 'Hubo un error el enviar la galería a la papelera de reciclaje',
+		'items_untrash' => 'La galería ha sido restaurada con éxito',
+		'items_untrash_err' => 'Hubo un error al restaurar la galería',
+		'items_delete' => 'La Galería ha sido eliminada con éxito',
+		'items_delete_err' => 'Hubo un error al eliminar la galería permanentemente',
+
+		'photos_oculted' => 'La galería se ha puesto en modo no visible',	
+		'photos_oculted_err' => 'Hubo un error al ocultar la galería',
+		'photos_visible' => 'La galería se ha puesto en modo visible',
+		'photos_visible_err' => 'Hubo un error al mostrar la galería',
+		'photos_update' => 'Galería actualizada con éxito',
+		'photos_update_err' => 'Hubo un error al actualizar la galería',
+		'photos_trash' => 'La galería ha sido enviada a la papelera de reciclaje',
+		'photos_trash_err' => 'Hubo un error el enviar la galería a la papelera de reciclaje',
+		'photos_untrash' => 'La galería ha sido restaurada con éxito',
+		'photos_untrash_err' => 'Hubo un error al restaurar la galería',
+		'photos_delete' => 'La Galería ha sido eliminada con éxito',
+		'photos_delete_err' => 'Hubo un error al eliminar la galería permanentemente',
+*/
+	);
 		
 	/**
 	 * @var prefix
