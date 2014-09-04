@@ -224,10 +224,9 @@ class GalleryLightboxDB{
 				$where .= " AND `post_status`='" . $status . "'";
 
 		if( $band ):
-
-			echo "SELECT * FROM " . $this->table .$where;
 			
 			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
+		
 			return $array;
 			
 		else:
@@ -279,8 +278,6 @@ class GalleryLightboxDB{
 		$gallery = array_replace( $gallery, $object );
 
 		$update = $wpdb->update( $this->table, $gallery, array( 'ID' => $gallery['ID'] ) );
-
-		var_dump($update) ;
 
 		return $update;
 
