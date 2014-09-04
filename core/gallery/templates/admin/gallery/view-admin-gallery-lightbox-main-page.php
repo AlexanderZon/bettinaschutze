@@ -235,8 +235,8 @@
 
     
 </div>
-<?php echo get_template_directory_uri().'/js/moment.js'; ?>
 
+<!--
 <script type="text/javascript" src="<?php echo get_template_directory_uri().'/js/moment.js'; ?>"></script>
 <script type="text/javascript">
     $(document).on('ready', function(){
@@ -247,3 +247,5 @@
     });
 
 </script>
+
+-->
