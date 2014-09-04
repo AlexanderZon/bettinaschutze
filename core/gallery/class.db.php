@@ -280,7 +280,7 @@ class GalleryLightboxDB{
 
 		$update = $wpdb->update( $this->table, $gallery, array( 'ID' => $gallery['ID'] ) );
 
-		echo "UPDATE ".$update;
+		var_dump($update) ;
 
 		return $update;
 
