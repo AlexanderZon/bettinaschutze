@@ -40,9 +40,9 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 				$gallery = $gldb->untrashGallery($data['ID']);
 
 				if($gallery):
-					$msg = $gldb->msg['gallery_oculted'];
+					$msg = 'gallery_oculted';
 				else:
-					$msg = $gldb->msg['gallery_oculted_err'];
+					$msg = 'gallery_oculted_err';
 				endif;
 
 				wp_redirect( '?page=page_gallery_lightbox&msg='.$msg ); exit;
@@ -52,9 +52,9 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 				$gallery = $gldb->publishGallery($data['ID']);
 
 				if($gallery):
-					$msg = $gldb->msg['gallery_visible'];
+					$msg = 'gallery_visible';
 				else:
-					$msg = $gldb->msg['gallery_visible_err'];
+					$msg = 'gallery_visible_err';
 				endif;
 
 				wp_redirect( '?page=page_gallery_lightbox&msg='.$msg ); exit;
@@ -72,9 +72,9 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 					$id = $gldb->updateGallery($gallery);
 					
 					if($id != 0):
-						$msg = $gldb->msg['gallery_update'];
+						$msg = 'gallery_update';
 					else:
-						$msg = $gldb->msg['gallery_update_err'];
+						$msg = 'gallery_update_err';
 					endif;
 
 					wp_redirect( '?page=page_gallery_lightbox&msg='.$msg ); exit;
@@ -108,9 +108,9 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 				$gallery = $gldb->deleteGallery($data['ID']);
 					
 				if($id != 0):
-					$msg = $gldb->msg['gallery_delete'];
+					$msg = 'gallery_delete';
 				else:
-					$msg = $gldb->msg['gallery_delete_err'];
+					$msg = 'gallery_delete_err';
 				endif;
 
 				wp_redirect( '?page=page_gallery_lightbox_delete&msg='.$msg ); exit;
@@ -120,9 +120,9 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 				$gallery = $gldb->untrashGallery($data['ID']);
 					
 				if($id != 0):
-					$msg = $gldb->msg['gallery_untrash'];
+					$msg = 'gallery_untrash';
 				else:
-					$msg = $gldb->msg['gallery_untrash_err'];
+					$msg = 'gallery_untrash_err';
 				endif;
 
 				wp_redirect( '?page=page_gallery_lightbox_trash&msg='.$msg ); exit;
@@ -132,9 +132,9 @@ class ClassAdminMenuGallery extends ClassAdminMenuParent{
 				$gallery = $gldb->trashGallery($data['ID']);
 					
 				if($id != 0):
-					$msg = $gldb->msg['gallery_trash'];
+					$msg = 'gallery_trash';
 				else:
-					$msg = $gldb->msg['gallery_trash_err'];
+					$msg = 'gallery_trash_err';
 				endif;
 
 				wp_redirect( '?page=page_gallery_lightbox&msg='.$msg ); exit;

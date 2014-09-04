@@ -22,7 +22,8 @@
     <?php 
 
     if(isset($_GET['msg']) AND $_GET['msg'] != ''):
-        echo '<div class="update-nag">'.$_GET['msg'].'</div>';
+        global $gldb;
+        echo '<div class="update-nag">'.$gldb->msg[$_GET['msg']].'</div>';
     endif;
     
     if( ! class_exists( 'WP_List_Table' ) )
