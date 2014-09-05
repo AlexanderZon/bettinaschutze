@@ -174,8 +174,10 @@
             }
             
         public function column_post_excerpt( $item ){
+
+        	$src = wp_get_attachment_url($item['post_excerpt']);
             
-            return sprintf( '<img src="%1$s" height="50"/>', $item['post_excerpt']);
+            return sprintf( '<img src="%1$s" height="50"/>', $src);
             
             }
             
