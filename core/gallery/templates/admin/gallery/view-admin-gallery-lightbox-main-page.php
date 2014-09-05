@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Gallery Lightbox <a href="admin.php?page=page_gallery_lightbox_add" class="add-new-h2">Añadir nueva</a></h2>
+    <h2>Gallery Lightbox <a href="admin.php?page=page_gallery_lightbox_add" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_gallery_lightbox_delete" class="add-new-h2">Papelera</a></h2>
     
     <?php 
 
