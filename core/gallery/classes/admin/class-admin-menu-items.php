@@ -78,7 +78,7 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 
 		$filedata = $this->upload_image_from_form( $file );
 
-		die($filedata);
+		var_dump($filedata);
 
 		$attachment = array(
 			'guid'           => $filedata['url'], 
