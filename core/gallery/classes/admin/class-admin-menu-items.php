@@ -131,6 +131,8 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 		else:
 
 		wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'' ); exit;
+
+		endif;
 		
 		//$this->autoload('view_admin_items_lightbox_edit');
 		
