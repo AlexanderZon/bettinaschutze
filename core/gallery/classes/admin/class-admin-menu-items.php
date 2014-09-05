@@ -140,8 +140,62 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 		}
 				
 	public function page_item_lightbox_delete( $atts ){
+
+		global $gldb;
+
+		if(isset($_GET['ID']) AND $_GET['ID'] != ''):
+
+			$data = $_GET;
+
+			if(isset($_GET['action']) AND $_GET['action'] == 'delete'):
+
+				$id = $gldb->deleteItem($data['ID']);
+					
+				if($id != 0):
+					$msg = 'item_delete';
+				else:
+					$msg = 'item_delete_err';
+				endif;
+
+				wp_redirect( '?page=page_items_lightbox_delete&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'untrash'):
+
+				$id = $gldb->untrashItem($data['ID']);
+					
+				if($id != 0):
+					$msg = 'item_untrash';
+				else:
+					$msg = 'item_untrash_err';
+				endif;
+
+				wp_redirect( '?page=page_items_lightbox_delete&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'trash'):
+
+				$id = $gldb->trashItem($data['ID']);
+					
+				if($id != 0):
+					$msg = 'item_trash';
+				else:
+					$msg = 'item_trash_err';
+				endif;
+
+				wp_redirect( '?page=page_items_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(!isset($_GET['action'])):
 		
-		$this->autoload('view_admin_items_lightbox_delete');
+			$this->autoload('view_admin_item_lightbox_delete');
+
+			endif;
+
+		else:
+
+			$this->autoload('view_admin_items_lightbox_delete');
+
+		endif;
+		
+		//$this->autoload('view_admin_items_lightbox_delete');
 		
 		}
 
