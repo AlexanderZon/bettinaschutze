@@ -95,7 +95,7 @@ class GalleryLightboxDB{
 		'gallery_delete' => 'La Galería ha sido eliminada con éxito',
 		'gallery_delete_err' => 'Hubo un error al eliminar la galería permanentemente',
 
-		'item_add' => 'La galería ha sido creada con éxito',	
+		'item_add' => 'El item ha sido creada con éxito',	
 		'item_add_err' => 'Hubo un error al crear el item',
 		'item_add_attach_err' => 'Hubo un error al crear la imagen de destaque del item',
 		'item_oculted' => 'El item se ha puesto en modo no visible',	
@@ -110,20 +110,23 @@ class GalleryLightboxDB{
 		'item_untrash_err' => 'Hubo un error al restaurar el item',
 		'item_delete' => 'El item ha sido eliminada con éxito',
 		'item_delete_err' => 'Hubo un error al eliminar el item permanentemente',
-/*
-		'photos_oculted' => 'La galería se ha puesto en modo no visible',	
-		'photos_oculted_err' => 'Hubo un error al ocultar la galería',
-		'photos_visible' => 'La galería se ha puesto en modo visible',
-		'photos_visible_err' => 'Hubo un error al mostrar la galería',
-		'photos_update' => 'Galería actualizada con éxito',
-		'photos_update_err' => 'Hubo un error al actualizar la galería',
-		'photos_trash' => 'La galería ha sido enviada a la papelera de reciclaje',
-		'photos_trash_err' => 'Hubo un error el enviar la galería a la papelera de reciclaje',
-		'photos_untrash' => 'La galería ha sido restaurada con éxito',
-		'photos_untrash_err' => 'Hubo un error al restaurar la galería',
-		'photos_delete' => 'La Galería ha sido eliminada con éxito',
-		'photos_delete_err' => 'Hubo un error al eliminar la galería permanentemente',
-*/
+
+		'photo_add' => 'La foto ha sido creada con éxito',	
+		'photo_add_err' => 'Hubo un error al crear la foto',
+		'photo_add_attach_err' => 'Hubo un error al crear la imagen',
+		'photo_oculted' => 'La foto se ha puesto en modo no visible',	
+		'photo_oculted_err' => 'Hubo un error al ocultar la foto',
+		'photo_visible' => 'La foto se ha puesto en modo visible',
+		'photo_visible_err' => 'Hubo un error al mostrar la foto',
+		'photo_update' => 'Foto actualizada con éxito',
+		'photo_update_err' => 'Hubo un error al actualizar la foto',
+		'photo_trash' => 'La foto ha sido enviada a la papelera de reciclaje',
+		'photo_trash_err' => 'Hubo un error el enviar la foto a la papelera de reciclaje',
+		'photo_untrash' => 'La foto ha sido restaurada con éxito',
+		'photo_untrash_err' => 'Hubo un error al restaurar la foto',
+		'photo_delete' => 'La Foto ha sido eliminada con éxito',
+		'photo_delete_err' => 'Hubo un error al eliminar la foto permanentemente',
+
 	);
 		
 	/**
