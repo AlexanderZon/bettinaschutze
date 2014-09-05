@@ -125,7 +125,7 @@ class ClassAdminMenuPhotos extends ClassAdminMenuParent{
 					
 				endif;
 		
-				$this->autoload('view_admin_items_lightbox_edit');
+				$this->autoload('view_admin_photos_lightbox_edit');
 
 			endif;
 
@@ -185,13 +185,13 @@ class ClassAdminMenuPhotos extends ClassAdminMenuParent{
 
 			elseif(!isset($_GET['action'])):
 		
-			$this->autoload('view_admin_items_lightbox_delete');
+			$this->autoload('view_admin_photos_lightbox_delete');
 
 			endif;
 
 		else:
 
-			$this->autoload('view_admin_items_lightbox_delete');
+			$this->autoload('view_admin_photos_lightbox_delete');
 
 		endif;
 		
