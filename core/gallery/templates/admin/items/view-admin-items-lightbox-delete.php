@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Items Lightbox (Papelera) <a href="admin.php?page=page_item_lightbox_add" class="add-new-h2">Añadir nueva</a></h2>
+    <h2>Items Lightbox (Papelera) <a href="admin.php?page=page_item_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Volver</a></h2>
     
     <?php 
 

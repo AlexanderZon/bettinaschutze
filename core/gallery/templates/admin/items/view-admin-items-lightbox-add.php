@@ -1,6 +1,7 @@
 <?php
 
 	# CODE_ERR: MOSTRAR ERROR DE DUPLICADO DE CÓDIGO DE MATERIA
+	$data = $_GET;
 
 ?>
 
@@ -32,14 +33,14 @@
 
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Añadir Items <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver</a></h2>
+	<h2>Añadir Items <a href="admin.php?page=page_gallery_lightbox&parent=<?php echo $data['parent']; ?>" class="add-new-h2">Volver</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
 	
 	<form method="post" action="" id="form-materia">
 		<input type="hidden" name="verify_gallery" value="add"/>
-		<input type="hidden" name="parent" value="<?php echo $_GET['parent']; ?>"/>
+		<input type="hidden" name="parent" value="<?php echo $data['parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
 				<td><span class="label">Título del Ítem:</span></td>
