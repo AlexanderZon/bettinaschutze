@@ -80,6 +80,8 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 
 		var_dump($filedata);
 
+		die("insert_attachment");
+
 		$attachment = array(
 			'guid'           => $filedata['url'], 
 			'post_mime_type' => $filedata['type'],
