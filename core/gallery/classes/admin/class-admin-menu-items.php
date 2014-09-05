@@ -31,7 +31,7 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 
 			$file = $_FILES['image'];
 
-			$parent = $data['post_parent'];
+			$parent = $data['parent'];
 				
 			$item = array(
 				'post_title' => $data['post_title'],
@@ -43,6 +43,12 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 			if($id):
 
 				$attachment = $this->insert_attachment( $file, $id );
+
+				$item = $gldb->getItem($id);
+
+				$item['post_excerpt'] = $attachment;
+
+				$item = $gldb->updateItem($item);
 
 				if($attachment):
 					$msg = 'item_add';
