@@ -50,7 +50,7 @@
 			</tr>
 			<tr>
 				<td><span class="label">Descripción:</span></td>
-				<td><textarea type="text" id="post_content" name="post_content" maxlength="255" required><?php echo $item['post_title']; ?></textarea></td>
+				<td><textarea type="text" id="post_content" name="post_content" maxlength="255" required><?php echo $item['post_content']; ?></textarea></td>
 			</tr>
 			<tr>
 				<td colspan="3">
