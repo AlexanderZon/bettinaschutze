@@ -17,7 +17,15 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Photos Lightbox <a href="admin.php?page=page_photo_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_photo_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_item_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Volver a Items</a></h2>
+    <?php 
+
+    	global $gldb;
+
+    	$item = $gldb->getItem($_GET['parent']);
+
+    ?>
+
+    <h2>Photos Lightbox <a href="admin.php?page=page_photo_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_photo_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_item_lightbox&parent=<?php echo $item['post_parent']; ?>" class="add-new-h2">Volver a Items</a></h2>
     
     <?php 
 
