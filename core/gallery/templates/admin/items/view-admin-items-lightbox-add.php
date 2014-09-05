@@ -33,7 +33,7 @@
 
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Añadir Items <a href="admin.php?page=page_gallery_lightbox&parent=<?php echo $data['parent']; ?>" class="add-new-h2">Volver</a></h2>
+	<h2>Añadir Items <a href="admin.php?page=page_item_lightbox&parent=<?php echo $data['parent']; ?>" class="add-new-h2">Volver</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
