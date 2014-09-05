@@ -30,13 +30,15 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 			$data = $_POST;
 
 			$file = $_FILES['image'];
+
+			$parent = $data['post_parent'];
 				
 			$item = array(
 				'post_title' => $data['post_title'],
 				'post_content' => $data['post_content']
 				);
 			
-			$id = $gldb->addGallery($item);
+			$id = $gldb->addItem( $parent, $item );
 
 			if($id):
 
