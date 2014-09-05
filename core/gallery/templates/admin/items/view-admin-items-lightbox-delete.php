@@ -36,8 +36,10 @@
         public function __construct(){
 
             global $gldb;
+
+            $parent = $_GET['parent'];
                             
-            $this->data = $gldb->getItems('trash');
+            $this->data = $gldb->getItems( $parent, 'trash');
             $this->_args = $this->data;
             $this->prepare_items();
             $this->display_search_box( 'Buscar', 'search_id' );
