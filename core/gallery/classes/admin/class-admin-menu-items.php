@@ -29,10 +29,6 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 		
 			$data = $_POST;
 
-			var_dump($_FILES);
-
-			die();
-
 			$file = $_FILES['image'];
 				
 			$item = array(
