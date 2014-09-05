@@ -22,6 +22,41 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 		}
 		
 	public function page_item_lightbox_add( $atts ){
+
+		if($_POST['verify_item'] == 'add'):
+
+			global $gldb;
+		
+			$data = $_POST;
+
+			$file = $_FILE['image'];
+				
+			$item = array(
+				'post_title' => $data['post_title'],
+				'post_content' => $data['post_content']
+				);
+			
+			$id = $gldb->addGallery($item);
+
+			if($id):
+
+				$attachment = $this->insert_attachment( $file, $id );
+
+				if($attachment):
+					$msg = 'item_add';
+				else:
+					$msg = 'item_add_attach_err';
+				endif;
+
+			else:
+
+				$msg = 'item_add_err';
+
+			endif;
+
+			wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+			
+		endif;
 		
 		$this->autoload('view_admin_items_lightbox_add');
 		
@@ -37,6 +72,43 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 		
 		$this->autoload('view_admin_items_lightbox_delete');
 		
+		}
+
+	public function insert_attachment( $file, $parent ){
+
+		$filedata = $this->upload_image_from_form( $file );
+
+		$attachment = array(
+			'guid'           => $filedata['url'], 
+			'post_mime_type' => $filedata['type'],
+			'post_title'     => '',
+			'post_content'   => '',
+			'post_status'    => 'inherit'
+		);
+
+		$attach_id = wp_insert_attachment( $attachment, $filedata['file'], $parent );
+
+		require_once( ABSPATH . 'wp-admin/includes/image.php' );
+
+		$attach_data = wp_generate_attachment_metadata( $attach_id, $filedata['file'] );
+		wp_update_attachment_metadata( $attach_id, $attach_data );
+
+		return $attach_id;
+
+	}
+
+	public function upload_image_from_form( $file ){
+
+		if ( ! function_exists( 'wp_handle_upload' ) ) require_once( ABSPATH . 'wp-admin/includes/file.php' );
+			$uploadedfile = $file;
+			$upload_overrides = array( 'test_form' => false );
+			$movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
+			if ( $movefile ):
+			    return $movefile;
+			else:
+			    return false;
+			endif;
+
 		}
 	
 	}

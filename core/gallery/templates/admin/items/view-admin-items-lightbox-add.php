@@ -38,8 +38,8 @@
 	
 	<!-- PAGE CONTENT -->
 	
-	<form method="post" action="" id="form-materia">
-		<input type="hidden" name="verify_gallery" value="add"/>
+	<form method="post" action="" id="form-materia" enctype="multipart/form-data">
+		<input type="hidden" name="verify_item" value="add"/>
 		<input type="hidden" name="parent" value="<?php echo $data['parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
@@ -52,7 +52,7 @@
 			</tr>
 			<tr>
 				<td><span class="label">Imagen de Destaque:</span></td>
-				<td><input type="file" id="post_excerpt" name="post_excerpt" maxlength="255" required/></td>
+				<td><input type="file" id="image" name="image" maxlength="255" required/></td>
 			</tr>
 			<tr>
 				<td colspan="3">
