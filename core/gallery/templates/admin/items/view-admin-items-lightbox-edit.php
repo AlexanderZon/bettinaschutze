@@ -42,7 +42,8 @@
 	
 	<form method="post" action="" id="form-materia">
 		<input type="hidden" name="verify_item" value="edit"/>
-		<input type="hidden" name="parent" value="<?php echo $_GET['parent']; ?>"/>
+		<input type="hidden" name="ID" value="<?php echo $_GET['ID']; ?>"/>
+		<input type="hidden" name="parent" value="<?php echo $item['post_parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
 				<td><span class="label">Título del Ítem:</span></td>

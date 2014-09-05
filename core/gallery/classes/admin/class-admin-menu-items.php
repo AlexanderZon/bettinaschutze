@@ -111,6 +111,7 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 					$item = $gldb->getItem($data['ID']);
 						
 					$item['post_title'] = $data['post_title'];
+					$item['post_content'] = $data['post_content'];
 
 					$id = $gldb->updateItem($item);
 					
