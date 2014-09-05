@@ -124,7 +124,7 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 					
 				endif;
 		
-				$this->autoload('view_admin_item_lightbox_edit');
+				$this->autoload('view_admin_items_lightbox_edit');
 
 			endif;
 
