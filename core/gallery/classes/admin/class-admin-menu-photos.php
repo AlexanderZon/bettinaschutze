@@ -71,8 +71,71 @@ class ClassAdminMenuPhotos extends ClassAdminMenuParent{
 		}
 		
 	public function page_photo_lightbox_edit( $atts ){
+
+		global $gldb;
+
+		if(isset($_GET['ID']) AND $_GET['ID'] != ''):
+
+			$data = $_GET;
+
+			if(isset($_GET['action']) AND $_GET['action'] == 'hide'):
+
+				$id = $gldb->untrashPhoto($data['ID']);
+
+				if($id):
+					$msg = 'photo_oculted';
+				else:
+					$msg = 'photo_oculted_err';
+				endif;
+
+				wp_redirect( '?page=page_photo_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'show'):
+
+				$id = $gldb->publishPhoto($data['ID']);
+
+				if($id):
+					$msg = 'photo_visible';
+				else:
+					$msg = 'photo_visible_err';
+				endif;
+
+				wp_redirect( '?page=page_photo_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'edit'):
+
+				if($_POST['verify_item'] == 'edit'):
+				
+					$data = $_POST;
+
+					$photo = $gldb->getPhoto($data['ID']);
+						
+					$photo['post_title'] = $data['post_title'];
+					$photo['post_content'] = $data['post_content'];
+
+					$id = $gldb->updatePhoto($photo);
+					
+					if($id != 0):
+						$msg = 'photo_update';
+					else:
+						$msg = 'photo_update_err';
+					endif;
+
+					wp_redirect( '?page=page_photo_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+					
+				endif;
 		
-		$this->autoload('view_admin_photos_lightbox_edit');
+				$this->autoload('view_admin_items_lightbox_edit');
+
+			endif;
+
+		else:
+
+		wp_redirect( '?page=page_photo_lightbox&parent='.$data['parent'].'' ); exit;
+
+		endif;
+		
+		//$this->autoload('view_admin_photos_lightbox_edit');
 		
 		}
 				
