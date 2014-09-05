@@ -71,8 +71,68 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 		}
 		
 	public function page_item_lightbox_edit( $atts ){
+
+		global $gldb;
+
+		if(isset($_GET['ID']) AND $_GET['ID'] != ''):
+
+			$data = $_GET;
+
+			if(isset($_GET['action']) AND $_GET['action'] == 'hide'):
+
+				$id = $gldb->untrashItem($data['ID']);
+
+				if($id):
+					$msg = 'item_oculted';
+				else:
+					$msg = 'item_oculted_err';
+				endif;
+
+				wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'show'):
+
+				$id = $gldb->publishItem($data['ID']);
+
+				if($id):
+					$msg = 'item_visible';
+				else:
+					$msg = 'item_visible_err';
+				endif;
+
+				wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'edit'):
+
+				if($_POST['verify_item'] == 'edit'):
+				
+					$data = $_POST;
+
+					$item = $gldb->getItem($data['ID']);
+						
+					$item['post_title'] = $data['post_title'];
+
+					$id = $gldb->updateItem($item);
+					
+					if($id != 0):
+						$msg = 'item_update';
+					else:
+						$msg = 'item_update_err';
+					endif;
+
+					wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+					
+				endif;
 		
-		$this->autoload('view_admin_items_lightbox_edit');
+				$this->autoload('view_admin_item_lightbox_edit');
+
+			endif;
+
+		else:
+
+		wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'' ); exit;
+		
+		//$this->autoload('view_admin_items_lightbox_edit');
 		
 		}
 				

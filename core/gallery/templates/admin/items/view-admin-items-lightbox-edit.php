@@ -41,7 +41,7 @@
 	<!-- PAGE CONTENT -->
 	
 	<form method="post" action="" id="form-materia">
-		<input type="hidden" name="verify_gallery" value="add"/>
+		<input type="hidden" name="verify_item" value="edit"/>
 		<input type="hidden" name="parent" value="<?php echo $_GET['parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
@@ -51,10 +51,6 @@
 			<tr>
 				<td><span class="label">Descripción:</span></td>
 				<td><textarea type="text" id="post_content" name="post_content" maxlength="255" required><?php echo $item['post_title']; ?></textarea></td>
-			</tr>
-			<tr>
-				<td><span class="label">Imagen de Destaque:</span></td>
-				<td><input type="file" id="post_excerpt" name="post_excerpt" maxlength="255" required value="<?php echo $item['post_excerpt']; ?>"/></td>
 			</tr>
 			<tr>
 				<td colspan="3">
