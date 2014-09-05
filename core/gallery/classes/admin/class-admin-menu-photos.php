@@ -22,6 +22,49 @@ class ClassAdminMenuPhotos extends ClassAdminMenuParent{
 		}
 		
 	public function page_photo_lightbox_add( $atts ){
+
+		if($_POST['verify_photo'] == 'add'):
+
+			global $gldb;
+		
+			$data = $_POST;
+
+			$file = $_FILES['image'];
+
+			$parent = $data['parent'];
+				
+			$photo = array(
+				'post_title' => $data['post_title'],
+				'post_content' => $data['post_content']
+				);
+			
+			$id = $gldb->addPhoto( $parent, $photo );
+
+			if($id):
+
+				$attachment = $this->insert_attachment( $file, $id );
+
+				$photo = $gldb->getPhoto($id);
+
+				$photo['post_excerpt'] = $attachment;
+
+				$photo = $gldb->updatePhoto($photo);
+
+				if($attachment):
+					$msg = 'photo_add';
+				else:
+					$msg = 'photo_add_attach_err';
+				endif;
+
+			else:
+
+				$msg = 'photo_add_err';
+
+			endif;
+
+			wp_redirect( '?page=page_photo_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+			
+		endif;
 		
 		$this->autoload('view_admin_photos_lightbox_add');
 		
@@ -37,6 +80,43 @@ class ClassAdminMenuPhotos extends ClassAdminMenuParent{
 		
 		$this->autoload('view_admin_photos_lightbox_delete');
 		
+		}
+
+	public function insert_attachment( $file, $parent ){
+
+		$filedata = $this->upload_image_from_form( $file );
+
+		$attachment = array(
+			'guid'           => $filedata['url'], 
+			'post_mime_type' => $filedata['type'],
+			'post_title'     => '',
+			'post_content'   => '',
+			'post_status'    => 'inherit'
+		);
+
+		$attach_id = wp_insert_attachment( $attachment, $filedata['file'], $parent );
+
+		require_once( ABSPATH . 'wp-admin/includes/image.php' );
+
+		$attach_data = wp_generate_attachment_metadata( $attach_id, $filedata['file'] );
+		wp_update_attachment_metadata( $attach_id, $attach_data );
+
+		return $attach_id;
+
+	}
+
+	public function upload_image_from_form( $file ){
+
+		if ( ! function_exists( 'wp_handle_upload' ) ) require_once( ABSPATH . 'wp-admin/includes/file.php' );
+			$uploadedfile = $file;
+			$upload_overrides = array( 'test_form' => false );
+			$movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
+			if ( !isset($movefile['error']) ):
+			    return $movefile;
+			else:
+			    return false;
+			endif;
+
 		}
 	
 	}
