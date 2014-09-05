@@ -157,7 +157,7 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 					$msg = 'item_delete_err';
 				endif;
 
-				wp_redirect( '?page=page_items_lightbox_delete&parent='.$data['parent'].'&msg='.$msg ); exit;
+				wp_redirect( '?page=page_item_lightbox_delete&parent='.$data['parent'].'&msg='.$msg ); exit;
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'untrash'):
 
@@ -169,7 +169,7 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 					$msg = 'item_untrash_err';
 				endif;
 
-				wp_redirect( '?page=page_items_lightbox_delete&parent='.$data['parent'].'&msg='.$msg ); exit;
+				wp_redirect( '?page=page_item_lightbox_delete&parent='.$data['parent'].'&msg='.$msg ); exit;
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'trash'):
 
@@ -181,11 +181,11 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 					$msg = 'item_trash_err';
 				endif;
 
-				wp_redirect( '?page=page_items_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+				wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
 
 			elseif(!isset($_GET['action'])):
 		
-			$this->autoload('view_admin_item_lightbox_delete');
+			$this->autoload('view_admin_items_lightbox_delete');
 
 			endif;
 
