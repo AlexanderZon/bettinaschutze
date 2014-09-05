@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Items Lightbox <a href="admin.php?page=page_item_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_item_lightbox_delete" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver a Galería</a></h2>
+    <h2>Items Lightbox <a href="admin.php?page=page_item_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_item_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver a Galería</a></h2>
     
     <?php 
 
