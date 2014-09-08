@@ -25,7 +25,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
-			console.log('Got this from the server: ' + response);
+			console.log(response);
 		});
 	})
 	$('body').append('<div class="fs_gallery_wrapper"><ul class="fs_gallery_container '+fs_options.fx+'"/><a href="javascript:void(0)" class="fs_slider_prev"/><a href="javascript:void(0)" class="fs_slider_next"/><div class="fs_title_wrapper '+set_state+'"><h1 class="fs_title"></h1><h6 class="fs_descr"></h6></div><div class="fs_thmb_viewport '+set_state+'"><div class="fs_thmb_wrapper" style="display:none"><ul class="fs_thmb_list" style="width:'+fs_options.slides.length*88+'px"/></div></div>');
