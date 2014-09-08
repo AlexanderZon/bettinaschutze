@@ -24,6 +24,7 @@ if (!function_exists('css_js_register')) {
 		#JS
 		wp_enqueue_script("jquery");
         wp_enqueue_script(array("jquery-ui-core"));
+		wp_enqueue_script('admin_js', get_template_directory_uri() . '/core/admin/js/fancybox/jquery.fancybox.js');
         wp_enqueue_script('run', get_template_directory_uri() . '/js/run.js');
         wp_enqueue_script('fs_gllaery', get_template_directory_uri() . '/js/fs_gllaery.js');
         wp_enqueue_script('theme', get_template_directory_uri() . '/js/theme.js', array(), false, true);
@@ -48,7 +49,6 @@ function admin_init()
 
 	#JS (MAIN)
 	wp_enqueue_script('admin_js', get_template_directory_uri() . '/core/admin/js/admin.js');
-	wp_enqueue_script('admin_js', get_template_directory_uri() . '/core/admin/js/fancybox/jquery.fancybox.js');
 	wp_enqueue_script('ajaxupload_js', get_template_directory_uri() . '/core/admin/js/ajaxupload.js');
 	wp_enqueue_script('colorpicker_js', get_template_directory_uri() . '/core/admin/js/colorpicker.js');
 	wp_enqueue_script('gallery_js', get_template_directory_uri() . '/core/admin/js/gallery.js');
