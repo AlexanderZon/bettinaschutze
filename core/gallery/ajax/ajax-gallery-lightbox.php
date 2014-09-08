@@ -6,15 +6,8 @@
 
 	global $wpdb, $gldb;
 
-	$fivesdrafts = $wpdb->get_results( 
-		"
-		SELECT ID, post_title 
-		FROM $wpdb->posts
-		WHERE post_status = 'draft' 
-		"
-	);
+	$data = $_POST;
 
-	foreach ( $fivesdrafts as $fivesdraft ) 
-	{
-		echo $fivesdraft->post_title;
-	}
+	$gallery = $gldb->getGallery($data['id']);
+	
+	echo $gallery->post_title;

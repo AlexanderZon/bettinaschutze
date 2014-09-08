@@ -20,8 +20,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	}
 	$(document).on('ready', function(){
 		var data = {
-			'action': 'my_action',
-			'whatever': 1234
+			'id': '312'
 		};
 
 		// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
