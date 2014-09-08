@@ -21,14 +21,13 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		};
 		var html = '';
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
+
+			console.log(response);
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				console.log(response.items);
-				console.log(response.items.0);
 				console.log(response.items.i);
 				console.log(item(response.items.i));
 			}
-
-			//console.log(response);
 		});
 	}
 	//Set Variables
