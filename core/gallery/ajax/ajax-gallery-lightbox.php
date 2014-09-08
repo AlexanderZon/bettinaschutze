@@ -22,4 +22,6 @@
 	
 	echo $gallery->post_title;
 
+	var_dump($gallery);
+
 	echo "Test<br>";
