@@ -13,7 +13,6 @@
 		SELECT ID, post_title 
 		FROM $wpdb->posts
 		WHERE post_status = 'draft' 
-			AND post_author = 5
 		"
 	);
 
