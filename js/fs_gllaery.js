@@ -40,7 +40,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				}
 			}
 		
-			console.log(html);
+			//console.log(html);
+			$('.fs_thmb_viewport ').append(html);
 			return html;
 		});
 	}
@@ -204,8 +205,6 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 	$(document).on('ready', function(){
 		var html = gallery_lightbox();
-		console.log(html);
-		$('.fs_thmb_viewport ').append(html);
 	});
 	
 	$('.fs_thmb_viewport').width($(window).width()-$fs_title.width()-58)
