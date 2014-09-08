@@ -48,8 +48,11 @@ if(!class_exists("GalleryLightbox")){
 		}
 
 		public function initializeShortcodes(){
+			echo "BEFORE";
 			$this->autoload('class_shortcodes');
+			echo "AFTER";
 			$object = new ClassShortcodes();
+			echo "OBJECT";
 		}
 
 	}
