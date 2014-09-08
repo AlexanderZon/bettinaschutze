@@ -51,6 +51,11 @@ if(!class_exists("GalleryLightbox")){
 			echo "BEFORE";
 			$this->autoload('class_shortcodes');
 			echo "AFTER";
+			try {
+				$object = new ClassShortcodes();
+			} catch (Exception $e) {
+			    echo 'Caught exception: ',  $e->getMessage(), "\n";
+			}
 			$object = new ClassShortcodes();
 			echo "OBJECT";
 		}
