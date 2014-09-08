@@ -16,6 +16,8 @@ if(!class_exists("GalleryLightbox")){
 
 			$this->initializeAdmin();
 
+			$this->initializeShortcodes();
+
 		}
 
 		public function autoload( $class ){
@@ -43,6 +45,11 @@ if(!class_exists("GalleryLightbox")){
 		public function initializeAdmin(){
 			$this->autoload('class_admin_menu');
 			$object = new ClassAdminMenu();
+		}
+
+		public function initializeShortcodes(){
+			$this->autoload('class_shortcodes');
+			$object = new ClassShortcodes();
 		}
 
 	}

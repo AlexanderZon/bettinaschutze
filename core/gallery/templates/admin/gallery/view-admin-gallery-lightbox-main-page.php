@@ -52,6 +52,7 @@
                 'post_title' => 'Título',
                 'post_status' => 'Visibilidad',
                 'post_excerpt' => 'Shortcode',
+                'comment_count' => 'Cantidad de Ítems',
                 'post_date' => 'Fecha de Creación'
                 );
             
@@ -113,6 +114,7 @@
                 'post_title' => array( 'post_title', false ),
                 'post_status' => array( 'post_status', false),
                 'post_excerpt' => array( 'post_excerpt', false),
+                'comment_count' => array( 'comment_count', false),
                 'post_date' => array( 'post_date', false)
                 );
                 
@@ -139,6 +141,7 @@
                 case 'post_title':
                 case 'post_status':
                 case 'post_excerpt':
+                case 'comment_count':
                 case 'post_date':
                     return $item[ $column_name ];
                 default:
@@ -166,6 +169,16 @@
             }
             
         public function column_post_excerpt( $item ){
+            
+            return sprintf( '<em>[gallery_lightbox id="%1$s"]</em>', $item['ID']);
+            
+            }
+            
+        public function column_comment_count( $item ){
+
+            global $gldb;
+
+            $items = $gldb->getItems( $item['ID'], 'all' );
             
             return sprintf( '<em>[gallery_lightbox id="%1$s"]</em>', $item['ID']);
             
