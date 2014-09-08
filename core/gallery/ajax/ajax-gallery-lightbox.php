@@ -10,4 +10,8 @@
 
 	$gallery = $gldb->getGallery($data['id']);
 
+	echo $gallery->post_title;
+
+	echo $gallery['post_title'];
+
 	var_dump($gallery);
