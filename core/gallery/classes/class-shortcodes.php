@@ -32,6 +32,8 @@ class ClassShortcodes{
 	public function gallery_lightbox( $atts ){
 		
 		echo "Hola Mundo %ESTUDIANTE_RECORD%";
+
+		die("Listo");
 		
 		}
 		
