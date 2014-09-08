@@ -12,7 +12,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	var gallery_lightbox = function(){
 
 		var item = function(item){
-			return '<a id="fancybox_'+item.id+'" href="'+item.src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" /></a>';
+			console.log(item);
+			return '<a id="fancybox_'+item.ID+'" href="'+item.src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" /></a>';
 		}
 
 		var data = {
