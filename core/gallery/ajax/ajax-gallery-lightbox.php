@@ -20,11 +20,10 @@
 
 	$response['items'] = $items;
 
-	foreach($response['items'] as $item):
-		$item['unique'] = '23498535';
+	for( $i = 0 ; $i < count($response['items']) ; $i++ ):
 		$photos = $gldb->getPhotos($item['ID'], 'publish');
-		$response['items'][$item]['photos'] = $photos;
-	endforeach;
+		$response['items'][$i]['photos'] = $photos;
+	endfor;
 
 	header('Content-Type: application/json');
 	echo json_encode($response);
