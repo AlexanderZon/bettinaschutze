@@ -202,7 +202,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	}
 
 	$(document).on('ready', function(){
-		gallery_lightbox();
+		var html = gallery_lightbox();
+		$('.fs_thmb_viewport ').append(html);
 	});
 	
 	$('.fs_thmb_viewport').width($(window).width()-$fs_title.width()-58)
