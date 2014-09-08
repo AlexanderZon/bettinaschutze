@@ -28,6 +28,7 @@ if(!class_exists("GalleryLightbox")){
 
 				$path = $this->plugin_path().'/classes/';
 				$file = str_replace( '_', '-', $class ) . '.php' ;
+				echo $path . $file;
 				if( is_readable( $path . $file ) ){
 					include_once( $path . $file );
 					return;
