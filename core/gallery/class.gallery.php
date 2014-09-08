@@ -24,11 +24,10 @@ if(!class_exists("GalleryLightbox")){
 
 			$class = strtolower( $class );
 
-			if( strpos( $class, 'class_admin' ) === 0 ){
+			if( strpos( $class, 'class_' ) === 0 ){
 
 				$path = $this->plugin_path().'/classes/';
 				$file = str_replace( '_', '-', $class ) . '.php' ;
-				echo $path . $file;
 				if( is_readable( $path . $file ) ){
 					include_once( $path . $file );
 					return;
