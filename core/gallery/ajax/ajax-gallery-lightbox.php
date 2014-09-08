@@ -8,10 +8,20 @@
 
 	$data = $_POST;
 
+	$response = null;
+
 	$gallery = $gldb->getGallery($data['id']);
 
-	echo $gallery->post_title;
+	$items = $gldb($gallery['ID'], 'publish');
 
-	echo $gallery['post_title'];
+	$response = $gallery;
 
-	var_dump($gallery);
+	$response['items'] = $items;
+
+	foreach($response['items'] as $item):
+		$photos = $gldb->getPhotos($item['ID'], 'publish');
+		$item['photos'] = $photos;
+	endforeach;
+
+	header('Content-Type: application/json');
+	echo json_encode($response);
