@@ -9,5 +9,5 @@
 	$data = $_POST;
 
 	$gallery = $gldb->getGallery($data['id']);
-	
-	echo $gallery->post_title;
+
+	var_dump($gallery);
