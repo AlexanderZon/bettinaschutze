@@ -31,7 +31,7 @@ class ClassShortcodes{
 		
 	public function gallery_lightbox( $atts ){
 		
-		echo "Hola Mundo %ESTUDIANTE_RECORD%";
+		$this->autoload('shortcode_electivas');
 
 		die("Listo");
 		
