@@ -20,13 +20,13 @@ class ClassShortcodes{
 	
 	public function __construct(){
 		
-		if ( function_exists( "__autoload" ) ) {
+		/*if ( function_exists( "__autoload" ) ) {
 			spl_autoload_register( "__autoload" );
 			}
 		spl_autoload_register( array( $this, 'autoload' ) );
 		
 		add_shortcode( 'gallery_lightbox' , array( $this , 'gallery_lightbox' ) );
-		
+		*/
 		}
 		
 	public function gallery_lightbox( $atts ){

@@ -16,7 +16,7 @@ if(!class_exists("GalleryLightbox")){
 
 			$this->initializeAdmin();
 
-			//$this->initializeShortcodes();
+			$this->initializeShortcodes();
 
 		}
 
