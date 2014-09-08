@@ -22,6 +22,8 @@
 	
 	echo $gallery->post_title;
 
+	var_dump($gldb);
+
 	var_dump($gallery);
 
 	echo "Test<br>";
