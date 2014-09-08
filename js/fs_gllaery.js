@@ -43,7 +43,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			$('.fs_thmb_viewport ').append(html);
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
-				$('.fancybox_'+response.items[i].ID)..fancybox({
+				$('.fancybox_'+response.items[i].ID).fancybox({
 		          	helpers: {
 		              	title : {
 		                  	type : 'float'
