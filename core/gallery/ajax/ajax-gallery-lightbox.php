@@ -22,8 +22,9 @@
 
 	foreach($response['items'] as $item):
 		$photos = $gldb->getPhotos($item['ID'], 'publish');
-		$item['photos'] = $photos;
+		$response['items'][$item]['photos'] = $photos;
 	endforeach;
 
 	header('Content-Type: application/json');
 	echo json_encode($response);
+
