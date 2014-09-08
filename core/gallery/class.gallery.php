@@ -32,6 +32,9 @@ if(!class_exists("GalleryLightbox")){
 					include_once( $path . $file );
 					return;
 				}
+				else{
+					echo "IS NOT READABLE ".$path . $file;
+				}
 
 			}
 
