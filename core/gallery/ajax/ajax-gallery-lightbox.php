@@ -21,8 +21,10 @@
 	$response['items'] = $items;
 
 	for( $i = 0 ; $i < count($response['items']) ; $i++ ):
+		$src = wp_get_attachment_thumb_url($item['post_excerpt']);
 		$photos = $gldb->getPhotos($response['items'][$i]['ID'], 'publish');
 		$response['items'][$i]['photos'] = $photos;
+		$response['items'][$i]['src'] = $src;
 	endfor;
 
 	header('Content-Type: application/json');
