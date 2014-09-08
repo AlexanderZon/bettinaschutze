@@ -14,7 +14,7 @@
 
 	$gallery = $gldb->getGallery(312);
 
-	$items = $gldb($gallery['ID'], 'publish');
+	$items = $gldb->getItems($gallery['ID'], 'publish');
 
 	$response = $gallery;
 
