@@ -19,19 +19,15 @@ class ClassShortcodes{
 	 */
 	
 	public function __construct(){
-
-		echo "Hola Mundo";
 		
-		/*if ( function_exists( "__autoload" ) ) {
+		if ( function_exists( "__autoload" ) ) {
 			spl_autoload_register( "__autoload" );
 			}
 		spl_autoload_register( array( $this, 'autoload' ) );
 		
 		add_shortcode( 'gallery_lightbox' , array( $this , 'gallery_lightbox' ) );
-		*/
+		
 		}
-
-	/*
 		
 	public function gallery_lightbox( $atts ){
 		
@@ -65,7 +61,7 @@ class ClassShortcodes{
 	 * @param string $class
  	 * @return string
 	 */
-	/*	
+		
 	public function select_default_folder( ){
 		
 		global $elearning;
@@ -79,7 +75,7 @@ class ClassShortcodes{
 	 * @param string $class
  	 * @return void
 	 */
-	/*
+	
 	public function autoload( $class ){
 		
 		$class = strtolower( $class );
@@ -104,11 +100,11 @@ class ClassShortcodes{
 	 * @param string $class
  	 * @return void
 	 */
-	/*
+	
 	public function template_path(){
 		
 		return plugins_url().$this->path_template;
 		
 		}
-	*/
+	
 	}
