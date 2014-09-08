@@ -1,3 +1,3 @@
 <?php
 
-	echo "Hola Mundo";
+	require_once( "../../../../../../../wp-config.php" );
