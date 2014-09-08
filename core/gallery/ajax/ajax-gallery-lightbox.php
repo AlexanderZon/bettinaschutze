@@ -21,6 +21,7 @@
 	$response['items'] = $items;
 
 	foreach($response['items'] as $item):
+		$response['items'][$item]['unique'] = '23498535';
 		$photos = $gldb->getPhotos($item['ID'], 'publish');
 		$response['items'][$item]['photos'] = $photos;
 	endforeach;
