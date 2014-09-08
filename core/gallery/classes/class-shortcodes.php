@@ -30,8 +30,12 @@ class ClassShortcodes{
 		}
 		
 	public function gallery_lightbox( $atts ){
+
+		?>
 		
-		$this->autoload('shortcode_electivas');
+		<h1>Hola Mundo</h1>
+
+		<?php
 
 		die("Listo");
 		
