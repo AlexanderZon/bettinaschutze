@@ -10,7 +10,9 @@
 
 	$response = null;
 
-	$gallery = $gldb->getGallery($data['id']);
+	//$gallery = $gldb->getGallery($data['id']);
+
+	$gallery = $gldb->getGallery(312);
 
 	$items = $gldb($gallery['ID'], 'publish');
 
