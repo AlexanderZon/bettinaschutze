@@ -29,9 +29,10 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 			console.log(response);
 			for(var i = 0 ; i < response.items.length ; i++ ){
+				console.log(response.items[i]);
 				console.log(item(response.items[i]));
-				for(var j = 0 ; j < resposre.items[i].photos.length ; j++ ){
-					console.log(photo(response.items[i].photos[j]));
+				for(var j = 0 ; j < response.items[i].photos.length ; j++ ){
+					console.log( photo( response.items[i].photos[j] ) );
 				}
 			}
 		});
