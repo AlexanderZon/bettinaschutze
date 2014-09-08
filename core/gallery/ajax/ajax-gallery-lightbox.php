@@ -21,7 +21,7 @@
 	$response['items'] = $items;
 
 	for( $i = 0 ; $i < count($response['items']) ; $i++ ):
-		$photos = $gldb->getPhotos($item['ID'], 'publish');
+		$photos = $gldb->getPhotos($response['items'][$i]['ID'], 'publish');
 		$response['items'][$i]['photos'] = $photos;
 	endfor;
 
