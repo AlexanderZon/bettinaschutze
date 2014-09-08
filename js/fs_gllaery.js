@@ -26,6 +26,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		};
 
 		var html = '';
+
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
 
 			console.log(response);
@@ -203,6 +204,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 	$(document).on('ready', function(){
 		var html = gallery_lightbox();
+		console.log(html);
 		$('.fs_thmb_viewport ').append(html);
 	});
 	
