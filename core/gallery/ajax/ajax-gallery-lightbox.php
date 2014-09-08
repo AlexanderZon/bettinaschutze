@@ -4,10 +4,22 @@
 
 	require_once( "../class.db.php" );
 
+	echo "Test<br>";
+
 	global $wpdb, $gldb;
+
+	echo "Test<br>";
+
+	echo "Test<br>";
 
 	$data = $_POST;
 
+	echo "Test<br>";
+
 	$gallery = $gldb->getGallery($data['id']);
+
+	echo "Test<br>";
 	
 	echo $gallery->post_title;
+
+	echo "Test<br>";
