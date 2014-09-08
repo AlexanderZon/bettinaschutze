@@ -8,7 +8,7 @@
 
 	global $wpdb, $gldb;
 
-	var_dump($_POST);
+	var_dump($_REQUEST);
 
 	echo "Test<br>";
 
