@@ -2,11 +2,9 @@
 
 	require_once( "../../../../../../wp-config.php" );
 
-	echo "Require";
+	require_once( "../class.db.php" );
 
-	global $wpdb;
-
-	echo "Global";
+	global $wpdb, $gldb;
 
 	$fivesdrafts = $wpdb->get_results( 
 		"
@@ -16,11 +14,7 @@
 		"
 	);
 
-	echo "Results";
-
 	foreach ( $fivesdrafts as $fivesdraft ) 
 	{
 		echo $fivesdraft->post_title;
 	}
-
-	echo "Foreach";

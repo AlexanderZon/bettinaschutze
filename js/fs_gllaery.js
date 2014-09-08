@@ -18,7 +18,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	} else {
 		set_state = "";
 	}
-	$(document)on('ready', function(){
+	$(document).on('ready', function(){
 		var data = {
 			'action': 'my_action',
 			'whatever': 1234
