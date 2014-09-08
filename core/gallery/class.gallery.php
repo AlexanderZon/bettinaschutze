@@ -18,6 +18,8 @@ if(!class_exists("GalleryLightbox")){
 
 			$this->initializeShortcodes();
 
+			$this->initializeAjax();
+
 		}
 
 		public function autoload( $class ){
@@ -53,6 +55,11 @@ if(!class_exists("GalleryLightbox")){
 		public function initializeShortcodes(){
 			$this->autoload('class_shortcodes');
 			$object = new ClassShortcodes();
+		}
+
+		public function initializeAjax(){
+			$this->autoload('class_ajax');
+			$object = new ClassAjax();
 		}
 
 	}
