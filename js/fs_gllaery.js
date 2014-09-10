@@ -91,7 +91,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var video = function(video){
 			console.log(video);
-			return '<a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a>';
+			return '<a id="fancybox_'+video.ID+'" class="fancybox-media" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" height="80"/></a>';
 		}
 
 		var data = {
@@ -126,8 +126,14 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		          	}
 		      	});
 			}
-
-			for(var i = 0 ; i < response.videos.length ; i++ ){
+			$('.fancybox-media').fancybox({
+	          	openEffect  : 'none',
+				closeEffect : 'none',
+				helpers : {
+					media : {}
+				}
+	      	});
+			/*for(var i = 0 ; i < response.videos.length ; i++ ){
 				$('.fancybox_'+response.videos[i].ID).fancybox({
 		          	helpers: {
 		              	title : {
@@ -135,7 +141,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		              	}
 		          	}
 		      	});
-			}
+			}*/
 
 			return html;
 		});
@@ -306,6 +312,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		e.preventDefault();
 		console.log("Click");
 		var html = video_lightbox();
+	});
+		
+	$('#menu-item-48').click(function(e){
+		e.preventDefault();
+		console.log("Click");
+		var html = gallery_lightbox();
 	});
 	
 	$('.fs_thmb_viewport').width($(window).width()-$fs_title.width()-58)
