@@ -56,7 +56,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	}
 
 	var video_lightbox = function(){
-
+		console.log("Video click");
 		var item = function(item){
 			//console.log(item);
 			return '<a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+item.src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" height="80"/></a>';
@@ -75,17 +75,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
 
-			//console.log(response);
 			for(var i = 0 ; i < response.items.length ; i++ ){
-				//console.log(response.items[i]);
-				//console.log(item(response.items[i]));
 				html += item(response.items[i]);
 				for(var j = 0 ; j < response.items[i].photos.length ; j++ ){
 					html += photo( response.items[i].photos[j],  response.items[i].ID);
-					//console.log( photo( response.items[i].photos[j] ) );
 				}
 			}
-			//console.log(html);
 			$('.fs_thmb_viewport ').append(html);
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
