@@ -58,8 +58,7 @@
             $columns = array(
                 'cb' => '<input type="checkbox" />',
                 'post_title' => 'Título',
-                'post_content' => 'Descripción',
-                'post_name' => 'URL',
+                'post_content' => 'URL',
                 'post_excerpt' => 'Imagen',
                 'post_status' => 'Visibilidad',
                 'post_parent' => 'Pertenece a',
@@ -123,7 +122,6 @@
             $sortable_columns = array(
                 'post_title' => array( 'post_title', false ),
                 'post_content' => array( 'post_content', false ),
-                'post_name' => array( 'post_name', false ),
                 'post_excerpt' => array( 'post_excerpt', false ),
                 'post_status' => array( 'post_status', false),
                 'post_parent' => array( 'post_parent', false),
@@ -152,7 +150,6 @@
                 
                 case 'post_title':
                 case 'post_content':
-                case 'post_name':
                 case 'post_excerpt':
                 case 'post_status':
                 case 'post_parent':
@@ -179,12 +176,6 @@
         public function column_post_content( $item ){
             
             return sprintf( '<span class="moment">%1$s</span>', $item['post_content']);
-            
-            }
-            
-        public function column_post_name( $item ){
-            
-            return sprintf( '<span class="moment">%1$s</span>', $item['post_name']);
             
             }
             
