@@ -91,7 +91,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var video = function(video){
 			console.log(video);
-			return '<a id="fancybox_'+video.ID+'" class="fancybox-media" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" height="80"/></a>';
+			return '<a class="fancybox-media" href="'+video.post_content+'"><img src="'+video.src+'" alt="" height="80"/></a>';
 		}
 
 		var data = {
