@@ -23,7 +23,7 @@
 
     ?>
 
-    <h2>Photos Lightbox <a href="admin.php?page=page_video_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_video_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver a Galería</a></h2>
+    <h2>Videos Lightbox <a href="admin.php?page=page_video_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_video_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver a Galería</a></h2>
     
     <?php 
 

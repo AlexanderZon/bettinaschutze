@@ -3,7 +3,7 @@
 	# CODE_ERR: MOSTRAR ERROR DE DUPLICADO DE CÓDIGO DE MATERIA
 	global $gldb;
 
-	$item = $gldb->getItem($_GET['ID']);
+	$video = $gldb->getVideo($_GET['ID']);
 
 ?>
 
@@ -35,23 +35,39 @@
 
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Editar Items <a href="admin.php?page=page_photo_lightbox&parent=<?php echo $item['post_parent']; ?>" class="add-new-h2">Volver</a></h2>
+	<h2>Editar Items <a href="admin.php?page=page_photo_lightbox&parent=<?php echo $video['post_parent']; ?>" class="add-new-h2">Volver</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
 	
-	<form method="post" action="" id="form-materia">
-		<input type="hidden" name="verify_photo" value="edit"/>
-		<input type="hidden" name="ID" value="<?php echo $_GET['ID']; ?>"/>
-		<input type="hidden" name="parent" value="<?php echo $item['post_parent']; ?>"/>
+	<form method="post" action="" id="form-materia" enctype="multipart/form-data">
+		<input type="hidden" name="verify_video" value="add"/>
+		<input type="hidden" name="parent" value="<?php echo $data['parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
-				<td><span class="label">Título del Ítem:</span></td>
-				<td><input type="text" id="post_title" name="post_title" maxlength="255" required value="<?php echo $item['post_title']; ?>"/></td>
+				<td><span class="label">Título del Video:</span></td>
+				<td><input type="text" id="post_title" name="post_title" maxlength="255" required /></td>
 			</tr>
 			<tr>
 				<td><span class="label">Descripción:</span></td>
-				<td><textarea type="text" id="post_content" name="post_content" maxlength="255" required><?php echo $item['post_content']; ?></textarea></td>
+				<td><textarea type="text" id="post_content" name="post_content" maxlength="255" required></textarea></td>
+			</tr>
+			<tr>
+				<td><span class="label">Procedencia:</span></td>
+				<td>
+					<select name="post_name">
+						<option value="youtube">YouTube</option>
+						<option value="vimeo">Vimeo</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><span class="label">Indique la URL del Video:</span></td>
+				<td><input type="text" id="url" name="url" maxlength="255" required/></td>
+			</tr>
+			<tr>
+				<td><span class="label">Indique la Imagen de Destaque del Video:</span></td>
+				<td><input type="file" id="image" name="image" maxlength="255" required/></td>
 			</tr>
 			<tr>
 				<td colspan="3">

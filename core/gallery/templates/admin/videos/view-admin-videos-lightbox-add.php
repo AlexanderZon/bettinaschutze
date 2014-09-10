@@ -33,13 +33,13 @@
 
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Añadir Photos <a href="admin.php?page=page_photo_lightbox&parent=<?php echo $data['parent']; ?>" class="add-new-h2">Volver</a></h2>
+	<h2>Añadir Video <a href="admin.php?page=page_video_lightbox&parent=<?php echo $data['parent']; ?>" class="add-new-h2">Volver</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
 	
 	<form method="post" action="" id="form-materia" enctype="multipart/form-data">
-		<input type="hidden" name="verify_photo" value="add"/>
+		<input type="hidden" name="verify_video" value="add"/>
 		<input type="hidden" name="parent" value="<?php echo $data['parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
@@ -53,7 +53,7 @@
 			<tr>
 				<td><span class="label">Procedencia:</span></td>
 				<td>
-					<select name="post_name">
+					<select name="pinged">
 						<option value="youtube">YouTube</option>
 						<option value="vimeo">Vimeo</option>
 					</select>
@@ -61,7 +61,7 @@
 			</tr>
 			<tr>
 				<td><span class="label">Indique la URL del Video:</span></td>
-				<td><input type="text" id="url" name="url" maxlength="255" required/></td>
+				<td><input type="text" id="url" name="post_name" maxlength="255" required/></td>
 			</tr>
 			<tr>
 				<td><span class="label">Indique la Imagen de Destaque del Video:</span></td>

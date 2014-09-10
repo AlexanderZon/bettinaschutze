@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Photos Lightbox (Papelera) <a href="admin.php?page=page_video_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Volver</a></h2>
+    <h2>Videos Lightbox (Papelera) <a href="admin.php?page=page_video_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Volver</a></h2>
     
     <?php 
 

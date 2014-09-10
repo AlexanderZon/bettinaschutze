@@ -36,7 +36,7 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 			$video = array(
 				'post_title' => $data['post_title'],
 				'post_content' => $data['post_content'],
-				'post_excerpt' => $data['post_excerpt'],
+				'pinged' => $data['pinged'],
 				'post_name' => $date['post_name']
 				);
 			
@@ -44,7 +44,19 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 
 			if($id):
 
-				$msg = 'video_add';
+				$attachment = $this->insert_attachment( $file, $id );
+
+				$video = $gldb->getItem($id);
+
+				$video['post_excerpt'] = $attachment;
+
+				$video = $gldb->updateItem($video);
+
+				if($attachment):
+					$msg = 'video_add';
+				else:
+					$msg = 'video_add_attach_err';
+				endif;
 
 			else:
 
