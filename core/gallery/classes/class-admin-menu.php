@@ -28,7 +28,9 @@ class ClassAdminMenu extends ClassParent{
 		 
 		add_action( 'admin_menu' , array( $this , 'menu_items' ) );
 		 
-		add_action( 'admin_menu' , array( $this , 'menu_photos' ) );		
+		add_action( 'admin_menu' , array( $this , 'menu_photos' ) );
+		 
+		add_action( 'admin_menu' , array( $this , 'menu_videos' ) );		
 		 
 		}
 	
