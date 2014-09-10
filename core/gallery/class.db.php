@@ -905,6 +905,8 @@ class GalleryLightboxDB{
 	 * @param integer $id
 	 * @return intener || false
 	 */
+
+	
 		
 	public function trashVideo( $id ){
 
