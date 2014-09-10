@@ -40,7 +40,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				}
 			}
 			//console.log(html);
-			$('.fs_thmb_viewport ').append(html);
+			$('.fs_thmb_viewport ').html(html);
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
@@ -81,7 +81,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 					html += photo( response.items[i].photos[j],  response.items[i].ID);
 				}
 			}
-			$('.fs_thmb_viewport ').append(html);
+			$('.fs_thmb_viewport ').html(html);
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
