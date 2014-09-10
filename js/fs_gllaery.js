@@ -21,6 +21,11 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			return '<a id="fancybox_'+photo.ID+'" class="fancybox fancybox_'+ID+'" rel="fancybox_'+ID+'" href="'+photo.src+'" title="'+photo.post_title+'"><img src="'+photo.src+'" style="display:none" alt="" /></a>';
 		}
 
+		var video = function(video){
+			//console.log(video);
+			return '<a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a>';
+		}
+
 		var data = {
 			'id': 312
 		};
@@ -39,6 +44,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 					//console.log( photo( response.items[i].photos[j] ) );
 				}
 			}
+
+			for(var i = 0 ; i < response.videos.length ; i++ ){
+				//console.log(response.items[i]);
+				//console.log(item(response.items[i]));
+				html += video(response.videos[i]);
+			}
 			//console.log(html);
 			$('.fs_thmb_viewport ').html(html);
 
@@ -51,6 +62,17 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		          	}
 		      	});
 			}
+
+			for(var i = 0 ; i < response.videos.length ; i++ ){
+				$('.fancybox_'+response.videos[i].ID).fancybox({
+		          	helpers: {
+		              	title : {
+		                  	type : 'float'
+		              	}
+		          	}
+		      	});
+			}
+
 			return html;
 		});
 	}
