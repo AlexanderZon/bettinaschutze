@@ -71,6 +71,7 @@ class GalleryLightboxDB{
 		'galleries' => 'gallery',	
 		'items' => 'item',	
 		'photos' => 'photo',
+		'videos' => 'video',
 	);
 	
 	/**
@@ -110,6 +111,22 @@ class GalleryLightboxDB{
 		'item_untrash_err' => 'Hubo un error al restaurar el item',
 		'item_delete' => 'El item ha sido eliminada con éxito',
 		'item_delete_err' => 'Hubo un error al eliminar el item permanentemente',
+
+		'video_add' => 'El video ha sido creada con éxito',	
+		'video_add_err' => 'Hubo un error al crear el video',
+		'video_add_attach_err' => 'Hubo un error al crear la imagen de destaque del video',
+		'video_oculted' => 'El video se ha puesto en modo no visible',	
+		'video_oculted_err' => 'Hubo un error al ocultar el video',
+		'video_visible' => 'El video se ha puesto en modo visible',
+		'video_visible_err' => 'Hubo un error al mostrar el video',
+		'video_update' => 'Item actualizada con éxito',
+		'video_update_err' => 'Hubo un error al actualizar el video',
+		'video_trash' => 'El video ha sido enviado a la papelera de reciclaje',
+		'video_trash_err' => 'Hubo un error el enviar el video a la papelera de reciclaje',
+		'video_untrash' => 'El video ha sido restaurado con éxito',
+		'video_untrash_err' => 'Hubo un error al restaurar el video',
+		'video_delete' => 'El video ha sido eliminada con éxito',
+		'video_delete_err' => 'Hubo un error al eliminar el video permanentemente',
 
 		'photo_add' => 'La foto ha sido creada con éxito',	
 		'photo_add_err' => 'Hubo un error al crear la foto',
@@ -743,6 +760,197 @@ class GalleryLightboxDB{
 		$photo['post_status'] = 'publish';
 
 		$trash = $this->updatePhoto( $photo );
+
+		return $trash;
+
+	}
+
+	/**
+	 * Inserción de video.
+	 * @access public
+	 * @param array $asignacion
+	 * @return int
+	 */
+
+	public function addVideo( $parent, $video ){
+		
+		$bool = true;
+		
+		if ( ! isset($video['post_type']) OR $video['post_type'] == '' )
+			$video['post_type'] = $this->videos;
+		if ( ! isset($video['post_status']) OR $video['post_status'] == '' )
+			$video['post_status'] = 'draft';
+
+		$video['post_parent'] = $parent;
+		
+		$id = wp_insert_post( $video );
+			
+		if( is_int($id) ):
+			
+			return $id;
+		
+		else:
+		
+			return 0;	
+		
+		endif;
+
+	}
+
+	/**
+	 * Consulta de videos.
+	 * @access public
+	 * @param string $status (Default:all)
+	 * @return array || false
+	 */
+
+	public function getVideos( $parent, $status = 'all' ){
+	 
+		global  $wpdb;
+		
+		$band = true;
+
+		$where = " WHERE `post_type`='".$this->videos."' AND  `post_parent`='".$parent."'";
+		
+		if( $status != 'all' AND $status != 'untrash' AND $status != 'publish' AND $status != 'draft' AND $status != 'trash' )
+			$band = false;
+		else 
+			if( $status == 'all' )
+				$where .= " ";
+			elseif( $status == 'untrash' )
+				$where .= " AND `post_status`!='trash'";
+			else
+				$where .= " AND `post_status`='" . $status . "'";
+
+		if( $band ):
+			
+			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
+		
+			return $array;
+			
+		else:
+		
+			return false;				
+				
+		endif;
+
+	}
+
+	/**
+	 * Consulta de video por ID.
+	 * @access public
+	 * @param string $id
+	 * @return array || 0
+	 */
+
+	public function getVideo( $id ){
+
+		global $wpdb;
+
+		$row  = $wpdb->get_row( "SELECT * FROM $this->table WHERE `ID`='$id';", ARRAY_A );
+
+		if( $row == null ):
+			return 0;
+		else:
+			return $row;
+		endif;
+
+	}
+
+	/** 
+	 * Actualización de Video.
+	 * @access public
+	 * @param array $object
+	 * @return integer || false
+	 */
+		
+	public function updateVideo( $object ){
+
+		global $wpdb;
+
+		if( !isset($object['ID']) OR empty($object['ID']) ):
+			return 0;
+		endif;
+
+		$video = $this->getVideo( $object['ID'] );
+
+		$video = array_replace( $video, $object );
+
+		$update = $wpdb->update( $this->table, $video, array( 'ID' => $video['ID'] ) );
+
+		return $update;
+
+	}
+
+	/**
+	 * Eliminación de video.
+	 * @access public
+	 * @param integer $id
+	 * @return integer || false
+	 */
+		
+	public function deleteVideo( $id ){
+
+		global $wpdb;
+
+		$delete = $wpdb->delete( $this->table, array( 'ID' => $id ), array( '%d' ) );
+
+		return $delete;
+
+	}
+
+	/**
+	 * Envío a papelera de video.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+		
+	public function trashVideo( $id ){
+
+		$video = $this->getVideo( $id );
+
+		$video['post_status'] = 'trash';
+
+		$trash = $this->updateVideo( $video );
+
+		return $trash;
+
+	}
+
+	/**
+	 * Envío a papelera de video.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+		
+	public function untrashVideo( $id ){
+
+		$video = $this->getVideo( $id );
+
+		$video['post_status'] = 'draft';
+
+		$trash = $this->updateVideo( $video );
+
+		return $trash;
+
+	}
+
+	/**
+	 * Publicación de video.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	public function publishVideo( $id ){
+
+		$video = $this->getVideo( $id );
+
+		$video['post_status'] = 'publish';
+
+		$trash = $this->updateVideo( $video );
 
 		return $trash;
 
