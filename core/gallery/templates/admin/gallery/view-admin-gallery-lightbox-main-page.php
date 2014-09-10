@@ -183,7 +183,7 @@
 
             $items = $gldb->getItems( $item['ID'], 'all' );
             
-            return sprintf( '%1$s', count($items));
+            return sprintf( '<a href="?page=%1$s&parent=%2$s">%3$s</a>', 'page_item_lightbox', $item['ID'], count($items));
             
             }
             
@@ -193,7 +193,7 @@
 
             $videos = $gldb->getVideos( $item['ID'], 'all' );
             
-            return sprintf( '%1$s', count($videos));
+            return sprintf( '<a href="?page=%1$s&parent=%2$s">%3$s</a>', 'page_video_lightbox', $item['ID'], count($videos));
             
             }
             
