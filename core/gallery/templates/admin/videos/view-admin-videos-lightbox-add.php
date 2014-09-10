@@ -43,7 +43,7 @@
 		<input type="hidden" name="parent" value="<?php echo $data['parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
-				<td><span class="label">Título de la Photo:</span></td>
+				<td><span class="label">Título del Video:</span></td>
 				<td><input type="text" id="post_title" name="post_title" maxlength="255" required/></td>
 			</tr>
 			<tr>
@@ -51,7 +51,20 @@
 				<td><textarea type="text" id="post_content" name="post_content" maxlength="255" required></textarea></td>
 			</tr>
 			<tr>
-				<td><span class="label">Indique la Imagen:</span></td>
+				<td><span class="label">Procedencia:</span></td>
+				<td>
+					<select name="post_name">
+						<option value="youtube">YouTube</option>
+						<option value="vimeo">Vimeo</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><span class="label">Indique la URL del Video:</span></td>
+				<td><input type="text" id="url" name="url" maxlength="255" required/></td>
+			</tr>
+			<tr>
+				<td><span class="label">Indique la Imagen de Destaque del Video:</span></td>
 				<td><input type="file" id="image" name="image" maxlength="255" required/></td>
 			</tr>
 			<tr>
