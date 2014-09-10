@@ -7,47 +7,6 @@
 	License : MIT License / GPL License
 */
 
-var video_lightbox = function(){
-		console.log("Video click");
-		var item = function(item){
-			//console.log(item);
-			return '<a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+item.src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" height="80"/></a>';
-		}
-
-		var photo = function(photo, ID){
-			//console.log(photo);
-			return '<a id="fancybox_'+photo.ID+'" class="fancybox fancybox_'+ID+'" rel="fancybox_'+ID+'" href="'+photo.src+'" title="'+photo.post_title+'"><img src="'+photo.src+'" style="display:none" alt="" /></a>';
-		}
-
-		var data = {
-			'id': 383
-		};
-
-		var html = '';
-
-		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
-
-			for(var i = 0 ; i < response.items.length ; i++ ){
-				html += item(response.items[i]);
-				for(var j = 0 ; j < response.items[i].photos.length ; j++ ){
-					html += photo( response.items[i].photos[j],  response.items[i].ID);
-				}
-			}
-			$('.fs_thmb_viewport ').append(html);
-
-			for(var i = 0 ; i < response.items.length ; i++ ){
-				$('.fancybox_'+response.items[i].ID).fancybox({
-		          	helpers: {
-		              	title : {
-		                  	type : 'float'
-		              	}
-		          	}
-		      	});
-			}
-			return html;
-		});
-	}
-
 jQuery.fn.fs_gallery = function(fs_options) {
 
 	gallery_lightbox = function(){
@@ -298,7 +257,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		var html = gallery_lightbox();
 	});
 		
-	$('#menu-item-73 a').click(function(e){
+	$('#menu-item-73').click(function(e){
 		e.preventDefault();
 		console.log("Click");
 		var html = video_lightbox();
