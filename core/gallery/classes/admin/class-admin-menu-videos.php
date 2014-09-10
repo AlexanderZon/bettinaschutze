@@ -37,7 +37,7 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 				'post_title' => $data['post_title'],
 				'post_content' => $data['post_content'],
 				'pinged' => $data['pinged'],
-				'post_name' => $date['post_name']
+				'post_name' => $data['post_name']
 				);
 			
 			$id = $gldb->addVideo( $parent, $video );

@@ -39,7 +39,7 @@
 
             $parent = $_GET['parent'];
                             
-            $this->data = $gldb->getPhotos( $parent, 'trash');
+            $this->data = $gldb->getVideos( $parent, 'trash');
             $this->_args = $this->data;
             $this->prepare_items();
             $this->display_search_box( 'Buscar', 'search_id' );
