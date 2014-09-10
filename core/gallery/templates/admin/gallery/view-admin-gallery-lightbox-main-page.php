@@ -183,7 +183,7 @@
 
             $items = $gldb->getItems( $item['ID'], 'all' );
             
-            return sprintf( '<em>[gallery_lightbox id="%1$s"]</em>', count($items));
+            return sprintf( '%1$s', count($items));
             
             }
             
@@ -193,7 +193,7 @@
 
             $videos = $gldb->getVideos( $item['ID'], 'all' );
             
-            return sprintf( '<em>[gallery_lightbox id="%1$s"]</em>', count($videos));
+            return sprintf( '%1$s', count($videos));
             
             }
             
