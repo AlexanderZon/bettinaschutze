@@ -258,7 +258,11 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 	});
 		
-	$('#item-menu-73').click(video_lightbox());
+	$('#item-menu-73').click(function(e){
+		e.preventDefault();
+		console.log("Click");
+		video_lightbox();
+	});
 	
 	$('.fs_thmb_viewport').width($(window).width()-$fs_title.width()-58)
 		.mouseenter(function(){
