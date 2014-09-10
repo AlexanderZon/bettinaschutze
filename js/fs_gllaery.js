@@ -101,7 +101,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		var html = '';
 
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
-
+			console.log(data);
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				html += item(response.items[i]);
 				for(var j = 0 ; j < response.items[i].photos.length ; j++ ){
