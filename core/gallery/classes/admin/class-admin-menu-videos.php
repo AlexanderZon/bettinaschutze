@@ -35,26 +35,16 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 				
 			$video = array(
 				'post_title' => $data['post_title'],
-				'post_content' => $data['post_content']
+				'post_content' => $data['post_content'],
+				'post_excerpt' => $data['post_excerpt'],
+				'post_name' => $date['post_name']
 				);
 			
-			$id = $gldb->addItem( $parent, $video );
+			$id = $gldb->addVideo( $parent, $video );
 
 			if($id):
 
-				$attachment = $this->insert_attachment( $file, $id );
-
-				$video = $gldb->getItem($id);
-
-				$video['post_excerpt'] = $attachment;
-
-				$video = $gldb->updateItem($video);
-
-				if($attachment):
-					$msg = 'video_add';
-				else:
-					$msg = 'video_add_attach_err';
-				endif;
+				$msg = 'video_add';
 
 			else:
 
@@ -80,7 +70,7 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 
 			if(isset($_GET['action']) AND $_GET['action'] == 'hide'):
 
-				$id = $gldb->untrashItem($data['ID']);
+				$id = $gldb->untrashVideo($data['ID']);
 
 				if($id):
 					$msg = 'video_oculted';
@@ -92,7 +82,7 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'show'):
 
-				$id = $gldb->publishItem($data['ID']);
+				$id = $gldb->publishVideo($data['ID']);
 
 				if($id):
 					$msg = 'video_visible';
@@ -108,12 +98,12 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 				
 					$data = $_POST;
 
-					$video = $gldb->getItem($data['ID']);
+					$video = $gldb->getVideo($data['ID']);
 						
 					$video['post_title'] = $data['post_title'];
 					$video['post_content'] = $data['post_content'];
 
-					$id = $gldb->updateItem($video);
+					$id = $gldb->updateVideo($video);
 					
 					if($id != 0):
 						$msg = 'video_update';
@@ -149,7 +139,7 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 
 			if(isset($_GET['action']) AND $_GET['action'] == 'delete'):
 
-				$id = $gldb->deleteItem($data['ID']);
+				$id = $gldb->deleteVideo($data['ID']);
 					
 				if($id != 0):
 					$msg = 'video_delete';
@@ -161,7 +151,7 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'untrash'):
 
-				$id = $gldb->untrashItem($data['ID']);
+				$id = $gldb->untrashVideo($data['ID']);
 					
 				if($id != 0):
 					$msg = 'video_untrash';
@@ -173,7 +163,7 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'trash'):
 
-				$id = $gldb->trashItem($data['ID']);
+				$id = $gldb->trashVideo($data['ID']);
 					
 				if($id != 0):
 					$msg = 'video_trash';
