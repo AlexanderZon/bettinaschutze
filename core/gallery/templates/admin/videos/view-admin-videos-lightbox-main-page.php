@@ -182,7 +182,7 @@
             
             }
             
-        public function column_post_content( $item ){
+        public function column_post_name( $item ){
             
             return sprintf( '<span class="moment">%1$s</span>', $item['post_name']);
             
