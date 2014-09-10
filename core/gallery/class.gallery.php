@@ -12,15 +12,13 @@ if(!class_exists("GalleryLightbox")){
 
 			spl_autoload_register( array($this, 'autoload') );
 
-			echo "Alo";
+			include_once( $this->plugin_path() . '/class.db.php' );
 
-			//include_once( $this->plugin_path() . '/class.db.php' );
+			$this->initializeAdmin();
 
-			//$this->initializeAdmin();
+			$this->initializeShortcodes();
 
-			//$this->initializeShortcodes();
-
-			//$this->initializeAjax();
+			$this->initializeAjax();
 
 		}
 
