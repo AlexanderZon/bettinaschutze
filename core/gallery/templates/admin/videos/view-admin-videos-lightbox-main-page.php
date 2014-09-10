@@ -21,11 +21,9 @@
 
     	global $gldb;
 
-    	$item = $gldb->getItem($_GET['parent']);
-
     ?>
 
-    <h2>Photos Lightbox <a href="admin.php?page=page_photo_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_photo_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_item_lightbox&parent=<?php echo $item['post_parent']; ?>" class="add-new-h2">Volver a Items</a></h2>
+    <h2>Photos Lightbox <a href="admin.php?page=page_video_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_video_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_gallery_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Volver a Items</a></h2>
     
     <?php 
 
@@ -47,7 +45,7 @@
 
             $parent = $_GET['parent'];
                             
-            $this->data = $gldb->getPhotos( $parent, 'untrash');
+            $this->data = $gldb->getVideos( $parent, 'untrash');
             $this->_args = $this->data;
             $this->prepare_items();
             $this->display_search_box( 'Buscar', 'search_id' );
@@ -167,8 +165,8 @@
         public function column_post_title( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Editar</a>', 'page_photo_lightbox_edit', 'edit' , $item['ID'], $item['post_parent'] ),
-                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Papelera</a>', 'page_photo_lightbox_delete', 'trash', $item['ID'], $item['post_parent'] )
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Editar</a>', 'page_video_lightbox_edit', 'edit' , $item['ID'], $item['post_parent'] ),
+                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Papelera</a>', 'page_video_lightbox_delete', 'trash', $item['ID'], $item['post_parent'] )
                 );
                 
             return sprintf( '%1$s %2$s', $item['post_title'], $this->row_actions( $actions ) );
@@ -218,13 +216,13 @@
                 case 'publish':
                     $status = 'Visible';
                     $actions = array(
-                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Ocultar</a>', 'page_photo_lightbox_edit', 'hide', $item['ID'], $item['post_parent'] )
+                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Ocultar</a>', 'page_video_lightbox_edit', 'hide', $item['ID'], $item['post_parent'] )
                         );
                     break;
                 case 'draft':
                     $status = 'No Visible';
                     $actions = array(
-                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Visualizar</a>', 'page_photo_lightbox_edit', 'show' , $item['ID'], $item['post_parent'] ),
+                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Visualizar</a>', 'page_video_lightbox_edit', 'show' , $item['ID'], $item['post_parent'] ),
                         );
                     break;
                 case 'trash':
@@ -259,7 +257,7 @@
             
             echo '
             <form method="post">
-                <input type="hidden" name="page" value="page_photo_lightbox"/>
+                <input type="hidden" name="page" value="page_video_lightbox"/>
             ';
             
             $this->search_box( $button, $id );

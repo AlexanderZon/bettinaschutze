@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Photos Lightbox (Papelera) <a href="admin.php?page=page_photo_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Volver</a></h2>
+    <h2>Photos Lightbox (Papelera) <a href="admin.php?page=page_video_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Volver</a></h2>
     
     <?php 
 
@@ -159,8 +159,8 @@
         public function column_post_title( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Restaurar</a>', 'page_photo_lightbox_delete', 'untrash' , $item['ID'], $item['post_parent'] ),
-                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Eliminar</a>', 'page_photo_lightbox_delete', 'delete', $item['ID'], $item['post_parent'] )
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Restaurar</a>', 'page_video_lightbox_delete', 'untrash' , $item['ID'], $item['post_parent'] ),
+                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Eliminar</a>', 'page_video_lightbox_delete', 'delete', $item['ID'], $item['post_parent'] )
                 );
                 
             return sprintf( '%1$s %2$s', $item['post_title'], $this->row_actions( $actions ) );
@@ -210,13 +210,13 @@
                 case 'publish':
                     $status = 'Visible';
                     $actions = array(
-                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Ocultar</a>', 'page_photo_lightbox_edit', 'hide', $item['ID'] )
+                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Ocultar</a>', 'page_video_lightbox_edit', 'hide', $item['ID'] )
                         );
                     break;
                 case 'draft':
                     $status = 'No Visible';
                     $actions = array(
-                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Visualizar</a>', 'page_photo_lightbox_edit', 'show' , $item['ID'] ),
+                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Visualizar</a>', 'page_video_lightbox_edit', 'show' , $item['ID'] ),
                         );
                     break;
                 case 'trash':
@@ -251,7 +251,7 @@
             
             echo '
             <form method="post">
-                <input type="hidden" name="page" value="page_photo_lightbox"/>
+                <input type="hidden" name="page" value="page_video_lightbox"/>
             ';
             
             $this->search_box( $button, $id );
