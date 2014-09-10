@@ -798,7 +798,7 @@ class GalleryLightboxDB{
 	}
 
 	/**
-	 * Consulta de videos xD.
+	 * Consulta de videos.
 	 * @access public
 	 * @param string $status (Default:all)
 	 * @return array || false
@@ -905,8 +905,6 @@ class GalleryLightboxDB{
 	 * @param integer $id
 	 * @return intener || false
 	 */
-
-	
 		
 	public function trashVideo( $id ){
 

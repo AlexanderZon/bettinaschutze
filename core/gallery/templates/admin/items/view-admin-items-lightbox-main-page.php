@@ -55,7 +55,6 @@
                 'post_content' => 'Descripción',
                 'post_excerpt' => 'Imagen de Destaque',
                 'post_status' => 'Visibilidad',
-                'comment_count' => 'Cantidad de Imagenes',
                 'post_parent' => 'Galería',
                 'post_date' => 'Fecha de Creación'
                 );
@@ -119,7 +118,6 @@
                 'post_content' => array( 'post_content', false ),
                 'post_excerpt' => array( 'post_excerpt', false ),
                 'post_status' => array( 'post_status', false),
-                'comment_count' => array( 'comment_count', false),
                 'post_parent' => array( 'post_parent', false),
                 'post_date' => array( 'post_date', false)
                 );
@@ -148,7 +146,6 @@
                 case 'post_content':
                 case 'post_excerpt':
                 case 'post_status':
-                case 'comment_count':
                 case 'post_parent':
                 case 'post_date':
                     return $item[ $column_name ];
@@ -192,21 +189,11 @@
             
         public function column_post_parent( $item ){
 
-            global $gldb;
+        	global $gldb;
 
-            $gallery = $gldb->getGallery($item['post_parent']);
+        	$gallery = $gldb->getGallery($item['post_parent']);
             
             return sprintf( '<span class="moment">%1$s</span>', $gallery['post_title']);
-            
-            }
-            
-        public function column_comment_count( $item ){
-
-            global $gldb;
-
-            $photos = $gldb->getPhotos($item['ID'], 'all');
-            
-            return sprintf( '<span class="moment">%1$s</span>', count($photos));
             
             }
             

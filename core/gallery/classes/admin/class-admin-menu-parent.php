@@ -28,7 +28,6 @@ class ClassAdminMenuParent{
 	public $default_folders = array(
 		'gallery',
 		'items',
-		'videos',
 		'photos'
 	);
 	
