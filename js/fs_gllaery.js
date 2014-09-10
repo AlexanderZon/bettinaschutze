@@ -78,7 +78,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	}
 
 	video_lightbox = function(){
-		//console.log("Video click");
+		console.log("Video click");
 		var item = function(item){
 			//console.log(item);
 			return '<a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+item.src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" height="80"/></a>';
