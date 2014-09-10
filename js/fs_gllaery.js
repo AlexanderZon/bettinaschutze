@@ -50,7 +50,7 @@ var video_lightbox = function(){
 
 jQuery.fn.fs_gallery = function(fs_options) {
 
-	var gallery_lightbox = function(){
+	gallery_lightbox = function(){
 
 		var item = function(item){
 			//console.log(item);
@@ -96,8 +96,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		});
 	}
 
-	var video_lightbox = function(){
-		console.log("Video click");
+	video_lightbox = function(){
+		//console.log("Video click");
 		var item = function(item){
 			//console.log(item);
 			return '<a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+item.src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" height="80"/></a>';
@@ -296,10 +296,9 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 	$(document).on('ready', function(){
 		var html = gallery_lightbox();
-
 	});
 		
-	$('#item-menu-73 a').click(function(e){
+	$('#menu-item-73 a').click(function(e){
 		e.preventDefault();
 		console.log("Click");
 		var html = video_lightbox();
