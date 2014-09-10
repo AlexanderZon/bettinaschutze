@@ -178,22 +178,30 @@
             }
             
         public function column_comment_count_1( $item ){
+            
+            $actions = array(
+                'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Ver Listado de Items</a>', 'page_item_lightbox', $item['ID'] ),
+                );
 
             global $gldb;
 
             $items = $gldb->getItems( $item['ID'], 'all' );
             
-            return sprintf( '<a href="?page=%1$s&parent=%2$s">%3$s</a>', 'page_item_lightbox', $item['ID'], count($items));
+            return sprintf( '<a href="?page=%1$s&parent=%2$s">%3$s</a> %4$s', 'page_item_lightbox', $item['ID'], count($items), $this->row_actions( $actions ));
             
             }
             
         public function column_comment_count_2( $item ){
+            
+            $actions = array(
+                'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Ver Listado de Videos</a>', 'page_video_lightbox', $item['ID'] ),
+                );
 
             global $gldb;
 
             $videos = $gldb->getVideos( $item['ID'], 'all' );
             
-            return sprintf( '<a href="?page=%1$s&parent=%2$s">%3$s</a>', 'page_video_lightbox', $item['ID'], count($videos));
+            return sprintf( '<a href="?page=%1$s&parent=%2$s">%3$s</a> %4$s', 'page_video_lightbox', $item['ID'], count($videos), $this->row_actions( $actions ));
             
             }
             
