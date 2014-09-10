@@ -14,11 +14,11 @@ if(!class_exists("GalleryLightbox")){
 
 			include_once( $this->plugin_path() . '/class.db.php' );
 
-			$this->initializeAdmin();
+			//$this->initializeAdmin();
 
-			$this->initializeShortcodes();
+			//$this->initializeShortcodes();
 
-			$this->initializeAjax();
+			//$this->initializeAjax();
 
 		}
 
