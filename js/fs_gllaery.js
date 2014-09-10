@@ -126,9 +126,9 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		          	}
 		      	});
 			}
-			$('.fancybox-media').click(function(e){
+			/*$('.fancybox-media').click(function(e){
 				e.preventDefault();
-			});
+			});*/
 
 			$('.fancybox-media').fancybox({
 	          	openEffect  : 'none',
