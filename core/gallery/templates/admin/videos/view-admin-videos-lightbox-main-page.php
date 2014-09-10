@@ -199,9 +199,7 @@
 
         	$parent = $gldb->getItem($item['post_parent']);
 
-        	$ancestor = $gldb->getGallery($parent['post_parent']);
-
-            return sprintf( '<span class="moment">%1$s - %2$s</span>', $ancestor['post_title'], $parent['post_title']);
+            return sprintf( '<span class="moment">%1$s</span>', $parent['post_title']);
             
             }
             
