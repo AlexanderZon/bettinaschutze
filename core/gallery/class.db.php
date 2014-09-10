@@ -798,7 +798,7 @@ class GalleryLightboxDB{
 	}
 
 	/**
-	 * Consulta de videos.
+	 * Consulta de videos xD.
 	 * @access public
 	 * @param string $status (Default:all)
 	 * @return array || false
