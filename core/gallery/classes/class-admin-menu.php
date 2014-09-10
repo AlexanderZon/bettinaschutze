@@ -55,5 +55,13 @@ class ClassAdminMenu extends ClassParent{
 		$object = new ClassAdminMenuPhotos();
 		
 		}	
+	
+	public function menu_videos(){
+		
+		$this->autoload( 'class_admin_menu_videos' );
+		
+		$object = new ClassAdminMenuVideos();
+		
+		}	
 	 
 	 }
