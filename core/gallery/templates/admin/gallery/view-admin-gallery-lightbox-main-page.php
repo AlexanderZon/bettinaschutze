@@ -52,7 +52,8 @@
                 'post_title' => 'Título',
                 'post_status' => 'Visibilidad',
                 'post_excerpt' => 'Shortcode',
-                'comment_count' => 'Cantidad de Ítems',
+                'comment_count_1' => 'Cantidad de Ítems',
+                'comment_count_2' => 'Cantidad de Videos',
                 'post_date' => 'Fecha de Creación'
                 );
             
@@ -114,7 +115,8 @@
                 'post_title' => array( 'post_title', false ),
                 'post_status' => array( 'post_status', false),
                 'post_excerpt' => array( 'post_excerpt', false),
-                'comment_count' => array( 'comment_count', false),
+                'comment_count_1' => array( 'comment_count_1', false),
+                'comment_count_2' => array( 'comment_count_2', false),
                 'post_date' => array( 'post_date', false)
                 );
                 
@@ -141,7 +143,8 @@
                 case 'post_title':
                 case 'post_status':
                 case 'post_excerpt':
-                case 'comment_count':
+                case 'comment_count_1':
+                case 'comment_count_2':
                 case 'post_date':
                     return $item[ $column_name ];
                 default:
@@ -174,13 +177,23 @@
             
             }
             
-        public function column_comment_count( $item ){
+        public function column_comment_count_1( $item ){
 
             global $gldb;
 
             $items = $gldb->getItems( $item['ID'], 'all' );
             
-            return sprintf( '<em>[gallery_lightbox id="%1$s"]</em>', $item['ID']);
+            return sprintf( '<em>[gallery_lightbox id="%1$s"]</em>', count($items));
+            
+            }
+            
+        public function column_comment_count_2( $item ){
+
+            global $gldb;
+
+            $videos = $gldb->getVideos( $item['ID'], 'all' );
+            
+            return sprintf( '<em>[gallery_lightbox id="%1$s"]</em>', count($videos));
             
             }
             
