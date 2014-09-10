@@ -39,6 +39,6 @@ require_once("registrator/misc.php");
 #admin
 require_once("admin/options.php");
 require_once("admin/theme-settings-page.php");
-require_once("gallery/class.gallery.php");
+//require_once("gallery/class.gallery.php");
 
 ?>
