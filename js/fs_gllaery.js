@@ -90,7 +90,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		}
 
 		var video = function(video){
-			//console.log(video);
+			console.log(video);
 			return '<a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a>';
 		}
 
@@ -114,7 +114,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				//console.log(item(response.items[i]));
 				html += video(response.videos[i]);
 			}
-			
+
 			$('.fs_thmb_viewport ').html(html);
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
