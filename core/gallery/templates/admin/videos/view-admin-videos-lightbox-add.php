@@ -47,10 +47,6 @@
 				<td><input type="text" id="post_title" name="post_title" maxlength="255" required/></td>
 			</tr>
 			<tr>
-				<td><span class="label">Descripción:</span></td>
-				<td><textarea type="text" id="post_content" name="post_content" maxlength="255" required></textarea></td>
-			</tr>
-			<tr>
 				<td><span class="label">Procedencia:</span></td>
 				<td>
 					<select name="pinged">
@@ -61,7 +57,7 @@
 			</tr>
 			<tr>
 				<td><span class="label">Indique la URL del Video:</span></td>
-				<td><input type="text" id="url" name="post_name" maxlength="255" required/></td>
+				<td><input type="text" id="url" name="post_content" maxlength="255" required/></td>
 			</tr>
 			<tr>
 				<td><span class="label">Indique la Imagen de Destaque del Video:</span></td>
