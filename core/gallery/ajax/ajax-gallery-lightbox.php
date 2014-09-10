@@ -16,9 +16,13 @@
 
 	$items = $gldb->getItems($gallery['ID'], 'publish');
 
+	$videos = $gldb->getVideos($gallery['ID'], 'publish');
+
 	$response = $gallery;
 
 	$response['items'] = $items;
+
+	$response['videos'] = $videos;
 
 	for( $i = 0 ; $i < count($response['items']) ; $i++ ):
 		$src = wp_get_attachment_url($response['items'][$i]['post_excerpt']);
@@ -28,6 +32,11 @@
 			$photos[$j]['src'] = wp_get_attachment_url($photos[$j]['post_excerpt']);
 		endfor;
 		$response['items'][$i]['photos'] = $photos;
+	endfor;
+
+	for( $i = 0 ; $i < count($response['videos']) ; $i++ ):
+		$src = wp_get_attachment_url($response['videos'][$i]['post_excerpt']);
+		$response['videos'][$i]['src'] = $src;
 	endfor;
 
 	header('Content-Type: application/json');
