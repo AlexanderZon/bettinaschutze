@@ -11,8 +11,7 @@
 
 	$headers = 'From: '.$data['name'].' <'.$data['email'].'>' . '\r\n';
 	$mail = wp_mail( 'theguitarplayer.am@gmail.com', $data['subject'], $data['message'] , $headers );
-
-	var_dump($mail);
+	
 	if($mail):
 		$html = 'Your message has been sent';
 	else:
