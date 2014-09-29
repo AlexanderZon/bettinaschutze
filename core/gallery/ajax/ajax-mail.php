@@ -1,6 +1,7 @@
 <?php
 
 	require_once( "../../../../../../wp-config.php" );
+	require( ABSPATH . WPINC . '/pluggable.php' );
 
 	require_once( "../class.db.php" );
 
