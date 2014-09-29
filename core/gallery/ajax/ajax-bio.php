@@ -8,7 +8,7 @@
 
 	$data = $_POST;
 
-	$bio = $wpdb->get_row("SELECT * FROM $wpdb->posts WHERE ID = ".$data['ID'], ARRAY_A);
+	$bio = $wpdb->get_row("SELECT * FROM $wpdb->posts WHERE ID = ".$data['id'], ARRAY_A);
 
 	header('Content-Type: application/json');
 	echo json_encode($bio);
