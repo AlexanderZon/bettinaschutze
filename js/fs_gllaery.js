@@ -95,7 +95,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		}
 
 		var data = {
-			'id': 312
+			'id': 397
 		};
 
 		var html = '';
@@ -407,6 +407,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		e.preventDefault();
 		console.log("Click");
 		var html = home_lightbox();
+	});
+		
+	$('#menu-item-72').click(function(e){
+		e.preventDefault();
+		console.log("Click");
+		var html = photo_lightbox();
 	});
 	
 	$('.fs_thmb_viewport').width($(window).width()-$fs_title.width()-58)
