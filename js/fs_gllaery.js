@@ -154,7 +154,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	contact_lightbox = function(){
 
 		var html = '';
-		html = '<a id="fancybox_contact" class="fancybox fancybox_contact fancybox.ajax" rel="fancybox_contact" href="/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-bio.php" ></a>';
+		html = '<a id="fancybox_contact" class="fancybox fancybox_contact fancybox.ajax" rel="fancybox_contact" href="/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-contact.php" ></a>';
 			
 		$('.fs_thmb_viewport ').append(html);
 		$('.fancybox_contact').fancybox({
