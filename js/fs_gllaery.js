@@ -153,10 +153,60 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 	contact_lightbox = function(){
 
+
 	}
 
 	bio_lightbox = function(){
 
+		var data = {
+			'id': 398
+		};
+
+		var html = '';
+
+		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-bio.php', data, function(response) {
+
+			console.log(response);
+			/*for(var i = 0 ; i < response.items.length ; i++ ){
+				//console.log(response.items[i]);
+				//console.log(item(response.items[i]));
+				html += item(response.items[i]);
+				for(var j = 0 ; j < response.items[i].photos.length ; j++ ){
+					html += photo( response.items[i].photos[j],  response.items[i].ID);
+					//console.log( photo( response.items[i].photos[j] ) );
+				}
+			}
+
+			for(var i = 0 ; i < response.videos.length ; i++ ){
+				//console.log(response.items[i]);
+				//console.log(item(response.items[i]));
+				html += video(response.videos[i]);
+			}
+			//console.log(html);
+			$('.fs_thmb_viewport ').html(html);
+
+			for(var i = 0 ; i < response.items.length ; i++ ){
+				$('.fancybox_'+response.items[i].ID).fancybox({
+		          	helpers: {
+		              	title : {
+		                  	type : 'float'
+		              	}
+		          	}
+		      	});
+			}
+
+			for(var i = 0 ; i < response.videos.length ; i++ ){
+				$('.fancybox_'+response.videos[i].ID).fancybox({
+		          	helpers: {
+		              	title : {
+		                  	type : 'float'
+		              	}
+		          	}
+		      	});
+			}
+
+			return html;*/
+		});
 	}
 
 	//Set Variables
