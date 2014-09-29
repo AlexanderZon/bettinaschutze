@@ -13,7 +13,7 @@
 	$logo = get_theme_option("logo");
 
 	$html = '<img src="'.$logo.'" ><br>
-			<div style="width:50%">'.$bio['post_content'].'</div>
+			<div style="width:500px">'.$bio['post_content'].'</div>
 	';
 	echo $html;
 
