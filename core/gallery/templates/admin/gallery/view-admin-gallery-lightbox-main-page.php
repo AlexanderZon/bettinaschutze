@@ -158,7 +158,7 @@
             
             $actions = array(
                 'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Editar</a>', 'page_gallery_lightbox_edit', 'edit' , $item['ID'] ),
-                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Papelera</a>', 'page_gallery_lightbox_delete', 'trash', $item['ID'] )
+                /*'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Papelera</a>', 'page_gallery_lightbox_delete', 'trash', $item['ID'] )*/
                 );
                 
             return sprintf( '%3$s %4$s', 'page_item_lightbox', $item['ID'], $item['post_title'], $this->row_actions( $actions ) );
@@ -180,7 +180,7 @@
         public function column_comment_count_1( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Ver Listado de Items</a>', 'page_item_lightbox', $item['ID'] ),
+                /*'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Ver Listado de Items</a>', 'page_item_lightbox', $item['ID'] ),*/
                 );
 
             global $gldb;
