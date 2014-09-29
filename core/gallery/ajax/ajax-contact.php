@@ -11,11 +11,12 @@
 	$html = '<img src="'.$logo.'" ><br>
 			<div style="width:500px;text-align:justify;">
 				<form>
-					<label>Name</label><input type="text" name="name"/>
-					<label>Email</label><input type="email" name="email" />
-					<label>Subject</label><input type="text" name="subject" />
-					<label>Message</label><textarea name="message"></textarea> 
-					<input type="submit" value="Submit">
+				<table>
+					<tr><td><label>Name</label></td><td><input type="text" name="name"/></td></tr>
+					<tr><td><label>Email</label></td><td><input type="email" name="email" /></td></tr>
+					<tr><td><label>Subject</label></td><td><input type="text" name="subject" /></td></tr>
+					<tr><td><label>Message</label></td><td><textarea name="message"></textarea> </td></tr>
+					<tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
 				</form>
 			</div>
 	';
