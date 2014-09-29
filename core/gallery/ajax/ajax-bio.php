@@ -6,10 +6,10 @@
 
 	global $wpdb;
 
-	$data = $_POST;
+	$data = $_GET;
 
 	$bio = $wpdb->get_row("SELECT * FROM $wpdb->posts WHERE ID = ".$data['id'], ARRAY_A);
 
 	header('Content-Type: application/json');
-	echo json_encode($bio);
+	echo $bio['post_content'];
 
