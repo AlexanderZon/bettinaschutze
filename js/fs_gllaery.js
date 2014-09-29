@@ -163,7 +163,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		};
 
 		var html = '';
-		html = '<a id="fancybox_bio" class="fancybox fancybox_bio fancybox.ajax" rel="fancybox_bio" href="/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-bio.php?id='+data.id+'" title="'+item.post_title+'"></a>';
+		html = '<a id="fancybox_bio" class="fancybox fancybox_bio fancybox.ajax" rel="fancybox_bio" href="/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-bio.php?id='+data.id+'" ></a>';
 			
 		$('.fs_thmb_viewport ').append(html);
 		$('.fancybox_bio').fancybox({
