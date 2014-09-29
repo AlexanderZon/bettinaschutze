@@ -9,7 +9,7 @@
 	$logo = get_theme_option("logo");
 
 	$html = '<img src="'.$logo.'" ><br>
-			<div style="width:500px;text-align:justify;">
+			<div style="width:500px;text-align:justify;" id="contact-form-container">
 				<form id="contact-form" action="" method="post">
 				<table>
 					<tr><td><label>Name</label></td><td><input type="text" name="name"/></td></tr>
@@ -24,7 +24,7 @@
 						var data = $("#contact-form").serialize();
 						$.post("/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-mail.php", data, function(response) {
 							console.log(response);
-							$(".fancybox-close").click();
+							$("#contact-form-container").html("Your message has been sent");
 							return response;
 						});
 					});
