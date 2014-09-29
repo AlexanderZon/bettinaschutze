@@ -11,12 +11,13 @@
 	$headers = 'From: '.$data['name'].' <'.$data['email'].'>' . '\r\n';
 	$mail = wp_mail( 'theguitarplayer.am@gmail.com', $data['subject'], $data['message'] , $headers );
 
+	var_dump($mail);
 	if($mail):
 		$html = 'Your message has been sent';
 	else:
 		$html = 'We had an error sending your message, please retry again later';
 	endif;
-	
+
 	echo $html;
 
 ?>
