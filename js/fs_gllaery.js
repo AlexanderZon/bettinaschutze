@@ -328,13 +328,13 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		'contant':'75'
 	}
 		
-	$('#menu-item-73').click(function(e){
+	$('#menu-item-'+menu_items.videos).click(function(e){
 		e.preventDefault();
 		console.log("Click");
 		var html = video_lightbox();
 	});
 		
-	$('#menu-item-48').click(function(e){
+	$('#menu-item-'+menu_items.photos).click(function(e){
 		e.preventDefault();
 		console.log("Click");
 		var html = photo_lightbox();
