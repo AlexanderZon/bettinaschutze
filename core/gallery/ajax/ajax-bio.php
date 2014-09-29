@@ -10,6 +10,8 @@
 
 	$bio = $wpdb->get_row("SELECT * FROM $wpdb->posts WHERE ID = ".$data['id'], ARRAY_A);
 
-	header('Content-Type: application/json');
-	echo $bio['post_content'];
+	$html = '<img src="'.the_theme_option("logo").'" ><br>
+			<p style="width:50%">'.$bio['post_content'].'</p>
+	';
+	echo $html;
 
