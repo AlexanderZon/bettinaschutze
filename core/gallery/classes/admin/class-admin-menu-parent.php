@@ -29,7 +29,9 @@ class ClassAdminMenuParent{
 		'gallery',
 		'items',
 		'photos',
-		'videos'
+		'videos',
+		'bio',
+		'contact'
 	);
 	
 	/**

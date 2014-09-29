@@ -24,7 +24,9 @@ class ClassAdminMenu extends ClassParent{
 	 
 	public function __construct(){
 		 
-		add_action( 'admin_menu' , array( $this , 'menu_gallery' ) );		
+		add_action( 'admin_menu' , array( $this , 'menu_gallery' ) );	
+		 
+		//add_action( 'admin_menu' , array( $this , 'menu_bio' ) );		
 		 
 		}
 	
@@ -33,6 +35,14 @@ class ClassAdminMenu extends ClassParent{
 		$this->autoload( 'class_admin_menu_gallery' );
 		
 		$object = new ClassAdminMenuGallery();
+		
+		}
+	
+	public function menu_bio(){
+		
+		$this->autoload( 'class_admin_menu_bio' );
+		
+		$object = new ClassAdminMenuBio();
 		
 		}	
 	 
