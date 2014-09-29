@@ -318,7 +318,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	}
 
 	$(document).on('ready', function(){
-		var html = gallery_lightbox();
+		var html = photo_lightbox();
 	});
 
 	var menu_items = {
