@@ -77,6 +77,74 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		});
 	}
 
+	photo_lightbox = function(){
+
+		var item = function(item){
+			//console.log(item);
+			return '<a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+item.src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" height="80"/></a>';
+		}
+
+		var photo = function(photo, ID){
+			//console.log(photo);
+			return '<a id="fancybox_'+photo.ID+'" class="fancybox fancybox_'+ID+'" rel="fancybox_'+ID+'" href="'+photo.src+'" title="'+photo.post_title+'"><img src="'+photo.src+'" style="display:none" alt="" /></a>';
+		}
+
+		var video = function(video){
+			//console.log(video);
+			return '<a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a>';
+		}
+
+		var data = {
+			'id': 312
+		};
+
+		var html = '';
+
+		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
+
+			//console.log(response);
+			for(var i = 0 ; i < response.items.length ; i++ ){
+				//console.log(response.items[i]);
+				//console.log(item(response.items[i]));
+				html += item(response.items[i]);
+				for(var j = 0 ; j < response.items[i].photos.length ; j++ ){
+					html += photo( response.items[i].photos[j],  response.items[i].ID);
+					//console.log( photo( response.items[i].photos[j] ) );
+				}
+			}
+
+			for(var i = 0 ; i < response.videos.length ; i++ ){
+				//console.log(response.items[i]);
+				//console.log(item(response.items[i]));
+				html += video(response.videos[i]);
+			}
+			//console.log(html);
+			$('.fs_thmb_viewport ').html(html);
+
+			for(var i = 0 ; i < response.items.length ; i++ ){
+				$('.fancybox_'+response.items[i].ID).fancybox({
+		          	helpers: {
+		              	title : {
+		                  	type : 'float'
+		              	}
+		          	}
+		      	});
+			}
+
+			for(var i = 0 ; i < response.videos.length ; i++ ){
+				$('.fancybox_'+response.videos[i].ID).fancybox({
+		          	helpers: {
+		              	title : {
+		                  	type : 'float'
+		              	}
+		          	}
+		      	});
+			}
+
+			return html;
+		});
+	}
+
 	video_lightbox = function(){
 		console.log("Video click");
 		var item = function(item){
@@ -150,6 +218,15 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			return html;
 		});
 	}
+
+	contact_lightbox = function(){
+
+	}
+
+	bio_lightbox = function(){
+
+	}
+
 	//Set Variables
 	var fs_el = $(this),
 		fs_base = this;
@@ -311,6 +388,14 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	$(document).on('ready', function(){
 		var html = gallery_lightbox();
 	});
+
+	var menu_items = {
+		'home': '48',
+		'photos':'72',
+		'videos':'73',
+		'bio':'74',
+		'contant':'75'
+	}
 		
 	$('#menu-item-73').click(function(e){
 		e.preventDefault();
