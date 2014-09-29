@@ -180,7 +180,7 @@
         public function column_comment_count_1( $item ){
             
             $actions = array(
-                /*'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Ver Listado de Items</a>', 'page_item_lightbox', $item['ID'] ),*/
+                'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Ver Listado de Items</a>', 'page_item_lightbox', $item['ID'] ),
                 );
 
             global $gldb;
@@ -216,7 +216,7 @@
                 case 'publish':
                     $status = 'Visible';
                     $actions = array(
-                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Ocultar</a>', 'page_gallery_lightbox_edit', 'hide', $item['ID'] )
+                        /*'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Ocultar</a>', 'page_gallery_lightbox_edit', 'hide', $item['ID'] )*/
                         );
                     break;
                 case 'draft':

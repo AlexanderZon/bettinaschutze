@@ -9,7 +9,7 @@
 
 jQuery.fn.fs_gallery = function(fs_options) {
 
-	gallery_lightbox = function(){
+	home_lightbox = function(){
 
 		var item = function(item){
 			//console.log(item);
@@ -406,7 +406,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	$('#menu-item-48').click(function(e){
 		e.preventDefault();
 		console.log("Click");
-		var html = gallery_lightbox();
+		var html = home_lightbox();
 	});
 	
 	$('.fs_thmb_viewport').width($(window).width()-$fs_title.width()-58)
