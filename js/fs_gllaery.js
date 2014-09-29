@@ -355,7 +355,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		'photos':'48',
 		'videos':'73',
 		'bio':'74',
-		'contant':'400'
+		'contact':'400'
 	}
 		
 	$('#menu-item-'+menu_items.videos).click(function(e){
