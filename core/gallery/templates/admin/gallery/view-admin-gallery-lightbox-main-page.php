@@ -173,7 +173,7 @@
             
         public function column_post_excerpt( $item ){
             
-            return sprintf( '<em>[gallery_lightbox id="%1$s"]</em>', $item['ID']);
+            return sprintf( '<em>%1$s</em>', $item['ID']);
             
             }
             
