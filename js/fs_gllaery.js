@@ -153,6 +153,19 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 	contact_lightbox = function(){
 
+		var html = '';
+		html = '<a id="fancybox_contact" class="fancybox fancybox_contact fancybox.ajax" rel="fancybox_contact" href="/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-bio.php" ></a>';
+			
+		$('.fs_thmb_viewport ').append(html);
+		$('.fancybox_contact').fancybox({
+	          	helpers: {
+	              	title : {
+	                  	type : 'float'
+	              	}
+	          	}
+	      	});
+		$('.fancybox_contact').click();
+
 
 	}
 
@@ -361,6 +374,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		e.preventDefault();
 		console.log("Click");
 		var html = bio_lightbox();
+	});
+		
+	$('#menu-item-'+menu_items.contact).click(function(e){
+		e.preventDefault();
+		console.log("Click");
+		var html = contact_lightbox();
 	});
 	
 	$('.fs_thmb_viewport').width($(window).width()-$fs_title.width()-58)
