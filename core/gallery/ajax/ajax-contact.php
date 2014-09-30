@@ -22,6 +22,7 @@
 					$("#contact-form").on("submit", function(e){
 						e.preventDefault();
 						var data = $("#contact-form").serialize();
+						console.log(data);
 						$.post("/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-mail.php", data, function(response) {
 							console.log(response);
 							$("#contact-form-container").html(response);
