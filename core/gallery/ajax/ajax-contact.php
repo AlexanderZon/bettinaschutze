@@ -25,7 +25,7 @@
 							"name": $("#contact-form-name").val(),
 							"email": $("#contact-form-email").val(),
 							"subject": $("#contact-form-subject").val(),
-							"message": $("#contact-form-message").html(),
+							"message": $("#contact-form-message").val(),
 						}
 						console.log(data);
 						$.post("/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-mail.php", data, function(response) {
