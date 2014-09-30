@@ -8,7 +8,7 @@
 	global $wpdb;
 
 	$data = $_POST;
-	return var_dump($data['subject']);
+	return var_dump($data['message']);
 	$headers = 'From: '.$data['name'].' <'.$data['email'].'>' . '\r\n';
 	$mail = mail( 'alex_100aleman@hotmail.com' , $data['subject'] , $data['message'] );
 	//$mail = wp_mail( 'alex_100aleman@hotmail.com', $data['subject'], $data['message'] , $headers );
