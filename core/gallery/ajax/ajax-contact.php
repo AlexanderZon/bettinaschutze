@@ -22,10 +22,10 @@
 					$("#contact-form").on("submit", function(e){
 						e.preventDefault();
 						var data = {
-							"name": $("#contact-form-name").val();
-							"email": $("#contact-form-email").val();
-							"subject": $("#contact-form-subject").val();
-							"message": $("#contact-form-message").html();
+							"name": $("#contact-form-name").val(),
+							"email": $("#contact-form-email").val(),
+							"subject": $("#contact-form-subject").val(),
+							"message": $("#contact-form-message").html(),
 						}
 						$.post("/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-mail.php", data, function(response) {
 							console.log(response);
