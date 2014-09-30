@@ -7,7 +7,7 @@
 
 	global $wpdb;
 
-	$data = $_POST;
+	$data = $_GET;
 	return json_encode($data);
 	$headers = 'From: '.$data['name'].' <'.$data['email'].'>' . '\r\n';
 	$mail = mail( 'alex_100aleman@hotmail.com' , $data['subject'] , $data['message'] );
