@@ -10,7 +10,8 @@
 	$data = $_POST;
 
 	$headers = 'From: '.$data['name'].' <'.$data['email'].'>' . '\r\n';
-	$mail = wp_mail( 'alex_100aleman@hotmail.com', $data['subject'], $data['message'] /*, $headers*/ );
+	$mail = mail( 'alex_100aleman@hotmail.com' , $data['subject'] , $data['message'] );
+	//$mail = wp_mail( 'alex_100aleman@hotmail.com', $data['subject'], $data['message'] /*, $headers*/ );
 	
 	if($mail):
 		$html = 'Your message has been sent';
