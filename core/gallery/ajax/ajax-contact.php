@@ -17,9 +17,16 @@
 					background: transparent;
 				}
 				#contact-form input{
-					width: 100%;
+					width: 70%;
 					padding: 3px 20px;
 					background: #FFF;
+				}
+				#contact-form label{
+					float:left;
+				}
+				#contact-form input{
+					float:right;
+					
 				}
 				#contact-form textarea, #contact-form input, #contact-form label{
 					display:inline-block;
@@ -28,6 +35,7 @@
 				.control-box{
 					display:block;
 					margin-bottom:10px;
+					clear:both;
 				}
 			</style>
 				<form id="contact-form" action="" method="post">
