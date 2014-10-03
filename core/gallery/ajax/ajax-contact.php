@@ -46,6 +46,7 @@
 				#contact-form input[type=submit]{
 					cursor: pointer;
 					background-color: #ECC;
+					padding: 5px 2px;
 				}
 			</style>
 				<form id="contact-form" action="" method="post">
