@@ -17,8 +17,8 @@
 					background: transparent;
 					position:relative;
 				}
-				#contact-form input[type=text],#contact-form input[type=submit]{
-				height:42px;
+				#contact-form input[type=text],#contact-form input[type=email],#contact-form input[type=submit]{
+				height:22px;
 				padding: 3px 20px;
 
 			}
@@ -31,7 +31,7 @@
 				#contact-form label{
 					float:left !important;
 					font-weight: 900;
-					
+
 				}
 				
 				#contact-form textarea, #contact-form input, #contact-form label{
