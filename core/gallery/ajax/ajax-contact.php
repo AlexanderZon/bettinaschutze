@@ -15,6 +15,7 @@
 				#contact-form{
 					width: 300px;
 					background: transparent;
+					position:relative;
 				}
 				#contact-form input{
 					width: 70%;
@@ -22,15 +23,15 @@
 					background: #FFF;
 				}
 				#contact-form label{
-					float:left;
+					float:left !important;
 				}
 				#contact-form input{
-					float:right;
+					float:right !important;
 					
 				}
 				#contact-form textarea, #contact-form input, #contact-form label{
 					display:inline-block;
-
+					border:0;
 				}
 				.control-box{
 					display:block;
