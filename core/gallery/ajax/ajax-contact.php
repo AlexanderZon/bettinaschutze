@@ -13,7 +13,7 @@
 
 			<style>
 				#contact-form{
-					width: 300px;
+					width: 320px;
 					background: transparent;
 					position:relative;
 				}
