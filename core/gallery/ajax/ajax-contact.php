@@ -43,6 +43,10 @@
 					display:block;
 					margin-bottom:10px;
 				}
+				#contact-form input[type=submit]{
+					cursor: pointer
+					background-color: #ECC;
+				}
 			</style>
 				<form id="contact-form" action="" method="post">
 					<div class="control-box"><label>Name</label><input id="contact-form-name" type="text" name="name"/><div style="clear:both;"></div></div>
