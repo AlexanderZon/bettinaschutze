@@ -22,7 +22,7 @@
 				padding: 3px 20px;
 
 			}
-				#contact-form input[type=text], #contact-form textarea{
+				#contact-form input[type=text], #contact-form input[type=email],#contact-form textarea{
 					padding: 3px 20px;
 					background: #FFF;
 					width: 60%;
