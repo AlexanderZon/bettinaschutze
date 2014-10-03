@@ -49,6 +49,7 @@
 					background-color: #ECC;
 					height: 42px;
 					color: #FFF;
+					font-weight: 900;
 				}
 			</style>
 				<form id="contact-form" action="" method="post">
