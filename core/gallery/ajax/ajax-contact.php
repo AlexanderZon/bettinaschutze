@@ -12,25 +12,30 @@
 			<div style="text-align:center;padding-top:1em;" id="contact-form-container">
 
 			<style>
-				#contact-form table{
+				#contact-form{
 					width: 100%;
 					background: transparent;
 				}
 				#contact-form input{
 					width: 100%;
-					display:block;
 					padding: 3px 20px;
 					background: #FFF;
-					
+				}
+				#contact-form textarea, #contact-form input, #contact-form label{
+					display:inline-block;
+
+				}
+				.control-box{
+					display:block;
+					margin-bottom:10px;
 				}
 			</style>
 				<form id="contact-form" action="" method="post">
-				<table >
-					<tr><td><label>Name</label></td><td><input id="contact-form-name" type="text" name="name"/></td></tr>
-					<tr><td><label>Email</label></td><td><input id="contact-form-email" type="email" name="email" /></td></tr>
-					<tr><td><label>Subject</label></td><td><input id="contact-form-subject" type="text" name="subject" /></td></tr>
-					<tr><td><label>Message</label></td><td><textarea id="contact-form-message" name="message"></textarea> </td></tr>
-					<tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
+					<div class="control-box"><label>Name</label><input id="contact-form-name" type="text" name="name"/></div>
+					<div class="control-box"><label>Email</label><input id="contact-form-email" type="email" name="email" /></div>
+					<div class="control-box"><label>Subject</label><input id="contact-form-subject" type="text" name="subject" /></div>
+					<div class="control-box"><label>Message</label><textarea id="contact-form-message" name="message"></textarea> </div>
+					<div class="control-box"><input type="submit" value="Submit"></div>
 				</form>
 				<script>
 					$("#contact-form").on("submit", function(e){
