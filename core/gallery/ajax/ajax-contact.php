@@ -14,11 +14,12 @@
 			<style>
 				#contact-form table{
 					width: 100%;
+					background: transparent;
 				}
 				#contact-form input{
+					width: 100%;
 					display:block;
-					height: 42px;
-					padding: 5px 2px;
+					padding: 3px 20px;
 					background: #FFF;
 					
 				}
