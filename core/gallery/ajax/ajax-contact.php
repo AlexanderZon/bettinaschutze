@@ -17,10 +17,10 @@
 					background: transparent;
 					position:relative;
 				}
-				#contact-form input{
-					width: 70%;
+				#contact-form input, #contact-form textarea{
 					padding: 3px 20px;
 					background: #FFF;
+					width: 70%;
 				}
 				#contact-form label{
 					float:left !important;
@@ -33,6 +33,7 @@
 					display:inline-block;
 					border:0;
 				}
+
 				.control-box{
 					display:block;
 					margin-bottom:10px;
