@@ -10,6 +10,19 @@
 
 	$html = '<img src="'.$logo.'" ><br>
 			<div style="text-align:center;padding-top:1em;" id="contact-form-container">
+
+			<style>
+				#contact-form{
+					width: 100%;
+				}
+				#contact-form input{
+					display:block;
+					height: 42px;
+					padding: 5px 15px;
+					background: #FFF;
+					
+				}
+			</style>
 				<form id="contact-form" action="" method="post">
 				<table>
 					<tr><td><label>Name</label></td><td><input id="contact-form-name" type="text" name="name"/></td></tr>
