@@ -44,7 +44,7 @@
 					margin-bottom:10px;
 				}
 				#contact-form input[type=submit]{
-					cursor: pointer
+					cursor: pointer;
 					background-color: #ECC;
 				}
 			</style>
