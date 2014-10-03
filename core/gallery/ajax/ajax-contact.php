@@ -12,19 +12,19 @@
 			<div style="text-align:center;padding-top:1em;" id="contact-form-container">
 
 			<style>
-				#contact-form{
+				#contact-form table{
 					width: 100%;
 				}
 				#contact-form input{
 					display:block;
 					height: 42px;
-					padding: 5px 15px;
+					padding: 5px 2px;
 					background: #FFF;
 					
 				}
 			</style>
 				<form id="contact-form" action="" method="post">
-				<table>
+				<table >
 					<tr><td><label>Name</label></td><td><input id="contact-form-name" type="text" name="name"/></td></tr>
 					<tr><td><label>Email</label></td><td><input id="contact-form-email" type="email" name="email" /></td></tr>
 					<tr><td><label>Subject</label></td><td><input id="contact-form-subject" type="text" name="subject" /></td></tr>
