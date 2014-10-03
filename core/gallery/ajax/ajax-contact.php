@@ -20,15 +20,13 @@
 				#contact-form input, #contact-form textarea{
 					padding: 3px 20px;
 					background: #FFF;
-					width: 70%;
+					width: 60%;
+					float:right !important;
 				}
 				#contact-form label{
 					float:left !important;
 				}
-				#contact-form input{
-					float:right !important;
-					
-				}
+				
 				#contact-form textarea, #contact-form input, #contact-form label{
 					display:inline-block;
 					border:0;
