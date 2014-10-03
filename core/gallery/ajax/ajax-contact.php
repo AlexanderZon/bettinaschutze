@@ -31,7 +31,8 @@
 				#contact-form label{
 					float:left !important;
 					font-weight: 900;
-
+					padding-top: 5px;
+					color: #C99;
 				}
 				
 				#contact-form textarea, #contact-form input, #contact-form label{
@@ -47,6 +48,7 @@
 					cursor: pointer;
 					background-color: #ECC;
 					height: 42px;
+					color: #FFF;
 				}
 			</style>
 				<form id="contact-form" action="" method="post">
