@@ -35,14 +35,13 @@
 				.control-box{
 					display:block;
 					margin-bottom:10px;
-					clear:both;
 				}
 			</style>
 				<form id="contact-form" action="" method="post">
-					<div class="control-box"><label>Name</label><input id="contact-form-name" type="text" name="name"/></div>
-					<div class="control-box"><label>Email</label><input id="contact-form-email" type="email" name="email" /></div>
-					<div class="control-box"><label>Subject</label><input id="contact-form-subject" type="text" name="subject" /></div>
-					<div class="control-box"><label>Message</label><textarea id="contact-form-message" name="message"></textarea> </div>
+					<div class="control-box"><label>Name</label><input id="contact-form-name" type="text" name="name"/><div style="clear:both;"></div></div>
+					<div class="control-box"><label>Email</label><input id="contact-form-email" type="email" name="email" /><div style="clear:both;"></div></div>
+					<div class="control-box"><label>Subject</label><input id="contact-form-subject" type="text" name="subject" /><div style="clear:both;"></div></div>
+					<div class="control-box"><label>Message</label><textarea id="contact-form-message" name="message"></textarea> <div style="clear:both;"></div></div>
 					<div class="control-box"><input type="submit" value="Submit"></div>
 				</form>
 				<script>
