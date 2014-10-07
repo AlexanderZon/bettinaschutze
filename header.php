@@ -37,6 +37,7 @@
     </script>
     <![endif]-->
     <?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class("fullscreen_layout"); ?>>
@@ -55,7 +56,12 @@
         <nav>
             <?php wp_nav_menu(array('theme_location' => 'main_menu', 'menu_class' => 'menu', 'depth' => '2')); ?>
             <!-- .menu -->
+            <span class='st_facebook_vcount' displayText='Facebook'></span>
+            <span class='st_twitter_vcount' displayText='Tweet'></span>
+            <span class='st_googleplus_vcount' displayText='Google +'></span>
             <div class="clear"></div>
         </nav>
     </div>
 </header>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "ec632103-ab0a-470c-bebc-2e3f6c97dfea", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
