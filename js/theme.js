@@ -435,39 +435,39 @@ jQuery(document).ready(function() {
 
 		});
 
-		jQuery(document).ready(function(){
+	});
 
-			var menu_items = {
-				'photos':'48',
-				'videos':'73',
-				'bio':'74',
-				'contact':'400'
-			}
-				
-			jQuery('#menu-item-'+menu_items.videos).on('click', function(e){
-				e.preventDefault();
-				console.log("Click");
-				var html = video_lightbox();
-			});
-				
-			jQuery('#menu-item-'+menu_items.photos).on('click', function(e){
-				e.preventDefault();
-				console.log("Click");
-				var html = photo_lightbox();
-			});
-				
-			jQuery('#menu-item-'+menu_items.bio).on('click', function(e){
-				e.preventDefault();
-				console.log("Click");
-				var html = bio_lightbox();
-			});
-				
-			jQuery('#menu-item-'+menu_items.contact).on('click', function(e){
-				e.preventDefault();
-				console.log("Click");
-				var html = contact_lightbox();
-			});
+	jQuery(document).ready(function(){
 
+		var menu_items = {
+			'photos':'48',
+			'videos':'73',
+			'bio':'74',
+			'contact':'400'
+		}
+			
+		jQuery('#menu-item-'+menu_items.videos).on('click', function(e){
+			e.preventDefault();
+			console.log("Click");
+			var html = video_lightbox();
+		});
+			
+		jQuery('#menu-item-'+menu_items.photos).on('click', function(e){
+			e.preventDefault();
+			console.log("Click");
+			var html = photo_lightbox();
+		});
+			
+		jQuery('#menu-item-'+menu_items.bio).on('click', function(e){
+			e.preventDefault();
+			console.log("Click");
+			var html = bio_lightbox();
+		});
+			
+		jQuery('#menu-item-'+menu_items.contact).on('click', function(e){
+			e.preventDefault();
+			console.log("Click");
+			var html = contact_lightbox();
 		});
 
 	});
