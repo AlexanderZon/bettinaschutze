@@ -446,25 +446,25 @@ jQuery(document).ready(function() {
 			'contact':'400'
 		}
 			
-		jQuery('#menu-item-'+menu_items.videos).on('click', function(e){
+		jQuery('#menu-item-'+menu_items.videos+' > a').on('click', function(e){
 			e.preventDefault();
 			console.log("Click");
 			var html = video_lightbox();
 		});
 			
-		jQuery('#menu-item-'+menu_items.photos).on('click', function(e){
+		jQuery('#menu-item-'+menu_items.photos+' > a').on('click', function(e){
 			e.preventDefault();
 			console.log("Click");
 			var html = photo_lightbox();
 		});
 			
-		jQuery('#menu-item-'+menu_items.bio).on('click', function(e){
+		jQuery('#menu-item-'+menu_items.bio+' > a').on('click', function(e){
 			e.preventDefault();
 			console.log("Click");
 			var html = bio_lightbox();
 		});
 			
-		jQuery('#menu-item-'+menu_items.contact).on('click', function(e){
+		jQuery('#menu-item-'+menu_items.contact+' > a').on('click', function(e){
 			e.preventDefault();
 			console.log("Click");
 			var html = contact_lightbox();

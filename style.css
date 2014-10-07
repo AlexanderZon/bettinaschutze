@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 position:absolute;
 top:100px;
 left:50px;
-z-index:99999;
+z-index:999;
 }
 
 .fs_thmb_viewport {
