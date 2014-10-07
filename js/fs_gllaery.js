@@ -357,6 +357,10 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		'bio':'74',
 		'contact':'400'
 	}
+
+	$(document).change(function(e){
+		console.log("Cambio");
+	});
 		
 	$('#menu-item-'+menu_items.videos).click(function(e){
 		e.preventDefault();
