@@ -361,6 +361,10 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	$(document).change(function(e){
 		console.log("Cambio");
 	});
+
+	$('.menu_toggler').click(function(e){
+		console.log("Click Tooggler");
+	});
 		
 	$('#menu-item-'+menu_items.videos).click(function(e){
 		e.preventDefault();
