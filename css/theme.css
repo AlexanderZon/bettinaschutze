@@ -277,7 +277,7 @@ header nav ul.menu > li:hover > ul.sub-menu > li:hover > ul.sub-menu {
 
 .fullscreen_layout .header_wrapper,
 .header2top .header_wrapper {
-    width: 100%;
+    width: 80%;
 }
 
 .fullscreen_layout header .logo,

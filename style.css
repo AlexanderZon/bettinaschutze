@@ -21,3 +21,10 @@ z-index:999;
 .fs_thmb_viewport {
 bottom: 69px !important;
 }
+
+.sharethis{
+	display: inline-block;
+	width: 150px;
+	float: left;
+	margin-top: 20px;
+}
