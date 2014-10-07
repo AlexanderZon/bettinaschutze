@@ -428,6 +428,7 @@ jQuery(document).ready(function() {
 	jQuery('.mobile_menu').html(jQuery('header').find('.menu').html());
 	jQuery('.mobile_menu_wrapper').hide();
 	jQuery('.menu_toggler').click(function(){
+		
 		var menu_items = {
 			'photos':'48',
 			'videos':'73',
@@ -460,7 +461,7 @@ jQuery(document).ready(function() {
 		});
 
 		jQuery('.mobile_menu_wrapper').slideToggle(300);
-		
+
 	});
 	
 	//Input and Textarea Click-Clear
