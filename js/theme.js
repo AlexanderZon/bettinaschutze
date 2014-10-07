@@ -435,30 +435,32 @@ jQuery(document).ready(function() {
 			'contact':'400'
 		}
 			
-		$('#menu-item-'+menu_items.videos).click(function(e){
+		jQuery('#menu-item-'+menu_items.videos).click(function(e){
 			e.preventDefault();
 			console.log("Click");
 			var html = video_lightbox();
 		});
 			
-		$('#menu-item-'+menu_items.photos).click(function(e){
+		jQuery('#menu-item-'+menu_items.photos).click(function(e){
 			e.preventDefault();
 			console.log("Click");
 			var html = photo_lightbox();
 		});
 			
-		$('#menu-item-'+menu_items.bio).click(function(e){
+		jQuery('#menu-item-'+menu_items.bio).click(function(e){
 			e.preventDefault();
 			console.log("Click");
 			var html = bio_lightbox();
 		});
 			
-		$('#menu-item-'+menu_items.contact).click(function(e){
+		jQuery('#menu-item-'+menu_items.contact).click(function(e){
 			e.preventDefault();
 			console.log("Click");
 			var html = contact_lightbox();
 		});
+
 		jQuery('.mobile_menu_wrapper').slideToggle(300);
+		
 	});
 	
 	//Input and Textarea Click-Clear
