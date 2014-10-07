@@ -897,6 +897,7 @@ a.menu_toggler {
 		margin:0 auto;
 	}
 	.mobile_menu {
+		text-align: center;
 		width:420px!important;
 		margin:0 auto;
 		padding-top: 20px !important;
