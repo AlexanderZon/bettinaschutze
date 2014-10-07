@@ -419,7 +419,7 @@ a.menu_toggler {
 		width:auto!important;
 	}
 	.mobile_menu > li {
-		width:100%!important;
+		width:20%!important;
 		display: inline-block;
 	}
 	
