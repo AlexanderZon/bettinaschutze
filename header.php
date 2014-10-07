@@ -51,6 +51,13 @@
                 height="<?php //the_theme_option("header_logo_standart_height"); ?>" class="logo_retina">--></a>
 
 <header class="">
+    <div class="sharethis">
+        
+        <span class='st_facebook_large' displayText='Facebook'></span>
+        <span class='st_twitter_large' displayText='Tweet'></span>
+        <span class='st_googleplus_large' displayText='Google +'></span>
+
+    </div>
     <div class="header_wrapper container">
        
         <nav>
