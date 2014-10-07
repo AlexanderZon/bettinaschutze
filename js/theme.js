@@ -430,7 +430,9 @@ jQuery(document).ready(function() {
 	jQuery('.menu_toggler').click(function(){
 
 		jQuery('.mobile_menu_wrapper').slideToggle(300, function(){
-			console.log("callback");
+
+			console.log("callback fix");
+
 			jQuery(document).ready(function(){
 
 				var menu_items = {
