@@ -283,7 +283,7 @@ Version: 0.1
     }
 
     .thumb_toggle {
-        display: none;
+        display: none !important;
     }
 
 }

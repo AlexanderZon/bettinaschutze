@@ -428,7 +428,36 @@ jQuery(document).ready(function() {
 	jQuery('.mobile_menu').html(jQuery('header').find('.menu').html());
 	jQuery('.mobile_menu_wrapper').hide();
 	jQuery('.menu_toggler').click(function(){
-		console.log('Click theme.js');
+		var menu_items = {
+			'photos':'48',
+			'videos':'73',
+			'bio':'74',
+			'contact':'400'
+		}
+			
+		$('#menu-item-'+menu_items.videos).click(function(e){
+			e.preventDefault();
+			console.log("Click");
+			var html = video_lightbox();
+		});
+			
+		$('#menu-item-'+menu_items.photos).click(function(e){
+			e.preventDefault();
+			console.log("Click");
+			var html = photo_lightbox();
+		});
+			
+		$('#menu-item-'+menu_items.bio).click(function(e){
+			e.preventDefault();
+			console.log("Click");
+			var html = bio_lightbox();
+		});
+			
+		$('#menu-item-'+menu_items.contact).click(function(e){
+			e.preventDefault();
+			console.log("Click");
+			var html = contact_lightbox();
+		});
 		jQuery('.mobile_menu_wrapper').slideToggle(300);
 	});
 	

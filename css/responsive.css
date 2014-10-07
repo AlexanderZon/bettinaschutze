@@ -420,6 +420,7 @@ a.menu_toggler {
 	}
 	.mobile_menu > li {
 		width:100%!important;
+		display: inline-block;
 	}
 	
 	.pre_footer {
@@ -898,6 +899,7 @@ a.menu_toggler {
 	.mobile_menu {
 		width:420px!important;
 		margin:0 auto;
+		padding-top: 20px !important;
 	}
 	
 	.content_wrapper {
