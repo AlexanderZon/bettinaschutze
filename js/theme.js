@@ -428,6 +428,7 @@ jQuery(document).ready(function() {
 	jQuery('.mobile_menu').html(jQuery('header').find('.menu').html());
 	jQuery('.mobile_menu_wrapper').hide();
 	jQuery('.menu_toggler').click(function(){
+		console.log('Click theme.js');
 		jQuery('.mobile_menu_wrapper').slideToggle(300);
 	});
 	
