@@ -271,7 +271,7 @@ Version: 0.1
 
 @media only screen and (max-width: 760px) {
     .fs_thmb_viewport {
-        display: none;
+        display: block;
     }
 
     .fs_title_wrapper {
