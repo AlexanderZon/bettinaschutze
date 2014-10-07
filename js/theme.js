@@ -431,37 +431,40 @@ jQuery(document).ready(function() {
 
 		jQuery('.mobile_menu_wrapper').slideToggle(300, function(){
 			console.log("callback");
-		});
+			jQuery(document).ready(function(){
 
-		var menu_items = {
-			'photos':'48',
-			'videos':'73',
-			'bio':'74',
-			'contact':'400'
-		}
-			
-		jQuery('#menu-item-'+menu_items.videos).click(function(e){
-			e.preventDefault();
-			console.log("Click");
-			var html = video_lightbox();
-		});
-			
-		jQuery('#menu-item-'+menu_items.photos).click(function(e){
-			e.preventDefault();
-			console.log("Click");
-			var html = photo_lightbox();
-		});
-			
-		jQuery('#menu-item-'+menu_items.bio).click(function(e){
-			e.preventDefault();
-			console.log("Click");
-			var html = bio_lightbox();
-		});
-			
-		jQuery('#menu-item-'+menu_items.contact).click(function(e){
-			e.preventDefault();
-			console.log("Click");
-			var html = contact_lightbox();
+				var menu_items = {
+					'photos':'48',
+					'videos':'73',
+					'bio':'74',
+					'contact':'400'
+				}
+					
+				jQuery('#menu-item-'+menu_items.videos).click(function(e){
+					e.preventDefault();
+					console.log("Click");
+					var html = video_lightbox();
+				});
+					
+				jQuery('#menu-item-'+menu_items.photos).click(function(e){
+					e.preventDefault();
+					console.log("Click");
+					var html = photo_lightbox();
+				});
+					
+				jQuery('#menu-item-'+menu_items.bio).click(function(e){
+					e.preventDefault();
+					console.log("Click");
+					var html = bio_lightbox();
+				});
+					
+				jQuery('#menu-item-'+menu_items.contact).click(function(e){
+					e.preventDefault();
+					console.log("Click");
+					var html = contact_lightbox();
+				});
+
+			});
 		});
 
 	});
