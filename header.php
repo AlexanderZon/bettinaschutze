@@ -63,9 +63,6 @@
         <nav>
             <?php wp_nav_menu(array('theme_location' => 'main_menu', 'menu_class' => 'menu', 'depth' => '2')); ?>
             <!-- .menu -->
-            <span class='st_facebook_vcount' displayText='Facebook'></span>
-            <span class='st_twitter_vcount' displayText='Tweet'></span>
-            <span class='st_googleplus_vcount' displayText='Google +'></span>
             <div class="clear"></div>
         </nav>
     </div>
