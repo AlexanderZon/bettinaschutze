@@ -13,12 +13,22 @@
 		left: -220px !important;
 	}
 
+	.fs_title_wrapper h6{		
+	    font-size: 16px;
+	    text-align:left;
+	}
+
 }
 
 @media only screen and (min-width: 960px) and (max-width: 1199px) {
 
 	.notext{
 		left: 0px !important;
+	}
+
+	.fs_title_wrapper h6{		
+	    font-size: 16px;
+	    text-align:left;
 	}
 	.contact-info{
         display: inline-block;
@@ -134,10 +144,12 @@
 	
 @media only screen and (min-width: 760px) and (max-width: 959px) {
 	.notext{
-		left: 0px;
+		left: 0px !important;
 	}
-	.notext > h6{
-		font-size: 9pt !important;
+
+	.fs_title_wrapper h6{		
+	    font-size: 16px;
+	    text-align:left;
 	}
 	.module_gallery_wall .list-of-images,
 	.module_gallery_wall .list-of-images .gallery_item {
