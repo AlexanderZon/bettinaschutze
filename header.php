@@ -79,9 +79,9 @@
     </style>
     <div class="contact-info">
         <span>bettina@bettinaschutze.com</span>
-        <span><b>Phone: </b> 0055 11 98114 2119 </span>
-        <span><b>Agency: </b> 0055 11 30428684 </span>
-        <span><b>Germany: </b> 0049 (0) 1725238027 </span>
+        <span>| <b>Phone: </b> 0055 11 98114 2119 </span>
+        <span>| <b>Agency: </b> 0055 11 30428684 </span>
+        <span>| <b>Germany: </b> 0049 (0) 1725238027 </span>
     </div>
     <div class="header_wrapper container">
        
