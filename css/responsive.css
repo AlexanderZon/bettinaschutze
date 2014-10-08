@@ -941,11 +941,10 @@ a.menu_toggler {
 	}
 	.logo {
 		max-width:400px!important;
-		width: 80% !important;
+		width: 90% !important;
 	}
 	.logo img {
 		max-width:400px!important;
-		width: 80% !important;
 		display:block!important;
 	}
 	.main_wrapper,
@@ -1067,6 +1066,7 @@ a.menu_toggler {
 
 	.logo{
 		max-width: 400px;
+		width: 90% !important;
 	}
 
 	.container {
