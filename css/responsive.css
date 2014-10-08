@@ -353,12 +353,19 @@ a.menu_toggler {
 	display:none;
 }
 @media only screen and (max-width: 760px) {
+	.sharethis{
+		margin-bottom: 10px;
+	}
 	.notext{
 		left: 0px !important;
 	}
 
 	.fs_thmb_viewport img{
 		height: 55px !important;
+	}
+
+	.fs_thmb_viewport{
+		bottom: 90px !important;
 	}
 
 	.fs_title_wrapper h6{
