@@ -251,7 +251,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_title').fadeOut(300);
 		$('.fs_descr').fadeOut(300, function(){
 			if (fs_options.slides[thisSlide].title == '' && fs_options.slides[thisSlide].description == "") {
-				$fs_title.addClass('notext');
+				$fs_title.css({'left':'0px'});
 				$('.fs_thmb_viewport').width($(window).width()).css('left', '0px');							
 			} else {
 				/*
@@ -291,7 +291,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_title').fadeOut(300);
 		$('.fs_descr').fadeOut(300, function(){
 			if (fs_options.slides[thisSlide].title == '' && fs_options.slides[thisSlide].description == "") {
-				$fs_title.addClass('notext');
+				$fs_title.css({'left':'0px'});
 				$('.fs_thmb_viewport').width($(window).width()).css('left', '0px');							
 			} else {
 				/*$fs_title.removeClass('notext');
@@ -321,7 +321,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_title').fadeOut(300);
 		$('.fs_descr').fadeOut(300, function(){
 			if (fs_options.slides[thisSlide].title == '' && fs_options.slides[thisSlide].description == "") {
-				$fs_title.addClass('notext');
+				$fs_title.css({'left':'0px'});
 				$('.fs_thmb_viewport').width($(window).width()).css('left', '0px');							
 			} else {
 				/*$fs_title.removeClass('notext');
