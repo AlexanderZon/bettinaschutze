@@ -7,7 +7,19 @@
 	display:none;	
 }
 
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+
+	.notext{
+		left: -220px !important;
+	}
+
+}
+
 @media only screen and (min-width: 960px) and (max-width: 1199px) {
+
+	.notext{
+		left: 0px !important;
+	}
 	.contact-info{
         display: inline-block;
         width: 45%;
@@ -121,6 +133,9 @@
 }
 	
 @media only screen and (min-width: 760px) and (max-width: 959px) {
+	.notext > h6{
+		font-size: 9pt;
+	}
 	.module_gallery_wall .list-of-images,
 	.module_gallery_wall .list-of-images .gallery_item {
 		margin:0!important;
@@ -318,43 +333,17 @@
 	
 }
 	
-@media only screen and (min-width: 760px) and (max-width: 825px) {
-	.contact-info{
-        display: inline-block;
-        width: 35%;
-        min-width: 200px;
-        float: left;
-        margin-top: 2em;
-        margin-bottom: 2em;
-        color: #FFF;
-        font-weight: 900;
-        font-size: 11pt;
-    }
-    .contact-info > span{
-        font-weight: 900;
-    }
-}
 
 a.menu_toggler { 
 	display:none;
 }
 @media only screen and (max-width: 760px) {
 
-	.contact-info{
-        display: inline-block;
-        width: 65%;
-        min-width: 200px;
-        float: left;
-        margin-top: 2em;
-        margin-bottom: 2em;
-        color: #FFF;
-        font-weight: 900;
-        font-size: 11pt;
-    }
-    .contact-info > span{
-        font-weight: 900;
-    }
-    
+	.notext > h6{
+		font-size: 9pt;
+		text-align:center;
+	}
+
 	header .logo,
 	header.type1 .logo,
 	header.type2 .logo,
