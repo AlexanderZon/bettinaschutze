@@ -190,7 +190,7 @@ Version: 0.1
 .fs_thmb_viewport {
     position: fixed;
     display: block;
-    bottom: 79px;
+    bottom: 150px !important;
     right: 0;
     width: 100%;
     height: 88px;
