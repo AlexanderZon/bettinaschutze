@@ -57,9 +57,14 @@
         <span class='st_twitter_large' displayText='Tweet'></span>
         <span class='st_googleplus_large' displayText='Google +'></span>
 
-            <span class="fs_descr">bettina@bettinaschutze.com</span> &nbsp; <span class="fs_descr"><b>Phone: </b> 0055 11 98114 2119 </span> &nbsp; <span class="fs_descr"><b>Agency: </b> 0055 11 30428684 </span>
+            
 
 
+    </div>
+    <div class="contact-info">
+        <span class="fs_descr">bettina@bettinaschutze.com</span>
+        <span class="fs_descr"><b>Phone: </b> 0055 11 98114 2119 </span>
+        <span class="fs_descr"><b>Agency: </b> 0055 11 30428684 </span>
     </div>
     <div class="header_wrapper container">
        
