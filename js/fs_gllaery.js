@@ -358,25 +358,25 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		'contact':'400'
 	}
 		
-	$('#menu-item-'+menu_items.videos).click(function(e){
+	$('#menu-item-'+menu_items.videos+' > a').click(function(e){
 		e.preventDefault();
 		console.log("Click");
 		var html = video_lightbox();
 	});
 		
-	$('#menu-item-'+menu_items.photos).click(function(e){
+	$('#menu-item-'+menu_items.photos+' > a').click(function(e){
 		e.preventDefault();
 		console.log("Click");
 		var html = photo_lightbox();
 	});
 		
-	$('#menu-item-'+menu_items.bio).click(function(e){
+	$('#menu-item-'+menu_items.bio+' > a').click(function(e){
 		e.preventDefault();
 		console.log("Click");
 		var html = bio_lightbox();
 	});
 		
-	$('#menu-item-'+menu_items.contact).click(function(e){
+	$('#menu-item-'+menu_items.contact+' > a').click(function(e){
 		e.preventDefault();
 		console.log("Click");
 		var html = contact_lightbox();

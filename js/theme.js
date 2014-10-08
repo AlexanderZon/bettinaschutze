@@ -430,7 +430,7 @@ jQuery(document).ready(function() {
 	jQuery('.menu_toggler').click(function(){
 
 		jQuery('.mobile_menu_wrapper').slideToggle(300, function(){
-
+/*
 			console.log("callback fix");
 
 			var menu_items = {
@@ -463,7 +463,7 @@ jQuery(document).ready(function() {
 				console.log("Click");
 				var html = contact_lightbox();
 			});
-
+*/
 		});
 
 	});
