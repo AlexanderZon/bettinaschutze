@@ -984,17 +984,17 @@ a.menu_toggler {
 		width:420px;
 		margin:0 auto;
 	}
-	.logo {
+	.logo{
 		left: 0px;
-		max-width:400px!important;
-		width: 90% !important;
+		max-width: 400px;
+		width: 100% !important;
 		height: auto !important;
 		text-align: center;
 	}
-	.logo img {
-		max-width:400px!important;
+
+	.logo img{
+		max-width: 400px;
 		width: 50% !important;
-		display:block!important;
 		height: auto !important;
 		text-align: center;
 	}
@@ -1122,7 +1122,7 @@ a.menu_toggler {
 	.logo{
 		left: 0px;
 		max-width: 400px;
-		width: 90% !important;
+		width: 100% !important;
 		height: auto !important;
 		text-align: center;
 	}
