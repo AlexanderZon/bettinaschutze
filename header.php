@@ -62,20 +62,7 @@
 
     </div>
     <style type="text/css">
-        .contact-info{
-            display: inline-block;
-            width: 45%;
-            min-width: 200px;
-            float: left;
-            margin-top: 2em;
-            margin-bottom: 2em;
-            color: #FFF;
-            font-weight: 900;
-            font-size: 11pt;
-        }
-        .contact-info > span{
-            font-weight: 900;
-        }
+        
     </style>
     <div class="contact-info">
         <span>bettina@bettinaschutze.com</span>
