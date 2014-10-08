@@ -945,6 +945,7 @@ a.menu_toggler {
 	}
 	.logo img {
 		max-width:400px!important;
+		width: 90% !important;
 		display:block!important;
 	}
 	.main_wrapper,
@@ -1065,6 +1066,11 @@ a.menu_toggler {
 @media only screen and (max-width: 459px) {
 
 	.logo{
+		max-width: 400px;
+		width: 90% !important;
+	}
+
+	.logo img{
 		max-width: 400px;
 		width: 90% !important;
 	}
