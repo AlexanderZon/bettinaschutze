@@ -362,6 +362,7 @@ a.menu_toggler {
 
 	.fs_thmb_viewport img{
 		height: 55px !important;
+		margin: 0 auto;
 	}
 
 	.fs_thmb_viewport{
@@ -945,6 +946,11 @@ a.menu_toggler {
 @media only screen and (min-width: 459px) and (max-width: 760px) {
 	.featured_slider ul li .carousel_desc:after {
 		display:block!important;
+	}
+
+	.fs_thmb_viewport{
+		bottom: 90px !important;
+		height: 45px !important;
 	}
 
 	.fs_thmb_viewport img{
