@@ -950,11 +950,13 @@ a.menu_toggler {
 	.logo {
 		max-width:400px!important;
 		width: 90% !important;
+		height: auto !important;
 	}
 	.logo img {
 		max-width:400px!important;
 		width: 90% !important;
 		display:block!important;
+		height: auto !important;
 	}
 	.main_wrapper,
 	.pre_footer {
@@ -1080,11 +1082,13 @@ a.menu_toggler {
 	.logo{
 		max-width: 400px;
 		width: 90% !important;
+		height: auto !important;
 	}
 
 	.logo img{
 		max-width: 400px;
 		width: 90% !important;
+		height: auto !important;
 	}
 
 	.container {
