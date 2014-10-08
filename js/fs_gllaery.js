@@ -254,10 +254,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				$fs_title.addClass('notext');
 				$('.fs_thmb_viewport').width($(window).width()).css('left', '0px');							
 			} else {
+				/*
 				$fs_title.removeClass('notext');
 				$('.fs_thmb_viewport').width($(window).width()-$fs_title.width()-58).css('left', $fs_title.width()+58+'px');
 				$('.fs_title').text(fs_options.slides[thisSlide].title);
 				$('.fs_descr').html(fs_options.slides[thisSlide].description);
+				*/
 			}
 			$('.fs_title').fadeIn(300);
 			$('.fs_descr').fadeIn(300);
@@ -292,10 +294,10 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				$fs_title.addClass('notext');
 				$('.fs_thmb_viewport').width($(window).width()).css('left', '0px');							
 			} else {
-				$fs_title.removeClass('notext');
+				/*$fs_title.removeClass('notext');
 				$('.fs_thmb_viewport').width($(window).width()-$fs_title.width()-58).css('left', $fs_title.width()+58+'px');
 				$('.fs_title').text(fs_options.slides[thisSlide].title);
-				$('.fs_descr').html(fs_options.slides[thisSlide].description);
+				$('.fs_descr').html(fs_options.slides[thisSlide].description);*/
 			}
 			$('.fs_title').fadeIn(300);
 			$('.fs_descr').fadeIn(300);
@@ -322,10 +324,10 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				$fs_title.addClass('notext');
 				$('.fs_thmb_viewport').width($(window).width()).css('left', '0px');							
 			} else {
-				$fs_title.removeClass('notext');
+				/*$fs_title.removeClass('notext');
 				$('.fs_thmb_viewport').width($(window).width()-$fs_title.width()-58).css('left', $fs_title.width()+58+'px');
 				$('.fs_title').text(fs_options.slides[thisSlide].title);
-				$('.fs_descr').html(fs_options.slides[thisSlide].description);
+				$('.fs_descr').html(fs_options.slides[thisSlide].description);*/
 			}
 			$('.fs_title').fadeIn(300);
 			$('.fs_descr').fadeIn(300);
