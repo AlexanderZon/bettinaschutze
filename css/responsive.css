@@ -3,10 +3,26 @@
 /*Responsive*/
 /*Style.css*/
 
+
 .mobile_menu_wrapper {
 	display:none;	
 }
 
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+	.logo{
+		display:none;
+	}
+
+}
+
+@media only screen and (min-device-width : 420px) and (max-device-width : 768px) and (orientation : landscape) {
+
+	.logo{
+		display:none;
+	}
+
+}
 @media only screen and (min-width: 1200px) and (max-width: 1450px) {
 
 	.notext{
@@ -969,7 +985,7 @@ a.menu_toggler {
 	}
 	.logo img {
 		max-width:400px!important;
-		width: 90% !important;
+		width: 50% !important;
 		display:block!important;
 		height: auto !important;
 		text-align: center;
@@ -1105,7 +1121,7 @@ a.menu_toggler {
 
 	.logo img{
 		max-width: 400px;
-		width: 90% !important;
+		width: 50% !important;
 		height: auto !important;
 		text-align: center;
 	}
