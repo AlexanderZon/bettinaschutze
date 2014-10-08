@@ -941,9 +941,11 @@ a.menu_toggler {
 	}
 	.logo {
 		max-width:400px!important;
+		width: 80% !important;
 	}
 	.logo img {
 		max-width:400px!important;
+		width: 80% !important;
 		display:block!important;
 	}
 	.main_wrapper,
