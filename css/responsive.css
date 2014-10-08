@@ -357,6 +357,10 @@ a.menu_toggler {
 		left: 0px !important;
 	}
 
+	.fs_thmb_viewport img{
+		height: 40px !important;
+	}
+
 	.fs_title_wrapper h6{
 		font-size: 9pt !important;
 		text-align:center;
@@ -935,6 +939,10 @@ a.menu_toggler {
 	.featured_slider ul li .carousel_desc:after {
 		display:block!important;
 	}
+
+	.fs_thmb_viewport img{
+		height: 35px !important;
+	}
 	.container {
 		width:420px;
 		margin:0 auto;
@@ -1065,6 +1073,10 @@ a.menu_toggler {
 
 @media only screen and (max-width: 459px) {
 
+
+	.fs_thmb_viewport img{
+		height: 25px !important;
+	}
 	.logo{
 		max-width: 400px;
 		width: 90% !important;
