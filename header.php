@@ -61,6 +61,17 @@
 
 
     </div>
+    <style type="text/css">
+        .contact-info{
+            display: inline-block;
+            width: 30%;
+            float: left;
+            margin-top: 2em;
+            color: #FFF;
+            font-weight: 900;
+            font-size: 11pt;
+        }
+    </style>
     <div class="contact-info">
         <span>bettina@bettinaschutze.com</span>
         <span><b>Phone: </b> 0055 11 98114 2119 </span>
