@@ -201,7 +201,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	}
 
 
-	$('body').append('<div class="fs_gallery_wrapper"><ul class="fs_gallery_container '+fs_options.fx+'"/><a href="javascript:void(0)" class="fs_slider_prev"/><a href="javascript:void(0)" class="fs_slider_next"/><div class="fs_title_wrapper '+set_state+'" style="width:100%"><h1 class="fs_title"></h1><h6>bettina@bettinaschutze.com | Phone: 0055 11 98114 2119 | Agency: 0055 11 30428684 | Germany: 0049 (0) 1725238027</h6><h6 class="fs_descr"></h6></div><div class="fs_thmb_viewport '+set_state+'"><div class="fs_thmb_wrapper" style="display:none"><ul class="fs_thmb_list" style="width:'+fs_options.slides.length*88+'px"/></div></div>');
+	$('body').append('<div class="fs_gallery_wrapper"><ul class="fs_gallery_container '+fs_options.fx+'"/><a href="javascript:void(0)" class="fs_slider_prev"/><a href="javascript:void(0)" class="fs_slider_next"/><div class="fs_title_wrapper '+set_state+'" style="width:95%"><h1 class="fs_title"></h1><h6 style="float:right">bettina@bettinaschutze.com | Phone: 0055 11 98114 2119 | Agency: 0055 11 30428684 | Germany: 0049 (0) 1725238027</h6><h6 class="fs_descr"></h6></div><div class="fs_thmb_viewport '+set_state+'"><div class="fs_thmb_wrapper" style="display:none"><ul class="fs_thmb_list" style="width:'+fs_options.slides.length*88+'px"/></div></div>');
 	$('header ul.menu').append('<li class="thumb_toggle"><a href="javascript:void(0)"></a></li>');
 	$fs_container = $('.fs_gallery_container');
 	$fs_thmb = $('.fs_thmb_list');
@@ -251,7 +251,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_title').fadeOut(300);
 		$('.fs_descr').fadeOut(300, function(){
 			if (fs_options.slides[thisSlide].title == '' && fs_options.slides[thisSlide].description == "") {
-				$fs_title.css({'left':'0px'});
+				$fs_title.addClass('notext');
+				//$fs_title.css({'left':'0px'});
 				$('.fs_thmb_viewport').width($(window).width()).css('left', '0px');							
 			} else {
 				/*
@@ -291,7 +292,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_title').fadeOut(300);
 		$('.fs_descr').fadeOut(300, function(){
 			if (fs_options.slides[thisSlide].title == '' && fs_options.slides[thisSlide].description == "") {
-				$fs_title.css({'left':'0px'});
+				$fs_title.addClass('notext');
+				//$fs_title.css({'left':'0px'});
 				$('.fs_thmb_viewport').width($(window).width()).css('left', '0px');							
 			} else {
 				/*$fs_title.removeClass('notext');
@@ -321,7 +323,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_title').fadeOut(300);
 		$('.fs_descr').fadeOut(300, function(){
 			if (fs_options.slides[thisSlide].title == '' && fs_options.slides[thisSlide].description == "") {
-				$fs_title.css({'left':'0px'});
+				$fs_title.addClass('notext');
+				//$fs_title.css({'left':'0px'});
 				$('.fs_thmb_viewport').width($(window).width()).css('left', '0px');							
 			} else {
 				/*$fs_title.removeClass('notext');
