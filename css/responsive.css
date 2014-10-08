@@ -948,15 +948,18 @@ a.menu_toggler {
 		margin:0 auto;
 	}
 	.logo {
+		left: 0px;
 		max-width:400px!important;
 		width: 90% !important;
 		height: auto !important;
+		text-align: center;
 	}
 	.logo img {
 		max-width:400px!important;
 		width: 90% !important;
 		display:block!important;
 		height: auto !important;
+		text-align: center;
 	}
 	.main_wrapper,
 	.pre_footer {
@@ -1080,15 +1083,18 @@ a.menu_toggler {
 		height: 35px !important;
 	}
 	.logo{
+		left: 0px;
 		max-width: 400px;
 		width: 90% !important;
 		height: auto !important;
+		text-align: center;
 	}
 
 	.logo img{
 		max-width: 400px;
 		width: 90% !important;
 		height: auto !important;
+		text-align: center;
 	}
 
 	.container {
