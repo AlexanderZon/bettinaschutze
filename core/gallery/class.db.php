@@ -119,7 +119,7 @@ class GalleryLightboxDB{
 		'video_oculted_err' => 'Hubo un error al ocultar el video',
 		'video_visible' => 'El video se ha puesto en modo visible',
 		'video_visible_err' => 'Hubo un error al mostrar el video',
-		'video_update' => 'Item actualizada con éxito',
+		'video_update' => 'Video actualizada con éxito',
 		'video_update_err' => 'Hubo un error al actualizar el video',
 		'video_trash' => 'El video ha sido enviado a la papelera de reciclaje',
 		'video_trash_err' => 'Hubo un error el enviar el video a la papelera de reciclaje',
