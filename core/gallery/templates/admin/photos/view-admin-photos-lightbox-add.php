@@ -33,7 +33,7 @@
 
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Añadir Photos <a href="admin.php?page=page_photo_lightbox&parent=<?php echo $data['parent']; ?>" class="add-new-h2">Volver</a></h2>
+	<h2>Add New Photos <a href="admin.php?page=page_photo_lightbox&parent=<?php echo $data['parent']; ?>" class="add-new-h2">Back</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
@@ -43,15 +43,15 @@
 		<input type="hidden" name="parent" value="<?php echo $data['parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
-				<td><span class="label">Título de la Photo:</span></td>
+				<td><span class="label">Title:</span></td>
 				<td><input type="text" id="post_title" name="post_title" maxlength="255" required/></td>
 			</tr>
 			<tr>
-				<td><span class="label">Descripción:</span></td>
-				<td><textarea type="text" id="post_content" name="post_content" maxlength="255" required></textarea></td>
+				<td><span class="label">Description:</span></td>
+				<td><textarea type="text" id="post_content" name="post_content" maxlength="255"></textarea></td>
 			</tr>
 			<tr>
-				<td><span class="label">Indique la Imagen:</span></td>
+				<td><span class="label">Image:</span></td>
 				<td><input type="file" id="image" name="image" maxlength="255" required/></td>
 			</tr>
 			<tr>

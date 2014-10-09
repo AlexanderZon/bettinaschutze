@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Photos Lightbox (Papelera) <a href="admin.php?page=page_photo_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Volver</a></h2>
+    <h2>Photos Lightbox (Trash) <a href="admin.php?page=page_photo_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Back</a></h2>
     
     <?php 
 
@@ -51,12 +51,12 @@
             
             $columns = array(
                 'cb' => '<input type="checkbox" />',
-                'post_title' => 'Título',
-                'post_content' => 'Descripción',
-                'post_excerpt' => 'Imagen',
-                'post_status' => 'Visibilidad',
-                'post_parent' => 'Pertenece a',
-                'post_date' => 'Fecha de Creación'
+                'post_title' => 'Title',
+                'post_content' => 'Description',
+                'post_excerpt' => 'Image',
+                'post_status' => 'Visibility',
+                'post_parent' => 'Belongs to',
+                'post_date' => 'Created At'
                 );
             
             return $columns;
@@ -159,8 +159,8 @@
         public function column_post_title( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Restaurar</a>', 'page_photo_lightbox_delete', 'untrash' , $item['ID'], $item['post_parent'] ),
-                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Eliminar</a>', 'page_photo_lightbox_delete', 'delete', $item['ID'], $item['post_parent'] )
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Restore</a>', 'page_photo_lightbox_delete', 'untrash' , $item['ID'], $item['post_parent'] ),
+                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Delete</a>', 'page_photo_lightbox_delete', 'delete', $item['ID'], $item['post_parent'] )
                 );
                 
             return sprintf( '%1$s %2$s', $item['post_title'], $this->row_actions( $actions ) );
@@ -210,20 +210,20 @@
                 case 'publish':
                     $status = 'Visible';
                     $actions = array(
-                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Ocultar</a>', 'page_photo_lightbox_edit', 'hide', $item['ID'] )
+                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Hide</a>', 'page_photo_lightbox_edit', 'hide', $item['ID'] )
                         );
                     break;
                 case 'draft':
-                    $status = 'No Visible';
+                    $status = 'Not Visible';
                     $actions = array(
-                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Visualizar</a>', 'page_photo_lightbox_edit', 'show' , $item['ID'] ),
+                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Show</a>', 'page_photo_lightbox_edit', 'show' , $item['ID'] ),
                         );
                     break;
                 case 'trash':
-                    $status = 'Eliminado';
+                    $status = 'Deleted';
                     break;
                 default:
-                    $status = 'Desconocido';
+                    $status = 'Unknowing';
                     break;
             }
             
@@ -234,7 +234,7 @@
         public function get_bulk_actions(){
             
             $actions = array(
-                'delete' => 'Eliminar'
+                'delete' => 'Delete'
                 );
                 
             return $actions;

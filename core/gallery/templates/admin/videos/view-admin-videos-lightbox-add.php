@@ -33,7 +33,7 @@
 
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Añadir Video <a href="admin.php?page=page_video_lightbox&parent=<?php echo $data['parent']; ?>" class="add-new-h2">Volver</a></h2>
+	<h2>Add New Video <a href="admin.php?page=page_video_lightbox&parent=<?php echo $data['parent']; ?>" class="add-new-h2">Back</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
@@ -43,11 +43,11 @@
 		<input type="hidden" name="parent" value="<?php echo $data['parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
-				<td><span class="label">Título del Video:</span></td>
+				<td><span class="label">Title:</span></td>
 				<td><input type="text" id="post_title" name="post_title" maxlength="255" required/></td>
 			</tr>
 			<tr>
-				<td><span class="label">Procedencia:</span></td>
+				<td><span class="label">Origin:</span></td>
 				<td>
 					<select name="pinged">
 						<option value="youtube">YouTube</option>
@@ -56,11 +56,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td><span class="label">Indique la URL del Video:</span></td>
+				<td><span class="label">Video URL:</span></td>
 				<td><input type="text" id="url" name="post_content" maxlength="255" required/></td>
 			</tr>
 			<tr>
-				<td><span class="label">Indique la Imagen de Destaque del Video:</span></td>
+				<td><span class="label">Main Image:</span></td>
 				<td><input type="file" id="image" name="image" maxlength="255" required/></td>
 			</tr>
 			<tr>
