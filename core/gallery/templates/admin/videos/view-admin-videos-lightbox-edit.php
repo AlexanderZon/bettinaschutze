@@ -43,7 +43,7 @@
 	<form method="post" action="" id="form-materia" enctype="multipart/form-data">
 		<input type="hidden" name="verify_video" value="edit"/>
 		<input type="hidden" name="ID" value="<?php echo $_GET['ID']; ?>"/>
-		<input type="hidden" name="parent" value="<?php echo $data['parent']; ?>"/>
+		<input type="hidden" name="parent" value="<?php echo $_GET['parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
 				<td><span class="label">Title:</span></td>
