@@ -195,6 +195,9 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	          	}
 	      	});
 		$('#fancybox_bio_'+num).click();
+		$('.fancybox-inner').css({
+			'padding-right':'10px'
+		});
 	}
 
 	//Set Variables
