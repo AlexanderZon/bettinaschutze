@@ -185,6 +185,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			padding: 30,
 			margin: 20,
 			width: 1000,
+			scrollOutside: true,
 			//maxWidth: '750',
 			maxHeight: 500,
 	          	helpers: {
