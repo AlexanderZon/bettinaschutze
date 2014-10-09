@@ -46,24 +46,11 @@
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
 				<td><span class="label">Title:</span></td>
-				<td><input type="text" id="post_title" name="post_title" maxlength="255" required /></td>
-			</tr>
-			<tr>
-				<td><span class="label">Origin:</span></td>
-				<td>
-					<select name="post_name">
-						<option value="youtube">YouTube</option>
-						<option value="vimeo">Vimeo</option>
-					</select>
-				</td>
+				<td><input type="text" id="post_title" name="post_title" maxlength="255" required value="<?php echo $item['post_title']; ?>"/></td>
 			</tr>
 			<tr>
 				<td><span class="label">Video URL:</span></td>
-				<td><input type="text" id="url" name="url" maxlength="255" required/></td>
-			</tr>
-			<tr>
-				<td><span class="label">Main Image:</span></td>
-				<td><input type="file" id="image" name="image" maxlength="255" required/></td>
+				<td><input type="text" id="url" name="post_content" maxlength="255" required value="<?php echo $item['post_content']; ?>"/></td>
 			</tr>
 			<tr>
 				<td colspan="3">

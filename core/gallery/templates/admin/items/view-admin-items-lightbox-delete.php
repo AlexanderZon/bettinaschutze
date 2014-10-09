@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Items Lightbox (Papelera) <a href="admin.php?page=page_item_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Volver</a></h2>
+    <h2>Items Lightbox (Trash) <a href="admin.php?page=page_item_lightbox&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Back</a></h2>
     
     <?php 
 
@@ -51,12 +51,12 @@
             
             $columns = array(
                 'cb' => '<input type="checkbox" />',
-                'post_title' => 'Título',
-                'post_content' => 'Descripción',
-                'post_excerpt' => 'Imagen de Destaque',
-                'post_status' => 'Visibilidad',
-                'post_parent' => 'Galería',
-                'post_date' => 'Fecha de Creación'
+                'post_title' => 'Title',
+                'post_content' => 'Description',
+                'post_excerpt' => 'Main Image',
+                'post_status' => 'Visibility',
+                'post_parent' => 'Gallery',
+                'post_date' => 'Created at'
                 );
             
             return $columns;
