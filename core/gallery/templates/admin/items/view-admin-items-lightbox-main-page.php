@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Items Lightbox <a href="admin.php?page=page_item_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_item_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver a Galería</a></h2>
+    <h2>Items Lightbox <a href="admin.php?page=page_item_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Add new</a> <a href="admin.php?page=page_item_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver a Galería</a></h2>
     
     <?php 
 
@@ -51,12 +51,12 @@
             
             $columns = array(
                 'cb' => '<input type="checkbox" />',
-                'post_title' => 'Título',
-                'post_content' => 'Descripción',
-                'post_excerpt' => 'Imagen de Destaque',
-                'post_status' => 'Visibilidad',
-                'post_parent' => 'Galería',
-                'post_date' => 'Fecha de Creación'
+                'post_title' => 'Title',
+                'post_content' => 'Description',
+                'post_excerpt' => 'Main Image',
+                'post_status' => 'Visibility',
+                'post_parent' => 'Galery',
+                'post_date' => 'Created at'
                 );
             
             return $columns;
@@ -159,8 +159,8 @@
         public function column_post_title( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Editar</a>', 'page_item_lightbox_edit', 'edit' , $item['ID'], $item['post_parent'] ),
-                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Papelera</a>', 'page_item_lightbox_delete', 'trash', $item['ID'], $item['post_parent'] )
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Edit</a>', 'page_item_lightbox_edit', 'edit' , $item['ID'], $item['post_parent'] ),
+                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Trash</a>', 'page_item_lightbox_delete', 'trash', $item['ID'], $item['post_parent'] )
                 );
                 
             return sprintf( '<a href="?page=%1$s&parent=%2$s">%3$s</a> %4$s', 'page_photo_lightbox', $item['ID'], $item['post_title'], $this->row_actions( $actions ) );
@@ -208,20 +208,20 @@
                 case 'publish':
                     $status = 'Visible';
                     $actions = array(
-                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Ocultar</a>', 'page_item_lightbox_edit', 'hide', $item['ID'], $item['post_parent'] )
+                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Hide</a>', 'page_item_lightbox_edit', 'hide', $item['ID'], $item['post_parent'] )
                         );
                     break;
                 case 'draft':
-                    $status = 'No Visible';
+                    $status = 'Not Visible';
                     $actions = array(
-                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Visualizar</a>', 'page_item_lightbox_edit', 'show' , $item['ID'], $item['post_parent'] ),
+                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Show</a>', 'page_item_lightbox_edit', 'show' , $item['ID'], $item['post_parent'] ),
                         );
                     break;
                 case 'trash':
-                    $status = 'Eliminado';
+                    $status = 'Deleted';
                     break;
                 default:
-                    $status = 'Desconocido';
+                    $status = 'Unknowing';
                     break;
             }
             
@@ -232,7 +232,7 @@
         public function get_bulk_actions(){
             
             $actions = array(
-                'delete' => 'Eliminar'
+                'delete' => 'Delete'
                 );
                 
             return $actions;
