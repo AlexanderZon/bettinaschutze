@@ -41,7 +41,7 @@
 	<!-- PAGE CONTENT -->
 	
 	<form method="post" action="" id="form-materia" enctype="multipart/form-data">
-		<input type="hidden" name="verify_video" value="add"/>
+		<input type="hidden" name="verify_video" value="edit"/>
 		<input type="hidden" name="parent" value="<?php echo $data['parent']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
