@@ -182,8 +182,9 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_thmb_viewport ').append(html);
 		$('#fancybox_bio_'+num).fancybox({
 			padding: '10',
-			maxWidth: '750',
-			maxHeight: '400',
+			width: '750',
+			//maxWidth: '750',
+			maxHeight: '500',
 	          	helpers: {
 	              	title : {
 	                  	type : 'float'
