@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Gallery Lightbox (Papelera) <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver</a></h2>
+    <h2>Gallery Lightbox (Trash) <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Back</a></h2>
     
     <?php 
 
@@ -49,9 +49,9 @@
             
             $columns = array(
                 'cb' => '<input type="checkbox" />',
-                'post_title' => 'Título',
-                'post_status' => 'Visibilidad',
-                'post_date' => 'Fecha de Creación'
+                'post_title' => 'Title',
+                'post_status' => 'Visibility',
+                'post_date' => 'Created at'
                 );
             
             return $columns;
@@ -148,8 +148,8 @@
         public function column_post_title( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Restaurar</a>', 'page_gallery_lightbox_delete', 'untrash' , $item['ID'] ),
-                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Eliminar</a>', 'page_gallery_lightbox_delete', 'delete', $item['ID'] )
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Restore</a>', 'page_gallery_lightbox_delete', 'untrash' , $item['ID'] ),
+                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Delete</a>', 'page_gallery_lightbox_delete', 'delete', $item['ID'] )
                 );
                 
             return sprintf( '<a href="?page=%1$s&parent=%2$s">%3$s</a> %4$s', 'page_item_lightbox', $item['ID'], $item['post_title'], $this->row_actions( $actions ) );
@@ -173,20 +173,20 @@
                 case 'publish':
                     $status = 'Visible';
                     $actions = array(
-                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Ocultar</a>', 'page_gallery_lightbox_edit', 'hide', $item['ID'] )
+                        'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Hide</a>', 'page_gallery_lightbox_edit', 'hide', $item['ID'] )
                         );
                     break;
                 case 'draft':
-                    $status = 'No Visible';
+                    $status = 'Not Visible';
                     $actions = array(
-                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Visualizar</a>', 'page_gallery_lightbox_edit', 'show' , $item['ID'] ),
+                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Show</a>', 'page_gallery_lightbox_edit', 'show' , $item['ID'] ),
                         );
                     break;
                 case 'trash':
-                    $status = 'Eliminado';
+                    $status = 'Deleted';
                     break;
                 default:
-                    $status = 'Desconocido';
+                    $status = 'Unknowing';
                     break;
             }
             

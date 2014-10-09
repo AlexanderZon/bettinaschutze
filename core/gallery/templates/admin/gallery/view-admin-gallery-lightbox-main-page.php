@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Gallery Lightbox <a href="admin.php?page=page_gallery_lightbox_add" class="add-new-h2">Añadir nueva</a> <a href="admin.php?page=page_gallery_lightbox_delete" class="add-new-h2">Papelera</a></h2>
+    <h2>Gallery Lightbox <a href="admin.php?page=page_gallery_lightbox_add" class="add-new-h2">Add new</a> <a href="admin.php?page=page_gallery_lightbox_delete" class="add-new-h2">Papelera</a></h2>
     
     <?php 
 
@@ -52,9 +52,9 @@
                 'post_title' => 'Title',
                 'post_status' => 'Visibility',
                 'post_excerpt' => 'Shortcode',
-                'comment_count_1' => 'Items counter',
-                'comment_count_2' => 'Videos counter',
-                'post_date' => 'Born date'
+                'comment_count_1' => 'Counter item',
+                'comment_count_2' => 'Counter video',
+                'post_date' => 'Created at'
                 );
             
             return $columns;
@@ -157,7 +157,7 @@
         public function column_post_title( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Editar</a>', 'page_gallery_lightbox_edit', 'edit' , $item['ID'] ),
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Edit</a>', 'page_gallery_lightbox_edit', 'edit' , $item['ID'] ),
                 /*'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Papelera</a>', 'page_gallery_lightbox_delete', 'trash', $item['ID'] )*/
                 );
                 
@@ -220,16 +220,16 @@
                         );
                     break;
                 case 'draft':
-                    $status = 'No Visible';
+                    $status = 'Not Visible';
                     $actions = array(
                         'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Show</a>', 'page_gallery_lightbox_edit', 'show' , $item['ID'] ),
                         );
                     break;
                 case 'trash':
-                    $status = 'Eliminado';
+                    $status = 'Delete';
                     break;
                 default:
-                    $status = 'Desconocido';
+                    $status = 'Unknowing';
                     break;
             }
             
@@ -240,7 +240,7 @@
         public function get_bulk_actions(){
             
             $actions = array(
-                'delete' => 'Eliminar'
+                'delete' => 'Delete'
                 );
                 
             return $actions;

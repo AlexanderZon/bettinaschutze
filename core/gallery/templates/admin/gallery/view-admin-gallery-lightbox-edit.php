@@ -36,7 +36,7 @@
 
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Editar Galerias <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver</a></h2>
+	<h2>Edit Galleries <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Back</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
@@ -46,7 +46,7 @@
 		<input type="hidden" name="ID" value="<?php echo $gallery['ID']; ?>"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
-				<td><span class="label">Título de la Galería:</span></td>
+				<td><span class="label">Title:</span></td>
 				<td><input type="text" id="post_title" name="post_title" maxlength="255" value="<?php echo $gallery['post_title']; ?>" required/></td>
 			</tr>
 			<tr>

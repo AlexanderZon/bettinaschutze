@@ -32,7 +32,7 @@
 
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Añadir Galerias <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Volver</a></h2>
+	<h2>Add Galleries <a href="admin.php?page=page_gallery_lightbox" class="add-new-h2">Back</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
@@ -41,7 +41,7 @@
 		<input type="hidden" name="verify_gallery" value="add"/>
 		<table style="border:1px #AAA dashed;padding:1em;">
 			<tr>
-				<td><span class="label">Título de la Galería:</span></td>
+				<td><span class="label">Title:</span></td>
 				<td><input type="text" id="post_title" name="post_title" maxlength="255" required/></td>
 			</tr>
 			<tr>
