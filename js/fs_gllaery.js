@@ -193,9 +193,6 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	          	}
 	      	});
 		$('#fancybox_bio_'+num).click();
-		$('#fancybox_bio_'+num).css({
-			'widht':''
-		})
 	}
 
 	//Set Variables
