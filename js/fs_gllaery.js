@@ -181,6 +181,9 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			
 		$('.fs_thmb_viewport ').append(html);
 		$('#fancybox_bio_'+num).fancybox({
+			padding: '10px',
+			maxWidth: '750px',
+			maxHeight: '400px'm
 	          	helpers: {
 	              	title : {
 	                  	type : 'float'
@@ -188,6 +191,9 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	          	}
 	      	});
 		$('#fancybox_bio_'+num).click();
+		$('#fancybox_bio_'+num).css({
+			'widht':''
+		})
 	}
 
 	//Set Variables
