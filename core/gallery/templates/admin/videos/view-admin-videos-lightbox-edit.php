@@ -49,8 +49,22 @@
 				<td><input type="text" id="post_title" name="post_title" maxlength="255" required value="<?php echo $item['post_title']; ?>"/></td>
 			</tr>
 			<tr>
+				<td><span class="label">Origin:</span></td>
+				<td>
+					<select name="pinged">
+						<option value="youtube" <?php echo $item['pinged'] == 'youtube' ? 'selected' : '' ?>>YouTube</option>
+						<option value="vimeo" <?php echo $item['pinged'] == 'vimeo' ? 'selected' : '' ?>>Vimeo</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
 				<td><span class="label">Video URL:</span></td>
 				<td><input type="text" id="url" name="post_content" maxlength="255" required value="<?php echo $item['post_content']; ?>"/></td>
+			</tr>
+			<tr>
+				<td><span class="label">Main Image:</span></td>
+				<td><input type="file" id="image" name="image" maxlength="255" required/><img src="<?php wp_get_attachment_url($item['post_excerpt']) ?>">
+				</td>
 			</tr>
 			<tr>
 				<td colspan="3">
