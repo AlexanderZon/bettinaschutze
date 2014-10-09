@@ -49,12 +49,12 @@
             
             $columns = array(
                 'cb' => '<input type="checkbox" />',
-                'post_title' => 'Título',
-                'post_status' => 'Visibilidad',
+                'post_title' => 'Title',
+                'post_status' => 'Visibility',
                 'post_excerpt' => 'Shortcode',
-                'comment_count_1' => 'Cantidad de Ítems',
-                'comment_count_2' => 'Cantidad de Ítems',
-                'post_date' => 'Fecha de Creación'
+                'comment_count_1' => 'Items counter',
+                'comment_count_2' => 'Videos counter',
+                'post_date' => 'Born date'
                 );
             
             return $columns;
@@ -180,7 +180,7 @@
         public function column_comment_count_1( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Ver Listado de Items</a>', 'page_item_lightbox', $item['ID'] ),
+                'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Show items</a>', 'page_item_lightbox', $item['ID'] ),
                 );
 
             global $gldb;
@@ -194,7 +194,7 @@
         public function column_comment_count_2( $item ){
             
             $actions = array(
-                'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Ver Listado de Videos</a>', 'page_video_lightbox', $item['ID'] ),
+                'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Show videos</a>', 'page_video_lightbox', $item['ID'] ),
                 );
 
             global $gldb;
@@ -222,7 +222,7 @@
                 case 'draft':
                     $status = 'No Visible';
                     $actions = array(
-                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Visualizar</a>', 'page_gallery_lightbox_edit', 'show' , $item['ID'] ),
+                        'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Show</a>', 'page_gallery_lightbox_edit', 'show' , $item['ID'] ),
                         );
                     break;
                 case 'trash':
