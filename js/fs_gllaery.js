@@ -176,17 +176,18 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		};
 
 		var html = '';
-		html = '<a id="fancybox_bio" class="fancybox fancybox_bio fancybox.ajax" rel="fancybox_bio" href="/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-bio.php?id='+data.id+'" ></a>';
+		var num = Math.floor((Math.random() * 10000) + 1);
+		html = '<a id="fancybox_bio_'+num+'" class="fancybox fancybox_bio fancybox.ajax" rel="fancybox_bio" href="/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-bio.php?id='+data.id+'" ></a>';
 			
 		$('.fs_thmb_viewport ').append(html);
-		$('.fancybox_bio').fancybox({
+		$('#fancybox_bio_'+num).fancybox({
 	          	helpers: {
 	              	title : {
 	                  	type : 'float'
 	              	}
 	          	}
 	      	});
-		$('.fancybox_bio').click();
+		$('#fancybox_bio_'+num).click();
 	}
 
 	//Set Variables
