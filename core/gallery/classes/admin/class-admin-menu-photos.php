@@ -108,10 +108,20 @@ class ClassAdminMenuPhotos extends ClassAdminMenuParent{
 				
 					$data = $_POST;
 
+					$file = $_FILES['image'];
+
 					$photo = $gldb->getPhoto($data['ID']);
 						
 					$photo['post_title'] = $data['post_title'];
 					$photo['post_content'] = $data['post_content'];
+
+					if($file['name'] != ''):
+
+						$attachment = $this->insert_attachment( $file, $id );
+
+						$photo['post_excerpt'] = $attachment;
+
+					endif;
 
 					$id = $gldb->updatePhoto($photo);
 					
