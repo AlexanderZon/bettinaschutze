@@ -35,7 +35,7 @@
 
 <div class="wrap">
 	<div class="icon32 element"><br></div>
-	<h2>Edit Videos <a href="admin.php?page=page_photo_lightbox&parent=<?php echo $video['post_parent']; ?>" class="add-new-h2">Back</a></h2>
+	<h2>Edit Videos <a href="admin.php?page=page_video_lightbox&parent=<?php echo $video['post_parent']; ?>" class="add-new-h2">Back</a></h2>
 	<hr>
 	
 	<!-- PAGE CONTENT -->
