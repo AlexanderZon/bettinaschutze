@@ -63,7 +63,7 @@
 			</tr>
 			<tr>
 				<td><span class="label">Main Image:</span></td>
-				<td><input type="file" id="image" name="image" maxlength="255" required/><img src="<?php wp_get_attachment_url($video['post_excerpt']) ?>">
+				<td><input type="file" id="image" name="image" maxlength="255" required/><img src="<?php echo wp_get_attachment_url($video['post_excerpt']) ?>">
 				</td>
 			</tr>
 			<tr>
