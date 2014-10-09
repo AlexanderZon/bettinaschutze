@@ -111,6 +111,8 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 
 					$file = $_FILES['image'];
 
+					return($file);
+
 					$video = $gldb->getVideo($data['ID']);
 						
 					$video['post_title'] = $data['post_title'];
