@@ -111,17 +111,13 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 
 					$file = $_FILES['image'];
 
-					return var_dump($_FILES);
-
-					return var_dump($file);
-
 					$video = $gldb->getVideo($data['ID']);
 						
 					$video['post_title'] = $data['post_title'];
 					$video['post_content'] = $data['post_content'];
 					$video['pinged'] = $date['pinged'];
 
-					if($file != null):
+					if($file['name'] != ""):
 
 						$attachment = $this->insert_attachment( $file, $video['ID'] );
 						$video['post_excerpt'] = $attachment;
