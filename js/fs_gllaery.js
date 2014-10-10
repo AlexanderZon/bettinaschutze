@@ -13,7 +13,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var item = function(item){
 			//console.log(item);
-			return '<a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+item.src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" height="80"/></a>';
+			return '<div><a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+item.src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" height="80"/></a></div>';
 		}
 
 		var photo = function(photo, ID){
@@ -23,14 +23,14 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var video = function(video){
 			//console.log(video);
-			return '<a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a>';
+			return '<div><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a></div>';
 		}
 
 		var data = {
 			'id': 312
 		};
 
-		var html = '';
+		var html = '<div class="una-clase-que-no-se-repita">';
 
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
 
@@ -50,6 +50,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				//console.log(item(response.items[i]));
 				html += video(response.videos[i]);
 			}
+
+			html += '</div>';
 			//console.log(html);
 			$('.fs_thmb_viewport ').html(html);
 
@@ -72,6 +74,15 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		          	}
 		      	});
 			}
+
+			$('.una-clase-que-no-se-repita').slick({
+			  dots: true,
+			  infinite: true,
+			  speed: 300,
+			  slidesToShow: 1,
+			  centerMode: true,
+			  variableWidth: true
+			});
 
 			return html;
 		});
