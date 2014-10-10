@@ -59,7 +59,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  dots: true,
 			  infinite: true,
 			  speed: 300,
-			  slidesToShow: 1,
+			  slidesToShow: 3,
+			  slidesToScroll: 3,
 			  centerMode: true,
 			  variableWidth: true
 			});
@@ -137,28 +138,40 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		                  	type : 'float'
 		              	}
 		          	}
-		      	});
-			}
-			/*$('.fancybox-media').click(function(e){
-				e.preventDefault();
-			});*/
+		      	}/*, function(){
 
+					$('.una-clase-que-no-se-repita').slick({
+					  dots: true,
+					  infinite: true,
+					  speed: 300,
+					  slidesToShow: 3,
+					  slidesToScroll: 3
+					  centerMode: true,
+					  variableWidth: true
+					});
+
+		      	}*/);
+			}
 			$('.una-clase-que-no-se-repita').slick({
 			  dots: true,
 			  infinite: true,
 			  speed: 300,
-			  slidesToShow: 1,
+			  slidesToShow: 3,
+			  slidesToScroll: 3,
 			  centerMode: true,
 			  variableWidth: true
 			});
-
+			/*$('.fancybox-media').click(function(e){
+				e.preventDefault();
+			});*/
+/*
 			$('.fancybox-media').fancybox({
 	          	openEffect  : 'none',
 				closeEffect : 'none',
 				helpers : {
 					media : {}
 				}
-	      	});
+	      	});*/
 			/*for(var i = 0 ; i < response.videos.length ; i++ ){
 				$('.fancybox_'+response.videos[i].ID).fancybox({
 		          	helpers: {
