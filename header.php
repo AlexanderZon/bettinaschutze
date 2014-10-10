@@ -39,6 +39,7 @@
     <?php wp_head(); ?>
 
     <link rel='stylesheet' id='AllFonts-css'  href='<?php echo get_template_directory_uri(); ?>/core/gallery/slick/slick.css' type='text/css' media='all' />
+<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/core/gallery/slick/slick.js'></script>
 
 </head>
 
