@@ -75,6 +75,10 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		      	});
 			}
 
+			$('.una-clase-que-no-se-repita').css({
+				'display':'inline-block'
+			});
+
 			$('.una-clase-que-no-se-repita').slick({
 			  dots: true,
 			  infinite: true,
