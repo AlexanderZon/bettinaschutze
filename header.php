@@ -38,7 +38,7 @@
     <![endif]-->
     <?php wp_head(); ?>
 
-    <link rel='stylesheet' id='AllFonts-css'  href='<?php echo get_template_directory_uri(); ?>/bettinaschutze/core/gallery/slick/slick.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='AllFonts-css'  href='<?php echo get_template_directory_uri(); ?>/core/gallery/slick/slick.css' type='text/css' media='all' />
 
 </head>
 
