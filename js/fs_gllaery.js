@@ -23,7 +23,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var video = function(video){
 			//console.log(video);
-			return '<div><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a></div>';
+			return '<a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a>';
 		}
 
 		var data = {
@@ -74,10 +74,6 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		          	}
 		      	});
 			}
-
-			$('.una-clase-que-no-se-repita').css({
-				'display':'inline-block'
-			});
 
 			$('.una-clase-que-no-se-repita').slick({
 			  dots: true,
