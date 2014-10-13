@@ -59,8 +59,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  dots: true,
 			  infinite: true,
 			  speed: 300,
-			  slidesToShow: 3,
-			  slidesToScroll: 3,
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
 			  centerMode: true,
 			  variableWidth: true
 			});
