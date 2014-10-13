@@ -18,12 +18,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var photo = function(photo, ID){
 			//console.log(photo);
-			return '<div style="display:inline-block"><a id="fancybox_'+photo.ID+'" class="fancybox fancybox_'+ID+'" rel="fancybox_'+ID+'" href="'+photo.src+'" title="'+photo.post_title+'"><img src="'+photo.src+'" style="display:none" alt="" /></a></div>';
+			return '<!--<div style="display:inline-block">--><a id="fancybox_'+photo.ID+'" class="fancybox fancybox_'+ID+'" rel="fancybox_'+ID+'" href="'+photo.src+'" title="'+photo.post_title+'"><img src="'+photo.src+'" style="display:none" alt="" /></a><!--</div>-->';
 		}
 
 		var video = function(video){
 			//console.log(video);
-			return '<div style="display:inline-block"><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a></div>';
+			return '<!--<div style="display:inline-block">--><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a><!--</div>-->';
 		}
 
 		var data = {
