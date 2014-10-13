@@ -57,7 +57,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 			$('.fs_thmb_viewport_2').slick({
 			  dots: false,
-			  infinite: false,
+			  infinite: true,
 			  speed: 300,
 			  slidesToShow: 1,
 			  slidesToScroll: 1,
