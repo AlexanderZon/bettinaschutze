@@ -53,8 +53,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 			html += '</div>';
 			//console.log(html);
-			$('.fs_thmb_viewport ').html(html);
-/*
+			$('.fs_thmb_viewport_2 ').html(html);
+
 			$('.una-clase-que-no-se-repita').slick({
 			  dots: true,
 			  infinite: true,
@@ -64,7 +64,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  centerMode: true,
 			  variableWidth: true
 			});
-*/
+
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
 		          	helpers: {
@@ -129,7 +129,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 			html += '</div>';
 
-			$('.fs_thmb_viewport ').html(html);
+			$('.fs_thmb_viewport_2 ').html(html);
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
@@ -138,8 +138,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		                  	type : 'float'
 		              	}
 		          	}
-		      	}/*, function(){
-
+		      	}, function(){
+/*
 					$('.una-clase-que-no-se-repita').slick({
 					  dots: true,
 					  infinite: true,
@@ -149,10 +149,10 @@ jQuery.fn.fs_gallery = function(fs_options) {
 					  centerMode: true,
 					  variableWidth: true
 					});
-
-		      	}*/);
+*/
+		      	});
 			}
-			/*
+			
 			$('.una-clase-que-no-se-repita').slick({
 			  dots: true,
 			  infinite: true,
@@ -161,19 +161,19 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  slidesToScroll: 3,
 			  centerMode: true,
 			  variableWidth: true
-			});*/
-			/*$('.fancybox-media').click(function(e){
+			});
+			$('.fancybox-media').click(function(e){
 				e.preventDefault();
-			});*/
-/*
+			});
+
 			$('.fancybox-media').fancybox({
 	          	openEffect  : 'none',
 				closeEffect : 'none',
 				helpers : {
 					media : {}
 				}
-	      	});*/
-			/*for(var i = 0 ; i < response.videos.length ; i++ ){
+	      	});
+			for(var i = 0 ; i < response.videos.length ; i++ ){
 				$('.fancybox_'+response.videos[i].ID).fancybox({
 		          	helpers: {
 		              	title : {
@@ -181,7 +181,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		              	}
 		          	}
 		      	});
-			}*/
+			}
 
 			return html;
 		});
@@ -193,7 +193,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		var num = Math.floor((Math.random() * 10000) + 1);
 		html = '<a id="fancybox_contact_'+num+'" class="fancybox fancybox_contact fancybox.ajax" rel="fancybox_contact" href="/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-contact.php" ></a>';
 			
-		$('.fs_thmb_viewport ').append(html);
+		$('.fs_thmb_viewport_2 ').append(html);
 		$('#fancybox_contact_'+num).fancybox({
 	          	helpers: {
 	              	title : {
@@ -216,7 +216,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		var num = Math.floor((Math.random() * 10000) + 1);
 		html = '<a id="fancybox_bio_'+num+'" class="fancybox fancybox_bio fancybox.ajax" rel="fancybox_bio" href="/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-bio.php?id='+data.id+'" ></a>';
 		html += '<style>.fancybox-inner{padding-right: 20px;}</style>'
-		$('.fs_thmb_viewport ').append(html);
+		$('.fs_thmb_viewport_2 ').append(html);
 		$('#fancybox_bio_'+num).fancybox({
 			padding: 30,
 			margin: 20,
@@ -245,7 +245,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	}
 
 
-	$('body').append('<div class="fs_gallery_wrapper"><ul class="fs_gallery_container '+fs_options.fx+'"/><a href="javascript:void(0)" class="fs_slider_prev"/><a href="javascript:void(0)" class="fs_slider_next"/><div class="fs_title_wrapper '+set_state+'" style="width:95%"><h1 class="fs_title"></h1><h6 style="float:right">bettina@bettinaschutze.com | Phone: 0055 11 98114 2119 | Agency: 0055 11 30428684 | Germany: 0049 (0) 1725238027</h6><h6 class="fs_descr"></h6></div><div class="fs_thmb_viewport '+set_state+'"><div class="fs_thmb_wrapper" style="display:none"><ul class="fs_thmb_list" style="width:'+fs_options.slides.length*88+'px"/></div></div>');
+	$('body').append('<div class="fs_gallery_wrapper"><ul class="fs_gallery_container '+fs_options.fx+'"/><a href="javascript:void(0)" class="fs_slider_prev"/><a href="javascript:void(0)" class="fs_slider_next"/><div class="fs_title_wrapper '+set_state+'" style="width:95%"><h1 class="fs_title"></h1><h6 style="float:right">bettina@bettinaschutze.com | Phone: 0055 11 98114 2119 | Agency: 0055 11 30428684 | Germany: 0049 (0) 1725238027</h6><h6 class="fs_descr"></h6></div><div class="fs_thmb_viewport_2 '+set_state+'"><div class="fs_thmb_wrapper" style="display:none"><ul class="fs_thmb_list" style="width:'+fs_options.slides.length*88+'px"/></div></div>');
 	$('header ul.menu').append('<li class="thumb_toggle"><a href="javascript:void(0)"></a></li>');
 	$fs_container = $('.fs_gallery_container');
 	$fs_thmb = $('.fs_thmb_list');
