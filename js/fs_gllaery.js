@@ -53,50 +53,53 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 			//html += '</div>';
 			//console.log(html);
-			$('.fs_thmb_viewport_2 ').html(html);
+			$('.fs_thmb_viewport_2 ').html(html, function(){
 
-			$('.fs_thmb_viewport_2').slick({
-			  infinite: true,
-			  speed: 300,
-			  responsive: [
-			  	{
-				  	breakpoint: 3000,
-				  	settings: {
-				  		slidesToShow: 6,
-			  			dots: true,
-				  	},
-				},
-				{
-				  	breakpoint: 1200,
-				  	settings: {
-				  		slidesToShow: 4,
-			  			dots: true,
-				  	},
-				},
-				{
-				  	breakpoint: 960,
-				  	settings: {
-				  		slidesToShow: 3,
-			  			dots: true,
-				  	},
-				},
-				{
-				  	breakpoint: 760,
-				  	settings: {
-				  		slidesToShow: 5,
-			  			dots: false,
-				  	},
-				},
-				{
-				  	breakpoint: 460,
-				  	settings: {
-				  		slidesToShow: 4,
-			  			dots: false,
-				  	},
-				},
-			  ],
-			  slidesToScroll: 1,
+				$('.fs_thmb_viewport_2').slick({
+				  infinite: true,
+				  speed: 300,
+				  responsive: [
+				  	{
+					  	breakpoint: 3000,
+					  	settings: {
+					  		slidesToShow: 6,
+				  			dots: true,
+					  	},
+					},
+					{
+					  	breakpoint: 1200,
+					  	settings: {
+					  		slidesToShow: 4,
+				  			dots: true,
+					  	},
+					},
+					{
+					  	breakpoint: 960,
+					  	settings: {
+					  		slidesToShow: 3,
+				  			dots: true,
+					  	},
+					},
+					{
+					  	breakpoint: 760,
+					  	settings: {
+					  		slidesToShow: 5,
+				  			dots: false,
+					  	},
+					},
+					{
+					  	breakpoint: 460,
+					  	settings: {
+					  		slidesToShow: 4,
+				  			dots: false,
+					  	},
+					},
+				  ],
+				  slidesToScroll: 1,
+				});
+				
 			});
+
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
@@ -162,51 +165,54 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 			//html += '</div>';
 
-			$('.fs_thmb_viewport_2 ').html(html);
+			$('.fs_thmb_viewport_2 ').html(html, function(){
 
-			$('.fs_thmb_viewport_2').slick({
-			  infinite: true,
-			  speed: 300,
-			  responsive: [
-			  	{
-				  	breakpoint: 3000,
-				  	settings: {
-				  		slidesToShow: 6,
-			  			dots: true,
-				  	},
-				},
-				{
-				  	breakpoint: 1200,
-				  	settings: {
-				  		slidesToShow: 4,
-			  			dots: true,
-				  	},
-				},
-				{
-				  	breakpoint: 960,
-				  	settings: {
-				  		slidesToShow: 3,
-			  			dots: true,
-				  	},
-				},
-				{
-				  	breakpoint: 760,
-				  	settings: {
-				  		slidesToShow: 5,
-			  			dots: false,
-				  	},
-				},
-				{
-				  	breakpoint: 460,
-				  	settings: {
-				  		slidesToShow: 4,
-			  			dots: false,
-				  	},
-				},
-			  ],
-			  slidesToScroll: 1,
+				$('.fs_thmb_viewport_2').slick({
+				  infinite: true,
+				  speed: 300,
+				  responsive: [
+				  	{
+					  	breakpoint: 3000,
+					  	settings: {
+					  		slidesToShow: 6,
+				  			dots: true,
+					  	},
+					},
+					{
+					  	breakpoint: 1200,
+					  	settings: {
+					  		slidesToShow: 4,
+				  			dots: true,
+					  	},
+					},
+					{
+					  	breakpoint: 960,
+					  	settings: {
+					  		slidesToShow: 3,
+				  			dots: true,
+					  	},
+					},
+					{
+					  	breakpoint: 760,
+					  	settings: {
+					  		slidesToShow: 5,
+				  			dots: false,
+					  	},
+					},
+					{
+					  	breakpoint: 460,
+					  	settings: {
+					  		slidesToShow: 4,
+				  			dots: false,
+					  	},
+					},
+				  ],
+				  slidesToScroll: 1,
+				});
+
 			});
-			
+
+
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
 		          	helpers: {
