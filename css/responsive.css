@@ -470,7 +470,7 @@ a.menu_toggler {
 	    position: fixed;
 	    left: 38%;
 	    display: block;
-	    bottom: 250px !important;
+	    bottom: 0px !important;
 	    width: 380px;
 	    height: 120px;
 	    overflow-x: hidden;
@@ -1061,7 +1061,7 @@ a.menu_toggler {
 	    position: fixed;
 	    left: 38%;
 	    display: block;
-	    bottom: 250px !important;
+	    bottom: 0px !important;
 	    width: 380px;
 	    height: 120px;
 	    overflow-x: hidden;
@@ -1212,7 +1212,7 @@ a.menu_toggler {
 	    position: fixed;
 	    left: 38%;
 	    display: block;
-	    bottom: 250px !important;
+	    bottom: 0px !important;
 	    width: 380px;
 	    height: 120px;
 	    overflow-x: hidden;
