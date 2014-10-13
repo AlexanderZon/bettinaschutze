@@ -81,7 +81,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				{
 				  	breakpoint: 760,
 				  	settings: {
-				  		slidesToShow: 6,
+				  		slidesToShow: 5,
 				  	},
 				},
 				{
