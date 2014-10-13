@@ -74,7 +74,7 @@
 		text-align: center;
 	    position: fixed;
 	    display: block;
-	    left: 38%;
+	    left: 35%;
 	    bottom: 250px !important;
 	    width: 380px;
 	    height: 120px;
@@ -97,7 +97,7 @@
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 38%;
+	    left: 32%;
 	    display: block;
 	    bottom: 250px !important;
 	    width: 380px;
@@ -234,7 +234,7 @@
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 38%;
+	    left: 29%;
 	    display: block;
 	    bottom: 250px !important;
 	    width: 380px;
@@ -459,12 +459,12 @@ a.menu_toggler {
 	.notext{
 		left: 0px !important;
 	}
-
+	/*
 	.fs_thmb_viewport_2 img{
 		height: 55px !important;
 		margin: 0 auto;
 	}
-
+	*/
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
@@ -1067,10 +1067,11 @@ a.menu_toggler {
 	    overflow-x: hidden;
 	    z-index: 99;
 	}
-
+	/*
 	.fs_thmb_viewport_2 img{
 		height: 45px !important;
 	}
+	*/
 	.container {
 		width:420px;
 		margin:0 auto;
@@ -1217,10 +1218,11 @@ a.menu_toggler {
 	    overflow-x: hidden;
 	    z-index: 99;
 	}
-
+	/*
 	.fs_thmb_viewport_2 img{
 		height: 35px !important;
 	}
+	*/
 	.logo{
 		left: 0px;
 		max-width: 400px;
