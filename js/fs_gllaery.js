@@ -56,13 +56,13 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			$('.fs_thmb_viewport_2 ').html(html);
 
 			$('.fs_thmb_viewport_2').slick({
-			  dots: true,
-			  infinite: true,
+			  dots: false,
+			  infinite: false,
 			  speed: 300,
 			  slidesToShow: 1,
 			  slidesToScroll: 1,
-			  centerMode: true,
-			  variableWidth: true
+			  centerMode: false,
+			  variableWidth: false
 			});
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
