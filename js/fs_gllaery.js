@@ -61,8 +61,6 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  speed: 300,
 			  slidesToShow: 1,
 			  slidesToScroll: 1,
-			  centerMode: false,
-			  variableWidth: true
 			});
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
