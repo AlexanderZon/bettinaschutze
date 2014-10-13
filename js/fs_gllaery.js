@@ -23,7 +23,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var video = function(video){
 			//console.log(video);
-			return '<!--<div style="display:inline-block">--><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a><!--</div>-->';
+			return '<div style="display:inline-block"><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.content+'" title="'+video.post_title+'"><img src="'+video.src+'" alt="" /></a></div>';
 		}
 
 		var data = {
@@ -131,7 +131,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var photo = function(photo, ID){
 			//console.log(photo);
-			return '<div style="display:inline-block"><a id="fancybox_'+photo.ID+'" class="fancybox fancybox_'+ID+'" rel="fancybox_'+ID+'" href="'+photo.src+'" title="'+photo.post_title+'"><img src="'+photo.src+'" style="display:none" alt="" /></a></div>';
+			return '<!--<div style="display:inline-block">--><a id="fancybox_'+photo.ID+'" class="fancybox fancybox_'+ID+'" rel="fancybox_'+ID+'" href="'+photo.src+'" title="'+photo.post_title+'"><img src="'+photo.src+'" style="display:none" alt="" /></a><!--</div>-->';
 		}
 
 		var video = function(video){
@@ -185,16 +185,49 @@ jQuery.fn.fs_gallery = function(fs_options) {
 */
 		      	});
 			}
-			
 			$('.fs_thmb_viewport_2').slick({
-			  dots: true,
 			  infinite: true,
 			  speed: 300,
-			  slidesToShow: 3,
-			  slidesToScroll: 3,
-			  centerMode: true,
-			  variableWidth: true
+			  responsive: [
+			  	{
+				  	breakpoint: 3000,
+				  	settings: {
+				  		slidesToShow: 6,
+			  			dots: true,
+				  	},
+				},
+				{
+				  	breakpoint: 1200,
+				  	settings: {
+				  		slidesToShow: 4,
+			  			dots: true,
+				  	},
+				},
+				{
+				  	breakpoint: 960,
+				  	settings: {
+				  		slidesToShow: 3,
+			  			dots: true,
+				  	},
+				},
+				{
+				  	breakpoint: 760,
+				  	settings: {
+				  		slidesToShow: 5,
+			  			dots: false,
+				  	},
+				},
+				{
+				  	breakpoint: 460,
+				  	settings: {
+				  		slidesToShow: 4,
+			  			dots: false,
+				  	},
+				},
+			  ],
+			  slidesToScroll: 1,
 			});
+
 			$('.fancybox-media').click(function(e){
 				e.preventDefault();
 			});
