@@ -452,7 +452,7 @@
 a.menu_toggler { 
 	display:none;
 }
-@media only screen and (max-width: 759px) {
+@media only screen and (max-width: 760px) {
 	.sharethis{
 		margin-bottom: 10px;
 	}
@@ -1051,7 +1051,7 @@ a.menu_toggler {
 
 }
 
-@media only screen and (min-width: 459px) and (max-width: 759px) {
+@media only screen and (min-width: 459px) and (max-width: 760px) {
 	.featured_slider ul li .carousel_desc:after {
 		display:block!important;
 	}
