@@ -30,7 +30,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			'id': 312
 		};
 
-		var html = '<div class="una-clase-que-no-se-repita">';
+		//var html = '<div class="una-clase-que-no-se-repita">';
 
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
 
@@ -51,7 +51,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				html += video(response.videos[i]);
 			}
 
-			html += '</div>';
+			//html += '</div>';
 			//console.log(html);
 			$('.fs_thmb_viewport_2 ').html(html);
 
