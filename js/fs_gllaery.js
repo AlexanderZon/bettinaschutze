@@ -54,10 +54,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			//html += '</div>';
 			//console.log(html);
 			$('.fs_thmb_viewport_2 ').html(html);
-
+			$('.fs_thmb_viewport_2').unslick();
 			$('.fs_thmb_viewport_2').slick({
 			  infinite: true,
 			  speed: 300,
+			  autoplay: true,
+			  autoplaySpeed: 2000,
 			  responsive: [
 			  	{
 				  	breakpoint: 3000,
@@ -168,10 +170,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			//html += '</div>';
 
 			$('.fs_thmb_viewport_2 ').html(html);
-
+			$('.fs_thmb_viewport_2').unslick();
 			$('.fs_thmb_viewport_2').slick({
 			  infinite: true,
 			  speed: 300,
+			  autoplay: true,
+			  autoplaySpeed: 2000,
 			  responsive: [
 			  	{
 				  	breakpoint: 3000,
