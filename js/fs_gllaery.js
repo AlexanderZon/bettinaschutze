@@ -59,7 +59,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  dots: true,
 			  infinite: true,
 			  speed: 300,
-			  slidesToShow: 1,
+			  slidesToShow: 3,
 			  slidesToScroll: 1,
 			});
 
