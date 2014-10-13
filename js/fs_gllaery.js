@@ -59,7 +59,38 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  dots: true,
 			  infinite: true,
 			  speed: 300,
-			  slidesToShow: 3,
+			  responsive: [
+			  	{
+				  	breakpoint: 3000,
+				  	settings: {
+				  		slidesToShow: 6,
+				  	},
+				},
+				{
+				  	breakpoint: 1200,
+				  	settings: {
+				  		slidesToShow: 4,
+				  	},
+				},
+				{
+				  	breakpoint: 960,
+				  	settings: {
+				  		slidesToShow: 3,
+				  	},
+				},
+				{
+				  	breakpoint: 760,
+				  	settings: {
+				  		slidesToShow: 4,
+				  	},
+				},
+				{
+				  	breakpoint: 460,
+				  	settings: {
+				  		slidesToShow: 3,
+				  	},
+				},
+			  },
 			  slidesToScroll: 1,
 			});
 
