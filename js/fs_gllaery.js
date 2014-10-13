@@ -90,7 +90,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				  		slidesToShow: 3,
 				  	},
 				},
-			  },
+			  ],
 			  slidesToScroll: 1,
 			});
 
