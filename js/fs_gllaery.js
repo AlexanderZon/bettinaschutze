@@ -164,27 +164,6 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 			$('.fs_thmb_viewport_2 ').html(html);
 
-			for(var i = 0 ; i < response.items.length ; i++ ){
-				$('.fancybox_'+response.items[i].ID).fancybox({
-		          	helpers: {
-		              	title : {
-		                  	type : 'float'
-		              	}
-		          	}
-		      	}, function(){
-/*
-					$('.una-clase-que-no-se-repita').slick({
-					  dots: true,
-					  infinite: true,
-					  speed: 300,
-					  slidesToShow: 3,
-					  slidesToScroll: 3
-					  centerMode: true,
-					  variableWidth: true
-					});
-*/
-		      	});
-			}
 			$('.fs_thmb_viewport_2').slick({
 			  infinite: true,
 			  speed: 300,
@@ -227,6 +206,28 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  ],
 			  slidesToScroll: 1,
 			});
+			
+			for(var i = 0 ; i < response.items.length ; i++ ){
+				$('.fancybox_'+response.items[i].ID).fancybox({
+		          	helpers: {
+		              	title : {
+		                  	type : 'float'
+		              	}
+		          	}
+		      	}, function(){
+/*
+					$('.una-clase-que-no-se-repita').slick({
+					  dots: true,
+					  infinite: true,
+					  speed: 300,
+					  slidesToShow: 3,
+					  slidesToScroll: 3
+					  centerMode: true,
+					  variableWidth: true
+					});
+*/
+		      	});
+			}
 
 			$('.fancybox-media').click(function(e){
 				e.preventDefault();
