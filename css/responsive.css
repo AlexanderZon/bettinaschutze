@@ -468,7 +468,7 @@ a.menu_toggler {
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 28%;
+	    /*left: 28%;*/
 	    display: block;
 	    bottom: 0px !important;
 	    width: 380px;
@@ -1059,7 +1059,7 @@ a.menu_toggler {
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 22%;
+	    /*left: 22%;*/
 	    display: block;
 	    bottom: 0px !important;
 	    width: 100%;
@@ -1210,7 +1210,7 @@ a.menu_toggler {
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 18%;
+	    /*left: 18%;*/
 	    display: block;
 	    bottom: 0px !important;
 	    width: 100%;
