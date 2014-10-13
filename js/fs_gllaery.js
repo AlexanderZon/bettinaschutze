@@ -98,6 +98,11 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  slidesToScroll: 1,
 			});
 
+			var width = window.innerWidth;
+			var height = window.innerHeight;
+			window.resizeTo(width-1, height);
+			window.resizeTo(width, height);
+
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
 		          	helpers: {
@@ -206,6 +211,11 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  ],
 			  slidesToScroll: 1,
 			});
+
+			var width = window.innerWidth;
+			var height = window.innerHeight;
+			window.resizeTo(width-1, height);
+			window.resizeTo(width, height);
 
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
