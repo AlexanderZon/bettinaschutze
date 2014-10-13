@@ -55,7 +55,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			//console.log(html);
 			$('.fs_thmb_viewport_2 ').html(html);
 
-			$('.una-clase-que-no-se-repita').slick({
+			$('.fs_thmb_viewport_2').slick({
 			  dots: true,
 			  infinite: true,
 			  speed: 300,
@@ -110,7 +110,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			'id': 383
 		};
 
-		var html = '<div class="una-clase-que-no-se-repita">';
+		//var html = '<div class="una-clase-que-no-se-repita">';
 
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
 			console.log(data);
@@ -127,7 +127,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				html += video(response.videos[i]);
 			}
 
-			html += '</div>';
+			//html += '</div>';
 
 			$('.fs_thmb_viewport_2 ').html(html);
 
@@ -153,7 +153,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		      	});
 			}
 			
-			$('.una-clase-que-no-se-repita').slick({
+			$('.fs_thmb_viewport_2').slick({
 			  dots: true,
 			  infinite: true,
 			  speed: 300,
