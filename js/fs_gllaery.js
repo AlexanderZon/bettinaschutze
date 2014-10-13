@@ -55,6 +55,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			//console.log(html);
 			$('.fs_thmb_viewport_2 ').html(html, function(){
 
+				console.log("HTML");
+
 				$('.fs_thmb_viewport_2').slick({
 				  infinite: true,
 				  speed: 300,
@@ -97,7 +99,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				  ],
 				  slidesToScroll: 1,
 				});
-				
+
 			});
 
 
