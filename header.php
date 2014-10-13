@@ -45,13 +45,13 @@
 
 <body <?php body_class("fullscreen_layout"); ?>>
 
-<a href="<?php echo get_site_url(); ?>" class="logo"><img src="<?php the_theme_option("logo"); ?>" alt=""
+<!--<a href="<?php echo get_site_url(); ?>" class="logo">--><img src="<?php the_theme_option("logo"); ?>" alt=""
                                                                   width="<?php the_theme_option("header_logo_standart_width"); ?>"
                                                                   height="<?php the_theme_option("header_logo_standart_height"); ?>"
                                                                   class="logo_def"><!--<img
                 src="<?php //the_theme_option("logo_retina"); ?>" alt=""
                 width="<?php //the_theme_option("header_logo_standart_width"); ?>"
-                height="<?php //the_theme_option("header_logo_standart_height"); ?>" class="logo_retina">--></a>
+                height="<?php //the_theme_option("header_logo_standart_height"); ?>" class="logo_retina">--><!--</a>-->
 
 <header class="">
     <div class="sharethis">
