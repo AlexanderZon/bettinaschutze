@@ -226,7 +226,7 @@
 	
 }
 	
-@media only screen and (min-width: 761px) and (max-width: 959px) {
+@media only screen and (min-width: 760px) and (max-width: 959px) {
 	.notext{
 		left: 0px !important;
 	}
@@ -452,7 +452,7 @@
 a.menu_toggler { 
 	display:none;
 }
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 759px) {
 	.sharethis{
 		margin-bottom: 10px;
 	}
@@ -470,7 +470,7 @@ a.menu_toggler {
 	    position: fixed;
 	    /*left: 28%;*/
 	    display: block;
-	    bottom: 0px !important;
+	    bottom: 35px !important;
 	    width: 100%;
 	    height: 120px;
 	    overflow-x: hidden;
@@ -1051,7 +1051,7 @@ a.menu_toggler {
 
 }
 
-@media only screen and (min-width: 459px) and (max-width: 760px) {
+@media only screen and (min-width: 459px) and (max-width: 759px) {
 	.featured_slider ul li .carousel_desc:after {
 		display:block!important;
 	}
@@ -1061,7 +1061,7 @@ a.menu_toggler {
 	    position: fixed;
 	    /*left: 22%;*/
 	    display: block;
-	    bottom: 0px !important;
+	    bottom: 35px !important;
 	    width: 100%;
 	    height: 120px;
 	    overflow-x: hidden;
