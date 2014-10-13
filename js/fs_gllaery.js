@@ -31,7 +31,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		};
 
 		//var html = '<div class="una-clase-que-no-se-repita">';
-
+		var html = '';
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
 
 			//console.log(response);
@@ -111,7 +111,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		};
 
 		//var html = '<div class="una-clase-que-no-se-repita">';
-
+		var html = '';
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
 			console.log(data);
 			for(var i = 0 ; i < response.items.length ; i++ ){
