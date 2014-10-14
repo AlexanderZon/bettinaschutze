@@ -12,7 +12,7 @@
 			<div style="text-align:center;padding-top:1em;" id="contact-form-container">
 
 			<style>
-				.fancybox-inner{
+				.fancybox-skin{
 					padding: 1.5em;
 					width: 70%;
 					max-width: 700px;
