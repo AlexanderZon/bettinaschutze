@@ -8,8 +8,8 @@
 
 	$logo = get_theme_option("logo");
 
-	$html = '<img src="'.$logo.'" style="width:80%; max-width:360px"><br>
-			<div style="text-align:center;padding-top:1em;" id="contact-form-container">
+	$html = '<img src="'.$logo.'" style="width:80%; max-width:360px;margin-top:1em;"><br>
+			<div style="text-align:center;padding-top:1em;padding-left:2em;" id="contact-form-container">
 
 			<style>
 				.fancybox-skin{
