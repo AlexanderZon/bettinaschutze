@@ -46,7 +46,7 @@ if (isset($pagebuilder['sliders']['fullscreen']['slides']) && is_array($pagebuil
             $('body').fs_gallery({
                 fx: 'fade', /*fade, zoom, slide_left, slide_right, slide_top, slide_bottom*/
 				thmb_state: '" . $thumbs_state . "',
-                slide_time: 10000, /*This time must be < then time in css*/
+                slide_time: 20000, /*This time must be < then time in css*/
                 slides: gallery_set
             });
             ";
