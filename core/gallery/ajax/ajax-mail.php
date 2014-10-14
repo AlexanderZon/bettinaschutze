@@ -103,6 +103,8 @@
 
 	$mail = new PHPMailer;
 
+
+	return "Response";
 	//$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 	$mail->isSMTP();                                      // Set mailer to use SMTP
@@ -136,8 +138,6 @@
 	} else {
 	    echo 'Message has been sent';
 	}
-
-	return "Response";
 
 ?>
 
