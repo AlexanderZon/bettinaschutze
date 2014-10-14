@@ -137,5 +137,7 @@
 	    echo 'Message has been sent';
 	}
 
+	return "Response";
+
 ?>
 
