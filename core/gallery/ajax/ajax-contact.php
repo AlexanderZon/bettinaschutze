@@ -60,6 +60,9 @@
 					<div class="control-box"><input type="submit" value="Submit"></div>
 				</form>
 				<script>
+					$("input[type=submit]").on("click", function(){
+						$("#contact-form-container").html("Enviando...");
+					});
 					$("#contact-form").on("submit", function(e){
 						e.preventDefault();
 						var data = {
@@ -73,9 +76,6 @@
 							console.log(response);
 							$("#contact-form-container").html(response);
 							return response;
-						});
-						$(this).ajaxStart(function(){
-							$("#contact-form-container").html("Enviando...");
 						});
 					});
 				</script>
