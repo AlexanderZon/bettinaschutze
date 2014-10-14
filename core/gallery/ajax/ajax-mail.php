@@ -74,9 +74,9 @@
 */
 
   include ("../smtp.class.php");
-  $host = "smtp.gallardodesigner.com.br"; /*host do servidor SMTP */
-  $mail = "robert@gallardodesigner.com.br";//o endereço de e-mail deve ser válido.
-  $senha = "robe4102";
+  $host = "smtp.gmail.com"; /*host do servidor SMTP */
+  $mail = "amontenegro.sistemas@gmail.com";//o endereço de e-mail deve ser válido.
+  $senha = "23498535";
 
   /* Configuração da classe.e smtp.class.php */
   $smtp = new Smtp($host, 587);
