@@ -79,7 +79,7 @@
   $senha = "23498535";
 
   /* Configuração da classe.e smtp.class.php */
-  $smtp = new Smtp($host, 587);
+  $smtp = new Smtp($host, 465);
   $smtp->user = $mail; /*usuario do servidor SMTP */
   $smtp->pass = $senha; /* senha do usuario do servidor SMTP*/
   $smtp->debug = true; /*ativa a autenticacao SMTP */
