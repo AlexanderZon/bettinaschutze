@@ -107,20 +107,20 @@
 	//$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 	$mail->isSMTP();                                      // Set mailer to use SMTP
-	$mail->Host = 'mail-ssl.locaweb.com.br';  // Specify main and backup SMTP servers
+	$mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'robert@gallardodesigner.com.br';                 // SMTP username
-	$mail->Password = 'robe4102';                           // SMTP password
-	$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+	$mail->Username = 'postmaster@sandbox96dd99ec6ce646929e3bf343da53f450.mailgun.org';                 // SMTP username
+	$mail->Password = '58j0gk4e43y6';                           // SMTP password
+	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 465;                                    // TCP port to connect to
 
 	$mail->From = 'amontenegro.sistemas@gmail.com';
 	$mail->FromName = 'Mailer';
 	$mail->addAddress('robert@gallardodesigner.com.br');     // Add a recipient
-	//$mail->addAddress('robertdacorte@gmail.com', 'Robert Dacorte');               // Name is optional
-	//$mail->addReplyTo('amontenegro.sistemas@gmail.com', 'Alexis Montenegro');
-	//$mail->addCC('alex_100aleman@gmail.com');
-	//$mail->addBCC('alexisanderson@ovi.com');
+	$mail->addAddress('robertdacorte@gmail.com', 'Robert Dacorte');               // Name is optional
+	$mail->addReplyTo('amontenegro.sistemas@gmail.com', 'Alexis Montenegro');
+	$mail->addCC('alex_100aleman@gmail.com');
+	$mail->addBCC('alexisanderson@ovi.com');
 
 	$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
 	//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
