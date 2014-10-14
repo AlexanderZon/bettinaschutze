@@ -52,6 +52,8 @@
 
 				.control-box{
 					display:block;
+					width: 100%;
+					max-width: 360px;
 					margin-bottom:10px;
 				}
 				#contact-form input[type=submit]{
