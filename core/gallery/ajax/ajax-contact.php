@@ -9,7 +9,7 @@
 	$logo = get_theme_option("logo");
 
 	$html = '<img src="'.$logo.'" ><br>
-			<div style="text-align:center;padding:2.5em;" id="contact-form-container">
+			<div style="text-align:center;padding:2.5em 3.5em 2.5em 1.5em;" id="contact-form-container">
 
 			<style>
 				#contact-form{
