@@ -17,6 +17,10 @@
 					width: 70%;
 					max-width: 700px;
 				}
+				.fancybox-outter{
+					padding: 1.5em;
+					width: 360px;
+				}
 				#contact-form{
 					width: 90%;
 					max-width: 400px
