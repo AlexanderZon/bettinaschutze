@@ -16,7 +16,7 @@
 					padding: 1.5em;
 				}
 				#contact-form{
-					width: 350px;
+					width: 400px;
 					background: transparent;
 					position:relative;
 				}
