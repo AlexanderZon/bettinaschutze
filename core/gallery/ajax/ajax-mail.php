@@ -114,11 +114,11 @@
 	//$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 587;                                    // TCP port to connect to
 
-	$mail->From = 'amontenegro.sistemas@gmail.com';
-	$mail->FromName = 'Mailer';
+	$mail->From = $data['email'];
+	$mail->FromName = 'Contact Form';
 	$mail->addAddress('robert@gallardodesigner.com.br');     // Add a recipient
 	$mail->addAddress('robertdacorte@gmail.com', 'Robert Dacorte');               // Name is optional
-	$mail->addReplyTo('amontenegro.sistemas@gmail.com', 'Alexis Montenegro');
+	$mail->addReplyTo($data['email'], $data['name']);
 	$mail->addCC('alex_100aleman@gmail.com');
 	$mail->addBCC('alexisanderson@ovi.com');
 
@@ -127,9 +127,9 @@
 	//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 	$mail->isHTML(true);                                  // Set email format to HTML
 
-	$mail->Subject = 'Here is the subject';
-	$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+	$mail->Subject = $data['subject'];
+	$mail->Body    = $data['message'];
+	//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 	if(!$mail->send()) {
 	    echo 'Message could not be sent.';
