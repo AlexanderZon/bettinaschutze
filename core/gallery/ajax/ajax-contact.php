@@ -14,9 +14,11 @@
 			<style>
 				.fancybox-inner{
 					padding: 1.5em;
+					width: 50%;
 				}
 				#contact-form{
-					width: 400px;
+					width: 50%;
+					max-width: 400px
 					background: transparent;
 					position:relative;
 				}
