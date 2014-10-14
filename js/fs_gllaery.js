@@ -318,7 +318,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	//Set Variables
 	var fs_el = $(this),
 		fs_base = this;
-	var fs_interval = setInterval('nextSlide()', fs_options.slide_time);
+	var fs_interval = setInterval('nextSlide()', /*fs_options.slide_time*/ 50000);
 
 	if (fs_options.thmb_state == 'hide') {
 		set_state = "fs_hide";
@@ -397,7 +397,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_gallery_container').find('.slide'+(nxtSlide)).attr('style', 'background:url('+$('.slide'+(thisSlide+1)).attr('data-src')+') no-repeat; background-size:'+$('.slide'+nxtSlide).attr('data-fit')+';');
 		$('.current-slide').removeClass('current-slide');
 		$('.slide'+thisSlide).addClass('current-slide');
-		fs_interval = setInterval('nextSlide()', /*fs_options.slide_time*/ 5000);
+		fs_interval = setInterval('nextSlide()', /*fs_options.slide_time*/ 50000);
 		setTimeout("afterChange()",500);
 	}
 
@@ -436,7 +436,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_gallery_container').find('.slide'+(nxtSlide)).attr('style', 'background:url('+$('.slide'+(thisSlide+1)).attr('data-src')+') no-repeat; background-size:'+$('.slide'+nxtSlide).attr('data-fit')+';');
 		$('.current-slide').removeClass('current-slide');
 		$('.slide'+thisSlide).addClass('current-slide');
-		fs_interval = setInterval('nextSlide()', fs_options.slide_time);		
+		fs_interval = setInterval('nextSlide()', /*fs_options.slide_time*/ 50000);		
 		setTimeout("afterChange()",500);
 	}
 	
@@ -467,7 +467,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_gallery_container').find('.slide'+(thisSlide+1)).attr('style', 'background:url('+$('.slide'+(thisSlide+1)).attr('data-src')+') no-repeat; background-size:'+$('.slide'+thisSlide+1).attr('data-fit')+';');
 		$('.current-slide').removeClass('current-slide');
 		$('.slide'+thisSlide).addClass('current-slide');
-		fs_interval = setInterval('nextSlide()', fs_options.slide_time);
+		fs_interval = setInterval('nextSlide()', /*fs_options.slide_time*/ 50000);
 		setTimeout("afterChange()",500);
 	}
 	
