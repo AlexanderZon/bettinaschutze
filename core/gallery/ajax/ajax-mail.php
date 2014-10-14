@@ -116,11 +116,11 @@
 
 	$mail->From = 'amontenegro.sistemas@gmail.com';
 	$mail->FromName = 'Mailer';
-	$mail->addAddress('theguitarplayer.am@gmail.com', 'Alexis Montenegro');     // Add a recipient
-	$mail->addAddress('robertdacorte@gmail.com', 'Robert Dacorte');               // Name is optional
-	$mail->addReplyTo('amontenegro.sistemas@gmail.com', 'Alexis Montenegro');
-	$mail->addCC('alex_100aleman@gmail.com');
-	$mail->addBCC('alexisanderson@ovi.com');
+	$mail->addAddress('robert@gallardodesigner.com.br');     // Add a recipient
+	//$mail->addAddress('robertdacorte@gmail.com', 'Robert Dacorte');               // Name is optional
+	//$mail->addReplyTo('amontenegro.sistemas@gmail.com', 'Alexis Montenegro');
+	//$mail->addCC('alex_100aleman@gmail.com');
+	//$mail->addBCC('alexisanderson@ovi.com');
 
 	$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
 	//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
