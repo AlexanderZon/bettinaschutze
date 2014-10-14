@@ -398,7 +398,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.current-slide').removeClass('current-slide');
 		$('.slide'+thisSlide).addClass('current-slide');
 		fs_interval = setInterval('nextSlide()', fs_options.slide_time);
-		setTimeout("afterChange()",500);
+		setTimeout("afterChange()",5000);
 	}
 
 	prevSlide = function() {
