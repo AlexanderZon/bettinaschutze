@@ -110,7 +110,7 @@
 	$mail->Host = 'mail-ssl.locaweb.com.br';  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
 	$mail->Username = 'robert@gallardodesigner.com.br';                 // SMTP username
-	$mail->Password = 'robe410';                           // SMTP password
+	$mail->Password = 'robe4102';                           // SMTP password
 	$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 465;                                    // TCP port to connect to
 
