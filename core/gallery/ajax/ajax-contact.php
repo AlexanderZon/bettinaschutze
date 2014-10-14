@@ -53,10 +53,10 @@
 				}
 			</style>
 				<form id="contact-form" action="" method="post">
-					<div class="control-box"><label>Name</label><input id="contact-form-name" type="text" name="name"/><div style="clear:both;"></div></div>
-					<div class="control-box"><label>Email</label><input id="contact-form-email" type="email" name="email" /><div style="clear:both;"></div></div>
-					<div class="control-box"><label>Subject</label><input id="contact-form-subject" type="text" name="subject" /><div style="clear:both;"></div></div>
-					<div class="control-box"><label>Message</label><textarea id="contact-form-message" name="message"></textarea> <div style="clear:both;"></div></div>
+					<div class="control-box"><label>Name</label><input id="contact-form-name" type="text" name="name" required/><div style="clear:both;"></div></div>
+					<div class="control-box"><label>Email</label><input id="contact-form-email" type="email" name="email" required/><div style="clear:both;"></div></div>
+					<div class="control-box"><label>Subject</label><input id="contact-form-subject" type="text" name="subject" required/><div style="clear:both;"></div></div>
+					<div class="control-box"><label>Message</label><textarea id="contact-form-message" name="message" required></textarea> <div style="clear:both;"></div></div>
 					<div class="control-box"><input type="submit" value="Submit"></div>
 				</form>
 				<script>
