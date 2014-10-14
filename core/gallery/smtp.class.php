@@ -60,7 +60,7 @@
 		$header .= "From: <" . $from . "> \n";
 		$header .= "To: <".$to."> \n";
 		$header .= "Subject: ".$subject." \n";
-		$header .= "Date: ". date('D, d M Y H:i:s O') ." \n";
+		//$header .= "Date: ". date('D, d M Y H:i:s O') ." \n";
 		$header .= "Content-Type: ". $type . "; charset=iso-8859-1 \n";
 
 		return $header;
