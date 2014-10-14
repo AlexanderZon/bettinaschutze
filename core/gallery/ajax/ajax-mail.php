@@ -104,7 +104,6 @@
 	$mail = new PHPMailer;
 
 
-	return "Response";
 	//$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 	$mail->isSMTP();                                      // Set mailer to use SMTP
@@ -132,6 +131,7 @@
 	$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
 	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
+	return "Response";
 	if(!$mail->send()) {
 	    echo 'Message could not be sent.';
 	    echo 'Mailer Error: ' . $mail->ErrorInfo;
