@@ -1,11 +1,11 @@
 <?php
 
-	require_once( "../../../../../../wp-config.php" );
-	require( ABSPATH . WPINC . '/pluggable.php' );
+	//require_once( "../../../../../../wp-config.php" );
+	//require( ABSPATH . WPINC . '/pluggable.php' );
 
-	require_once( "../class.db.php" );
+	//require_once( "../class.db.php" );
 
-	global $wpdb;
+	//global $wpdb;
 
 	$data = $_POST;
 /*
@@ -57,12 +57,12 @@
 			    mail($emaildestinatario, $assunto, $mensagemHTML, $headers );
 			}
 			 */
-
-	/*$headers = 'From: '.$data['name'].' <'.$data['email'].'>' . '\r\n';
+/*
+	$headers = 'From: '.$data['name'].' <'.$data['email'].'>' . '\r\n';
 	$mail = mail( 'robert@gallardodesigner.com.br' , 'Juan lopez se baña en la cabaña' , 'fredo godofredo me gusta el yogurt' );
 
-	//$mail = mail( 'amontenegro.sistemas@gmail.com' , $data['subject'] , $data['message'] );
-	//$mail = wp_mail( 'alex_100aleman@hotmail.com', $data['subject'], $data['message'] , $headers );
+	$mail = mail( 'amontenegro.sistemas@gmail.com' , $data['subject'] , $data['message'] );
+	$mail = wp_mail( 'alex_100aleman@hotmail.com', $data['subject'], $data['message'] , $headers );
 	
 	if($mail):
 		$html = 'Your message has been sent';
@@ -70,7 +70,30 @@
 		$html = 'We had an error sending your message, please retry again later';
 	endif;
 
-	echo $html;*/
+	echo $html;
+*/
+
+  include ("../smtp.class.php");
+  $host = "smtp.gallardodesigner.com.br"; /*host do servidor SMTP */
+  $mail = "robert@gallardodesigner.com.br";//o endereço de e-mail deve ser válido.
+  $senha = "robe4102";
+
+  /* Configuração da classe.e smtp.class.php */
+  $smtp = new Smtp($host, 587);
+  $smtp->user = $mail; /*usuario do servidor SMTP */
+  $smtp->pass = $senha; /* senha do usuario do servidor SMTP*/
+  $smtp->debug = true; /*ativa a autenticacao SMTP */
+
+  /* Prepara a mensagem para ser enviada. */
+  $from = $data['email'];
+  $to = $mail;
+  $subject = $data['subject'];
+  $msg = "<b>Esta mensagem é um teste da <font color=red>Locaweb.</font><</b><br />";
+  $msg .= $data['message'];
+
+  /* faz o envio da mensagem */
+  $enviou = $smtp->Send($to, $from, $subject, $msg, "text/html") ? 'enviou' : 'falhou';
+  header('Location:index.php?status='.$enviou, "-r".$from);
 
 ?>
 
