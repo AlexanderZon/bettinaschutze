@@ -60,11 +60,9 @@
 					<div class="control-box"><input type="submit" value="Submit"></div>
 				</form>
 				<script>
-					$("input[type=submit]").on("click", function(){
-						$("#contact-form-container").html("Enviando...");
-					});
 					$("#contact-form").on("submit", function(e){
 						e.preventDefault();
+						$("#contact-form-container").html("Enviando...");
 						var data = {
 							"name": $("#contact-form-name").val(),
 							"email": $("#contact-form-email").val(),
