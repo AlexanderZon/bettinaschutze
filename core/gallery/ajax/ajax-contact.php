@@ -74,6 +74,9 @@
 							$("#contact-form-container").html(response);
 							return response;
 						});
+						$(this).ajaxStart(function(){
+							$("#contact-form-container").html("Enviando...");
+						});
 					});
 				</script>
 			</div>
