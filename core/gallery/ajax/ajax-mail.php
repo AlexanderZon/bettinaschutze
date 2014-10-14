@@ -93,6 +93,7 @@
 
   /* faz o envio da mensagem */
   $enviou = $smtp->Send($to, $from, $subject, $msg, "text/html") ? 'enviou' : 'falhou';
+  echo $enviou;
   //header('Location:index.php?status='.$enviou, "-r".$from);
 
 ?>
