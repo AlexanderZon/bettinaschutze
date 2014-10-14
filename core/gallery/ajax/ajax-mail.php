@@ -72,29 +72,70 @@
 
 	echo $html;
 */
+# ------------------------------------------------
 
-  include ("../smtp.class.php");
-  $host = "smtp.gmail.com"; /*host do servidor SMTP */
+  /*include ("../smtp.class.php");
+  $host = "smtp.gmail.com"; //host do servidor SMTP 
   $mail = "amontenegro.sistemas@gmail.com";//o endereço de e-mail deve ser válido.
   $senha = "23498535";
   date_default_timezone_set('America/Sao_Paulo');
-  /* Configuração da classe.e smtp.class.php */
+  // Configuração da classe.e smtp.class.php 
   $smtp = new Smtp($host, 465);
-  $smtp->user = $mail; /*usuario do servidor SMTP */
-  $smtp->pass = $senha; /* senha do usuario do servidor SMTP*/
-  $smtp->debug = true; /*ativa a autenticacao SMTP */
+  $smtp->user = $mail; #usuario do servidor SMTP 
+  $smtp->pass = $senha; # senha do usuario do servidor SMTP
+  $smtp->debug = true; #ativa a autenticacao SMTP 
 
-  /* Prepara a mensagem para ser enviada. */
+  # Prepara a mensagem para ser enviada. 
   $from = $data['email'];
   $to = $mail;
   $subject = $data['subject'];
   $msg = "<b>Esta mensagem é um teste da <font color=red>Locaweb.</font><</b><br />";
   $msg .= $data['message'];
 
-  /* faz o envio da mensagem */
+  # faz o envio da mensagem 
   $enviou = $smtp->Send($to, $from, $subject, $msg, "text/html") ? 'enviou' : 'falhou';
   echo $enviou;
-  //header('Location:index.php?status='.$enviou, "-r".$from);
+  //header('Location:index.php?status='.$enviou, "-r".$from);*/
+
+#----------------------------------------------------------
+
+  require '../phpmailer/PHPMailerAutoload.php';
+
+	$mail = new PHPMailer;
+
+	//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+	$mail->isSMTP();                                      // Set mailer to use SMTP
+	$mail->Host = 'smtp.gmail.com;smtp2.example.com';  // Specify main and backup SMTP servers
+	$mail->SMTPAuth = true;                               // Enable SMTP authentication
+	$mail->Username = 'amontenegro.sistemas@gmail.com';                 // SMTP username
+	$mail->Password = '23498535';                           // SMTP password
+	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+	$mail->Port = 465;                                    // TCP port to connect to
+
+	$mail->From = 'from@example.com';
+	$mail->FromName = 'Mailer';
+	$mail->addAddress('theguitarplayer.am@gmail.com', 'Alexis Montenegro');     // Add a recipient
+	$mail->addAddress('robertdacorte@gmail.com', 'Robert Dacorte');               // Name is optional
+	$mail->addReplyTo('amontenegro.sistemas@gmail.com', 'Alexis Montenegro');
+	$mail->addCC('alex_100aleman@gmail.com');
+	$mail->addBCC('alexisanderson@ovi.com');
+
+	$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+	//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+	//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+	$mail->isHTML(true);                                  // Set email format to HTML
+
+	$mail->Subject = 'Here is the subject';
+	$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+	if(!$mail->send()) {
+	    echo 'Message could not be sent.';
+	    echo 'Mailer Error: ' . $mail->ErrorInfo;
+	} else {
+	    echo 'Message has been sent';
+	}
 
 ?>
 
