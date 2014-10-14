@@ -112,7 +112,7 @@
 	$mail->Username = 'amontenegro.sistemas@gmail.com';                 // SMTP username
 	$mail->Password = '23498535';                           // SMTP password
 	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-	$mail->Port = 465;                                    // TCP port to connect to
+	$mail->Port = 587;                                    // TCP port to connect to
 
 	$mail->From = 'amontenegro.sistemas@gmail.com';
 	$mail->FromName = 'Mailer';
