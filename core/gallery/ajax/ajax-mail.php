@@ -111,8 +111,8 @@
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
 	$mail->Username = 'postmaster@sandbox96dd99ec6ce646929e3bf343da53f450.mailgun.org';                 // SMTP username
 	$mail->Password = '58j0gk4e43y6';                           // SMTP password
-	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-	$mail->Port = 465;                                    // TCP port to connect to
+	//$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+	$mail->Port = 587;                                    // TCP port to connect to
 
 	$mail->From = 'amontenegro.sistemas@gmail.com';
 	$mail->FromName = 'Mailer';
