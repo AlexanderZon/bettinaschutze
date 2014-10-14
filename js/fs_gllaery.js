@@ -99,12 +99,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  ],
 			  slidesToScroll: 1,
 			});
-
+/*
 			var width = window.innerWidth;
 			var height = window.innerHeight;
 			window.resizeTo(width-1, height);
 			window.resizeTo(width, height);
-
+*/
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
 		          	helpers: {
@@ -215,12 +215,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  ],
 			  slidesToScroll: 1,
 			});
-
+/*
 			var width = window.innerWidth;
 			var height = window.innerHeight;
 			window.resizeTo(width-1, height);
 			window.resizeTo(width, height);
-
+*/
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
@@ -397,8 +397,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$('.fs_gallery_container').find('.slide'+(nxtSlide)).attr('style', 'background:url('+$('.slide'+(thisSlide+1)).attr('data-src')+') no-repeat; background-size:'+$('.slide'+nxtSlide).attr('data-fit')+';');
 		$('.current-slide').removeClass('current-slide');
 		$('.slide'+thisSlide).addClass('current-slide');
-		fs_interval = setInterval('nextSlide()', fs_options.slide_time);
-		setTimeout("afterChange()",5000);
+		fs_interval = setInterval('nextSlide()', /*fs_options.slide_time*/ 5000);
+		setTimeout("afterChange()",500);
 	}
 
 	prevSlide = function() {
