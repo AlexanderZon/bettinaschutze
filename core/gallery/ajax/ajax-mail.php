@@ -111,7 +111,7 @@
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
 	$mail->Username = 'robert@gallardodesigner.com.br';                 // SMTP username
 	$mail->Password = 'robe4102';                           // SMTP password
-	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+	//$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 587;                                    // TCP port to connect to
 
 	$mail->From = 'amontenegro.sistemas@gmail.com';
