@@ -116,8 +116,8 @@
 
 	$mail->From = $data['email'];
 	$mail->FromName = 'Contact Form';
-	$mail->addAddress('robert@gallardodesigner.com.br');     // Add a recipient
-	$mail->addAddress('robertdacorte@gmail.com', 'Robert Dacorte');               // Name is optional
+	$mail->addAddress('bettina@bettinaschutze.com');     // Add a recipient
+	//$mail->addAddress('robertdacorte@gmail.com', 'Robert Dacorte');               // Name is optional
 	$mail->addReplyTo($data['email'], $data['name']);
 	$mail->addCC('alex_100aleman@gmail.com');
 	$mail->addBCC('alexisanderson@ovi.com');
