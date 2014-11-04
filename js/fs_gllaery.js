@@ -64,7 +64,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  	{
 				  	breakpoint: 3000,
 				  	settings: {
-				  		slidesToShow: 8,
+				  		slidesToShow: 6,
 			  			dots: true,
 				  	},
 				},
@@ -180,7 +180,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  	{
 				  	breakpoint: 3000,
 				  	settings: {
-				  		slidesToShow: 8,
+				  		slidesToShow: 6,
 			  			dots: true,
 				  	},
 				},
