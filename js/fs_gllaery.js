@@ -58,7 +58,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			$('.fs_thmb_viewport_2').slick({
 			  infinite: true,
 			  speed: 300,
-			  autoplay: true,
+			  autoplay: false,
 			  autoplaySpeed: 2000,
 			  responsive: [
 			  	{
@@ -174,7 +174,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			$('.fs_thmb_viewport_2').slick({
 			  infinite: true,
 			  speed: 300,
-			  autoplay: true,
+			  autoplay: false,
 			  autoplaySpeed: 2000,
 			  responsive: [
 			  	{
