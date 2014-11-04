@@ -45,7 +45,7 @@
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 22%;
+	    left: 20%;
 	    display: block;
 	    bottom: 120px !important;
 	    width: 1000px;
@@ -74,7 +74,7 @@
 		text-align: center;
 	    position: fixed;
 	    display: block;
-	    left: 20%;
+	    left: 14%;
 	    bottom: 120px !important;
 	    width: 1000px;
 	    height: 120px;
