@@ -97,7 +97,7 @@
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 14%;
+	    left: 12%;
 	    display: block;
 	    bottom: 120px !important;
 	    width: 750px;
@@ -1213,7 +1213,7 @@ a.menu_toggler {
 	    position: fixed;
 	    /*left: 18%;*/
 	    display: block;
-	    bottom: 0px !important;
+	    bottom: 20px !important;
 	    width: 100%;
 	    height: 120px;
 	    overflow-x: hidden;
