@@ -129,10 +129,12 @@ Version: 0.1
 }
 
 .fs_slider_prev {
+    display: none;
     left: 50px;
 }
 
 .fs_slider_next {
+    display: none;
     right: 50px;
 }
 
