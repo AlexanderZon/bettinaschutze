@@ -99,12 +99,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  ],
 			  slidesToScroll: 1,
 			});
-/*
+			/*
 			var width = window.innerWidth;
 			var height = window.innerHeight;
 			window.resizeTo(width-1, height);
 			window.resizeTo(width, height);
-*/
+			*/
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
 		          	helpers: {
@@ -215,12 +215,12 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  ],
 			  slidesToScroll: 1,
 			});
-/*
+			/*
 			var width = window.innerWidth;
 			var height = window.innerHeight;
 			window.resizeTo(width-1, height);
 			window.resizeTo(width, height);
-*/
+			*/
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
@@ -230,7 +230,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		              	}
 		          	}
 		      	}, function(){
-/*
+			/*
 					$('.una-clase-que-no-se-repita').slick({
 					  dots: true,
 					  infinite: true,
@@ -240,7 +240,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 					  centerMode: true,
 					  variableWidth: true
 					});
-*/
+			*/
 		      	});
 			}
 
