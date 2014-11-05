@@ -87,14 +87,18 @@
 	    font-size: 16px;
 	    text-align:left;
 	}
+	
+	.slick-prev { left: -40px !important; top: 65px; }
+
+	.slick-next { right: -40px !important; top: 65px; }
 
 	.arrows_container{
 		text-align: center;
 		position: fixed;
-		left: 1%;
+		left: 8%;
 		display: block;
 		bottom: 160px !important;
-		width: 1200px;
+		width: 1000px;
 		height: 150px;
 		z-index: 999;
 	}
@@ -122,14 +126,18 @@
 	.notext{
 		left: 0px !important;
 	}
+	
+	.slick-prev { left: -40px !important; top: 65px; }
+
+	.slick-next { right: -40px !important; top: 65px; }
 
 	.arrows_container{
 		text-align: center;
 		position: fixed;
-		left: 8%;
+		left: 12%;
 		display: block;
 		bottom: 160px !important;
-		width: 865px;
+		width: 750px;
 		height: 150px;
 		z-index: 999;
 	}
