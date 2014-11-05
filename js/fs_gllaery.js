@@ -11,8 +11,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 	photo_lightbox = function(){
 
-		var item = function(item, first){
-			console.log(first);
+		var item = function(item){
+			console.log(item);
 			return '<div style="display:inline-block;background-color:#fff;height:100px;margin-left:8px;margin-right:9px;"><a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+first.src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" height="100"/></a></div>';
 		}
 
@@ -38,7 +38,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				//console.log(response.items[i]);
 				//console.log(item(response.items[i]));
-				html += item(response.items[i], response.items[i].photos);
+				html += item(response.items[i]);
 				for(var j = 1 ; j < response.items[i].photos.length ; j++ ){
 					html += photo( response.items[i].photos[j],  response.items[i].ID);
 					//console.log( photo( response.items[i].photos[j] ) );
