@@ -26,7 +26,9 @@
 
 	for( $i = 0 ; $i < count($response['items']) ; $i++ ):
 		$src = wp_get_attachment_url($response['items'][$i]['post_excerpt']);
+		$thumb = wp_get_attachment_thumb_url($response['items'][$i]['post_excerpt']);
 		$response['items'][$i]['src'] = $src;
+		$response['items'][$i]['thumb'] = $thumb;
 		$photos = $gldb->getPhotos($response['items'][$i]['ID'], 'publish');
 		for( $j = 0 ; $j < count($photos) ; $j++ ):
 			$photos[$j]['src'] = wp_get_attachment_url($photos[$j]['post_excerpt']);
