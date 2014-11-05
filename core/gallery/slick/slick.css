@@ -34,7 +34,7 @@
 .slick-prev { left: 10px; top: 65px; }
 .slick-prev:before { content: "\2190"; }
 
-.slick-next { right: 22px; top: 65px; }
+.slick-next { right: 10px; top: 65px; }
 .slick-next:before { content: "\2192"; }
 
 /* Dots */
