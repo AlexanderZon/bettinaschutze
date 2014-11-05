@@ -31,10 +31,10 @@
 
 .slick-prev:before, .slick-next:before { font-family: "slick"; font-size: 34px; line-height: 1; color: white; opacity: 0.75; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-.slick-prev { left: 10px; top: 36px; }
+.slick-prev { left: 10px; top: 65px; }
 .slick-prev:before { content: "\2190"; }
 
-.slick-next { right: 22px; top: 36px; }
+.slick-next { right: 22px; top: 65px; }
 .slick-next:before { content: "\2192"; }
 
 /* Dots */
