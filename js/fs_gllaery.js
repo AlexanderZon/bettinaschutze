@@ -151,7 +151,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var video = function(video){
 			//console.log(video);
-			return '<div style="display:inline-block;height:100px;margin-left:5px;margin-right:5px;width:100px"><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.thumb+'" alt="" height="100"/></a></div>';
+			return '<div style="display:inline-block;height:100px;margin-left:5px;margin-right:5px;width:100px"><a id="fancybox_'+video.ID+'" class="fancybox fancybox-media fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.thumb+'" alt="" height="100"/></a></div>';
 		}
 
 		var data = {
@@ -180,7 +180,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			$('.fs_thmb_viewport_2 ').html(html);
 			$('.fs_thmb_viewport_2').unslick();
 			$('.fs_thmb_viewport_2').slick({
-			  infinite: true,
+			  infinite: false,
 			  speed: 300,
 			  autoplay: false,
 			  autoplaySpeed: 2000,
