@@ -531,6 +531,7 @@ a.menu_toggler {
 
 	.arrows_container{
 		background: rgba(50,50,50,0) !important;
+		box-shadow: 0px 0px 15px rgba(50,50,50,0) !important;
 		text-align: center;
 		position: fixed;
 		display: block;
@@ -1133,6 +1134,7 @@ a.menu_toggler {
 
 	.arrows_container{
 		background: rgba(50,50,50,0) !important;
+		box-shadow: 0px 0px 15px rgba(50,50,50,0) !important;
 		text-align: center;
 		position: fixed;
 		/* left: 15%; */
@@ -1297,6 +1299,7 @@ a.menu_toggler {
 
 	.arrows_container{
 		background: rgba(50,50,50,0) !important;
+		box-shadow: 0px 0px 15px rgba(50,50,50,0) !important;
 		text-align: center;
 		position: fixed;
 		/* left: 15%; */
