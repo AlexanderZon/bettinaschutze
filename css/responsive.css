@@ -44,14 +44,18 @@
 	    font-size: 16px;
 	    text-align:left;
 	}
+	
+	.slick-prev { left: -10px; top: 65px; }
+
+	.slick-next { right: -10px; top: 65px; }
 
 	.arrows_container{
 		text-align: center;
 		position: fixed;
-		left: 15%;
+		left: 20%;
 		display: block;
 		bottom: 160px !important;
-		width: 1200px;
+		width: 1000px;
 		height: 150px;
 		z-index: 999;
 	}
