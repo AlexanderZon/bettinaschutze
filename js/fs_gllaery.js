@@ -335,7 +335,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	}
 
 
-	$('body').append('<div class="fs_gallery_wrapper"><ul class="fs_gallery_container '+fs_options.fx+'"/><a href="javascript:void(0)" class="fs_slider_prev"/><a href="javascript:void(0)" class="fs_slider_next"/><div class="fs_title_wrapper '+set_state+'" style="width:95%"><h1 class="fs_title"></h1><h6 style="float:right">bettina@bettinaschutze.com | Phone: 0055 11 98114 2119 | Agency: 0055 11 30428684 | Germany: 0049 (0) 1725238027</h6><h6 class="fs_descr"></h6></div><div class="fs_thmb_viewport_2 '+set_state+'"><div class="fs_thmb_wrapper" style="display:none"><ul class="fs_thmb_list" style="width:'+fs_options.slides.length*88+'px"/></div></div>');
+	$('body').append('<div class="fs_gallery_wrapper"><ul class="fs_gallery_container '+fs_options.fx+'"/><a href="javascript:void(0)" class="fs_slider_prev"/><a href="javascript:void(0)" class="fs_slider_next"/><div class="fs_title_wrapper '+set_state+'" style="width:95%"><h1 class="fs_title"></h1><h6 style="float:right">bettina@bettinaschutze.com | Phone: 0055 11 98114 2119 | Agency: 0055 11 30428684 | Germany: 0049 (0) 1725238027</h6><h6 class="fs_descr"></h6></div><div class="arrows_container"><div class="fs_thmb_viewport_2 '+set_state+'"><div class="fs_thmb_wrapper" style="display:none"><ul class="fs_thmb_list" style="width:'+fs_options.slides.length*88+'px"/></div></div></div>');
 	$('header ul.menu').append('<li class="thumb_toggle" style="display:none"><a href="javascript:void(0)"></a></li>');
 	$fs_container = $('.fs_gallery_container');
 	$fs_thmb = $('.fs_thmb_list');
