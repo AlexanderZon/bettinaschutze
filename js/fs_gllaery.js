@@ -56,7 +56,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			$('.fs_thmb_viewport_2 ').html(html);
 			$('.fs_thmb_viewport_2').unslick();
 			$('.fs_thmb_viewport_2').slick({
-			  infinite: true,
+			  infinite: false,
 			  speed: 300,
 			  autoplay: false,
 			  autoplaySpeed: 2000,
@@ -93,6 +93,13 @@ jQuery.fn.fs_gallery = function(fs_options) {
 				  	breakpoint: 460,
 				  	settings: {
 				  		slidesToShow: 4,
+			  			dots: false,
+				  	},
+				},
+				{
+				  	breakpoint: 400,
+				  	settings: {
+				  		slidesToShow: 3,
 			  			dots: false,
 				  	},
 				},
