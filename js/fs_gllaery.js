@@ -23,7 +23,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var video = function(video){
 			//console.log(video);
-			return '<div style="display:inline-block;height:100px;margin-left:10px;margin-right:10px;"><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.thumb+'" alt="" /></a></div>';
+			return '<div style="display:inline-block;height:100px;margin-left:10px;margin-right:10px;"><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.thumb+'" alt="" height="100" /></a></div>';
 		}
 
 		var data = {
@@ -151,7 +151,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var video = function(video){
 			//console.log(video);
-			return '<div style="display:inline-block;height:100px;margin-left:10px;margin-right:10px;"><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.thumb+'" alt="" /></a></div>';
+			return '<div style="display:inline-block;height:100px;margin-left:10px;margin-right:10px;"><a id="fancybox_'+video.ID+'" class="fancybox fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.thumb+'" alt="" height="100"/></a></div>';
 		}
 
 		var data = {
