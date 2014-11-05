@@ -38,7 +38,9 @@
 
 	for( $i = 0 ; $i < count($response['videos']) ; $i++ ):
 		$src = wp_get_attachment_url($response['videos'][$i]['post_excerpt']);
+		$thumb = wp_get_attachment_thumb_url($response['videos'][$i]['post_excerpt']);
 		$response['videos'][$i]['src'] = $src;
+		$response['videos'][$i]['thumb'] = $thumb;
 	endfor;
 
 	header('Content-Type: application/json');
