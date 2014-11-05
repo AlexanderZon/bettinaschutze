@@ -12,7 +12,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	photo_lightbox = function(){
 
 		var item = function(item){
-			console.log(item.photos[0]);
+			//console.log(item.photos[0]);
 			return '<div style="display:inline-block;background-color:#fff;height:100px;margin-left:8px;margin-right:9px;"><a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+item.photos[0].src+'" title="'+item.post_title+'"><img src="'+item.src+'" alt="" height="100"/></a></div>';
 		}
 
@@ -34,7 +34,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		var html = '';
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
 
-			//console.log(response);
+			console.log(response);
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				//console.log(response.items[i]);
 				//console.log(item(response.items[i]));
