@@ -84,7 +84,7 @@
 	.arrows_container{
 		text-align: center;
 		position: fixed;
-		left: 15%;
+		left: 1%;
 		display: block;
 		bottom: 160px !important;
 		width: 1200px;
@@ -96,7 +96,7 @@
 		text-align: center;
 	    position: fixed;
 	    display: block;
-	    left: 20%;
+	    left: 8%;
 	    bottom: 120px !important;
 	    width: 1000px;
 	    height: 120px;
@@ -122,7 +122,7 @@
 		left: 8%;
 		display: block;
 		bottom: 160px !important;
-		width: 1000px;
+		width: 865px;
 		height: 120px;
 		z-index: 999;
 	}
@@ -270,7 +270,7 @@
 		left: 5%;
 		display: block;
 		bottom: 160px !important;
-		width: 900px;
+		width: 764px;
 		height: 120px;
 		z-index: 999;
 	}
