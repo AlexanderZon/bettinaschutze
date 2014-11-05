@@ -13,7 +13,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var item = function(item){
 			console.log(item);
-			return '<div style="display:inline-block;height:100px;margin-left:8px;margin-right:9px;"><a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+item.src+'" title="'+item.post_title+'"><img src="'+item.thumb+'" alt="" height="100"/></a></div>';
+			return '<div style="display:inline-block;height:100px;margin-left:8px;margin-right:9px;"><a id="fancybox_'+item.ID+'" class="fancybox fancybox_'+item.ID+'" rel="fancybox_'+item.ID+'" href="'+item.photos[0].src+'" title="'+item.post_title+'"><img src="'+item.thumb+'" alt="" height="100"/></a></div>';
 		}
 
 		var photo = function(photo, ID){
