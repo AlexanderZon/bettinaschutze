@@ -412,6 +412,8 @@ class GalleryLightboxDB{
 			$item['post_status'] = 'draft';
 
 		$item['post_parent'] = $parent;
+
+		$item['menu_order'] = count($this->getItems($parent));
 		
 		$id = wp_insert_post( $item );
 			
@@ -602,7 +604,7 @@ class GalleryLightboxDB{
 			return false;
 
 		else:
-			
+
 			$parent = $item['post_parent'];
 			$at = $item['menu_order'];
 
@@ -696,6 +698,8 @@ class GalleryLightboxDB{
 			$photo['post_status'] = 'draft';
 
 		$photo['post_parent'] = $parent;
+
+		$photo['menu_order'] = count($this->getPhotos($parent));
 		
 		$id = wp_insert_post( $photo );
 			
@@ -920,7 +924,7 @@ class GalleryLightboxDB{
 
 		$photo = $this->getPhoto( $id );
 
-		if( $photo['menu_order'] == 0 ):
+		if( $photo['menu_order'] == ( count($this->getPhotos( $photo['post_parent'] )) - 1 ) ):
 
 			return false;
 
