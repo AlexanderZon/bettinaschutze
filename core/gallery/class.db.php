@@ -896,6 +896,9 @@ class GalleryLightboxDB{
 
 			$prev = $this->photoAt( $parent, $at-1 );
 
+			var_dump($prev);
+			var_dump($photo);
+			die("fuck!");
 			$photo['menu_order'] = $prev['menu_order'];
 			$prev['menu_order'] = $at;
 
