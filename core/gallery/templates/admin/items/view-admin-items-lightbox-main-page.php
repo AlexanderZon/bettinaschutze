@@ -51,6 +51,7 @@
             
             $columns = array(
                 'cb' => '<input type="checkbox" />',
+                'menu_order' => 'Order',
                 'post_title' => 'Title',
                 'post_content' => 'Description',
                 'post_excerpt' => 'Main Image',
@@ -120,6 +121,7 @@
                 'post_status' => array( 'post_status', false),
                 'post_parent' => array( 'post_parent', false),
                 'post_date' => array( 'post_date', false)
+                'menu_order' => array( 'menu_order', false)
                 );
                 
             return $sortable_columns;
@@ -148,11 +150,23 @@
                 case 'post_status':
                 case 'post_parent':
                 case 'post_date':
+                case 'menu_order':
                     return $item[ $column_name ];
                 default:
                     return print_r( $item, true );
                 
                 }
+            
+            }
+            
+        public function column_menu_order( $item ){
+            
+            $actions = array(
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">up</a>', 'page_item_lightbox_edit', 'up' , $item['ID'], $item['post_parent'] ),
+                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">down</a>', 'page_item_lightbox_edit', 'down', $item['ID'], $item['post_parent'] )
+                );
+                
+            return sprintf( '%1$s %2$s', $item['menu_order'], $this->row_actions( $actions ) );
             
             }
             
