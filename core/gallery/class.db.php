@@ -910,7 +910,7 @@ class GalleryLightboxDB{
 				echo "Updated prev: " .$prev['menu_order'] . '<br>';
 				echo "Updated photo: " .$photo['menu_order'] . '<br>';
 
-				die("fuck!");
+				//die("fuck!");
 				return true;
 
 			else:
