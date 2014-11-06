@@ -640,9 +640,9 @@ class GalleryLightboxDB{
 
 		$item = $this->getItem( $id );
 
-		echo ( count($this->data = $gldb->getItems( $parent ) ) -1 );
+		echo ( count($gldb->getItems( $parent ) ) -1 );
 
-		if( $item['menu_order'] == ( count($this->data = $gldb->getItems( $parent ) ) -1 ) ):
+		if( $item['menu_order'] == ( count($gldb->getItems( $parent ) ) -1 ) ):
 
 			return false;
 
