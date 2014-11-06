@@ -909,6 +909,8 @@ class GalleryLightboxDB{
 
 			if($this->updatePhoto($photo) AND $this->updatePhoto($prev)):
 
+				echo "Updated prev: " .$prev['menu_order'] . '<br>';
+				echo "Updated photo: " .$photo['menu_order'] . '<br>';
 				return true;
 
 			else:
