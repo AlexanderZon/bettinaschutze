@@ -159,7 +159,7 @@
             
             }
             
-        public function column_menu_order( $item ){
+        /*public function column_menu_order( $item ){
             
             $actions = array(
                 'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">up</a>', 'page_item_lightbox_edit', 'up' , $item['ID'], $item['post_parent'] ),
@@ -168,7 +168,7 @@
                 
             return sprintf( '%1$s %2$s', $item['menu_order'], $this->row_actions( $actions ) );
             
-            }
+            }*/
             
         public function column_post_title( $item ){
             
