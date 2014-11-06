@@ -166,7 +166,7 @@
                 'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">down</a>', 'page_item_lightbox_edit', 'down', $item['ID'], $item['post_parent'] )
                 );
                 
-            return sprintf( '%1$s %2$s', $item['menu_order'], $this->row_actions( $actions ) );
+            return sprintf( '%d %s', $item['menu_order'], $this->row_actions( $actions ) );
             
             }
             
