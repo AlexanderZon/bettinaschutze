@@ -905,12 +905,12 @@ class GalleryLightboxDB{
 			echo "After prev: " .$prev['menu_order'] . '<br>';
 			echo "After photo: " .$photo['menu_order'] . '<br>';
 
-			die("fuck!");
-
 			if($this->updatePhoto($photo) AND $this->updatePhoto($prev)):
 
 				echo "Updated prev: " .$prev['menu_order'] . '<br>';
 				echo "Updated photo: " .$photo['menu_order'] . '<br>';
+
+				die("fuck!");
 				return true;
 
 			else:
