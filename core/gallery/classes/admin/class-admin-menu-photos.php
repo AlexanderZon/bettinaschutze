@@ -102,9 +102,33 @@ class ClassAdminMenuPhotos extends ClassAdminMenuParent{
 
 				wp_redirect( '?page=page_photo_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
 
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'up'):
+
+				$id = $gldb->upPhoto($data['ID']);
+
+				if($id):
+					$msg = 'photo_upped';
+				else:
+					$msg = 'photo_upped_err';
+				endif;
+
+				wp_redirect( '?page=page_photo_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'down'):
+
+				$id = $gldb->downPhoto($data['ID']);
+				
+				if($id):
+					$msg = 'photo_downed';
+				else:
+					$msg = 'photo_downed_err';
+				endif;
+				
+				wp_redirect( '?page=page_photo_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'edit'):
 
-				if($_POST['verify_item'] == 'edit'):
+				if($_POST['verify_photo'] == 'edit'):
 				
 					$data = $_POST;
 

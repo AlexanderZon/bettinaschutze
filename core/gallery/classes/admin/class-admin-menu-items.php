@@ -116,15 +116,14 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'down'):
 
-				echo "Entra aquí";
 				$id = $gldb->downItem($data['ID']);
-				echo "Despues de la función";
+				
 				if($id):
 					$msg = 'item_downed';
 				else:
 					$msg = 'item_downed_err';
 				endif;
-				echo "Despues del condicional";
+
 				wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
 
 
