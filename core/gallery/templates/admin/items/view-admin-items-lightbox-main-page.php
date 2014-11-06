@@ -130,7 +130,7 @@
             
         public function usort_reorder( $a, $b ){
             
-            $orderby = ( ! empty( $_GET['orderby'] ) ) ? $_GET['orderby'] : 'post_title';
+            $orderby = ( ! empty( $_GET['orderby'] ) ) ? $_GET['orderby'] : 'menu_order';
             
             $order = ( ! empty( $_GET['order'] ) ) ? $_GET['order'] : 'asc' ;
             
