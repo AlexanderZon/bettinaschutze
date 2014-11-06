@@ -966,7 +966,7 @@ class GalleryLightboxDB{
 
 		global $wpdb;
 
-		$row  = $wpdb->get_row( "SELECT * FROM $this->table WHERE `post_parent`='$parent' AND `menu_order`=$a;", ARRAY_A );
+		$row  = $wpdb->get_row( "SELECT * FROM $this->table WHERE `post_parent`='$parent' AND `menu_order`=$at;", ARRAY_A );
 
 		if( $row == null ):
 			return 0;
