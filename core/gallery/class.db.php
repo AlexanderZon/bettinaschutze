@@ -111,6 +111,10 @@ class GalleryLightboxDB{
 		'item_untrash_err' => 'Hubo un error al restaurar el item',
 		'item_delete' => 'El item ha sido eliminada con éxito',
 		'item_delete_err' => 'Hubo un error al eliminar el item permanentemente',
+		'item_upped' => 'El item ha sido subido con éxito',
+		'item_upped_err' => 'Hubo un error al subir el item',
+		'item_downed' => 'El item ha sido bajado con éxito',
+		'item_downed_err' => 'Hubo un error al bajar el item permanentemente',
 
 		'video_add' => 'El video ha sido creada con éxito',	
 		'video_add_err' => 'Hubo un error al crear el video',
@@ -127,6 +131,10 @@ class GalleryLightboxDB{
 		'video_untrash_err' => 'Hubo un error al restaurar el video',
 		'video_delete' => 'El video ha sido eliminada con éxito',
 		'video_delete_err' => 'Hubo un error al eliminar el video permanentemente',
+		'video_upped' => 'El video ha sido subido con éxito',
+		'video_upped_err' => 'Hubo un error al subir el video',
+		'video_downed' => 'El video ha sido bajado con éxito',
+		'video_downed_err' => 'Hubo un error al bajar el video permanentemente',
 
 		'photo_add' => 'La foto ha sido creada con éxito',	
 		'photo_add_err' => 'Hubo un error al crear la foto',
@@ -143,6 +151,10 @@ class GalleryLightboxDB{
 		'photo_untrash_err' => 'Hubo un error al restaurar la foto',
 		'photo_delete' => 'La Foto ha sido eliminada con éxito',
 		'photo_delete_err' => 'Hubo un error al eliminar la foto permanentemente',
+		'photo_upped' => 'La foto ha sido subido con éxito',
+		'photo_upped_err' => 'Hubo un error al subir la foto',
+		'photo_downed' => 'La foto ha sido bajado con éxito',
+		'photo_downed_err' => 'Hubo un error al bajar la foto permanentemente',
 
 	);
 		
@@ -442,7 +454,7 @@ class GalleryLightboxDB{
 
 		if( $band ):
 			
-			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
+			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where . " ORDER BY `menu_order` ASC", ARRAY_A );
 		
 			return $array;
 			
@@ -573,6 +585,99 @@ class GalleryLightboxDB{
 		return $trash;
 
 	}
+
+	/**
+	 * Subida de posicion de item.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	public function upItem( $id ){
+
+		$item = $this->getItem( $id );
+
+		if( $item['menu_order'] == 0 ):
+
+			return false;
+
+		else:
+
+			$parent = $item['post_parent'];
+			$at = $item['menu_order'];
+
+			$prev = $this->itemAt( $parent, $at-1 );
+
+			$item['menu_order'] = $prev['menu_order'];
+			$prev['menu_order'] = $at;
+
+			if($this->updateItem($item) AND $this->updateItem($prev)):
+
+				return true;
+
+			else:
+
+				return false;
+
+			endif;
+
+		endif;
+
+	}
+
+	/**
+	 * Bajada de posicion de item.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	public function downItem( $id ){
+
+		$item = $this->getItem( $id );
+
+		if( $item['menu_order'] == 0 ):
+
+			return false;
+
+		else:
+
+			$parent = $item['post_parent'];
+			$at = $item['menu_order'];
+
+			$next = $this->itemAt( $parent, $at+1 );
+
+			$item['menu_order'] = $next['menu_order'];
+			$next['menu_order'] = $at;
+
+			if( $this->updateItem($item) AND $this->updateItem($next) ):
+
+				return true;
+
+			else:
+
+				return false;
+
+			endif;
+
+		endif;
+
+	}
+
+	public function itemAt( $parent, $at ){
+
+		global $wpdb;
+
+		$row  = $wpdb->get_row( "SELECT * FROM $this->table WHERE `post_parent`='$parent' AND `menu_order`='$at';", ARRAY_A );
+
+		if( $row == null ):
+			return 0;
+		else:
+			return $row;
+		endif;
+
+	}
+
 
 	/**
 	 * Inserción de photo.
@@ -762,6 +867,98 @@ class GalleryLightboxDB{
 		$trash = $this->updatePhoto( $photo );
 
 		return $trash;
+
+	}
+
+	/**
+	 * Subida de posicion de photo.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	public function upPhoto( $id ){
+
+		$photo = $this->getPhoto( $id );
+
+		if( $photo['menu_order'] == 0 ):
+
+			return false;
+
+		else:
+
+			$parent = $photo['post_parent'];
+			$at = $photo['menu_order'];
+
+			$prev = $this->photoAt( $parent, $at-1 );
+
+			$photo['menu_order'] = $prev['menu_order'];
+			$prev['menu_order'] = $at;
+
+			if($this->updatePhoto($photo) AND $this->updatePhoto($prev)):
+
+				return true;
+
+			else:
+
+				return false;
+
+			endif;
+
+		endif;
+
+	}
+
+	/**
+	 * Bajada de posicion de photo.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	public function downPhoto( $id ){
+
+		$photo = $this->getPhoto( $id );
+
+		if( $photo['menu_order'] == 0 ):
+
+			return false;
+
+		else:
+
+			$parent = $photo['post_parent'];
+			$at = $photo['menu_order'];
+
+			$next = $this->photoAt( $parent, $at+1 );
+
+			$photo['menu_order'] = $next['menu_order'];
+			$next['menu_order'] = $at;
+
+			if( $this->updatePhoto($photo) AND $this->updatePhoto($next) ):
+
+				return true;
+
+			else:
+
+				return false;
+
+			endif;
+
+		endif;
+
+	}
+
+	public function photoAt( $parent, $at ){
+
+		global $wpdb;
+
+		$row  = $wpdb->get_row( "SELECT * FROM $this->table WHERE `post_parent`='$parent' AND `menu_order`='$at';", ARRAY_A );
+
+		if( $row == null ):
+			return 0;
+		else:
+			return $row;
+		endif;
 
 	}
 

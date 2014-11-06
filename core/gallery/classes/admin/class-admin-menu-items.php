@@ -102,6 +102,31 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 
 				wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
 
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'up'):
+
+				$id = $gldb->upItem($data['ID']);
+
+				if($id):
+					$msg = 'item_upped';
+				else:
+					$msg = 'item_upped_err';
+				endif;
+
+				wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'down'):
+
+				$id = $gldb->downItem($data['ID']);
+
+				if($id):
+					$msg = 'item_downed';
+				else:
+					$msg = 'item_downed_err';
+				endif;
+
+				wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'edit'):
 
 				if($_POST['verify_item'] == 'edit'):
