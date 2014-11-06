@@ -602,21 +602,25 @@ class GalleryLightboxDB{
 			return false;
 
 		else:
-
+			echo "else";
 			$parent = $item['post_parent'];
 			$at = $item['menu_order'];
 
+			echo "elements";
 			$prev = $this->itemAt( $parent, $at-1 );
 
+			echo "prev";
 			$item['menu_order'] = $prev['menu_order'];
 			$prev['menu_order'] = $at;
 
+			echo "change";
 			if($this->updateItem($item) AND $this->updateItem($prev)):
-
+				echo "updated";
 				return true;
 
 			else:
 
+				echo "non updated";
 				return false;
 
 			endif;
@@ -636,7 +640,7 @@ class GalleryLightboxDB{
 
 		$item = $this->getItem( $id );
 
-		if( $item['menu_order'] == () count($this->data = $gldb->getItems( $parent )) -1 ) ):
+		if( $item['menu_order'] == ( count($this->data = $gldb->getItems( $parent )) -1 ) ):
 
 			return false;
 
