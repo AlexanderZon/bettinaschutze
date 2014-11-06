@@ -742,7 +742,7 @@ class GalleryLightboxDB{
 
 		if( $band ):
 			
-			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
+			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where . " ORDER BY `menu_order` ASC", ARRAY_A );
 		
 			return $array;
 			
