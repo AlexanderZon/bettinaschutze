@@ -95,7 +95,7 @@
             $hidden = array();
             $sortable = $this->get_sortable_columns();
             $this->_column_headers = array( $columns, $hidden, $sortable );
-            //usort( $this->data, array( &$this, 'usort_reorder' ) );
+            usort( $this->data, array( &$this, 'usort_reorder' ) );
             $per_page = 10;
             $current_page = $this->get_pagenum();
             if( isset($_POST['s'] ) and $_POST['s'] != '' ):
@@ -130,7 +130,7 @@
             
         public function usort_reorder( $a, $b ){
             
-            $orderby = ( ! empty( $_GET['orderby'] ) ) ? $_GET['orderby'] : 'menu_order';
+            //$orderby = ( ! empty( $_GET['orderby'] ) ) ? $_GET['orderby'] : 'menu_order';
             
             $order = ( ! empty( $_GET['order'] ) ) ? $_GET['order'] : 'asc' ;
             
