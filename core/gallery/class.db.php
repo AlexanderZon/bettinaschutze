@@ -646,20 +646,26 @@ class GalleryLightboxDB{
 
 		else:
 
+			echo "else";
 			$parent = $item['post_parent'];
 			$at = $item['menu_order'];
 
+			echo "elements";
 			$next = $this->itemAt( $parent, $at+1 );
 
+			echo "next";
 			$item['menu_order'] = $next['menu_order'];
 			$next['menu_order'] = $at;
 
+			echo "ganche";
 			if( $this->updateItem($item) AND $this->updateItem($next) ):
 
+				echo "updated";
 				return true;
 
 			else:
 
+				echo "non updated";
 				return false;
 
 			endif;
