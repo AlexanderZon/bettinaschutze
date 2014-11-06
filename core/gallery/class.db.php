@@ -896,11 +896,16 @@ class GalleryLightboxDB{
 
 			$prev = $this->photoAt( $parent, $at-1 );
 
-			var_dump($prev);
-			var_dump($photo);
-			die("fuck!");
+			echo "Before prev: " .$prev['menu_order'] . '<br>';
+			echo "Before photo: " .$photo['menu_order'] . '<br>';
+
 			$photo['menu_order'] = $prev['menu_order'];
 			$prev['menu_order'] = $at;
+
+			echo "After prev: " .$prev['menu_order'] . '<br>';
+			echo "After photo: " .$photo['menu_order'] . '<br>';
+
+			die("fuck!");
 
 			if($this->updatePhoto($photo) AND $this->updatePhoto($prev)):
 
