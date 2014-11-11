@@ -57,6 +57,7 @@
             
             $columns = array(
                 'cb' => '<input type="checkbox" />',
+                'menu_order' => 'Order',
                 'post_title' => 'Title',
                 'post_content' => 'URL',
                 'post_excerpt' => 'Main Image',
