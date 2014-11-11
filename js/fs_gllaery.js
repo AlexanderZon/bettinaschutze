@@ -151,8 +151,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var video = function(video){
 			console.log(video);
-			return '<div style="display:inline-block"><a class="fancybox-media" href="'+video.post_content+'"><img src="'+video.src+'" alt="" height="80"/></a></div>';
-			//return '<div style="display:inline-block;height:100px;margin-left:5px;margin-right:5px;width:100px"><a id="fancybox_'+video.ID+'" class="fancybox fancybox-media fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.thumb+'" alt="" height="100"/></a></div>';
+			//return '<div style="display:inline-block"><a class="fancybox-media" href="'+video.post_content+'"><img src="'+video.src+'" alt="" height="80"/></a></div>';
+			return '<div style="display:inline-block;height:100px;margin-left:5px;margin-right:5px;width:100px"><a id="fancybox_'+video.ID+'" class="fancybox fancybox-media fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.thumb+'" alt="" height="100"/></a></div>';
 		}
 
 		var data = {
@@ -164,8 +164,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
 			//console.log(data);
 			for(var i = 0 ; i < response.items.length ; i++ ){
-				html += item(response.items[i]);
-				for(var j = 0 ; j < response.items[i].photos.length ; j++ ){
+				html += item(response.items[i], response.items[i].photos[0]);
+				for(var j = 1 ; j < response.items[i].photos.length ; j++ ){
 					html += photo( response.items[i].photos[j],  response.items[i].ID);
 				}
 			}
@@ -181,29 +181,29 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			$('.fs_thmb_viewport_2 ').html(html);
 			$('.fs_thmb_viewport_2').unslick();
 			$('.fs_thmb_viewport_2').slick({
-			  infinite: true,
+			  infinite: false,
 			  speed: 300,
-			  autoplay: true,
+			  autoplay: false,
 			  autoplaySpeed: 2000,
 			  responsive: [
 			  	{
 				  	breakpoint: 3000,
 				  	settings: {
-				  		slidesToShow: 6,
+				  		slidesToShow: 8,
 			  			dots: true,
 				  	},
 				},
 				{
 				  	breakpoint: 1200,
 				  	settings: {
-				  		slidesToShow: 4,
+				  		slidesToShow: 7,
 			  			dots: true,
 				  	},
 				},
 				{
 				  	breakpoint: 960,
 				  	settings: {
-				  		slidesToShow: 3,
+				  		slidesToShow: 6,
 			  			dots: true,
 				  	},
 				},
@@ -221,15 +221,22 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  			dots: false,
 				  	},
 				},
+				{
+				  	breakpoint: 400,
+				  	settings: {
+				  		slidesToShow: 3,
+			  			dots: false,
+				  	},
+				},
 			  ],
 			  slidesToScroll: 1,
 			});
-
+			/*
 			var width = window.innerWidth;
 			var height = window.innerHeight;
 			window.resizeTo(width-1, height);
 			window.resizeTo(width, height);
-
+			*/
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
@@ -239,7 +246,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		              	}
 		          	}
 		      	}, function(){
-				/*
+			/*
 					$('.una-clase-que-no-se-repita').slick({
 					  dots: true,
 					  infinite: true,
@@ -249,13 +256,13 @@ jQuery.fn.fs_gallery = function(fs_options) {
 					  centerMode: true,
 					  variableWidth: true
 					});
-				*/
+			*/
 		      	});
 			}
 
-			$('.fancybox-media').click(function(e){
+			/*$('.fancybox-media').click(function(e){
 				e.preventDefault();
-			});
+			});*/
 
 			$('.fancybox-media').fancybox({
 	          	openEffect  : 'none',
