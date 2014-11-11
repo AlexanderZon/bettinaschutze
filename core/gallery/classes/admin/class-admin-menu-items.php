@@ -126,17 +126,26 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 
 				wp_redirect( '?page=page_item_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
 
-
 			elseif(isset($_GET['action']) AND $_GET['action'] == 'edit'):
 
 				if($_POST['verify_item'] == 'edit'):
 				
 					$data = $_POST;
 
+					$file = $_FILES['image'];
+
 					$item = $gldb->getItem($data['ID']);
 						
 					$item['post_title'] = $data['post_title'];
 					$item['post_content'] = $data['post_content'];
+
+					if($file['name'] != ''):
+
+						$attachment = $this->insert_attachment( $file, $id );
+
+						$photo['post_excerpt'] = $attachment;
+
+					endif;
 
 					$id = $gldb->updateItem($item);
 					

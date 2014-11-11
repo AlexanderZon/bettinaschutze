@@ -54,6 +54,13 @@
 				<td><textarea type="text" id="post_content" name="post_content" maxlength="255" required><?php echo $item['post_content']; ?></textarea></td>
 			</tr>
 			<tr>
+				<td><span class="label">Main Image:</span></td>
+				<td><input type="file" id="image" name="image" maxlength="255"/></td>
+			</tr>
+			<tr>
+				<td colspan="2"><img src="<?php echo wp_get_attachment_url($video['post_excerpt']) ?>" width="400"></td>
+			</tr>
+			<tr>
 				<td colspan="3">
 				<hr>
 					<center>
