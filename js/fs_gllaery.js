@@ -151,7 +151,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 		var video = function(video){
 			//console.log(video);
-			return '<div style="display:inline-block;height:100px;margin-left:5px;margin-right:5px;width:100px"><a id="fancybox_'+video.ID+'" class="fancybox fancybox-media fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.thumb+'" alt="" height="100"/></a></div>';
+			return '<div style="display:inline-block"><a class="fancybox-media" href="'+video.post_content+'"><img src="'+video.src+'" alt="" height="80"/></a></div>';
+//			return '<div style="display:inline-block;height:100px;margin-left:5px;margin-right:5px;width:100px"><a id="fancybox_'+video.ID+'" class="fancybox fancybox-media fancybox_'+video.ID+'" rel="fancybox_'+video.ID+'" href="'+video.post_content+'" title="'+video.post_title+'"><img src="'+video.thumb+'" alt="" height="100"/></a></div>';
 		}
 
 		var data = {
