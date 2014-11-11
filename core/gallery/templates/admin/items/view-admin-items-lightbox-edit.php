@@ -5,8 +5,6 @@
 
 	$item = $gldb->getItem($_GET['ID']);
 
-	$attachment = 
-
 ?>
 
 <style>
