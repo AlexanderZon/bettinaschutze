@@ -5,6 +5,8 @@
 
 	$item = $gldb->getItem($_GET['ID']);
 
+	$attachment = 
+
 ?>
 
 <style>
@@ -58,7 +60,7 @@
 				<td><input type="file" id="image" name="image" maxlength="255"/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><img src="<?php echo wp_get_attachment_url($video['post_excerpt']) ?>" width="400"></td>
+				<td colspan="2"><img src="<?php echo wp_get_attachment_url($item['post_excerpt']) ?>" width="400"></td>
 			</tr>
 			<tr>
 				<td colspan="3">
