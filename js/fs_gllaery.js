@@ -259,9 +259,9 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		      	});
 			}
 
-			$('.fancybox-media').click(function(e){
+			/*$('.fancybox-media').click(function(e){
 				e.preventDefault();
-			});
+			});*/
 
 			$('.fancybox-media').fancybox({
 	          	openEffect  : 'none',
@@ -270,7 +270,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 					media : {}
 				}
 	      	});
-			for(var i = 0 ; i < response.videos.length ; i++ ){
+			/*for(var i = 0 ; i < response.videos.length ; i++ ){
 				$('.fancybox_'+response.videos[i].ID).fancybox({
 		          	helpers: {
 		              	title : {
@@ -278,7 +278,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		              	}
 		          	}
 		      	});
-			}
+			}*/
 
 			return html;
 		});
