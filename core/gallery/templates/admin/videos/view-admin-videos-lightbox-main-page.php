@@ -156,6 +156,7 @@
                 case 'post_status':
                 case 'post_parent':
                 case 'post_date':
+                case 'menu_order':
                     return $item[ $column_name ];
                 default:
                     return print_r( $item, true );
