@@ -239,11 +239,11 @@ jQuery.fn.fs_gallery = function(fs_options) {
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
-		          	helpers: {
-		              	title : {
-		                  	type : 'float'
-		              	}
-		          	}
+					openEffect  : 'none',
+					closeEffect : 'none',
+					helpers : {
+						media : {}
+					}
 		      	}, function(){
 			/*
 					$('.una-clase-que-no-se-repita').slick({
