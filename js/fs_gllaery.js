@@ -163,8 +163,8 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		$.post('/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-gallery-lightbox.php', data, function(response) {
 			//console.log(data);
 			for(var i = 0 ; i < response.items.length ; i++ ){
-				html += item(response.items[i], response.items[i].photos[0]);
-				for(var j = 1 ; j < response.items[i].photos.length ; j++ ){
+				html += item(response.items[i]);
+				for(var j = 0 ; j < response.items[i].photos.length ; j++ ){
 					html += photo( response.items[i].photos[j],  response.items[i].ID);
 				}
 			}
@@ -180,29 +180,29 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			$('.fs_thmb_viewport_2 ').html(html);
 			$('.fs_thmb_viewport_2').unslick();
 			$('.fs_thmb_viewport_2').slick({
-			  infinite: false,
+			  infinite: true,
 			  speed: 300,
-			  autoplay: false,
+			  autoplay: true,
 			  autoplaySpeed: 2000,
 			  responsive: [
 			  	{
 				  	breakpoint: 3000,
 				  	settings: {
-				  		slidesToShow: 8,
+				  		slidesToShow: 6,
 			  			dots: true,
 				  	},
 				},
 				{
 				  	breakpoint: 1200,
 				  	settings: {
-				  		slidesToShow: 7,
+				  		slidesToShow: 4,
 			  			dots: true,
 				  	},
 				},
 				{
 				  	breakpoint: 960,
 				  	settings: {
-				  		slidesToShow: 6,
+				  		slidesToShow: 3,
 			  			dots: true,
 				  	},
 				},
@@ -220,32 +220,25 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			  			dots: false,
 				  	},
 				},
-				{
-				  	breakpoint: 400,
-				  	settings: {
-				  		slidesToShow: 3,
-			  			dots: false,
-				  	},
-				},
 			  ],
 			  slidesToScroll: 1,
 			});
-			/*
+
 			var width = window.innerWidth;
 			var height = window.innerHeight;
 			window.resizeTo(width-1, height);
 			window.resizeTo(width, height);
-			*/
+
 
 			for(var i = 0 ; i < response.items.length ; i++ ){
 				$('.fancybox_'+response.items[i].ID).fancybox({
-					openEffect  : 'none',
-					closeEffect : 'none',
-					helpers : {
-             			media: true
-         			},
+		          	helpers: {
+		              	title : {
+		                  	type : 'float'
+		              	}
+		          	}
 		      	}, function(){
-			/*
+				/*
 					$('.una-clase-que-no-se-repita').slick({
 					  dots: true,
 					  infinite: true,
@@ -255,7 +248,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 					  centerMode: true,
 					  variableWidth: true
 					});
-			*/
+				*/
 		      	});
 			}
 
@@ -270,7 +263,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 					media : {}
 				}
 	      	});
-			/*for(var i = 0 ; i < response.videos.length ; i++ ){
+			for(var i = 0 ; i < response.videos.length ; i++ ){
 				$('.fancybox_'+response.videos[i].ID).fancybox({
 		          	helpers: {
 		              	title : {
@@ -278,7 +271,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		              	}
 		          	}
 		      	});
-			}*/
+			}
 
 			return html;
 		});
