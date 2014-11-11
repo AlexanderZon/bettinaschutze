@@ -101,7 +101,7 @@
             $hidden = array();
             $sortable = $this->get_sortable_columns();
             $this->_column_headers = array( $columns, $hidden, $sortable );
-            usort( $this->data, array( &$this, 'usort_reorder' ) );
+            //usort( $this->data, array( &$this, 'usort_reorder' ) );
             $per_page = 10;
             $current_page = $this->get_pagenum();
             if( isset($_POST['s'] ) and $_POST['s'] != '' ):
@@ -126,7 +126,8 @@
                 'post_excerpt' => array( 'post_excerpt', false ),
                 'post_status' => array( 'post_status', false),
                 'post_parent' => array( 'post_parent', false),
-                'post_date' => array( 'post_date', false)
+                'post_date' => array( 'post_date', false),
+                'menu_order' => array( 'menu_order', false),
                 );
                 
             return $sortable_columns;
