@@ -45,11 +45,11 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 
 				$attachment = $this->insert_attachment( $file, $id );
 
-				$video = $gldb->getItem($id);
+				$video = $gldb->getVideo($id);
 
 				$video['post_excerpt'] = $attachment;
 
-				$video = $gldb->updateItem($video);
+				$video = $gldb->updateVideo($video);
 
 				if($attachment):
 					$msg = 'video_add';
@@ -99,6 +99,30 @@ class ClassAdminMenuVideos extends ClassAdminMenuParent{
 					$msg = 'video_visible';
 				else:
 					$msg = 'video_visible_err';
+				endif;
+
+				wp_redirect( '?page=page_video_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'up'):
+
+				$id = $gldb->upVideo($data['ID']);
+
+				if($id):
+					$msg = 'video_upped';
+				else:
+					$msg = 'video_upped_err';
+				endif;
+
+				wp_redirect( '?page=page_video_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;
+
+			elseif(isset($_GET['action']) AND $_GET['action'] == 'down'):
+
+				$id = $gldb->downVideo($data['ID']);
+				
+				if($id):
+					$msg = 'video_downed';
+				else:
+					$msg = 'video_downed_err';
 				endif;
 
 				wp_redirect( '?page=page_video_lightbox&parent='.$data['parent'].'&msg='.$msg ); exit;

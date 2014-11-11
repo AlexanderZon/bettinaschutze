@@ -896,20 +896,10 @@ class GalleryLightboxDB{
 
 			$prev = $this->photoAt( $parent, $at-1 );
 
-			echo "Before prev: " .$prev['menu_order'] . '<br>';
-			echo "Before photo: " .$photo['menu_order'] . '<br>';
-
 			$photo['menu_order'] = $prev['menu_order'];
 			$prev['menu_order'] = $at;
 
-			echo "After prev: " .$prev['menu_order'] . '<br>';
-			echo "After photo: " .$photo['menu_order'] . '<br>';
-
 			if($this->updatePhoto($photo) AND $this->updatePhoto($prev)):
-
-				echo "Updated prev: " .$prev['menu_order'] . '<br>';
-				echo "Updated photo: " .$photo['menu_order'] . '<br>';
-
 				//die("fuck!");
 				return true;
 
@@ -993,6 +983,8 @@ class GalleryLightboxDB{
 			$video['post_status'] = 'draft';
 
 		$video['post_parent'] = $parent;
+
+		$video['menu_order'] = count($this->getVideos($parent));
 		
 		$id = wp_insert_post( $video );
 			
@@ -1035,7 +1027,7 @@ class GalleryLightboxDB{
 
 		if( $band ):
 			
-			$array = $wpdb->get_results( "SELECT * FROM " . $this->table .$where , ARRAY_A );
+			$array = $wpdb->get_results( "SELECT * FROM " . $this->table . $where . ' ORDER BY `menu_order` ASC' , ARRAY_A );
 		
 			return $array;
 			
@@ -1164,6 +1156,108 @@ class GalleryLightboxDB{
 		$trash = $this->updateVideo( $video );
 
 		return $trash;
+
+	}
+
+	/**
+	 * Subida de posicion de video.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	public function upVideo( $id ){
+
+		$video = $this->getVideo( $id );
+
+		if( $video['menu_order'] == 0 ):
+
+			return false;
+
+		else:
+
+			$parent = $video['post_parent'];
+			$at = $video['menu_order'];
+
+			$prev = $this->videoAt( $parent, $at-1 );
+
+			echo "Before prev: " .$prev['menu_order'] . '<br>';
+			echo "Before video: " .$video['menu_order'] . '<br>';
+
+			$video['menu_order'] = $prev['menu_order'];
+			$prev['menu_order'] = $at;
+
+			echo "After prev: " .$prev['menu_order'] . '<br>';
+			echo "After video: " .$video['menu_order'] . '<br>';
+
+			if($this->updateVideo($video) AND $this->updateVideo($prev)):
+
+				echo "Updated prev: " .$prev['menu_order'] . '<br>';
+				echo "Updated video: " .$video['menu_order'] . '<br>';
+
+				//die("fuck!");
+				return true;
+
+			else:
+
+				return false;
+
+			endif;
+
+		endif;
+
+	}
+
+	/**
+	 * Bajada de posicion de video.
+	 * @access public
+	 * @param integer $id
+	 * @return intener || false
+	 */
+
+	public function downVideo( $id ){
+
+		$video = $this->getVideo( $id );
+
+		if( $video['menu_order'] == ( count($this->getVideos( $video['post_parent'] )) - 1 ) ):
+
+			return false;
+
+		else:
+
+			$parent = $video['post_parent'];
+			$at = $video['menu_order'];
+
+			$next = $this->videoAt( $parent, $at+1 );
+
+			$video['menu_order'] = $next['menu_order'];
+			$next['menu_order'] = $at;
+
+			if( $this->updateVideo($video) AND $this->updateVideo($next) ):
+
+				return true;
+
+			else:
+
+				return false;
+
+			endif;
+
+		endif;
+
+	}
+
+	public function videoAt( $parent, $at ){
+
+		global $wpdb;
+
+		$row  = $wpdb->get_row( "SELECT * FROM $this->table WHERE `post_parent`='$parent' AND `menu_order`=$at;", ARRAY_A );
+
+		if( $row == null ):
+			return 0;
+		else:
+			return $row;
+		endif;
 
 	}
 		

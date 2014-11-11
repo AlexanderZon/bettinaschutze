@@ -57,6 +57,7 @@
             
             $columns = array(
                 'cb' => '<input type="checkbox" />',
+                'menu_order' => 'Order',
                 'post_title' => 'Title',
                 'post_content' => 'URL',
                 'post_excerpt' => 'Main Image',
@@ -100,7 +101,7 @@
             $hidden = array();
             $sortable = $this->get_sortable_columns();
             $this->_column_headers = array( $columns, $hidden, $sortable );
-            usort( $this->data, array( &$this, 'usort_reorder' ) );
+            //usort( $this->data, array( &$this, 'usort_reorder' ) );
             $per_page = 10;
             $current_page = $this->get_pagenum();
             if( isset($_POST['s'] ) and $_POST['s'] != '' ):
@@ -125,7 +126,8 @@
                 'post_excerpt' => array( 'post_excerpt', false ),
                 'post_status' => array( 'post_status', false),
                 'post_parent' => array( 'post_parent', false),
-                'post_date' => array( 'post_date', false)
+                'post_date' => array( 'post_date', false),
+                'menu_order' => array( 'menu_order', false),
                 );
                 
             return $sortable_columns;
@@ -154,11 +156,50 @@
                 case 'post_status':
                 case 'post_parent':
                 case 'post_date':
+                case 'menu_order':
                     return $item[ $column_name ];
                 default:
                     return print_r( $item, true );
                 
                 }
+            
+            }
+            
+        public function column_menu_order( $item ){
+
+            if($item['menu_order'] == 0):
+            
+            $actions = array(
+                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">down</a>', 'page_video_lightbox_edit', 'down', $item['ID'], $item['post_parent'] ),
+                );
+
+            elseif($item['menu_order'] == (count($this->data)-1)):
+            
+            $actions = array(
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">up</a>', 'page_video_lightbox_edit', 'up' , $item['ID'], $item['post_parent'] ),
+                );
+
+            else:
+            
+            $actions = array(
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">up</a>', 'page_video_lightbox_edit', 'up' , $item['ID'], $item['post_parent'] ),
+                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">down</a>', 'page_video_lightbox_edit', 'down', $item['ID'], $item['post_parent'] ),
+                );
+
+            endif;
+                
+            return sprintf( '%d %s', $item['menu_order'], $this->row_actions( $actions ) );
+            
+            }
+            
+        public function column_menu_order( $item ){
+            
+            $actions = array(
+                'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">up</a>', 'page_video_lightbox_edit', 'up' , $item['ID'], $item['post_parent'] ),
+                'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">down</a>', 'page_video_lightbox_edit', 'down', $item['ID'], $item['post_parent'] )
+                );
+                
+            return sprintf( '%1$s %2$s', $item['post_title'], $this->row_actions( $actions ) );
             
             }
             
