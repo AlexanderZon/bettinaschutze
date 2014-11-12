@@ -196,7 +196,7 @@
                 'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s&parent=%s">Trash</a>', 'page_item_lightbox_delete', 'trash', $item['ID'], $item['post_parent'] )
                 );
                 
-            return sprintf( '<a href="?page=%1$s&action=%2$s&parent=%3$s">%4$s</a> %5$s', 'page_item_lightbox_edit', 'edit', $item['ID'], $item['post_title'], $this->row_actions( $actions ) );
+            return sprintf( '<a href="?page=%1$s&action=%2$s&ID=%3$s&parent=%4$s">%5$s</a> %6$s', 'page_item_lightbox_edit', 'edit', $item['ID'], $item['post_parent'], $item['post_title'], $this->row_actions( $actions ) );
             
             }
             
