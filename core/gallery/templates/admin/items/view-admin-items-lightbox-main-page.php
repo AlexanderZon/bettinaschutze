@@ -56,7 +56,8 @@
                 'post_content' => 'Description',
                 'post_excerpt' => 'Main Image',
                 'post_status' => 'Visibility',
-                'post_parent' => 'Galery',
+                'photos' => 'Photos on Gallery',
+                'post_parent' => 'Parent',
                 'post_date' => 'Created at'
                 );
             
@@ -122,6 +123,7 @@
                 'post_parent' => array( 'post_parent', false),
                 'post_date' => array( 'post_date', false),
                 'menu_order' => array( 'menu_order', false),
+                'photos' => array( 'photos', false),
                 );
                 
             return $sortable_columns;
@@ -151,6 +153,7 @@
                 case 'post_parent':
                 case 'post_date':
                 case 'menu_order':
+                case 'photos':
                     return $item[ $column_name ];
                 default:
                     return print_r( $item, true );
@@ -194,6 +197,20 @@
                 );
                 
             return sprintf( '<a href="?page=%1$s&parent=%2$s">%3$s</a> %4$s', 'page_photo_lightbox', $item['ID'], $item['post_title'], $this->row_actions( $actions ) );
+            
+            }
+            
+        public function column_photos( $item ){
+            
+            $actions = array(
+                'edit' => sprintf( '<a href="?page=%s&parent=%2$s">Show photos</a>', 'page_photo_lightbox', $item['ID'] ),
+                );
+
+            global $gldb;
+
+            $items = $gldb->getPhotos( $item['ID'], 'all' );
+            
+            return sprintf( '<a href="?page=%1$s&parent=%2$s">%3$s</a> %4$s', 'page_photo_lightbox', $item['ID'], count($items), $this->row_actions( $actions ));
             
             }
             
