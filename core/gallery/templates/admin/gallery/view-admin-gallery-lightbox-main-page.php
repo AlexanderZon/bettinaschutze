@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="icon32 element"><br></div>
-    <h2>Gallery Lightbox <a href="admin.php?page=page_gallery_lightbox_add" class="add-new-h2">Add new</a> <a href="admin.php?page=page_gallery_lightbox_delete" class="add-new-h2">Papelera</a></h2>
+    <h2>Gallery Lightbox <a href="admin.php?page=page_gallery_lightbox_add" class="add-new-h2">Add new</a> <a href="admin.php?page=page_gallery_lightbox_delete" class="add-new-h2">Trash</a></h2>
     
     <?php 
 
@@ -158,7 +158,7 @@
             
             $actions = array(
                 'edit' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Edit</a>', 'page_gallery_lightbox_edit', 'edit' , $item['ID'] ),
-                /*'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Papelera</a>', 'page_gallery_lightbox_delete', 'trash', $item['ID'] )*/
+                /*'delete' => sprintf( '<a href="?page=%s&action=%s&ID=%s">Trash</a>', 'page_gallery_lightbox_delete', 'trash', $item['ID'] )*/
                 );
                 
             return sprintf( '%3$s %4$s', 'page_item_lightbox', $item['ID'], $item['post_title'], $this->row_actions( $actions ) );

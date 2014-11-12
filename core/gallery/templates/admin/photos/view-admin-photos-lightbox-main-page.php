@@ -25,7 +25,7 @@
 
     ?>
 
-    <h2>Photos Lightbox <a href="admin.php?page=page_photo_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Add new</a> <a href="admin.php?page=page_photo_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Papelera</a> <a href="admin.php?page=page_item_lightbox&parent=<?php echo $item['post_parent']; ?>" class="add-new-h2">Volver a Items</a></h2>
+    <h2>Photos Lightbox <a href="admin.php?page=page_photo_lightbox_add&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Add new</a> <a href="admin.php?page=page_photo_lightbox_delete&parent=<?php echo $_GET['parent']; ?>" class="add-new-h2">Trash</a> <a href="admin.php?page=page_item_lightbox&parent=<?php echo $item['post_parent']; ?>" class="add-new-h2">Back to Items</a></h2>
     
     <?php 
 
