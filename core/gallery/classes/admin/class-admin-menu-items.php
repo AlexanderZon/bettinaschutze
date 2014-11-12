@@ -139,7 +139,9 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 					$item['post_title'] = $data['post_title'];
 					$item['post_content'] = $data['post_content'];
 
-					die($file);
+					var_dump($file);
+
+					die("");
 
 					if($file['name'] != ''):
 
