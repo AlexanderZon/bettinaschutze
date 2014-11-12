@@ -40,7 +40,7 @@
 	
 	<!-- PAGE CONTENT -->
 	
-	<form method="post" action="" id="form-materia">
+	<form method="post" action="" id="form-materia" enctype="multipart/form-data">
 		<input type="hidden" name="verify_item" value="edit"/>
 		<input type="hidden" name="ID" value="<?php echo $_GET['ID']; ?>"/>
 		<input type="hidden" name="parent" value="<?php echo $item['post_parent']; ?>"/>
