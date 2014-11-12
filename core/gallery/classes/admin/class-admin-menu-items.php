@@ -139,15 +139,11 @@ class ClassAdminMenuItems extends ClassAdminMenuParent{
 					$item['post_title'] = $data['post_title'];
 					$item['post_content'] = $data['post_content'];
 
-					var_dump($file);
-
-					die("");
-
 					if($file['name'] != ''):
 
 						$attachment = $this->insert_attachment( $file, $id );
 
-						$photo['post_excerpt'] = $attachment;
+						$item['post_excerpt'] = $attachment;
 
 					endif;
 
