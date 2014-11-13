@@ -45,14 +45,14 @@
 	    text-align:left;
 	}
 	
-	.slick-prev { left: -40px !important; top: 65px; }
+	.slick-prev { left: -40px !important; top: 90px !important; }
 
-	.slick-next { right: -40px !important; top: 65px; }
+	.slick-next { right: -40px !important; top: 90px !important; }
 
 	.arrows_container{
 		text-align: center;
 		position: fixed;
-		left: 15.2%;
+		left: 14.4%;
 		display: block;
 		bottom: 160px !important;
 		width: 1200px;
@@ -63,7 +63,7 @@
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 15.2%;
+	    left: 14.2%;
 	    display: block;
 	    bottom: 120px !important;
 	    width: 1200px;
@@ -88,9 +88,9 @@
 	    text-align:left;
 	}
 	
-	.slick-prev { left: -40px !important; top: 65px; }
+	.slick-prev { left: -40px !important; top: 90px !important; }
 
-	.slick-next { right: -40px !important; top: 65px; }
+	.slick-next { right: -40px !important; top: 90px !important; }
 
 	.arrows_container{
 		text-align: center;
