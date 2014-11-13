@@ -63,11 +63,11 @@
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 20%;
+	    left: 10%;
 	    display: block;
 	    bottom: 120px !important;
-	    width: 1000px;
-	    height: 120px;
+	    width: 1200px;
+	    height: 170px;
 	    overflow-x: hidden;
 	    z-index: 99;
 	}
@@ -107,10 +107,10 @@
 		text-align: center;
 	    position: fixed;
 	    display: block;
-	    left: 8%;
+	    left: 2%;
 	    bottom: 120px !important;
-	    width: 1000px;
-	    height: 120px;
+	    width: 1200px;
+	    height: 170px;
 	    overflow-x: hidden;
 	    z-index: 99;
 	}
@@ -148,8 +148,8 @@
 	    left: 12%;
 	    display: block;
 	    bottom: 120px !important;
-	    width: 750px;
-	    height: 120px;
+	    width: 950px;
+	    height: 170px;
 	    overflow-x: hidden;
 	    z-index: 99;
 	}
@@ -300,8 +300,8 @@
 	    left: 8%;
 	    display: block;
 	    bottom: 120px !important;
-	    width: 630px;
-	    height: 120px;
+	    width: 730px;
+	    height: 170px;
 	    overflow-x: hidden;
 	    z-index: 99;
 	}
