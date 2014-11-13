@@ -55,7 +55,7 @@
 			</tr>
 			<tr>
 				<td><span class="label">Image:</span></td>
-				<td><input type="file" id="image" name="image" maxlength="255" required/></td>
+				<td><input type="file" id="image" name="image" maxlength="255"/></td>
 			</tr>
 			<tr>
 				<td colspan="2"><img src="<?php echo wp_get_attachment_url($item['post_excerpt']); ?>" width="400"></td>
