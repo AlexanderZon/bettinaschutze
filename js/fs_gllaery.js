@@ -329,7 +329,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 	          	}
 	      	});
 		$('#fancybox_bio_'+num).click();
-		$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true});
+		$(".fancybox-inner").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true});
 	}
 
 	//Set Variables
