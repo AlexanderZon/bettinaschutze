@@ -134,21 +134,21 @@
 	.arrows_container{
 		text-align: center;
 		position: fixed;
-		left: 12%;
+		left: 6%;
 		display: block;
 		bottom: 160px !important;
-		width: 760px;
-		height: 150px;
+		width: 900px;
+		height: 200px;
 		z-index: 999;
 	}
 
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 12%;
+	    left: 6%;
 	    display: block;
 	    bottom: 120px !important;
-	    width: 950px;
+	    width: 900px;
 	    height: 170px;
 	    overflow-x: hidden;
 	    z-index: 99;
