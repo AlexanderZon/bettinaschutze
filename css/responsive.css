@@ -95,11 +95,11 @@
 	.arrows_container{
 		text-align: center;
 		position: fixed;
-		left: 8%;
+		left: 3%;
 		display: block;
 		bottom: 160px !important;
-		width: 1200px;
-		height: 150px;
+		width: 1050px;
+		height: 200px;
 		z-index: 999;
 	}
 
@@ -107,9 +107,9 @@
 		text-align: center;
 	    position: fixed;
 	    display: block;
-	    left: 2%;
+	    left: 3%;
 	    bottom: 120px !important;
-	    width: 1200px;
+	    width: 1050px;
 	    height: 170px;
 	    overflow-x: hidden;
 	    z-index: 99;
