@@ -328,7 +328,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
               	}
           	},
           	afterLoad: function(){
-				$(".fancybox-inner").niceScroll({cursorborder:"",cursorcolor:"#ff5474",boxzoom:true});
+				$(".fancybox-inner").niceScroll({cursorborder:"",cursorcolor:"#CB9583",boxzoom:true});
           	}
 	      	});
 		$('#fancybox_bio_'+num).click();
