@@ -313,7 +313,7 @@ jQuery.fn.fs_gallery = function(fs_options) {
 		var html = '';
 		var num = Math.floor((Math.random() * 10000) + 1);
 		html = '<a id="fancybox_bio_'+num+'" class="fancybox fancybox_bio fancybox.ajax" rel="fancybox_bio" href="/wp-content/themes/bettinaschutze/core/gallery/ajax/ajax-bio.php?id='+data.id+'" ></a>';
-		html += '<style>.fancybox-inner{padding-right: 20px;}</style>'
+		html += '<style>.fancybox-inner{padding-right: 20px;overflow:hidden}</style>'
 		$('.fs_thmb_viewport_2 ').append(html);
 		$('#fancybox_bio_'+num).fancybox({
 			padding: 30,
