@@ -1170,7 +1170,7 @@ a.menu_toggler {
 		display: block;
 		bottom: 160px !important;
 		width: 100%;
-		height: 150px;
+		height: 200px;
 		z-index: 999;
 	}
 
@@ -1181,7 +1181,7 @@ a.menu_toggler {
 	    display: block;
 	    bottom: 0px !important;
 	    width: 90%;
-	    height: 120px;
+	    height: 170px;
 	    overflow-x: hidden;
 	    z-index: 99;
 	}
@@ -1335,7 +1335,7 @@ a.menu_toggler {
 		display: block;
 		bottom: 35px !important;
 		width: 100%;
-		height: 150px;
+		height: 200px;
 		z-index: 999;
 	}
 
@@ -1346,7 +1346,7 @@ a.menu_toggler {
 	    display: block;
 	    bottom: 80px !important;
 	    width: 100%;
-	    height: 120px;
+	    height: 170px;
 	    overflow-x: hidden;
 	    z-index: 99;
 	}
