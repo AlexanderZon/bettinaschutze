@@ -322,14 +322,16 @@ jQuery.fn.fs_gallery = function(fs_options) {
 			scrollOutside: true,
 			//maxWidth: '750',
 			maxHeight: 500,
-	          	helpers: {
-	              	title : {
-	                  	type : 'float'
-	              	}
-	          	}
+          	helpers: {
+              	title : {
+                  	type : 'float'
+              	}
+          	},
+          	afterLoad: function(){
+				$(".fancybox-inner").niceScroll({cursorborder:"",cursorcolor:"#ff5474",boxzoom:true});
+          	}
 	      	});
 		$('#fancybox_bio_'+num).click();
-		$(".fancybox-inner").niceScroll({cursorborder:"",cursorcolor:"#ff5474",boxzoom:true})
 	}
 
 	//Set Variables
