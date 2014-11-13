@@ -55,7 +55,7 @@
 		left: 20%;
 		display: block;
 		bottom: 160px !important;
-		width: 1000px;
+		width: 1200px;
 		height: 150px;
 		z-index: 999;
 	}
@@ -63,7 +63,7 @@
 	.fs_thmb_viewport_2 {
 		text-align: center;
 	    position: fixed;
-	    left: 10%;
+	    left: 15.2%%;
 	    display: block;
 	    bottom: 120px !important;
 	    width: 1200px;
@@ -98,7 +98,7 @@
 		left: 8%;
 		display: block;
 		bottom: 160px !important;
-		width: 1000px;
+		width: 1200px;
 		height: 150px;
 		z-index: 999;
 	}
