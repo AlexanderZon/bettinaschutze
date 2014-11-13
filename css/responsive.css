@@ -1351,9 +1351,9 @@ a.menu_toggler {
 	    z-index: 99;
 	}
 	
-	.slick-prev { left: -40px !important; top: 120px !important; }
+	.slick-prev {/*  left: -40px !important;  */top: 120px !important; }
 
-	.slick-next { right: -40px !important; top: 120px !important; }
+	.slick-next {/*  right: -40px !important;  */top: 120px !important; }
 	/*
 	.fs_thmb_viewport_2 img{
 		height: 35px !important;
