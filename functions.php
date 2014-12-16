@@ -4,6 +4,9 @@ require_once("core/loader.php");
 
 if (!isset($content_width)) $content_width = 940;
 
+remove_action( 'load-update-core.php', 'wp_update_plugins' );
+add_filter( 'pre_site_transient_update_plugins', create_function( '$a', "return null;" ) );
+
 function get_theme_sidebars_for_admin()
 {
     $theme_sidebars = get_theme_option("theme_sidebars");
